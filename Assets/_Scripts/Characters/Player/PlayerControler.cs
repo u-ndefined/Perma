@@ -10,22 +10,67 @@ public class PlayerControler : MonoBehaviour {
 	private Camera cam;
 	private Motor motor;
 	public Interactable focus;
+    private Rigidbody rb;
 
-	// Use this for initialization
-	void Start () {
+
+
+	void Start () 
+    {
 		cam = Camera.main;
 		motor = GetComponent<Motor> ();
+        rb = GetComponent<Rigidbody>();
 	}
+
+    void FixedUpdate()
+    {
+        
+            MovePlayer();
+
+    }
+
+    private void MovePlayer()
+    {
+        //reading the input:
+        float horizontalAxis = Input.GetAxis("Horizontal");
+        float verticalAxis = Input.GetAxis("Vertical");
+
+        //camera forward and right vectors:
+        Vector3 forward = cam.transform.forward;
+        Vector3 right = cam.transform.right;
+
+        //project forward and right vectors on the horizontal plane (y = 0)
+        forward.y = 0f;
+        right.y = 0f;
+        forward.Normalize();
+        right.Normalize();
+
+        //direction in the world
+        Vector3 moveDirection = (forward * verticalAxis + right * horizontalAxis).normalized;
+
+        //now we can apply the movement:
+        rb.velocity = moveDirection * motor.moveSpeed;
+
+        //face direction
+        if(moveDirection != Vector3.zero)
+        {
+            transform.rotation = Quaternion.LookRotation(moveDirection); 
+        }
+
+    }
 	
-	// Update is called once per frame
-	void Update () {
-		if (EventSystem.current.IsPointerOverGameObject ()) {
+
+	void Update () 
+    {
+        
+
+		if (EventSystem.current.IsPointerOverGameObject ()) {               //return if mouse onUI
 			return;
 		}
 
-		if (Input.GetMouseButtonDown (0)) {
-			
+		if (Input.GetMouseButtonDown (0)) {                                 //if left clic
 
+            InventoryManager.Instance.UseSlot();
+            /*
 			Ray ray = cam.ScreenPointToRay (Input.mousePosition);
 			RaycastHit hit;
 
@@ -35,9 +80,11 @@ public class PlayerControler : MonoBehaviour {
 
 				RemoveFocus ();
 			}
+			*/
 		}
 
-		if (Input.GetMouseButtonDown (1)) {
+        if (Input.GetMouseButtonDown (1)) {                                 //if right clic
+            
 			Ray ray = cam.ScreenPointToRay (Input.mousePosition);
 			RaycastHit hit;
 
@@ -48,9 +95,12 @@ public class PlayerControler : MonoBehaviour {
 				}
 
 
-				motor.MoveToPoint(hit.point);
+				//motor.MoveToPoint(hit.point);
 			}
+			
 		}
+		
+
 	}
 
 	void SetFocus(Interactable newFocus){

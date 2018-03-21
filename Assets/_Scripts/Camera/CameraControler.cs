@@ -21,10 +21,10 @@ public class CameraControler : MonoBehaviour {
 	}
 
 	void Update(){
-		currentZoom -= Input.GetAxis ("Mouse ScrollWheel") * zoomSpeed;
-		currentZoom = Mathf.Clamp (currentZoom, minZoom, maxZoom);
+		//currentZoom -= Input.GetAxis ("Mouse ScrollWheel") * zoomSpeed;
+		//currentZoom = Mathf.Clamp (currentZoom, minZoom, maxZoom);
 
-		currentYaw -= Input.GetAxis ("Horizontal") * yawSpeed * Time.deltaTime; 
+		//currentYaw -= Input.GetAxis ("Horizontal") * yawSpeed * Time.deltaTime; 
 	}
 	// Update is called once per frame
 	void LateUpdate () {
