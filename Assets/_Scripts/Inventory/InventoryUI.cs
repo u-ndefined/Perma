@@ -8,7 +8,7 @@ public class InventoryUI : MonoBehaviour {
 
 
 
-    public InventorySlot[] slots;
+    private InventorySlot[] slots;
 
 
 
@@ -16,9 +16,7 @@ public class InventoryUI : MonoBehaviour {
     {
         inventory = InventoryManager.Instance;
         inventory.onItemChangedCallback += UpdateUI;
-
-
-
+        slots = inventory.slots;
 	}
 	
 
@@ -26,15 +24,18 @@ public class InventoryUI : MonoBehaviour {
 
     void UpdateUI()
     {
-        for (int i = 0; i < slots.Length; i++)
+        Debug.Log("update UI " + inventory.slots.Length);
+        Debug.Log("items count " + inventory.items.Count);
+        for (int i = 0; i < inventory.slots.Length; i++)
         {
             if(i < inventory.items.Count)
             {
-                slots[i].AddItem(inventory.items[i]);
+                Debug.Log("add?");
+                inventory.slots[i].AddItem(inventory.items[i]);
             }
             else
             {
-                slots[i].ClearSlot();
+                inventory.slots[i].ClearSlot();
             }
         }
     }

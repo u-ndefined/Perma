@@ -4,6 +4,8 @@ using UnityEngine.UI;
 public class InventorySlot : MonoBehaviour {
     public Image icon;
 
+    public Sprite empty;
+
     private Item item;
 
     public int slotIndex;
@@ -13,14 +15,16 @@ public class InventorySlot : MonoBehaviour {
         item = newItem;
 
         icon.sprite = item.icon;
-        icon.enabled = true;
+        //icon.enabled = true;
+
+        Debug.Log("Item added in slot " + slotIndex);
     }
 
     public void ClearSlot()
     {
         item = null;
-        icon.sprite = null;
-        icon.enabled = false;
+        icon.sprite = empty;
+        //icon.enabled = false;
     }
 
     public void UseItem()

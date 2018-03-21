@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Motor))]
-public class PlayerControler : MonoBehaviour {
+public class PlayerControler : ISingleton<PlayerControler> {
+
+    protected PlayerControler() { }
 
 	public LayerMask movementMask;
 	private Camera cam;
@@ -103,7 +105,7 @@ public class PlayerControler : MonoBehaviour {
 
 	}
 
-	void SetFocus(Interactable newFocus){
+	public void SetFocus(Interactable newFocus){
 		if (newFocus != focus) {
 			if (focus != null) {
 				focus.OnDefocused ();
@@ -113,7 +115,8 @@ public class PlayerControler : MonoBehaviour {
 		}
 		newFocus.OnFocused (transform);
 	}
-	void RemoveFocus(){
+
+	public void RemoveFocus(){
 		if (focus != null) {
 			focus.OnDefocused ();
 		}

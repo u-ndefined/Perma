@@ -41,9 +41,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2b2a44f8dc964da5afab3564878ee77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 114740352940795604}
+  empty: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   slotIndex: 0
-  inventoryUI: {fileID: 0}
 --- !u!114 &114714458636125732
 MonoBehaviour:
   m_ObjectHideFlags: 1

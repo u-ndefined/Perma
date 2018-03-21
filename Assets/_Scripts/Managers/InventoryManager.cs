@@ -12,13 +12,13 @@ public class InventoryManager : ISingleton<InventoryManager> {
     public List<Item> items = new List<Item>();
 
     private int selectedSlot = 0;
-    private InventorySlot[] slots;
+    public InventorySlot[] slots;
 
     [SerializeField]
     private Transform selector;
     [SerializeField]
     private Transform slotParent;
-
+    [SerializeField]
     private int space;
 
 	private void Start()
@@ -73,6 +73,8 @@ public class InventoryManager : ISingleton<InventoryManager> {
         }
 
         items.Add(item);
+
+        Debug.Log(item.name + " added");
 
         if (onItemChangedCallback != null)
         {
