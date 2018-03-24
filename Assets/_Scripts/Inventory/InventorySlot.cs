@@ -2,28 +2,24 @@
 using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour {
-    public Image icon;
 
-    [SerializeField]
-    private Sprite empty;
-
-    private Stack itemStack;
+    public StackDisplay stackDisplay;
 
     public int slotIndex;
 
-    public void AddStack(Stack newItem)
+    public void UpdateSlot(Stack stack)
     {
-        itemStack = newItem;
+        Debug.Log(stack.quantity + " " + stack.item.name + " added in slot " + slotIndex);
+        Debug.Log(stackDisplay.icon);
 
-        icon.sprite = itemStack.item.icon;
-
-        Debug.Log("Item added in slot " + slotIndex);
+        stackDisplay.icon.sprite = stack.item.icon;
+        stackDisplay.quantity.text = stack.quantity.ToString();
     }
 
     public void ClearSlot()
     {
-        itemStack = null;
-        icon.sprite = empty;
+        stackDisplay.icon.sprite = null;
+        stackDisplay.quantity.text = null;
     }
 
     /*

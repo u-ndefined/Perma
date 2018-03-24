@@ -30,18 +30,23 @@ public class InventoryUI : MonoBehaviour {
         {
             slots[i].slotIndex = i;
         }
+
+        //UpdateSlots();
+        UpdateSelector();
+
 	}
-	
+
 
 
 
     private void UpdateSlots()  //I need to change this later, the player may want to choose a slot for each item
     {
-        for (int i = 0; i < slots.Length; i++)  //for each slot
+        for (int i = 0; i < slots.Length; i++)
         {
-            if(i < inventory.stacks.Count)  //if there is a stack in the inventory
+            if (inventory.stacks[i] != null)
             {
-                slots[i].AddStack(inventory.stacks[i]); //add stack to the slot
+                Debug.Log(inventory.stacks[i].item.name + " " + inventory.stacks[i].quantity);
+                slots[i].UpdateSlot(inventory.stacks[i]); //add stack to the slot
             }
             else
             {
@@ -49,6 +54,7 @@ public class InventoryUI : MonoBehaviour {
             }
         }
     }
+
 
 	private void UpdateSelector()
 	{
