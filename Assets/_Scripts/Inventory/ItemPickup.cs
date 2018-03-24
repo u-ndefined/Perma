@@ -2,7 +2,7 @@
 
 public class ItemPickup : Interactable {
 
-    public Item item;
+    public Stack stack;
 
 	public override void Interact()
 	{
@@ -14,7 +14,7 @@ public class ItemPickup : Interactable {
     private void Pickup()
     {
         PlayerControler.Instance.RemoveFocus();
-        if(InventoryManager.Instance.Add(item))
+        if(InventoryManager.Instance.Add(stack))
         {
             Destroy(gameObject);
         }

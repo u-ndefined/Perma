@@ -4,34 +4,34 @@ using UnityEngine.UI;
 public class InventorySlot : MonoBehaviour {
     public Image icon;
 
-    public Sprite empty;
+    [SerializeField]
+    private Sprite empty;
 
-    private Item item;
+    private Stack itemStack;
 
     public int slotIndex;
 
-    public void AddItem(Item newItem)
+    public void AddStack(Stack newItem)
     {
-        item = newItem;
+        itemStack = newItem;
 
-        icon.sprite = item.icon;
-        //icon.enabled = true;
+        icon.sprite = itemStack.item.icon;
 
         Debug.Log("Item added in slot " + slotIndex);
     }
 
     public void ClearSlot()
     {
-        item = null;
+        itemStack = null;
         icon.sprite = empty;
-        //icon.enabled = false;
     }
 
+    /*
     public void UseItem()
     {
-        if(item != null)
+        if(itemStack != null)
         {
-            item.Use();
+            itemStack.item.Use();
         }
     }
 
@@ -40,4 +40,5 @@ public class InventorySlot : MonoBehaviour {
         Debug.Log("Select this slot " + slotIndex);
         InventoryManager.Instance.SelectSlot(slotIndex);
     }
+    */
 }
