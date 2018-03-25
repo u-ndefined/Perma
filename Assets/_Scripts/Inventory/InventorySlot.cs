@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour {
 
@@ -9,8 +8,7 @@ public class InventorySlot : MonoBehaviour {
 
     public void UpdateSlot(Stack stack)
     {
-        Debug.Log(stack.quantity + " " + stack.item.name + " added in slot " + slotIndex);
-        Debug.Log(stackDisplay.icon);
+        Debug.Log(stack.quantity + " " + stack.item.name + " updated in slot " + slotIndex);
 
         stackDisplay.icon.sprite = stack.item.icon;
         stackDisplay.quantity.text = stack.quantity.ToString();

@@ -16,7 +16,7 @@ public class InventoryUI : MonoBehaviour {
 
 
 
-	void Start () 
+	void Awake () 
     {
         inventory = InventoryManager.Instance;
         inventory.onItemChangedEvent += UpdateSlots;
@@ -32,7 +32,7 @@ public class InventoryUI : MonoBehaviour {
         }
 
         //UpdateSlots();
-        UpdateSelector();
+        //UpdateSelector();
 
 	}
 
@@ -45,7 +45,6 @@ public class InventoryUI : MonoBehaviour {
         {
             if (inventory.stacks[i] != null)
             {
-                Debug.Log(inventory.stacks[i].item.name + " " + inventory.stacks[i].quantity);
                 slots[i].UpdateSlot(inventory.stacks[i]); //add stack to the slot
             }
             else
