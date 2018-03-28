@@ -37,18 +37,12 @@ public class InventoryInputsHandler : MonoBehaviour
             {
                 if (inventory.stacks[startingSlot.slotIndex].item != null)  //prevent drag empty object
                 {
-                    /*
-                    Stack tempStack = inventory.stacks[startingSlot.slotIndex]; //set dragged stack
 
-                    stackDragged.item = tempStack.item;
-                    stackDragged.quantity = tempStack.quantity;
-                    */
-
-                    stackDragged = new Stack(inventory.stacks[startingSlot.slotIndex]);
+                    stackDragged = new Stack(inventory.stacks[startingSlot.slotIndex]); //copy stack before removing it
 
                     mouseFollower.gameObject.SetActive(true);                                                   //set mouseFollower
                     mouseFollower.icon.sprite = startingSlot.stackDisplay.icon.sprite;
-                    mouseFollower.quantity.text = startingSlot.stackDisplay.quantity.text;
+                    mouseFollower.quantity.text = stackDragged.quantity.ToString();
 
 
 
