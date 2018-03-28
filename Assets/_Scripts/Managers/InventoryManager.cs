@@ -109,6 +109,12 @@ public class InventoryManager : ISingleton<InventoryManager>
                 Add(newStack);                                  //if no place, add stack to empty slot
             }
         }
+        else                                                //if it's not the same object swap them together
+        {
+            Stack itemToSwap = new Stack(stacks[index]);
+            stacks[index] = newStack;
+            Add(itemToSwap);
+        }
         
     }
 

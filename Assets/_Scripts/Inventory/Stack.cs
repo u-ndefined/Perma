@@ -10,16 +10,11 @@ public class Stack
     public int quantity = 0;
     public int maxQuantity = 99;
 
-    /*
-    public void Remove(int removedQuantity)
+    public Stack(Stack other)
     {
-        quantity -= removedQuantity;
+        item = other.item;
+        quantity = other.quantity;
+        maxQuantity = other.maxQuantity;
     }
-
-    public void Add(int addedQuantity)
-    {
-        quantity += addedQuantity;
-    }
-    */
     
 }
