@@ -35,10 +35,20 @@ public class InventoryInputsHandler : MonoBehaviour
 
             if (startingSlot != null && !dragging)      //if begin drag
             {
-                if (inventory.stacks[startingSlot.slotIndex].item != null)  //prevent drag empty object
+                if (inventory.stacks[startingSlot.slotIndex] != null)  //prevent drag empty object
                 {
-
                     stackDragged = new Stack(inventory.stacks[startingSlot.slotIndex]); //copy stack before removing it
+
+                    if(Input.GetButton("Modifier1"))   //if modifier 1 get half
+                    {
+                        Debug.Log("half");
+                        stackDragged.quantity = (int) Mathf.Ceil(stackDragged.quantity / 2);
+                    }
+                    if (Input.GetButton("Modifier2"))   //if modifier 2 get 1
+                    {
+                        Debug.Log("one");
+                        stackDragged.quantity = 1;
+                    }
 
                     mouseFollower.gameObject.SetActive(true);                                                   //set mouseFollower
                     mouseFollower.icon.sprite = startingSlot.stackDisplay.icon.sprite;
@@ -88,6 +98,8 @@ public class InventoryInputsHandler : MonoBehaviour
             mouseFollower.gameObject.SetActive(false);      //unset mouseFollower
             mouseFollower.icon.sprite = null;
             mouseFollower.quantity.text = null;
+
+            stackDragged = null;
 
             dragging = false;
         }
