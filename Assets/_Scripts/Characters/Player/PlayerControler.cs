@@ -13,6 +13,7 @@ public class PlayerControler : ISingleton<PlayerControler> {
 	private Motor motor;
 	public Interactable focus;
     private Rigidbody rb;
+    public float rotationSpeed = 5f;
 
 
 
@@ -53,9 +54,10 @@ public class PlayerControler : ISingleton<PlayerControler> {
         rb.velocity = moveDirection * motor.moveSpeed;
 
         //face direction
-        if(moveDirection != Vector3.zero)
+        if(moveDirection != Vector3.zero && moveDirection != transform.forward)
         {
-            transform.rotation = Quaternion.LookRotation(moveDirection); 
+            Quaternion rotation = Quaternion.LookRotation(moveDirection); 
+            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
         }
 
     }

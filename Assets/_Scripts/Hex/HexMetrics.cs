@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HexMetrics : MonoBehaviour {
 
-    public const float outerRadius = 10f;
+    public const float outerRadius = 1f;
     public const float innerRadius = outerRadius * 0.866025404f; //edge * sqr(3) / 2;
 
     public static Vector3[] corners = {

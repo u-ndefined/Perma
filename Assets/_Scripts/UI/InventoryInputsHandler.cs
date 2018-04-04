@@ -42,7 +42,7 @@ public class InventoryInputsHandler : MonoBehaviour
                     if(Input.GetButton("Modifier1"))   //if modifier 1 get half
                     {
                         Debug.Log("half");
-                        stackDragged.quantity = (int) Mathf.Ceil(stackDragged.quantity / 2);
+                        stackDragged.quantity = Mathf.CeilToInt((float)stackDragged.quantity / 2);
                     }
                     if (Input.GetButton("Modifier2"))   //if modifier 2 get 1
                     {
