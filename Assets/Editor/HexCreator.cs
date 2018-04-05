@@ -29,7 +29,8 @@ public class HexCreator : EditorWindow
         height = EditorGUILayout.IntField("Height", height);
         type = (HexType) EditorGUILayout.EnumPopup("Type", type);
 
-        if(GUILayout.Button("Create")) //when create button is pressed
+
+        if(GUILayout.Button("Create (enter)") || Event.current.keyCode == KeyCode.Return) //when create button is pressed
         {
 
             hexCell = AssetDatabase.LoadAssetAtPath("Assets/_Prefabs/Hex/HexCell.prefab", typeof(GameObject));  //get the prefab in the hierarchy
@@ -41,9 +42,6 @@ public class HexCreator : EditorWindow
             {
                 GameObject hexRaw = new GameObject("HexRaw: " + y);     //create the raw parent
                 hexRaw.transform.parent = hexGrid.transform;
-
-
-
 
                 for (int x = 0; x < height; x++)
                 {
@@ -66,7 +64,7 @@ public class HexCreator : EditorWindow
             Close();
         }
 
-        if (GUILayout.Button("Close")) //when create button is pressed
+        if (GUILayout.Button("Close (esc)") || Event.current.keyCode == KeyCode.Escape) //when create button is pressed
         {
             Close();
         }
