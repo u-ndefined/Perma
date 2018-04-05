@@ -65,5 +65,11 @@ public class HexCreator : EditorWindow
 
             Close();
         }
+
+        if (GUILayout.Button("Close")) //when create button is pressed
+        {
+            Close();
+        }
+
 	}
 }

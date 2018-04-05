@@ -1446,7 +1446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &816064500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1458,8 +1458,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4bd9c564495e4884bc410e1b11a00af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 6
-  height: 6
+  width: 1
+  height: 1
   cellPrefab: {fileID: 114381344453744482, guid: 0dde4a5eb8e3e4484a49da34912d5a43,
     type: 2}
   cellLabelPrefab: {fileID: 114934932423006136, guid: dcf90fa2b5ca24193918bd9496608ad1,
