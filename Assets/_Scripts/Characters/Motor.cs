@@ -56,9 +56,11 @@ public class Motor : MonoBehaviour {
 		MoveToPoint (target.position);
 	}
 	public void StopFollowingTarget(){
+        Debug.Log("Stop!");
 		currentStoppingDistance = stoppingDistance;
 		isFollowing = false;
 		target = null;
+        hasPath = false;
 	}
 
 

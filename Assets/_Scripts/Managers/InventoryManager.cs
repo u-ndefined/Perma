@@ -19,6 +19,8 @@ public class InventoryManager : ISingleton<InventoryManager>
 
     public int space = 10;
 
+    public Stack stackUsed = null;
+
 
     public Stack tempStack;
 
@@ -71,7 +73,8 @@ public class InventoryManager : ISingleton<InventoryManager>
     public void UseSlot()
     {
         Debug.Log("Use slot " + selectedSlotID);
-        //stacks[selectedSlotID].item.UseItem();
+        stackUsed = stacks[selectedSlotID];
+        stackUsed.item.Use();
     }
 
     #region Add_and_Remove_at_index

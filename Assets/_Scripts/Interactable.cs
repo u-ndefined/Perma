@@ -12,6 +12,15 @@ public class Interactable : MonoBehaviour {
 
 	public Transform interactionTransform;
 
+	private void Start()
+	{
+        if(interactionTransform == null)
+        {
+            Debug.Log("le gros bug");
+            interactionTransform = transform;
+        }
+	}
+
 
 	void Update(){
 		if (isFocus && !hasInteracted) {
@@ -24,7 +33,7 @@ public class Interactable : MonoBehaviour {
 	}
 
 	public virtual void Interact(){
-		Debug.Log("Interacting with " + player.name);
+		Debug.Log(name + " interacting with " + player.name);
 	}
 
 	public void OnFocused(Transform playerTransform){

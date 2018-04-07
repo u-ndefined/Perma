@@ -17,6 +17,8 @@ public class PlayerControler : ISingleton<PlayerControler> {
 
 
 
+
+
 	void Start () 
     {
 		cam = Camera.main;
@@ -53,13 +55,17 @@ public class PlayerControler : ISingleton<PlayerControler> {
         //now we can apply the movement:
         rb.velocity = moveDirection * motor.moveSpeed;
 
-        //face direction
-        if(moveDirection != Vector3.zero && moveDirection != transform.forward)
-        {
-            Quaternion rotation = Quaternion.LookRotation(moveDirection); 
-            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
-        }
 
+        if (moveDirection != Vector3.zero)
+        {
+            RemoveFocus();
+
+            if (moveDirection != transform.forward) //face direction
+            {
+                Quaternion rotation = Quaternion.LookRotation(moveDirection);
+                transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
+            }
+        }
     }
 	
 
@@ -94,7 +100,7 @@ public class PlayerControler : ISingleton<PlayerControler> {
 
 			if (Physics.Raycast(ray, out hit,100)){
 				Interactable interactable = hit.collider.GetComponent<Interactable> ();
-				if(interactable != null){
+                if(interactable != null && interactable is HexCell == false){
 					SetFocus (interactable);
 				}
 
