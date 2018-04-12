@@ -7,4 +7,5 @@ public class PlayerManager : ISingleton<PlayerManager> {
 	protected PlayerManager() { }
 
 
+
 }

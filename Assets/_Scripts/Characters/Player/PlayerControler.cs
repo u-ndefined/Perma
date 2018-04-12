@@ -58,7 +58,7 @@ public class PlayerControler : ISingleton<PlayerControler> {
 
         if (moveDirection != Vector3.zero)
         {
-            RemoveFocus();
+            RemoveFocus();  //stop following target if there is an input
 
             if (moveDirection != transform.forward) //face direction
             {
@@ -73,24 +73,30 @@ public class PlayerControler : ISingleton<PlayerControler> {
     {
         
 
-		if (EventSystem.current.IsPointerOverGameObject ()) {               //return if mouse onUI
+		if (EventSystem.current.IsPointerOverGameObject ()) 
+        {               //return if mouse onUI
 			return;
 		}
 
-		if (Input.GetMouseButtonDown (0)) {                                 //if left clic
+        if (Input.GetMouseButtonDown (0))       //if left clic
+        {                                 
 
-            InventoryManager.Instance.UseSlot();
-            /*
-			Ray ray = cam.ScreenPointToRay (Input.mousePosition);
-			RaycastHit hit;
 
-			if (Physics.Raycast(ray, out hit,100,movementMask)){
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
 
-				motor.MoveToPoint(hit.point);
+            if (Physics.Raycast(ray, out hit, 100))
+            {
+                Interactable interactable = hit.collider.GetComponent<Interactable>();       // get interractable under mouse
 
-				RemoveFocus ();
-			}
-			*/
+                if (interactable != null)
+                {
+                    SetFocus(interactable);                                 //go to the object
+                }
+            }
+
+            InventoryManager.Instance.UseSlot();                            //use active slot
+           
 		}
 
         if (Input.GetMouseButtonDown (1)) {                                 //if right clic
@@ -98,14 +104,21 @@ public class PlayerControler : ISingleton<PlayerControler> {
 			Ray ray = cam.ScreenPointToRay (Input.mousePosition);
 			RaycastHit hit;
 
-			if (Physics.Raycast(ray, out hit,100)){
+			if (Physics.Raycast(ray, out hit,100))                         //if interactable follow it
+            {                 
 				Interactable interactable = hit.collider.GetComponent<Interactable> ();
+
                 if(interactable != null && interactable is HexCell == false){
 					SetFocus (interactable);
 				}
+                else
+                {
+                    Debug.Log("move");
+                    motor.MoveToPoint(hit.point);                           //else go there
+                }
 
 
-				//motor.MoveToPoint(hit.point);
+				
 			}
 			
 		}

@@ -21,7 +21,6 @@ public class InventoryManager : ISingleton<InventoryManager>
 
     public Stack stackUsed = null;
 
-
     public Stack tempStack;
 
     void Awake()
@@ -62,6 +61,8 @@ public class InventoryManager : ISingleton<InventoryManager>
 
     public void SelectSlot(int slotID)
     {
+        stackUsed = null;
+
         selectedSlotID = slotID;
 
         if (onSelectorChangedEvent != null)         //update selector
@@ -72,9 +73,21 @@ public class InventoryManager : ISingleton<InventoryManager>
 
     public void UseSlot()
     {
-        Debug.Log("Use slot " + selectedSlotID);
-        stackUsed = stacks[selectedSlotID];
-        stackUsed.item.Use();
+        if(stacks[selectedSlotID] != null)
+        {
+            Debug.Log("Use slot " + selectedSlotID);
+            stackUsed = stacks[selectedSlotID];
+            //stackUsed.item.Use();
+        }
+       
+    }
+
+    public void DropItem(Stack dropStack)
+    {
+        Transform player = PlayerControler.Instance.transform;
+        Vector3 dropPosition = player.position + player.forward + Vector3.up;
+        GameObject dropObject = Instantiate(dropStack.item.physicalItem, dropPosition, player.rotation);
+        dropObject.GetComponent<ItemPickup>().stack.quantity = dropStack.quantity;
     }
 
     #region Add_and_Remove_at_index

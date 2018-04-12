@@ -22,13 +22,13 @@ GameObject:
   - component: {fileID: 114381344453744482}
   - component: {fileID: 23428883602552152}
   - component: {fileID: 33804578930845276}
-  - component: {fileID: 64206849512138806}
+  - component: {fileID: 65980721149401582}
   m_Layer: 0
   m_Name: HexCell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1245900838890238
 GameObject:
@@ -39,14 +39,14 @@ GameObject:
   m_Component:
   - component: {fileID: 4785014397504244}
   - component: {fileID: 33056559858448424}
-  - component: {fileID: 136790958083361034}
   - component: {fileID: 23771679805691716}
+  - component: {fileID: 114123654499572882}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4330322381043234
 Transform:
@@ -54,9 +54,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1064393024442320}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.936, y: 3.936, z: 0.001}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 3.4641016, y: 0, z: -3.35}
+  m_LocalScale: {x: 3.936, y: 3.936002, z: 0.0010000005}
   m_Children:
   - {fileID: 4785014397504244}
   m_Father: {fileID: 0}
@@ -157,8 +157,8 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1064393024442320}
   m_Mesh: {fileID: 4300000, guid: 087719f69b7af44219b045d3e4a876fa, type: 3}
---- !u!64 &64206849512138806
-MeshCollider:
+--- !u!65 &65980721149401582
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -166,11 +166,21 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 087719f69b7af44219b045d3e4a876fa, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.43994093, y: 0.50800014, z: 0.05080002}
+  m_Center: {x: 0.000000007450581, y: 0, z: 0.02540001}
+--- !u!114 &114123654499572882
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1245900838890238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8109b152474845dd94d85941a48b0d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seed: {fileID: 0}
 --- !u!114 &114381344453744482
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -182,24 +192,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc544671602249d98c783bf489e86a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 3
+  radius: 1.5
   interactionTransform: {fileID: 4330322381043234}
+  baseHexData:
+    light: 30
+    humidity: 30
+    energy: 60
   coordinates:
-    x: 0
-    z: 0
+    x: -6
+    z: 16
   isActive: 1
-  type: 0
-  seed: {fileID: 0}
---- !u!136 &136790958083361034
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1245900838890238}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  type: 2
+  hexState: 1
+  hexData:
+    light: 30
+    humidity: 30
+    energy: 30
+  hexGrid: {fileID: 0}

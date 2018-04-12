@@ -8,13 +8,21 @@ public class TimeManager : ISingleton<TimeManager> {
 
     public delegate void voidNoParam();
     public voidNoParam OnNewDayEvent;
+    public voidNoParam OnNewDayLateEvent;
 
-    public void NextDay()
+
+
+	public void NextDay()
     {
         Debug.Log("Next Day");
         if (OnNewDayEvent != null)         //updateUI
         {
             OnNewDayEvent.Invoke();
+        }
+
+        if (OnNewDayLateEvent != null)         //updateUI
+        {
+            OnNewDayLateEvent.Invoke();
         }
     }
 }

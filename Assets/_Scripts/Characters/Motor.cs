@@ -25,6 +25,7 @@ public class Motor : MonoBehaviour {
 	private Vector3 direction;
     private bool hasPath;
 	private bool isFollowing = false;
+    private bool searchingPath = false;
 
 	void Start(){
 		agent = GetComponent<NavMeshAgent> ();
@@ -34,18 +35,27 @@ public class Motor : MonoBehaviour {
 	}
 
 	void Update(){
+        if (searchingPath && !agent.pathPending)
+        {
+            searchingPath = false;
+            Debug.Log(agent.path.corners.Length);
+            Debug.Log(agent.pathPending);
+            SetupPath(agent.path);
+            agent.enabled = false;
+        }
+
 		if (isFollowing && previousTargetPosition != target.position) {
 			previousTargetPosition = target.position;
 			MoveToPoint (target.position);
 		}
+
 		MoveAlongPath ();
 	}
 
 	public void MoveToPoint(Vector3 point){
 		agent.enabled = true;
-		agent.SetDestination (point);
-		SetupPath(agent.path);
-		agent.enabled = false;
+        searchingPath = true;
+        agent.SetDestination(point);
 	}
 
 	public void FollowTarget(Interactable newTarget){

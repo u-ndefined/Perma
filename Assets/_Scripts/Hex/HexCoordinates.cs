@@ -43,6 +43,12 @@ public struct HexCoordinates
         return new HexCoordinates(x - z / 2, z);
     }
 
+
+    public static Vector2 CoordinatesToGrid(int x, int z)
+    {
+        return new Vector2(x + Mathf.CeilToInt(z / 2), z);
+    }
+
     public static HexCoordinates FromPosition(Vector3 position)
     {
         float x = position.x / (HexMetrics.innerRadius * 2f);

@@ -92,6 +92,7 @@ public class InventoryInputsHandler : MonoBehaviour
                 else
                 {
                     Debug.Log("create object"); //if there is no ending slot create stack on ground
+                    inventory.DropItem(stackDragged);
                 }
             }
 

@@ -37,6 +37,10 @@ public class HexCreator : EditorWindow
 
             GameObject hexGrid = new GameObject("HexGrid"); //create the grid parent
 
+            HexGrid grid = hexGrid.AddComponent<HexGrid>(); // add hexGrid script + intialize it
+            grid.width = width;
+            grid.height = height;
+
 
             for (int y = 0; y < width; y++)
             {
@@ -52,8 +56,11 @@ public class HexCreator : EditorWindow
                     Vector3 cellPos = new Vector3((x + y * 0.5f - y / 2) * (HexMetrics.innerRadius * 2f) ,0,0); //Set cell pos
                     cell.transform.position = cellPos;
 
-                    cell.GetComponent<HexCell>().type = type;
-                    cell.GetComponent<HexCell>().coordinates = HexCoordinates.FromOffsetCoordinates(x, y);
+                    HexCell hexCellScript = cell.GetComponent<HexCell>();
+
+                    hexCellScript.type = type;
+                    hexCellScript.coordinates = HexCoordinates.FromOffsetCoordinates(x, y);
+                    hexCellScript.hexGrid = grid;
                 } 
 
 
