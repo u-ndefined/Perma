@@ -29,7 +29,7 @@ public class PlayerControler : ISingleton<PlayerControler> {
     void FixedUpdate()
     {
         
-            MovePlayer();
+        MovePlayer();
 
     }
 

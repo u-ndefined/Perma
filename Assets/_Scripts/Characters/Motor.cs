@@ -11,6 +11,7 @@ public class Motor : MonoBehaviour {
 	public OnPointReached onPointReached;
 
 	private NavMeshAgent agent;
+    private Rigidbody rb;
 
 	private Transform target;
 	private Vector3 pointToFace;
@@ -32,25 +33,30 @@ public class Motor : MonoBehaviour {
 
 		agent.enabled = false;
 		cornerQueue = new Queue<Vector3>();
+
+        rb = GetComponent<Rigidbody>();
 	}
 
 	void Update(){
+        
+        Debug.Log(rb.velocity);
         if (searchingPath && !agent.pathPending)
         {
             searchingPath = false;
-            Debug.Log(agent.path.corners.Length);
-            Debug.Log(agent.pathPending);
             SetupPath(agent.path);
             agent.enabled = false;
         }
 
-		if (isFollowing && previousTargetPosition != target.position) {
-			previousTargetPosition = target.position;
-			MoveToPoint (target.position);
-		}
+        if (isFollowing && Vector3.Distance(previousTargetPosition, target.position) > 1f)
+        {
+            previousTargetPosition = target.position;
+            MoveToPoint(target.position);
+        }
 
 		MoveAlongPath ();
 	}
+
+
 
 	public void MoveToPoint(Vector3 point){
 		agent.enabled = true;
@@ -117,8 +123,7 @@ public class Motor : MonoBehaviour {
 
 			if(currentDistance > currentStoppingDistance)
 			{
-                //maybe use velocity on rb?
-				transform.position +=  direction  * moveSpeed * Time.deltaTime;
+                rb.AddForce(direction * moveSpeed, ForceMode.VelocityChange);
                 FaceTarget();
 			}
 			else
