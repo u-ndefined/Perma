@@ -8,7 +8,7 @@ public class InventorySlot : MonoBehaviour {
 
     public void UpdateSlot(Stack stack)
     {
-        Debug.Log(stack.quantity + " " + stack.item.name + " updated in slot " + slotIndex);
+        //Debug.Log(stack.quantity + " " + stack.item.name + " updated in slot " + slotIndex);
 
         stackDisplay.icon.enabled = true;
         stackDisplay.icon.sprite = stack.item.icon;

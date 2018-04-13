@@ -43,6 +43,22 @@ public struct HexCoordinates
         return new HexCoordinates(x - z / 2, z);
     }
 
+    public static Vector2[] GetAdjacents(int x, int z)
+    {
+        Vector2[] results = new Vector2[6];
+
+
+        results[0] = CoordinatesToGrid(x - 1, z    );
+        results[1] = CoordinatesToGrid(x - 1, z + 1);
+        results[2] = CoordinatesToGrid(x    , z + 1);
+        results[3] = CoordinatesToGrid(x + 1, z    );
+        results[4] = CoordinatesToGrid(x + 1, z - 1);
+        results[5] = CoordinatesToGrid(x    , z - 1);
+
+
+        return results;
+    }
+
 
     public static Vector2 CoordinatesToGrid(int x, int z)
     {

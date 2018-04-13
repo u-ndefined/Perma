@@ -86,7 +86,7 @@ public class InventoryManager : ISingleton<InventoryManager>
     {
         Transform player = PlayerControler.Instance.transform;
         Vector3 dropPosition = player.position + player.forward + Vector3.up;
-        GameObject dropObject = Instantiate(dropStack.item.physicalItem, dropPosition, player.rotation);
+        GameObject dropObject = Instantiate(dropStack.item.objectOnGround, dropPosition, player.rotation);
         dropObject.GetComponent<ItemPickup>().stack.quantity = dropStack.quantity;
     }
 

@@ -113,7 +113,6 @@ public class PlayerControler : ISingleton<PlayerControler> {
 				}
                 else
                 {
-                    Debug.Log("move");
                     motor.MoveToPoint(hit.point);                           //else go there
                 }
 

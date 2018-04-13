@@ -25,18 +25,16 @@ public class HexGrid : MonoBehaviour {
             x = 0;
             y++;
         }
+
 	}
 
 
 	public HexCell SafeHexCell(int x, int y)
     {
-
-
-        if(x < 0 || y < 0 || x > width || y > height)
+        if(x < 0 || y < 0 || x >= width || y >= height)
         {
             return null;
         }
-
 
         return cells[x, y];
     }

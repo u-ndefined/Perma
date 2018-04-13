@@ -13,7 +13,7 @@ public enum ItemType
 public class Item : ScriptableObject {
     new public string name = "New item";
     public Sprite icon = null;
-    public GameObject physicalItem;
+    public GameObject objectOnGround;
     public ItemType itemType;
 
     public virtual void Use()

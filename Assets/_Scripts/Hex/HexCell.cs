@@ -16,57 +16,6 @@ public enum HexState
     DUG
 }
 
-[System.Serializable]
-public struct HexData
-{
-    public int light;
-    public int humidity;
-    public int energy;
-
-    public HexData(int _light, int _humidity, int _energy)
-    {
-        light = _light;
-        humidity = _humidity;
-        energy = _energy;
-    }
-
-    public bool IsPositive()
-    {
-        if(light < 0)
-        {
-            return false;
-        }
-        if (humidity < 0)
-        {
-            return false;
-        }
-        if (energy < 0)
-        {
-            return false;
-        }
-        return true;
-    }
-
-    public static HexData operator+ (HexData a, HexData b)
-    {
-        HexData result = new HexData();
-        result.light = a.light + b.light;
-        result.humidity = a.humidity + b.humidity;
-        result.energy = a.energy + b.energy;
-        return result;
-    }
-
-    public static HexData operator- (HexData a, HexData b)
-    {
-        HexData result = new HexData();
-        result.light = a.light - b.light;
-        result.humidity = a.humidity - b.humidity;
-        result.energy = a.energy - b.energy;
-        return result;
-    }
-
-}
-
 public class HexCell : Interactable {
     private HexData baseHexData;
     public HexCoordinates coordinates;
@@ -87,6 +36,8 @@ public class HexCell : Interactable {
         plant = transform.GetChild(0).GetComponent<Plant>();
 
         baseHexData = hexData;
+
+        //Debug.Log(coordinates.X + " ; " + coordinates.Z + " = " + HexCoordinates.CoordinatesToGrid(coordinates.X, coordinates.Z));
 	}
 
 	public override void Interact()
@@ -112,21 +63,19 @@ public class HexCell : Interactable {
 
     private void ImpactAdjacentHexCells(HexData impactData)
     {
-        
 
-        Vector2 pos = HexCoordinates.CoordinatesToGrid(coordinates.X, coordinates.Z);
+        Vector2[] adjacentPos = HexCoordinates.GetAdjacents(coordinates.X, coordinates.Z);
 
-        int x = (int) pos.x;
-        int y = (int) pos.y;
+        int x;
+        int y;
 
 
-        ImpactAdjacentHexCell(hexGrid.SafeHexCell(x + 1, y    ), impactData);
-        ImpactAdjacentHexCell(hexGrid.SafeHexCell(x - 1, y - 1), impactData);
-        ImpactAdjacentHexCell(hexGrid.SafeHexCell(x    , y + 1), impactData);
-        ImpactAdjacentHexCell(hexGrid.SafeHexCell(x    , y - 1), impactData);
-        ImpactAdjacentHexCell(hexGrid.SafeHexCell(x - 1, y    ), impactData);
-        ImpactAdjacentHexCell(hexGrid.SafeHexCell(x - 1, y + 1), impactData);
-
+        for (int i = 0; i < adjacentPos.Length; i++)
+        {
+            x = (int)adjacentPos[i].x;
+            y = (int)adjacentPos[i].y;
+            ImpactAdjacentHexCell(hexGrid.SafeHexCell(x , y), impactData);
+        }
 
     }
 
@@ -145,8 +94,8 @@ public class HexCell : Interactable {
     {
         if (plant.CanGrow())
         {
-            hexData += plant.seed.hexEffect;
-            ImpactAdjacentHexCells(plant.seed.hexEffect);
+            hexData += plant.seed.hexEffect;                //impact its own cell
+            ImpactAdjacentHexCells(plant.seed.hexEffect);   //impact adjacent cells
         }
 	}
 
@@ -154,7 +103,7 @@ public class HexCell : Interactable {
     {
         if (plant.CanGrow())
         {
-            if(hexData.IsPositive())
+            if((hexData - plant.seed.plantNeeds).IsPositive())
             {
                 plant.Grow();
             }

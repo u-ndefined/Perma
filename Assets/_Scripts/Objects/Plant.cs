@@ -23,7 +23,6 @@ public class Plant : MonoBehaviour {
 
     public void AddSeed(Seed newSeed)
     {
-        
         seed = newSeed;
         meshFilter.mesh = seed.growthSteps[actualGrowStep];
         Debug.Log(newSeed.name + " added");

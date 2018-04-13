@@ -6944,11 +6944,6 @@ Prefab:
       propertyPath: m_Name
       value: Tomato_Fruit (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 114949713510526278, guid: 0e56bc55581e54178bf5376a378fc875,
-        type: 2}
-      propertyPath: stack.quantity
-      value: 99
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0e56bc55581e54178bf5376a378fc875, type: 2}
   m_IsPrefabParent: 0
@@ -8804,6 +8799,11 @@ Prefab:
     - target: {fileID: 1064393024442320, guid: 0dde4a5eb8e3e4484a49da34912d5a43, type: 2}
       propertyPath: m_Name
       value: 'HexCell: 2'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114381344453744482, guid: 0dde4a5eb8e3e4484a49da34912d5a43,
+        type: 2}
+      propertyPath: hexData.energy
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0dde4a5eb8e3e4484a49da34912d5a43, type: 2}
@@ -11681,7 +11681,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4816280802107776, guid: 0e56bc55581e54178bf5376a378fc875, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 25.1
+      value: 24.1
       objectReference: {fileID: 0}
     - target: {fileID: 4816280802107776, guid: 0e56bc55581e54178bf5376a378fc875, type: 2}
       propertyPath: m_LocalRotation.x

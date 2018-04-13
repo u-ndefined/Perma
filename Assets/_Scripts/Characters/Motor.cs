@@ -38,8 +38,7 @@ public class Motor : MonoBehaviour {
 	}
 
 	void Update(){
-        
-        Debug.Log(rb.velocity);
+            
         if (searchingPath && !agent.pathPending)
         {
             searchingPath = false;
@@ -72,7 +71,6 @@ public class Motor : MonoBehaviour {
 		MoveToPoint (target.position);
 	}
 	public void StopFollowingTarget(){
-        Debug.Log("Stop!");
 		currentStoppingDistance = stoppingDistance;
 		isFollowing = false;
 		target = null;

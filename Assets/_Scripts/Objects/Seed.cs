@@ -10,6 +10,7 @@ public class Seed : Item {
     public Mesh[] growthSteps;
 
     public HexData hexEffect;
+    public HexData plantNeeds;
 
     public override void Use()
     {

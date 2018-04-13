@@ -9,21 +9,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cab7664e062de4c4e964b33210902592, type: 3}
-  m_Name: Tomato
+  m_Name: LENTILLES
   m_EditorClassIdentifier: 
-  name: Tomato
-  icon: {fileID: 21300000, guid: 4496f194c358344fda985ca30ddb7f7b, type: 3}
-  objectOnGround: {fileID: 1995457342605116, guid: 0e56bc55581e54178bf5376a378fc875,
-    type: 2}
+  name: New item
+  icon: {fileID: 0}
+  objectOnGround: {fileID: 0}
   itemType: 0
-  growthSteps:
-  - {fileID: 4300008, guid: b69b26c8b73b8bd49bf243bbe541a2e0, type: 3}
-  - {fileID: 4300004, guid: fbd33e75d8d4bf9479c9cb59e83a9e37, type: 3}
-  - {fileID: 4300010, guid: b69b26c8b73b8bd49bf243bbe541a2e0, type: 3}
+  growthSteps: []
   hexEffect:
     light: 0
     humidity: 0
-    energy: -10
+    energy: 0
   plantNeeds:
     light: 0
     humidity: 0

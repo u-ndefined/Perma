@@ -194,10 +194,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 1.5
   interactionTransform: {fileID: 4330322381043234}
-  baseHexData:
-    light: 30
-    humidity: 30
-    energy: 60
   coordinates:
     x: -6
     z: 16
@@ -207,5 +203,5 @@ MonoBehaviour:
   hexData:
     light: 30
     humidity: 30
-    energy: 30
+    energy: 60
   hexGrid: {fileID: 0}
