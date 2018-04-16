@@ -17,9 +17,9 @@ MonoBehaviour:
     type: 2}
   itemType: 0
   growthSteps:
-  - {fileID: 4300008, guid: b69b26c8b73b8bd49bf243bbe541a2e0, type: 3}
-  - {fileID: 4300004, guid: fbd33e75d8d4bf9479c9cb59e83a9e37, type: 3}
-  - {fileID: 4300010, guid: b69b26c8b73b8bd49bf243bbe541a2e0, type: 3}
+  - {fileID: 1465113783263694, guid: a7d97c64015684e99bd0942e88ea058f, type: 2}
+  - {fileID: 1650737692830606, guid: d106069e9f8ee46c1991baa016c30807, type: 2}
+  - {fileID: 1747637961642104, guid: d5005e6b756b34f47a8a4df49354dcdd, type: 2}
   hexEffect:
     light: 0
     humidity: 0

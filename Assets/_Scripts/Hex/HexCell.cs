@@ -33,7 +33,7 @@ public class HexCell : Interactable {
         TimeManager.Instance.OnNewDayEvent += UpdateHexState;
         TimeManager.Instance.OnNewDayLateEvent += UpdatePlantState;
 
-        plant = transform.GetChild(0).GetComponent<Plant>();
+        plant = GetComponent<Plant>();
 
         baseHexData = hexData;
 
@@ -50,6 +50,7 @@ public class HexCell : Interactable {
         {
             if(stackUsed.item.itemType == ItemType.SEED && hexState == HexState.EXPOSED)    //if it's a seed and hex is exposed
             {
+                Debug.Log(stackUsed.item.name);
                 plant.AddSeed((Seed)stackUsed.item);
                 InventoryManager.Instance.Remove(stackUsed, 1);         //plant the seed and remove it from inventory
             }
@@ -94,6 +95,7 @@ public class HexCell : Interactable {
     {
         if (plant.CanGrow())
         {
+            Debug.Log("???" + plant.seed.name);
             hexData += plant.seed.hexEffect;                //impact its own cell
             ImpactAdjacentHexCells(plant.seed.hexEffect);   //impact adjacent cells
         }

@@ -15,6 +15,7 @@ public class Item : ScriptableObject {
     public Sprite icon = null;
     public GameObject objectOnGround;
     public ItemType itemType;
+    public int maxQuantity = 99;
 
     public virtual void Use()
     {

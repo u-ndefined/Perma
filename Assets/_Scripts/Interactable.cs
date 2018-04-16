@@ -16,7 +16,6 @@ public class Interactable : MonoBehaviour {
 	{
         if(interactionTransform == null)
         {
-            Debug.Log("le gros bug");
             interactionTransform = transform;
         }
 	}

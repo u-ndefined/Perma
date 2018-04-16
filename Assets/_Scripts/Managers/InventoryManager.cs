@@ -93,7 +93,7 @@ public class InventoryManager : ISingleton<InventoryManager>
     #region Add_and_Remove_at_index
     public void AddAtIndex(int index, Stack newStack)
     {
-        if(stacks[index] == null)
+        if(stacks[index] == null) //if there is nothing here add new stack
         {
             stacks[index] = newStack;
 
@@ -102,9 +102,10 @@ public class InventoryManager : ISingleton<InventoryManager>
                 onItemChangedEvent.Invoke();
             }
         }
-        else if (stacks[index].item == newStack.item)
+        else if (stacks[index].item == newStack.item)   // if it's the same stack type
         {
-            int remainingQuantity = stacks[index].maxQuantity - stacks[index].quantity;
+            int remainingQuantity = stacks[index].item.maxQuantity - stacks[index].quantity;
+
             if(remainingQuantity >= newStack.quantity)          //if enought place
             {
                 stacks[index].quantity += newStack.quantity;    //add stack
@@ -168,7 +169,7 @@ public class InventoryManager : ISingleton<InventoryManager>
 
             if (stacks[i] != null && stacks[i].item == newStack.item)               //if item already in inventory
             {
-                int remainingQuantity = stacks[i].maxQuantity - stacks[i].quantity; // get remaining quantity
+                int remainingQuantity = stacks[i].item.maxQuantity - stacks[i].quantity; // get remaining quantity
 
                 if (remainingQuantity >= newStack.quantity)     //if enought place
                 {

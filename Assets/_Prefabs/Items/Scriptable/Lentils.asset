@@ -9,17 +9,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cab7664e062de4c4e964b33210902592, type: 3}
-  m_Name: LENTILLES
+  m_Name: Lentils
   m_EditorClassIdentifier: 
-  name: New item
-  icon: {fileID: 0}
-  objectOnGround: {fileID: 0}
+  name: Lentils
+  icon: {fileID: 21300000, guid: 73bf0f6c1e1654d0cbde5bd18f310b77, type: 3}
+  objectOnGround: {fileID: 1196777598968104, guid: 627661a3fad474eb08bde7168f11266b,
+    type: 2}
   itemType: 0
-  growthSteps: []
+  growthSteps:
+  - {fileID: 1000014111768446, guid: 2cf13a738fc434c46bda5ebf7ca44756, type: 2}
+  - {fileID: 1000013410243764, guid: 56b36da289d9a9e4cb37c5f588e23748, type: 2}
+  - {fileID: 1000012235373026, guid: 1c8776a0b36cd9a4f813bf0d2d59d109, type: 2}
   hexEffect:
     light: 0
-    humidity: 0
-    energy: 0
+    humidity: -5
+    energy: 5
   plantNeeds:
     light: 0
     humidity: 0
