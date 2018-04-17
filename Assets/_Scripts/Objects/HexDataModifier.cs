@@ -22,6 +22,8 @@ public class HexDataModifier : MonoBehaviour
 	{
         hexCell = GetComponentInParent<HexCell>();
 
+        hexCell.isActive = false;
+
         switch(frequency)
         {
             case Frequency.ADD_ONCE:
