@@ -137,7 +137,9 @@ public class PlayerControler : ISingleton<PlayerControler> {
 	}
 
 	public void RemoveFocus(){
+        
 		if (focus != null) {
+            InventoryManager.Instance.stackUsed = null;
 			focus.OnDefocused ();
 		}
 		focus = null;

@@ -7,6 +7,7 @@ public enum ItemType
     SEED,
     SHOVEL,
     AXE,
+    FRUIT
 }
 
 [CreateAssetMenu(fileName = "New Item", menuName = "Items/Item")]

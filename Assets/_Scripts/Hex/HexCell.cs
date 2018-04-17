@@ -54,6 +54,10 @@ public class HexCell : Interactable {
                 plant.AddSeed((Seed)stackUsed.item);
                 InventoryManager.Instance.Remove(stackUsed, 1);         //plant the seed and remove it from inventory
             }
+            if (stackUsed.item.itemType == ItemType.SHOVEL && plant.seed != null)    //if it's a seed and hex is exposed
+            {
+                plant.ResetPlant();
+            }
         }
 	}
 
@@ -95,7 +99,6 @@ public class HexCell : Interactable {
     {
         if (plant.CanGrow())
         {
-            Debug.Log("???" + plant.seed.name);
             hexData += plant.seed.hexEffect;                //impact its own cell
             ImpactAdjacentHexCells(plant.seed.hexEffect);   //impact adjacent cells
         }

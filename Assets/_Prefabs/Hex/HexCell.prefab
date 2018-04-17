@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 23583736757708068}
   - component: {fileID: 33837031796147782}
   - component: {fileID: 136589202954887616}
+  - component: {fileID: 114098414289437892}
   m_Layer: 0
   m_Name: PlantMesh
   m_TagString: Untagged
@@ -210,9 +211,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8109b152474845dd94d85941a48b0d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  harvestable: 0
+  wilted: 0
   seed: {fileID: 0}
   plantObject: {fileID: 4375182747898504}
   wiltedMaterial: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+--- !u!114 &114098414289437892
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1345469825065984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69b1a535974e344f09e11781fb6443a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 1.5
+  interactionTransform: {fileID: 0}
 --- !u!114 &114675724754094986
 MonoBehaviour:
   m_ObjectHideFlags: 1

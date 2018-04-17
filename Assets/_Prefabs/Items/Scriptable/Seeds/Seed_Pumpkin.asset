@@ -9,17 +9,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cab7664e062de4c4e964b33210902592, type: 3}
-  m_Name: Pumpkin
+  m_Name: Seed_Pumpkin
   m_EditorClassIdentifier: 
-  name: Pumpkin
+  name: Seed_Pumpkin
   icon: {fileID: 21300000, guid: d429ce7c7f2ae9d41a0199b013170f81, type: 3}
   objectOnGround: {fileID: 1000010169018756, guid: c2a2644fedfa0a849bbc9b40600c5c65,
     type: 2}
   itemType: 0
+  maxQuantity: 99
   growthSteps:
-  - {fileID: 4300016, guid: fbd33e75d8d4bf9479c9cb59e83a9e37, type: 3}
-  - {fileID: 4300000, guid: b69b26c8b73b8bd49bf243bbe541a2e0, type: 3}
-  - {fileID: 4300002, guid: b69b26c8b73b8bd49bf243bbe541a2e0, type: 3}
+  - {fileID: 1191493744897054, guid: 8330631c2f03a4ab4ab6219586109991, type: 2}
+  - {fileID: 1561504367853036, guid: f1c86c5489c98446f86d906f488dc6c0, type: 2}
+  - {fileID: 1517648458785846, guid: 65829ddf06ba54a559faa431db92eb4a, type: 2}
   hexEffect:
     light: 0
     humidity: 15
@@ -28,3 +29,8 @@ MonoBehaviour:
     light: 0
     humidity: 0
     energy: 0
+  harvestContent:
+  - item: {fileID: 11400000, guid: 79dce7379a03449f2afb594848a3f3cb, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000}
+    quantity: 1
