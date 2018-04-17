@@ -15,6 +15,7 @@ public class InventoryInputsHandler : MonoBehaviour
     public StackDisplay mouseFollower;
 
     private bool dragging = false;
+    private bool dragSet = false;
 
     private InventoryManager inventory;
 
@@ -22,12 +23,14 @@ public class InventoryInputsHandler : MonoBehaviour
 
     private List<RaycastResult> hitObjects = new List<RaycastResult>();
 
-    private void Start()
-	{
-        inventory = InventoryManager.Instance;
-	}
+    private Vector2 startingPoint;
 
-	void Update()
+    private void Start()
+    {
+        inventory = InventoryManager.Instance;
+    }
+
+    void Update()
     {
         if (Input.GetMouseButtonDown(0)) //when mouse pressed
         {
@@ -35,38 +38,47 @@ public class InventoryInputsHandler : MonoBehaviour
 
             if (startingSlot != null && !dragging)      //if begin drag
             {
-                if (inventory.stacks[startingSlot.slotIndex] != null)  //prevent drag empty object
-                {
-                    stackDragged = new Stack(inventory.stacks[startingSlot.slotIndex]); //copy stack before removing it
+                startingPoint = Input.mousePosition;
 
-                    if(Input.GetButton("Modifier1"))   //if modifier 1 get half
-                    {
-                        Debug.Log("half");
-                        stackDragged.quantity = Mathf.CeilToInt((float)stackDragged.quantity / 2);
-                    }
-                    if (Input.GetButton("Modifier2"))   //if modifier 2 get 1
-                    {
-                        Debug.Log("one");
-                        stackDragged.quantity = 1;
-                    }
-
-                    mouseFollower.gameObject.SetActive(true);                                                   //set mouseFollower
-                    mouseFollower.icon.sprite = startingSlot.stackDisplay.icon.sprite;
-                    mouseFollower.quantity.text = stackDragged.quantity.ToString();
-
-
-
-                    inventory.RemoveAtIndex(startingSlot.slotIndex, stackDragged.quantity); //remove quantity in starting slot
-
-
-                    dragging = true;
-                }
+                dragging = true;
             }
         }
 
         if (dragging)   //when dragging
         {
-            mouseFollower.transform.position = Input.mousePosition; //updte mouseFollower position
+            if (!dragSet && inventory.stacks[startingSlot.slotIndex] != null && MouseMoved())  //prevent drag empty object
+            {
+                stackDragged = new Stack(inventory.stacks[startingSlot.slotIndex]); //copy stack before removing it
+
+                if (Input.GetButton("Modifier1"))   //if modifier 1 get half
+                {
+                    Debug.Log("half");
+                    stackDragged.quantity = Mathf.CeilToInt((float)stackDragged.quantity / 2);
+                }
+                if (Input.GetButton("Modifier2"))   //if modifier 2 get 1
+                {
+                    Debug.Log("one");
+                    stackDragged.quantity = 1;
+                }
+
+                mouseFollower.gameObject.SetActive(true);                                                   //set mouseFollower
+                mouseFollower.icon.sprite = startingSlot.stackDisplay.icon.sprite;
+                mouseFollower.quantity.text = stackDragged.quantity.ToString();
+
+
+
+                inventory.RemoveAtIndex(startingSlot.slotIndex, stackDragged.quantity); //remove quantity in starting slot
+
+
+                dragSet = true;
+            }
+            else
+            {
+                mouseFollower.transform.position = Input.mousePosition; //update mouseFollower position
+            }
+
+
+
         }
 
         if (Input.GetMouseButtonUp(0))  //when release
@@ -75,25 +87,38 @@ public class InventoryInputsHandler : MonoBehaviour
             {
                 endingSlot = GetSlotUnderMouse();   //get slot under mouse
 
-                if (endingSlot != null)
+                if (stackDragged != null)
                 {
-                    if (endingSlot == startingSlot) //if it's the same than starting slot
+                    if (endingSlot != null)
                     {
-                        Debug.Log("select slot " + startingSlot.slotIndex); 
-                        inventory.SelectSlot(startingSlot.slotIndex);   //add dragged stack
-                        inventory.AddAtIndex(endingSlot.slotIndex, stackDragged);   //and select it
+                        if (endingSlot == startingSlot) //if it's the same than starting slot
+                        {
+                            Debug.Log("select slot " + startingSlot.slotIndex);
+                            inventory.SelectSlot(startingSlot.slotIndex);  //select slot 
+                            inventory.AddAtIndex(endingSlot.slotIndex, stackDragged);    //add dragged stack
+
+                        }
+                        else
+                        {
+                            Debug.Log("add to slot " + endingSlot.slotIndex);
+                            inventory.AddAtIndex(endingSlot.slotIndex, stackDragged);   //else add stack to ending slot
+                        }
                     }
                     else
                     {
-                        Debug.Log("add to slot " + endingSlot.slotIndex);
-                        inventory.AddAtIndex(endingSlot.slotIndex, stackDragged);   //else add stack to ending slot
+                        Debug.Log("create object"); //if there is no ending slot create stack on ground
+                        inventory.DropItem(stackDragged);
                     }
                 }
                 else
                 {
-                    Debug.Log("create object"); //if there is no ending slot create stack on ground
-                    inventory.DropItem(stackDragged);
+                    if (endingSlot != null)
+                    {
+                        inventory.SelectSlot(endingSlot.slotIndex);  //select slot 
+                    }
                 }
+
+
             }
 
             mouseFollower.gameObject.SetActive(false);      //unset mouseFollower
@@ -103,6 +128,10 @@ public class InventoryInputsHandler : MonoBehaviour
             stackDragged = null;
 
             dragging = false;
+
+            dragSet = false;
+
+            startingPoint = Vector2.zero;
         }
     }
 
@@ -116,10 +145,10 @@ public class InventoryInputsHandler : MonoBehaviour
 
         if (hitObjects.Count <= 0) return null;
 
-        foreach(RaycastResult hitObject in hitObjects)
+        foreach (RaycastResult hitObject in hitObjects)
         {
             InventorySlot slotUnderMouse = hitObject.gameObject.GetComponent<InventorySlot>();
-            if(slotUnderMouse != null)
+            if (slotUnderMouse != null)
             {
                 return slotUnderMouse;
             }
@@ -128,5 +157,10 @@ public class InventoryInputsHandler : MonoBehaviour
         return null;
     }
 
+    private bool MouseMoved()
+    {
+        Vector2 mousePosition = Input.mousePosition;
+        return !startingPoint.Equals(mousePosition);
+    }
 
 }

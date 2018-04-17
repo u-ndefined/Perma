@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Hightlight : MonoBehaviour {
     private Ray ray;
@@ -16,10 +17,18 @@ public class Hightlight : MonoBehaviour {
 
 	private void FixedUpdate()
 	{
+        if (EventSystem.current.IsPointerOverGameObject())
+        {    
+            HexHightlighter.gameObject.SetActive(false);
+            return;
+        }
+
         ray = cam.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, 100))
         {
             Interactable interactable = hit.collider.GetComponent<Interactable>();
+
+            HexHightlighter.gameObject.SetActive(false);
 
             if (interactable != null)
             {
@@ -31,10 +40,6 @@ public class Hightlight : MonoBehaviour {
                         HexHightlighter.position = hit.transform.position;
                     }
                    
-                }
-                else
-                {
-                    HexHightlighter.gameObject.SetActive(false);
                 }
             }
 

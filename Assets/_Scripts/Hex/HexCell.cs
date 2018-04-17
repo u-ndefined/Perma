@@ -55,15 +55,21 @@ public class HexCell : Interactable {
 
         base.Interact();
 
-        Stack stackUsed = InventoryManager.Instance.stackUsed;      //get stack used
+        InventoryManager inventory = InventoryManager.Instance;
+
+        Stack stackUsed = inventory.stackUsed;      //get stack used
 
         if(stackUsed != null)
         {
             if(stackUsed.item.itemType == ItemType.SEED && hexState == HexState.EXPOSED)    //if it's a seed and hex is exposed
             {
                 Debug.Log(stackUsed.item.name);
-                plant.AddSeed((Seed)stackUsed.item);
-                InventoryManager.Instance.Remove(stackUsed, 1);         //plant the seed and remove it from inventory
+                if(inventory.stacks[inventory.selectedSlotID].item == stackUsed.item )
+                {
+                    plant.AddSeed((Seed)stackUsed.item);
+                    inventory.RemoveAtIndex(inventory.selectedSlotID,1);         //plant the seed and remove it from inventory
+                }
+               
             }
             if (stackUsed.item.itemType == ItemType.SHOVEL && plant.seed != null)    //if it's a seed and hex is exposed
             {
