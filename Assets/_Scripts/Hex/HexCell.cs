@@ -42,6 +42,11 @@ public class HexCell : Interactable {
 
 	public override void Interact()
 	{
+        if(!isActive)   //ther is better solutions
+        {
+            return;
+        }
+
         base.Interact();
 
         Stack stackUsed = InventoryManager.Instance.stackUsed;      //get stack used
