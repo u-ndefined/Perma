@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -40,7 +41,12 @@ public class HexCell : Interactable {
         //Debug.Log(coordinates.X + " ; " + coordinates.Z + " = " + HexCoordinates.CoordinatesToGrid(coordinates.X, coordinates.Z));
 	}
 
-	public override void Interact()
+	public static explicit operator HexCell(bool v)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void Interact()
 	{
         if(!isActive)   //ther is better solutions
         {
