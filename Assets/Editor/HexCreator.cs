@@ -7,6 +7,7 @@ public class HexCreator : EditorWindow
     private int height = 1;
     private HexType type;
     private Object hexCell;
+    private float scale = 1.0f;
     //private HexMetrics hexMetrics;
 
     //private Vector3 cellPos;
@@ -21,6 +22,20 @@ public class HexCreator : EditorWindow
         window.ShowPopup();
     }
 
+    protected void OnEnable()
+    {
+        width = EditorPrefs.GetInt("Width", width);
+        height = EditorPrefs.GetInt("Height", height);
+        scale = EditorPrefs.GetFloat("HexScale", scale);
+    }
+
+    protected void OnDisable()
+    {
+        EditorPrefs.SetFloat("HexScale", scale);
+        EditorPrefs.SetInt("Width", width);
+        EditorPrefs.SetInt("Height", height);
+    }
+
 	private void OnGUI()
 	{
 
@@ -28,6 +43,7 @@ public class HexCreator : EditorWindow
         width = EditorGUILayout.IntField("Width", width);
         height = EditorGUILayout.IntField("Height", height);
         type = (HexType) EditorGUILayout.EnumPopup("Type", type);
+        scale = EditorGUILayout.Slider(scale, 0.1f, 10.0f);
 
 
         if(GUILayout.Button("Create (enter)") || Event.current.keyCode == KeyCode.Return) //when create button is pressed
@@ -67,6 +83,9 @@ public class HexCreator : EditorWindow
                 Vector3 rawPos = new Vector3(0, 0, y * (HexMetrics.outerRadius * 1.5f));        //Set raw pos
                 hexRaw.transform.position = rawPos;
             }
+
+
+            hexGrid.transform.localScale = new Vector3(scale, scale, scale);
 
             Close();
         }

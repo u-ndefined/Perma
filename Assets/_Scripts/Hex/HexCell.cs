@@ -26,34 +26,25 @@ public class HexCell : Interactable {
     public HexData hexData;
     public HexGrid hexGrid;
 
-    private Plant plant;
+    public Plant plant;
 
 
-	private void Start()
-	{
+    private void Start()
+    {
         TimeManager.Instance.OnNewDayEvent += UpdateHexState;
         TimeManager.Instance.OnNewDayLateEvent += UpdatePlantState;
 
         plant = GetComponent<Plant>();
 
         baseHexData = hexData;
-
-        //Debug.Log(coordinates.X + " ; " + coordinates.Z + " = " + HexCoordinates.CoordinatesToGrid(coordinates.X, coordinates.Z));
-	}
-
-	public static explicit operator HexCell(bool v)
-    {
-        throw new NotImplementedException();
     }
 
     public override void Interact()
 	{
-        if(!isActive)   //ther is better solutions
+        if(!isActive)   //there is better solutions
         {
             return;
         }
-
-        base.Interact();
 
         InventoryManager inventory = InventoryManager.Instance;
 
@@ -61,7 +52,7 @@ public class HexCell : Interactable {
 
         if(stackUsed != null)
         {
-            if(stackUsed.item.itemType == ItemType.SEED && hexState == HexState.EXPOSED)    //if it's a seed and hex is exposed
+            if(stackUsed.item.itemType == ItemType.SEED && hexState == HexState.EXPOSED && plant.seed == null)    //if it's a seed and hex is exposed and there is no seed in this hex
             {
                 Debug.Log(stackUsed.item.name);
                 if(inventory.stacks[inventory.selectedSlotID].item == stackUsed.item )
@@ -76,6 +67,8 @@ public class HexCell : Interactable {
                 plant.ResetPlant();
             }
         }
+
+        base.Interact();
 	}
 
     private void ChangeColor()
@@ -141,8 +134,4 @@ public class HexCell : Interactable {
         hexData = baseHexData;  //reset hex data with baseHexData
         plant.ResetPlant();
     }
-
-     
-
-
 }

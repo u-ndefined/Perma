@@ -8,13 +8,18 @@ public class DialogueManager : ISingleton<DialogueManager> {
 
 	private Actor actor;
 	private Queue<string> sentences;
+    private Actor player;
 
 	// Use this for initialization
 	void Start () {
 		sentences = new Queue<string>();
+        player = PlayerControler.Instance.GetComponent<Actor>();
 	}
 
 	public void StartDialogue(Actor newActor, string[] newSentences){
+
+        Debug.Log("sentence " + newSentences[0]);
+
 		actor = newActor;
 		actor.dialogueBox.Display ();					//affiche la dialogueBox
 		sentences.Clear ();
@@ -38,5 +43,17 @@ public class DialogueManager : ISingleton<DialogueManager> {
 		actor.dialogueBox.Hide ();
 		SequenceManager.Instance.NextAction ();
 	}
+
+    public void PlayerSay(string dialogueName)
+    {
+        if(player.dialogues.Contains(dialogueName))
+        {
+            StartDialogue(player, (string[])player.dialogues[dialogueName]);
+        }
+        else
+        {
+            Debug.Log("this dialogue doesn't exist on this actor");
+        }
+    }
 
 }

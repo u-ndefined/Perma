@@ -33,6 +33,7 @@ public class Interactable : MonoBehaviour {
 
 	public virtual void Interact(){
 		Debug.Log(name + " interacting with " + player.name);
+        InventoryManager.Instance.stackUsed = null;
 	}
 
 	public void OnFocused(Transform playerTransform){

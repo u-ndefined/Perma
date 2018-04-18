@@ -6,9 +6,11 @@ public class Harvest : Interactable {
 
     public override void Interact()
     {
-        base.Interact();
+        
 
         Stack stackUsed = InventoryManager.Instance.stackUsed;      //get stack used
+
+        Debug.Log("ici");
 
         if(stackUsed == null)   //if no stack used == harvest
         {
@@ -43,6 +45,7 @@ public class Harvest : Interactable {
         }
         else
         {
+            Debug.Log("là");
             if(stackUsed.item.itemType == ItemType.SHOVEL)
             {
                 Plant plant = GetComponentInParent<Plant>();
@@ -50,6 +53,6 @@ public class Harvest : Interactable {
                 plant.ResetPlant();
             }
         }
-
+        base.Interact();
     }
 }

@@ -35,13 +35,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1561504367853036}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.009, y: 0.053, z: 0.085}
-  m_LocalScale: {x: 2.5341153, y: 2.5341232, z: 2.5341232}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23692822311022576
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -82,7 +82,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1561504367853036}
-  m_Mesh: {fileID: 4300006, guid: a0afd8eb69fe3944f96f514611774f3f, type: 3}
+  m_Mesh: {fileID: 4300036, guid: e010c440070179f42baafd25b8b0ed94, type: 3}
 --- !u!136 &136919136649067140
 CapsuleCollider:
   m_ObjectHideFlags: 1

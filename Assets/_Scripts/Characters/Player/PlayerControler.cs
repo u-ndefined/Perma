@@ -85,7 +85,7 @@ public class PlayerControler : ISingleton<PlayerControler> {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, 100))
+            if (Physics.Raycast(ray, out hit, 1000))
             {
                 Interactable interactable = hit.collider.GetComponent<Interactable>();       // get interractable under mouse
 
@@ -104,7 +104,7 @@ public class PlayerControler : ISingleton<PlayerControler> {
 			Ray ray = cam.ScreenPointToRay (Input.mousePosition);
 			RaycastHit hit;
 
-			if (Physics.Raycast(ray, out hit,100))                         //if interactable follow it
+			if (Physics.Raycast(ray, out hit,1000))                         //if interactable follow it
             {                 
 				Interactable interactable = hit.collider.GetComponent<Interactable> ();
 

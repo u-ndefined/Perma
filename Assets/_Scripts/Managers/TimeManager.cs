@@ -15,6 +15,9 @@ public class TimeManager : ISingleton<TimeManager> {
 	public void NextDay()
     {
         Debug.Log("Next Day");
+        
+        DialogueManager.Instance.PlayerSay("NewDay");
+
         if (OnNewDayEvent != null)         //updateUI
         {
             OnNewDayEvent.Invoke();

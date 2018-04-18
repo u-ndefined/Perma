@@ -24,7 +24,7 @@ public class Hightlight : MonoBehaviour {
         }
 
         ray = cam.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, 100))
+        if (Physics.Raycast(ray, out hit, 1000))
         {
             Interactable interactable = hit.collider.GetComponent<Interactable>();
 
@@ -34,7 +34,7 @@ public class Hightlight : MonoBehaviour {
             {
                 if(interactable is HexCell)
                 {
-                    if(((HexCell)interactable).isActive)
+                    if(((HexCell)interactable).isActive && ((HexCell)interactable).plant.seed == null)
                     {
                         HexHightlighter.gameObject.SetActive(true);
                         HexHightlighter.position = hit.transform.position;
