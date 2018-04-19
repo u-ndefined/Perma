@@ -24,12 +24,18 @@ public class HexCell : Interactable {
     public HexType type;
     public HexState hexState;
     public HexData hexData;
+    [HideInInspector]
     public HexGrid hexGrid;
-
+    [HideInInspector]
     public Plant plant;
 
+    [Header("Day effect")]
+    public HexData dayEffectToAdd;
+    public HexData dayEffectToSet;
+    public bool setLight, setHumidity, setEnergy;
 
-    private void Start()
+
+	private void Start()
     {
         TimeManager.Instance.OnNewDayEvent += UpdateHexState;
         TimeManager.Instance.OnNewDayLateEvent += UpdatePlantState;
@@ -107,6 +113,11 @@ public class HexCell : Interactable {
 
 	private void UpdateHexState()      // call first on next day
     {
+        if(plant.seed == null)
+        {
+            DayEffect();
+        }
+
         if (plant.CanGrow())
         {
             hexData += plant.seed.hexEffect;                //impact its own cell
@@ -133,5 +144,23 @@ public class HexCell : Interactable {
     {
         hexData = baseHexData;  //reset hex data with baseHexData
         plant.ResetPlant();
+    }
+
+    private void DayEffect()
+    {
+        if(setLight)
+        {
+            hexData.light = dayEffectToSet.light;
+        }
+        if (setEnergy)
+        {
+            hexData.energy = dayEffectToSet.energy;
+        }
+        if (setHumidity)
+        {
+            hexData.humidity = dayEffectToSet.humidity;
+        }
+
+        hexData += dayEffectToAdd;
     }
 }
