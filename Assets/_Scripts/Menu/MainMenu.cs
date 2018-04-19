@@ -24,6 +24,12 @@ public class MainMenu : MonoBehaviour {
         options.SetActive(true);
     }
 
+    public void HideOptions()
+    {
+        mainMenu.SetActive(true);
+        options.SetActive(false);
+    }
+
 	public void Quit()
 	{
         Application.Quit();
