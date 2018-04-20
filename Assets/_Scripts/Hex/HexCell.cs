@@ -24,6 +24,7 @@ public class HexCell : Interactable {
     public HexType type;
     public HexState hexState;
     public HexData hexData;
+    public HexData hexDataMax;
     [HideInInspector]
     public HexGrid hexGrid;
     [HideInInspector]
@@ -123,6 +124,8 @@ public class HexCell : Interactable {
             hexData += plant.seed.hexEffect;                //impact its own cell
             ImpactAdjacentHexCells(plant.seed.hexEffect);   //impact adjacent cells
         }
+
+        hexData = ClampHexData();   //clamp hexData with maxHexData
 	}
 
     private void UpdatePlantState()
@@ -162,5 +165,16 @@ public class HexCell : Interactable {
         }
 
         hexData += dayEffectToAdd;
+    }
+
+    private HexData ClampHexData()
+    {
+        HexData result = new HexData();
+
+        hexData.light = hexData.light > hexDataMax.light ? hexDataMax.light : hexData.light;
+        hexData.humidity = hexData.humidity > hexDataMax.humidity ? hexDataMax.humidity : hexData.humidity;
+        hexData.energy = hexData.energy > hexDataMax.energy ? hexDataMax.energy : hexData.energy;
+
+        return result;
     }
 }
