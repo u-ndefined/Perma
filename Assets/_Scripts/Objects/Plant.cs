@@ -13,6 +13,9 @@ public class Plant : MonoBehaviour {
     private MeshRenderer meshRenderer;
     private CapsuleCollider plantCollider;
 
+
+
+
     private void Start()
     {
         meshFilter = plantObject.GetComponent<MeshFilter>();
@@ -76,7 +79,9 @@ public class Plant : MonoBehaviour {
     public bool CanGrow()
     {
         if (seed == null) return false;
+
         if (wilted) return false;
+
         if (actualGrowStep >= seed.growthSteps.Length - 1) return false;
 
         return true;
@@ -84,7 +89,14 @@ public class Plant : MonoBehaviour {
 
     public void Wilt()
     {
+        wilted = true;
         meshRenderer.material = wiltedMaterial;
         Debug.Log("Wilt");
+    }
+
+    [ContextMenu("Do Something")]
+    void DoSomething()
+    {
+        Debug.Log("Perform operation");
     }
 }
