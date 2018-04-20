@@ -171,9 +171,9 @@ public class HexCell : Interactable {
     {
         HexData result = new HexData();
 
-        hexData.light = hexData.light > hexDataMax.light ? hexDataMax.light : hexData.light;
-        hexData.humidity = hexData.humidity > hexDataMax.humidity ? hexDataMax.humidity : hexData.humidity;
-        hexData.energy = hexData.energy > hexDataMax.energy ? hexDataMax.energy : hexData.energy;
+        result.light = hexData.light > hexDataMax.light ? hexDataMax.light : hexData.light;
+        result.humidity = hexData.humidity > hexDataMax.humidity ? hexDataMax.humidity : hexData.humidity;
+        result.energy = hexData.energy > hexDataMax.energy ? hexDataMax.energy : hexData.energy;
 
         return result;
     }

@@ -47,4 +47,9 @@ public struct HexData
         return result;
     }
 
+    public string ToString()
+    {
+        return "HexData: light = " + light + ", humidity = " + humidity + ", energy = " + energy;
+    }
+
 }
