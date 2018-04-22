@@ -21,10 +21,11 @@ MonoBehaviour:
   - {fileID: 1458021908387832, guid: 9ea58b334947e44c89b67a7e6191f80e, type: 2}
   - {fileID: 1386193453064138, guid: ae2277c0a0a78401785753453655012b, type: 2}
   - {fileID: 1581099224296042, guid: 291296e2cd82249948e8a7f714b89c8c, type: 2}
+  - {fileID: 1581099224296042, guid: 291296e2cd82249948e8a7f714b89c8c, type: 2}
   hexEffect:
     light: 0
     humidity: -5
-    energy: 5
+    energy: 10
   plantNeeds:
     light: 0
     humidity: 0

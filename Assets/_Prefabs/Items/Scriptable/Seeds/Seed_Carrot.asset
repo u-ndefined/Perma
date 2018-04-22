@@ -9,11 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cab7664e062de4c4e964b33210902592, type: 3}
-  m_Name: Seed_Pumpkin
+  m_Name: Seed_Carrot
   m_EditorClassIdentifier: 
-  name: Seed_Pumpkin
-  icon: {fileID: 21300000, guid: d429ce7c7f2ae9d41a0199b013170f81, type: 3}
-  objectOnGround: {fileID: 1000010169018756, guid: c2a2644fedfa0a849bbc9b40600c5c65,
+  name: Seed_Carrot
+  icon: {fileID: 21300026, guid: 5b32c2d36abe44540bed74c1f787033b, type: 3}
+  objectOnGround: {fileID: 1196777598968104, guid: 01b0c96106e88405680f0cee86f6948e,
     type: 2}
   itemType: 0
   maxQuantity: 99
@@ -24,10 +24,10 @@ MonoBehaviour:
   - {fileID: 1936212318230112, guid: fa7501aa1df0c40159502cc6e9625afb, type: 2}
   hexEffect:
     light: 0
-    humidity: 3
+    humidity: 0
     energy: 0
   plantNeeds:
-    light: 0
+    light: -10
     humidity: 0
     energy: 0
   harvestContent:
