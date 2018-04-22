@@ -18,6 +18,8 @@ public class HexDataModifier : MonoBehaviour
 
     private HexCell hexCell;
 
+    public bool setLight, setHumidity, setEnergy;
+
 	private void Start()
 	{
         hexCell = GetComponentInParent<HexCell>();
@@ -51,7 +53,9 @@ public class HexDataModifier : MonoBehaviour
 
         for (int i = 0; i < cellsInRange.Length; i++)
         {
-            cellsInRange[i].hexData = hexEffect;
+            if(setLight)cellsInRange[i].hexData.light = hexEffect.light;
+            if (setHumidity) cellsInRange[i].hexData.humidity = hexEffect.humidity;
+            if (setEnergy) cellsInRange[i].hexData.energy = hexEffect.energy;
         }
     }
 
