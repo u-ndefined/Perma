@@ -112,7 +112,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1580087105838504}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -249,15 +249,19 @@ MonoBehaviour:
   type: 0
   hexState: 1
   hexData:
-    light: 100
-    humidity: 100
-    energy: 100
+    light: 10
+    humidity: 10
+    energy: 10
+  hexDataMax:
+    light: 110
+    humidity: 110
+    energy: 110
   hexGrid: {fileID: 0}
   plant: {fileID: 0}
   dayEffectToAdd:
-    light: 0
-    humidity: 0
-    energy: 0
+    light: 10
+    humidity: 5
+    energy: 2
   dayEffectToSet:
     light: 0
     humidity: 0

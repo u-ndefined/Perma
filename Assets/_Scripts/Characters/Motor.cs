@@ -121,7 +121,10 @@ public class Motor : MonoBehaviour {
 
 			if(currentDistance > currentStoppingDistance)
 			{
-                rb.AddForce(direction * moveSpeed, ForceMode.VelocityChange);
+
+                rb.AddForce(direction * moveSpeed * Time.timeScale, ForceMode.VelocityChange);
+                //Debug.Log(direction * moveSpeed);
+                //rb.velocity = direction * moveSpeed;
                 FaceTarget();
 			}
 			else
