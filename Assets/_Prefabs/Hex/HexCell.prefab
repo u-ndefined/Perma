@@ -249,17 +249,17 @@ MonoBehaviour:
   type: 0
   hexState: 1
   hexData:
-    light: 10
-    humidity: 10
-    energy: 10
+    light: 90
+    humidity: 30
+    energy: 90
   hexDataMax:
-    light: 110
-    humidity: 110
-    energy: 110
+    light: 90
+    humidity: 30
+    energy: 90
   hexGrid: {fileID: 0}
   plant: {fileID: 0}
   dayEffectToAdd:
-    light: 10
+    light: 0
     humidity: 5
     energy: 2
   dayEffectToSet:
