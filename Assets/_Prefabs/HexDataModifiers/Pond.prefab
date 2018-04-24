@@ -97,6 +97,6 @@ MonoBehaviour:
   range: 2
   hexEffect:
     light: 0
-    humidity: 40
+    humidity: 30
     energy: 0
   frequency: 2
