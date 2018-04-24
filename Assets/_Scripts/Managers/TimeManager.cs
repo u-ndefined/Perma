@@ -9,25 +9,29 @@ public class TimeManager : ISingleton<TimeManager>
     {
     }
 
+    public bool gameIsPaused;
+
     public delegate void voidNoParam();
     public voidNoParam OnNewDayEvent;
     public voidNoParam OnNewDayLateEvent;
 
     public float secondPerDay;
+    public int dayPerSeason;
 
-    private float secondPerHour, secondPerMinute;
+    private float secondPerHour, secondPerMinute, secondPerSecond;
 
     private double realTime;
 
     public Clock clock;
+    public Calendar calendar;
+    public int dayPassed;
 
 
 	private void Start()
 	{
         secondPerHour = secondPerDay / 24;
         secondPerMinute = secondPerHour / 60;
-
-        clock = new Clock(0, 0, 0, 0);
+        secondPerSecond = secondPerMinute / 60;
 	}
 
 	private void Update()
@@ -56,19 +60,32 @@ public class TimeManager : ISingleton<TimeManager>
     public void Pause()
     {
         Time.timeScale = 0f;
+        gameIsPaused = true;
     }
 
     public void Play()
     {
         Time.timeScale = 1f;
+        gameIsPaused = false;
     }
 
     private void CalculateTime()
     {
         realTime += Time.deltaTime;
-        clock.minute = Mathf.RoundToInt((float)((realTime / secondPerMinute) % 60));
-        clock.hour = Mathf.RoundToInt((float)((realTime / secondPerHour) % 24));
-        clock.day = Mathf.RoundToInt((float)(realTime / secondPerDay));
+        if(realTime >= secondPerSecond)
+        {
+            int s = Mathf.FloorToInt((float)(realTime / secondPerSecond));
+            realTime -= s * secondPerSecond;
+            if(clock.AddSecond(s))
+            {
+                calendar.AddDay();
+
+                if(dayPassed >= dayPerSeason)
+                {
+                    calendar.AddSeason();
+                }
+            }
+        }
     }
     
 }

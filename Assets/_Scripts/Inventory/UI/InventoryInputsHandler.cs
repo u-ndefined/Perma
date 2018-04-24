@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class InventoryInputsHandler : MonoBehaviour
 {
+    private TimeManager timeManager;
 
     private PointerEventData pointer;
 
@@ -28,10 +29,13 @@ public class InventoryInputsHandler : MonoBehaviour
     private void Start()
     {
         inventory = InventoryManager.Instance;
+        timeManager = TimeManager.Instance;
     }
 
     void Update()
     {
+        if (timeManager.gameIsPaused) return;
+
         if (Input.GetMouseButtonDown(0)) //when mouse pressed
         {
             startingSlot = GetSlotUnderMouse();             //get slot under mouse

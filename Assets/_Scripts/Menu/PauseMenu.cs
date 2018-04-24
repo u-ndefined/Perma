@@ -4,20 +4,21 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour {
-
-    public static bool gameIsPaused;
+    
     private GameObject pauseMenuUI;
+    private TimeManager timeManager;
 
 	private void Start()
 	{
         pauseMenuUI = transform.GetChild(0).gameObject;
+        timeManager = TimeManager.Instance;
 	}
 
 	private void Update()
 	{
         if(Input.GetButtonDown("Pause"))
         {
-            if(gameIsPaused)
+            if(timeManager.gameIsPaused)
             {
                 Resume();
             }
@@ -31,15 +32,13 @@ public class PauseMenu : MonoBehaviour {
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
-        TimeManager.Instance.Play();
-        gameIsPaused = false;
+        timeManager.Play();
     }
 
 	public void Pause()
 	{
         pauseMenuUI.SetActive(true);
-        TimeManager.Instance.Pause();
-        gameIsPaused = true;
+        timeManager.Pause();
 	}
 
     public void SaveAndQuit()
