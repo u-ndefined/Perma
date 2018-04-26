@@ -12,16 +12,15 @@ MonoBehaviour:
   m_Name: Seed_Tomato
   m_EditorClassIdentifier: 
   name: Seed_Tomato
-  icon: {fileID: 21300000, guid: 4496f194c358344fda985ca30ddb7f7b, type: 3}
-  objectOnGround: {fileID: 1995457342605116, guid: 0e56bc55581e54178bf5376a378fc875,
-    type: 2}
+  icon: {fileID: 21300008, guid: bc69f20010a6b4a52a9cc620db824248, type: 3}
+  objectOnGround: {fileID: 100002, guid: c5531c82d03290246949f45ac1bb95e9, type: 3}
   itemType: 0
   maxQuantity: 99
   growthSteps:
-  - {fileID: 1870460635402906, guid: a89afa8f0397e4cc2ab297bd36af400b, type: 2}
-  - {fileID: 1068123905163998, guid: 5881bb9b024c4490a81815f0b7b9c1c6, type: 2}
-  - {fileID: 1547015318589214, guid: 75989fd303b934e81a52a7418ff2c316, type: 2}
-  - {fileID: 1547015318589214, guid: 75989fd303b934e81a52a7418ff2c316, type: 2}
+  - {fileID: 1506542235783948, guid: 7aa1eb6c989d6421fa1c279e0dc1100a, type: 2}
+  - {fileID: 1308897535182340, guid: 92c2df8d3cabd49ee8c690ef3d52a655, type: 2}
+  - {fileID: 1862321843746936, guid: f10af1da710fd4fdf8e014bdeaaa7d9f, type: 2}
+  - {fileID: 1076994603934232, guid: 2c6587c37e3d2452999a7ee36bfebc79, type: 2}
   hexEffect:
     light: 0
     humidity: 0

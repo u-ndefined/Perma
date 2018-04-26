@@ -9,10 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e64b760ef208d4cdfaa08f0ad27217e9, type: 3}
-  m_Name: New Item
+  m_Name: Fruit_Beans
   m_EditorClassIdentifier: 
-  name: New item
-  icon: {fileID: 0}
-  objectOnGround: {fileID: 0}
-  itemType: 0
+  name: Fruit_beans
+  icon: {fileID: 21300006, guid: bc69f20010a6b4a52a9cc620db824248, type: 3}
+  objectOnGround: {fileID: 100000, guid: 30a4fd2b036b3214faa49105e81bb576, type: 3}
+  itemType: 3
   maxQuantity: 99

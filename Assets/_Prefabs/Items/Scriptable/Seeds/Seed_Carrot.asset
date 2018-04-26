@@ -17,10 +17,10 @@ MonoBehaviour:
   itemType: 0
   maxQuantity: 99
   growthSteps:
-  - {fileID: 100002, guid: 82e257f73179c8140b629300ded46e91, type: 3}
-  - {fileID: 100000, guid: 98053e42679260549ba19e7017037159, type: 3}
-  - {fileID: 100000, guid: b2b1f96d62e53674a821f6814e1022e0, type: 3}
-  - {fileID: 100002, guid: b1dec9f0b09e47740a055351d8ef7537, type: 3}
+  - {fileID: 1508708179832240, guid: 75f3d7443b695443eade76eda666fd9d, type: 2}
+  - {fileID: 1001537082989898, guid: d171827233dfa45b18b54b60027a5e87, type: 2}
+  - {fileID: 1660567052028542, guid: c063f36dcec69422c8aa4f14aa2d8379, type: 2}
+  - {fileID: 1531705169912984, guid: faea083f8aed24265946cd212520309b, type: 2}
   hexEffect:
     light: 0
     humidity: 0

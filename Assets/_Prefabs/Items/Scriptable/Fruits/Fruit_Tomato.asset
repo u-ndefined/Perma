@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Fruit_Tomato
   m_EditorClassIdentifier: 
   name: Fruit_Tomato
-  icon: {fileID: 21300012, guid: 5b32c2d36abe44540bed74c1f787033b, type: 3}
+  icon: {fileID: 21300008, guid: bc69f20010a6b4a52a9cc620db824248, type: 3}
   objectOnGround: {fileID: 1944951606216320, guid: e63fe78c611a14830be73eb3368cc846,
     type: 2}
   itemType: 3

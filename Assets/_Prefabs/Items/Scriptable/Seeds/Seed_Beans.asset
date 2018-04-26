@@ -9,19 +9,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cab7664e062de4c4e964b33210902592, type: 3}
-  m_Name: Seed_Lentils
+  m_Name: Seed_Beans
   m_EditorClassIdentifier: 
-  name: Seed_Lentils
-  icon: {fileID: 21300000, guid: 73bf0f6c1e1654d0cbde5bd18f310b77, type: 3}
-  objectOnGround: {fileID: 1196777598968104, guid: 627661a3fad474eb08bde7168f11266b,
-    type: 2}
+  name: Seed_Beans
+  icon: {fileID: 21300006, guid: bc69f20010a6b4a52a9cc620db824248, type: 3}
+  objectOnGround: {fileID: 100002, guid: 63b236bf373587e4fa88b40145002de5, type: 3}
   itemType: 0
   maxQuantity: 99
   growthSteps:
-  - {fileID: 1458021908387832, guid: 9ea58b334947e44c89b67a7e6191f80e, type: 2}
-  - {fileID: 1386193453064138, guid: ae2277c0a0a78401785753453655012b, type: 2}
-  - {fileID: 1581099224296042, guid: 291296e2cd82249948e8a7f714b89c8c, type: 2}
-  - {fileID: 1581099224296042, guid: 291296e2cd82249948e8a7f714b89c8c, type: 2}
+  - {fileID: 1716410842662310, guid: 93990ae47b669474681f931ab7780327, type: 2}
+  - {fileID: 1856882649425124, guid: f5e6eaa0eb64a434287c0c57756fbaee, type: 2}
+  - {fileID: 1198363262899036, guid: 77902d9801b0a47a58ab3cca59d42237, type: 2}
+  - {fileID: 1086559746651034, guid: 467e6b55c90374647a57e3ed85ae9e2e, type: 2}
   hexEffect:
     light: 0
     humidity: -5
@@ -33,3 +32,5 @@ MonoBehaviour:
   harvestContent:
   - item: {fileID: 11400000}
     quantity: 10
+  - item: {fileID: 11400000, guid: c0beb26d63f494b15881239fcc059fde, type: 2}
+    quantity: 5
