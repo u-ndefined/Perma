@@ -12,16 +12,15 @@ MonoBehaviour:
   m_Name: Seed_Carrot
   m_EditorClassIdentifier: 
   name: Seed_Carrot
-  icon: {fileID: 21300026, guid: 5b32c2d36abe44540bed74c1f787033b, type: 3}
-  objectOnGround: {fileID: 1196777598968104, guid: 01b0c96106e88405680f0cee86f6948e,
-    type: 2}
+  icon: {fileID: 21300000, guid: 910ede7fea3f24fd38bdd4c403d9a789, type: 3}
+  objectOnGround: {fileID: 100002, guid: 82e257f73179c8140b629300ded46e91, type: 3}
   itemType: 0
   maxQuantity: 99
   growthSteps:
-  - {fileID: 1959504114875780, guid: d81df6af539494d4baf0b90f4551ce48, type: 2}
-  - {fileID: 1606358948135388, guid: b403cbdcc754945a98d28c8758cfb140, type: 2}
-  - {fileID: 1936212318230112, guid: fa7501aa1df0c40159502cc6e9625afb, type: 2}
-  - {fileID: 1936212318230112, guid: fa7501aa1df0c40159502cc6e9625afb, type: 2}
+  - {fileID: 100002, guid: 82e257f73179c8140b629300ded46e91, type: 3}
+  - {fileID: 100000, guid: 98053e42679260549ba19e7017037159, type: 3}
+  - {fileID: 100000, guid: b2b1f96d62e53674a821f6814e1022e0, type: 3}
+  - {fileID: 100002, guid: b1dec9f0b09e47740a055351d8ef7537, type: 3}
   hexEffect:
     light: 0
     humidity: 0
@@ -31,7 +30,7 @@ MonoBehaviour:
     humidity: 0
     energy: 0
   harvestContent:
-  - item: {fileID: 11400000, guid: 79dce7379a03449f2afb594848a3f3cb, type: 2}
+  - item: {fileID: 11400000, guid: c61ee4686f51c4a1187233e25fa804ec, type: 2}
     quantity: 1
   - item: {fileID: 11400000}
-    quantity: 1
+    quantity: 2
