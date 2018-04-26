@@ -131,7 +131,7 @@ public class PlayerControler : ISingleton<PlayerControler> {
 				focus.OnDefocused ();
 			}
 			focus = newFocus;
-			motor.FollowTarget (newFocus);
+            motor.FollowTarget (newFocus.transform);
 		}
 		newFocus.OnFocused (transform);
 	}

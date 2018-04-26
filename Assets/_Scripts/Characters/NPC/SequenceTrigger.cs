@@ -12,6 +12,6 @@ public class SequenceTrigger : Interactable {
 
 	void TriggerRandomSequences(){
 		int random = Random.Range (0, randomSequences.Length);
-		SequenceManager.Instance.StartSequence (randomSequences[random]);
+		//SequenceManager.Instance.StartSequence (randomSequences[random]);
 	}
 }

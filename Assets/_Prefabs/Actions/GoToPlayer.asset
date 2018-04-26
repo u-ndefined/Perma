@@ -8,7 +8,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 784c75f265fd04bd5b30942ab8bdbdb2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8490cce98abbb48cea75600e8f03a61d, type: 3}
   m_Name: GoToPlayer
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  targetName: Player

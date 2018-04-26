@@ -37,7 +37,6 @@ public class TimeManager : ISingleton<TimeManager>
 	private void Update()
     {
         CalculateTime();
-        Debug.Log(clock.ToString());
     }
 
     public void NextDay()

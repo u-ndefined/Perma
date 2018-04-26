@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New scriptable action", menuName = "Action/ScriptableAction")]
 [System.Serializable]
-public class ScriptableAction : ScriptableObject 
-{
-    
+public class ScriptableAction : ScriptableObject {
+    public virtual void Act(Transform actor)
+    {
+        Debug.Log("Act");
+    }
 }

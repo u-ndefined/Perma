@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SequenceManager : ISingleton<SequenceManager> {
 	protected SequenceManager() { }
-
+    /*
 	private Queue<Action> actions;
 	private Actor actor;
 
@@ -19,8 +19,10 @@ public class SequenceManager : ISingleton<SequenceManager> {
 		}
 		NextAction ();
 	}
+	*/
 
 	public void NextAction(){
+        /*
 		if (actions.Count == 0) {						//s'il n'y a plus de phrases fini le dialogue
 			EndSequence ();
 			return;
@@ -40,11 +42,12 @@ public class SequenceManager : ISingleton<SequenceManager> {
 			action.actor.motor.onPointReached += PointReached;
 			break;
 		}
+		*/
 	}
 
 	void PointReached( ){
-		actor.motor.onPointReached -= PointReached;
-		actor.motor.StopFollowingTarget ();
+		//actor.motor.onPointReached -= PointReached;
+		//actor.motor.StopFollowingTarget ();
 		NextAction ();
 	}
 

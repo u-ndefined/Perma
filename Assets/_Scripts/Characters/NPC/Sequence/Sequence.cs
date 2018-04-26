@@ -4,7 +4,7 @@ using UnityEngine;
 
 [System.Serializable]
 public class Sequence {
-	public Action[] actions;
+	//public Action[] actions;
 
 
 }

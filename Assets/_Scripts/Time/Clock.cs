@@ -48,4 +48,152 @@ public struct Clock
 
         return false;
     }
+
+    public override string ToString()
+    {
+        return "Hour " + hour + ", Minute " + minute + ", Second " + second;
+    }
+
+    public static bool operator ==(Clock a, Clock b)
+    {
+        // an item is always equal to itself
+        if (object.ReferenceEquals(a, b))
+            return true;
+
+        // if both a and b were null, we would have already escaped so check if either is null
+        if (object.ReferenceEquals(a, null))
+            return false;
+        if (object.ReferenceEquals(b, null))
+            return false;
+        // Now that we've made sure we are working with real objects:
+        return a.second == b.second && a.minute == b.minute && a.hour == b.hour;
+    }
+
+    public static bool operator !=(Clock a, Clock b)
+    {
+        return !(a == b);
+    }
+
+    public override int GetHashCode()
+    {
+        unchecked
+        {
+            return second.GetHashCode() +
+                         minute.GetHashCode() +
+                         hour.GetHashCode();
+        }
+    }
+
+    public override bool Equals(object obj)
+    {
+        return Equals((Clock)obj);
+    }
+    public bool Equals(Clock other)
+    {
+        return other == this;
+    }
+
+    public static bool operator >=(Clock a, Clock b)
+    {
+        // an item is always equal to itself
+        if (object.ReferenceEquals(a, b))
+            return true;
+
+        // if both a and b were null, we would have already escaped so check if either is null
+        if (object.ReferenceEquals(a, null))
+            return false;
+        if (object.ReferenceEquals(b, null))
+            return false;
+        // Now that we've made sure we are working with real objects:
+
+        if (a.hour > b.hour) return true;
+        else if (a.hour == b.hour)
+        {
+            if (a.minute > b.hour) return true;
+            else if (a.minute == b.minute)
+            {
+                if (a.second >= b.second) return true;
+            }
+        }
+
+        return false;
+    }
+
+    public static bool operator <=(Clock a, Clock b)
+    {
+        // an item is always equal to itself
+        if (object.ReferenceEquals(a, b))
+            return true;
+
+        // if both a and b were null, we would have already escaped so check if either is null
+        if (object.ReferenceEquals(a, null))
+            return false;
+        if (object.ReferenceEquals(b, null))
+            return false;
+        // Now that we've made sure we are working with real objects:
+
+        if (a.hour < b.hour) return true;
+        else if (a.hour == b.hour)
+        {
+            if (a.minute < b.hour) return true;
+            else if (a.minute == b.minute)
+            {
+                if (a.second <= b.second) return true;
+            }
+        }
+
+        return false;
+    }
+
+    public static bool operator >(Clock a, Clock b)
+    {
+        // an item is always equal to itself
+        if (object.ReferenceEquals(a, b))
+            return true;
+
+        // if both a and b were null, we would have already escaped so check if either is null
+        if (object.ReferenceEquals(a, null))
+            return false;
+        if (object.ReferenceEquals(b, null))
+            return false;
+        // Now that we've made sure we are working with real objects:
+
+        if (a.hour > b.hour) return true;
+        else if (a.hour == b.hour)
+        {
+            if (a.minute > b.hour) return true;
+            else if (a.minute == b.minute)
+            {
+                if (a.second > b.second) return true;
+            }
+        }
+
+        return false;
+    }
+
+    public static bool operator <(Clock a, Clock b)
+    {
+        // an item is always equal to itself
+        if (object.ReferenceEquals(a, b))
+            return true;
+
+        // if both a and b were null, we would have already escaped so check if either is null
+        if (object.ReferenceEquals(a, null))
+            return false;
+        if (object.ReferenceEquals(b, null))
+            return false;
+        // Now that we've made sure we are working with real objects:
+
+        if (a.hour < b.hour) return true;
+        else if (a.hour == b.hour)
+        {
+            if (a.minute < b.hour) return true;
+            else if (a.minute == b.minute)
+            {
+                if (a.second < b.second) return true;
+            }
+        }
+
+        return false;
+    }
 }

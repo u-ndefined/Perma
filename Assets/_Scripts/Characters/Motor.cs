@@ -63,13 +63,22 @@ public class Motor : MonoBehaviour {
         agent.SetDestination(point);
 	}
 
-	public void FollowTarget(Interactable newTarget){
-		currentStoppingDistance = newTarget.radius * 0.85f;
-		isFollowing = true;
-		target = newTarget.transform;
-		previousTargetPosition = target.position;
-		MoveToPoint (target.position);
-	}
+    public void FollowTarget(Transform newTarget)
+    {
+        Interactable interactable = newTarget.GetComponent<Interactable>();
+
+        if(interactable != null)
+        {
+            currentStoppingDistance = interactable.radius * 0.85f;
+        }
+
+       
+        isFollowing = true;
+        target = newTarget.transform;
+        previousTargetPosition = target.position;
+        MoveToPoint(target.position);
+    }
+
 	public void StopFollowingTarget(){
 		currentStoppingDistance = stoppingDistance;
 		isFollowing = false;

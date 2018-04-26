@@ -8,5 +8,6 @@ public struct RoutineState
     public Date date;
     public ScriptableDialogues mainDialogue;
     public ScriptableDialogues[] sideDialogues;
-    public ScriptableAction[] scriptableActions;
+    public ScriptableAction[] actions;
+
 }
