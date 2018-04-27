@@ -25,6 +25,7 @@ ExportedObj/
 *.booproj
 *.svd
 *.pdb
+*.psd
 
 # Unity3D generated meta files
 *.pidb.meta
@@ -39,6 +40,5 @@ sysinfo.txt
 #fmod
 Assets/FMODStudioCache.asset
 Assets/StreamingAssets/*.bank
-fmod_editor.log
 fmod_editor.log
 *.log
