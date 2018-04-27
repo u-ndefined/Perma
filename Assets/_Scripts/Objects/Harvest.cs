@@ -10,7 +10,6 @@ public class Harvest : Interactable {
 
         Stack stackUsed = InventoryManager.Instance.stackUsed;      //get stack used
 
-        Debug.Log("ici");
 
         if(stackUsed == null)   //if no stack used == harvest
         {
@@ -45,7 +44,6 @@ public class Harvest : Interactable {
         }
         else
         {
-            Debug.Log("là");
             if(stackUsed.item.itemType == ItemType.SHOVEL)
             {
                 Plant plant = GetComponentInParent<Plant>();

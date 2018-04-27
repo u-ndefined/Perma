@@ -32,6 +32,7 @@ public class TimeManager : ISingleton<TimeManager>
         secondPerHour = secondPerDay / 24;
         secondPerMinute = secondPerHour / 60;
         secondPerSecond = secondPerMinute / 60;
+        SoundManager.Instance.PlaySound("ambiance_jour");
 	}
 
 	private void Update()

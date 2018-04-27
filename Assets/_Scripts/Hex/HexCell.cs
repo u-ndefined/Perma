@@ -64,6 +64,7 @@ public class HexCell : Interactable {
                 Debug.Log(stackUsed.item.name);
                 if(inventory.stacks[inventory.selectedSlotID].item == stackUsed.item )
                 {
+                    SoundManager.Instance.PlaySound("arrose" + PlayerControler.Instance.transform.GetInstanceID());
                     plant.AddSeed((Seed)stackUsed.item);
                     inventory.RemoveAtIndex(inventory.selectedSlotID,1);         //plant the seed and remove it from inventory
                 }
@@ -71,7 +72,11 @@ public class HexCell : Interactable {
             }
             if (stackUsed.item.itemType == ItemType.SHOVEL && plant.seed != null)    //if it's a seed and hex is exposed
             {
+                Debug.Log("plouf");
                 plant.ResetPlant();
+
+
+
             }
         }
 

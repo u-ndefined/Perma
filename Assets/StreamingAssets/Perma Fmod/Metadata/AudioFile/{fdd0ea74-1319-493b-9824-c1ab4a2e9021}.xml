@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{fdd0ea74-1319-493b-9824-c1ab4a2e9021}">
+        <property name="assetPath">
+            <value>ramasse2.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>0.24936507936507937</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{58364f10-0750-4b1d-83e2-63802984b3f3}</destination>
+        </relationship>
+    </object>
+</objects>

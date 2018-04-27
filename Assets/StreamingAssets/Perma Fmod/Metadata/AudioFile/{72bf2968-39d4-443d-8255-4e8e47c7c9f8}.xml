@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{72bf2968-39d4-443d-8255-4e8e47c7c9f8}">
+        <property name="assetPath">
+            <value>pas_terre_2.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>0.41455782312925171</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{58364f10-0750-4b1d-83e2-63802984b3f3}</destination>
+        </relationship>
+    </object>
+</objects>
