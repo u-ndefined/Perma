@@ -1,24 +1,19 @@
 fileFormatVersion: 2
-guid: b2b1f96d62e53674a821f6814e1022e0
-timeCreated: 1524735980
+guid: 3948c8cddb6e880489e63db1158f5e39
+timeCreated: 1524927901
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Plane003
+    100002: Carrot_step03
     400000: //RootNode
-    400002: Plane003
-    2100000: Plane003Mat
-    2300000: Plane003
-    3300000: Plane003
-    4300000: Plane003
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Plane003Mat
-    second: {fileID: 2100000, guid: 42f224b2493d7054c93f66307ab9d611, type: 2}
+    400002: Carrot_step03
+    2100000: Carrot_step03Mat
+    2300000: Carrot_step03
+    3300000: Carrot_step03
+    4300000: Carrot_step03
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0

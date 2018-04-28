@@ -1,24 +1,19 @@
 fileFormatVersion: 2
-guid: c5531c82d03290246949f45ac1bb95e9
-timeCreated: 1524580023
+guid: ba7b7d13d57fe6c41bcfd95a980616f7
+timeCreated: 1524925358
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Box002
+    100000: Tomato_step01
     100002: //RootNode
-    400000: Box002
+    400000: Tomato_step01
     400002: //RootNode
-    2100000: Box002Mat
-    2300000: Box002
-    3300000: Box002
-    4300000: Box002
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Box002Mat
-    second: {fileID: 2100000, guid: d4a48bfa07b13264abdeb3e983678c5a, type: 2}
+    2100000: Tomato_step01Mat
+    2300000: Tomato_step01
+    3300000: Tomato_step01
+    4300000: Tomato_step01
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0

@@ -1,35 +1,25 @@
 fileFormatVersion: 2
-guid: 9b8665139421e3548bfea73169c3e487
-timeCreated: 1524584073
+guid: be802625a7719574e9bd72b204526041
+timeCreated: 1524925408
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Box003
-    100002: Object001
+    100000: Tomato_fruits
+    100002: Tomato_step04
     100004: //RootNode
-    400000: Box003
-    400002: Object001
+    400000: Tomato_fruits
+    400002: Tomato_step04
     400004: //RootNode
-    2100000: Box003Mat
-    2100002: Object001Mat
-    2300000: Box003
-    2300002: Object001
-    3300000: Box003
-    3300002: Object001
-    4300000: Box003
-    4300002: Object001
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Box003Mat
-    second: {fileID: 2100000, guid: e9f96c3c56903db4caef00b6916d51c8, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Object001Mat
-    second: {fileID: 2100000, guid: bc75261dbd79c8c41ba34f103dbb8a25, type: 2}
+    2100000: Tomato_fruitsMat
+    2100002: Tomato_step04Mat
+    2300000: Tomato_fruits
+    2300002: Tomato_step04
+    3300000: Tomato_fruits
+    3300002: Tomato_step04
+    4300000: Tomato_fruits
+    4300002: Tomato_step04
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0

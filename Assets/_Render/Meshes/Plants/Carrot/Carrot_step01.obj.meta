@@ -1,24 +1,19 @@
 fileFormatVersion: 2
-guid: 82e257f73179c8140b629300ded46e91
-timeCreated: 1524735335
+guid: d5273026b8ca3154a94c645c37ff013b
+timeCreated: 1524927901
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Box002
-    100002: //RootNode
-    400000: Box002
-    400002: //RootNode
-    2100000: Box002Mat
-    2300000: Box002
-    3300000: Box002
-    4300000: Box002
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Box002Mat
-    second: {fileID: 2100000, guid: 62b0aa8a6f0f92649834a65673ebbb76, type: 2}
+    100000: //RootNode
+    100002: Carrot_step01
+    400000: //RootNode
+    400002: Carrot_step01
+    2100000: Carrot_step01Mat
+    2300000: Carrot_step01
+    3300000: Carrot_step01
+    4300000: Carrot_step01
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0

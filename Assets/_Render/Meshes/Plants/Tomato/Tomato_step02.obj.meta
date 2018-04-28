@@ -1,24 +1,19 @@
 fileFormatVersion: 2
-guid: b7ec4f85de62dd149a59ca4376602f03
-timeCreated: 1524580905
+guid: ec31a4dd8f0684e4a84e53116b73a9c0
+timeCreated: 1524925358
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Cylinder002
+    100000: Tomato_step02
     100002: //RootNode
-    400000: Cylinder002
+    400000: Tomato_step02
     400002: //RootNode
-    2100000: Cylinder002Mat
-    2300000: Cylinder002
-    3300000: Cylinder002
-    4300000: Cylinder002
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Cylinder002Mat
-    second: {fileID: 2100000, guid: d281fcb09e295ea4a95f12acfbe50f2d, type: 2}
+    2100000: Tomato_step02Mat
+    2300000: Tomato_step02
+    3300000: Tomato_step02
+    4300000: Tomato_step02
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
