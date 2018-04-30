@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class Harvest : Interactable {
 
-    public override void Interact()
+    Plant plant;
+
+	private void Start()
+	{
+        plant = GetComponent<Plant>();
+	}
+
+	public override void Interact()
     {
         
 
@@ -13,8 +20,6 @@ public class Harvest : Interactable {
 
         if(stackUsed == null)   //if no stack used == harvest
         {
-
-        Plant plant = GetComponentInParent<Plant>();
 
             if (plant.wilted)
             {
@@ -46,9 +51,7 @@ public class Harvest : Interactable {
         {
             if(stackUsed.item.itemType == ItemType.SHOVEL)
             {
-                Plant plant = GetComponentInParent<Plant>();
-
-                plant.ResetPlant();
+                ObjectsPooler.Instance.GoBackToPool(gameObject);
             }
         }
         base.Interact();

@@ -2,87 +2,82 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Plant : MonoBehaviour {
-    private int actualGrowStep = 0;
+public class Plant : MonoBehaviour, IPooledObject {
+    private int actualGrowthStep = 0;
+    private GrowStep[] growthSteps;
     public bool harvestable = false;
     public bool wilted = false;
     public Seed seed;
-    public Transform plantObject;
+    //public GameObject plantObject;
     public Material wiltedMaterial;
-    private MeshFilter meshFilter;
-    private MeshRenderer meshRenderer;
-    private CapsuleCollider plantCollider;
+
+    private GameData.Prefabs plantType;
 
 
 
+
+    public void OnObjectSpawn()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void OnGoBackToPool()
+    {
+        ResetPlant();
+    }
 
     private void Start()
     {
-        meshFilter = plantObject.GetComponent<MeshFilter>();
-        meshRenderer = plantObject.GetComponent<MeshRenderer>();
-        plantCollider = plantObject.GetComponent<CapsuleCollider>();
+        growthSteps = new GrowStep[transform.childCount];
+        for (int i = 0; i < growthSteps.Length; i++)
+        {
+            growthSteps[i] = transform.GetChild(i).GetComponent<GrowStep>();
+        }
     }
 
-    private void SetPlant(int n)
+    private void NextStep()
     {
-        plantObject.transform.localPosition = seed.growthSteps[n].transform.position;
-        plantObject.transform.localScale = seed.growthSteps[n].transform.lossyScale;
-        plantObject.transform.rotation = seed.growthSteps[n].transform.rotation;
-        meshFilter.mesh = seed.growthSteps[n].GetComponent<MeshFilter>().sharedMesh;
-        meshRenderer.material = seed.growthSteps[n].GetComponent<MeshRenderer>().sharedMaterial;
-        plantCollider.enabled = true;
-        plantCollider.radius = seed.growthSteps[n].GetComponent<CapsuleCollider>().radius;
-        plantCollider.height = seed.growthSteps[n].GetComponent<CapsuleCollider>().height;
-        plantCollider.center = seed.growthSteps[n].GetComponent<CapsuleCollider>().center;
+       
+            growthSteps[actualGrowthStep].gameObject.SetActive(false);
+            actualGrowthStep++;
+            growthSteps[actualGrowthStep].gameObject.SetActive(true);
+
     }
+
 
     public void Grow()
     {
         if(!harvestable)
         {
-            actualGrowStep++;
-            SetPlant(actualGrowStep);
-            Debug.Log("Grow");
+            NextStep();
 
-            if(actualGrowStep == seed.growthSteps.Length - 1)
+            if(actualGrowthStep == growthSteps.Length - 1)
             {
                 harvestable = true;
-                Debug.Log("Harvestable !");
             }
         }
 
     }
 
-    public void AddSeed(Seed newSeed)
-    {
-        seed = newSeed;
-        SetPlant(actualGrowStep);
-        Debug.Log(newSeed.name + " added");
-    }
 
     public void ResetPlant()
     {
-        seed = null;
         wilted = false;
-        actualGrowStep = 0;
-        meshFilter.mesh = null;
-        meshRenderer.material = null;
-        plantCollider.enabled = false;
-        /*
-        plantCollider.radius = 0;
-        plantCollider.height = 0;
-        plantCollider.center = Vector3.zero;
-        */
-        harvestable = false;
+        actualGrowthStep = 0;
+        for (int i = 0; i < growthSteps.Length; i++)
+        {
+            growthSteps[i].ResetGrowStep();
+
+            if (i == 0) growthSteps[i].gameObject.SetActive(true);
+            else growthSteps[i].gameObject.SetActive(false);
+        }
     }
 
     public bool CanGrow()
     {
-        if (seed == null) return false;
-
         if (wilted) return false;
 
-        if (actualGrowStep >= seed.growthSteps.Length - 1) return false;
+        if (actualGrowthStep >= growthSteps.Length - 1) return false;
 
         return true;
     }
@@ -90,13 +85,6 @@ public class Plant : MonoBehaviour {
     public void Wilt()
     {
         wilted = true;
-        meshRenderer.material = wiltedMaterial;
-        Debug.Log("Wilt");
-    }
-
-    [ContextMenu("Do Something")]
-    void DoSomething()
-    {
-        Debug.Log("Perform operation");
+        growthSteps[actualGrowthStep].Wilt();
     }
 }

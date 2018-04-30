@@ -7,9 +7,7 @@ using UnityEngine;
 [System.Serializable]
 public class Seed : Item {
 
-    //public Mesh[] growthSteps;
-
-    public GameObject[] growthSteps;
+    public GameData.Prefabs plantType;
 
     public HexData hexEffect;
     public HexData plantNeeds;

@@ -35,15 +35,17 @@ public class HexCell : Interactable {
     public HexData dayEffectToSet;
     public bool setLight, setHumidity, setEnergy;
 
+    private ObjectsPooler pool;
+
 
 	private void Start()
     {
         TimeManager.Instance.OnNewDayEvent += UpdateHexState;
         TimeManager.Instance.OnNewDayLateEvent += UpdatePlantState;
 
-        plant = GetComponent<Plant>();
-
         baseHexData = hexData;
+
+        pool = ObjectsPooler.Instance;
     }
 
     public override void Interact()
@@ -64,24 +66,28 @@ public class HexCell : Interactable {
                 Debug.Log(stackUsed.item.name);
                 if(inventory.stacks[inventory.selectedSlotID].item == stackUsed.item )
                 {
-                    SoundManager.Instance.PlaySound("arrose" + PlayerControler.Instance.transform.GetInstanceID());
-                    plant.AddSeed((Seed)stackUsed.item);
+                    //SoundManager.Instance.PlaySound("arrose" + PlayerControler.Instance.transform.GetInstanceID());
+                    //plant.AddSeed((Seed)stackUsed.item);
+                    PlantSeed((Seed)stackUsed.item);
                     inventory.RemoveAtIndex(inventory.selectedSlotID,1);         //plant the seed and remove it from inventory
                 }
                
             }
             if (stackUsed.item.itemType == ItemType.SHOVEL && plant.seed != null)    //if it's a seed and hex is exposed
             {
-                Debug.Log("plouf");
-                plant.ResetPlant();
-
-
-
+                pool.GoBackToPool(plant.gameObject);
+                plant = null;
             }
         }
 
         base.Interact();
 	}
+
+    private void PlantSeed(Seed seed)
+    {
+        GameObject plantObject = ObjectsPooler.Instance.SpawnFromPool(seed.plantType, transform.position, Quaternion.identity, transform);
+        plant = plantObject.GetComponent<Plant>();
+    }
 
     private void ChangeColor()
     {
@@ -114,17 +120,16 @@ public class HexCell : Interactable {
         }
 
         cell.hexData += impactData;
-        //cell.ChangeColor();
     }
 
 	private void UpdateHexState()      // call first on next day
     {
-        if(plant.seed == null)
+        if(plant == null)
         {
             DayEffect();
         }
 
-        if (plant.CanGrow())
+        else if (plant.CanGrow())
         {
             hexData += plant.seed.hexEffect;                //impact its own cell
             ImpactAdjacentHexCells(plant.seed.hexEffect);   //impact adjacent cells
@@ -151,7 +156,8 @@ public class HexCell : Interactable {
     private void ResetHexCell()
     {
         hexData = baseHexData;  //reset hex data with baseHexData
-        plant.ResetPlant();
+        if (plant) pool.GoBackToPool(plant.gameObject);
+        plant = null;
     }
 
     private void DayEffect()
