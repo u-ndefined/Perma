@@ -61,7 +61,7 @@ public class HexCell : Interactable {
 
         if(stackUsed != null)
         {
-            if(stackUsed.item.itemType == ItemType.SEED && hexState == HexState.EXPOSED && plant.seed == null)    //if it's a seed and hex is exposed and there is no seed in this hex
+            if(stackUsed.item.itemType == ItemType.SEED && hexState == HexState.EXPOSED && plant == null)    //if it's a seed and hex is exposed and there is no seed in this hex
             {
                 Debug.Log(stackUsed.item.name);
                 if(inventory.stacks[inventory.selectedSlotID].item == stackUsed.item )
@@ -140,7 +140,7 @@ public class HexCell : Interactable {
 
     private void UpdatePlantState()
     {
-        if (plant.CanGrow())
+        if (plant != null && plant.CanGrow())
         {
             if((hexData - plant.seed.plantNeeds).IsPositive())
             {

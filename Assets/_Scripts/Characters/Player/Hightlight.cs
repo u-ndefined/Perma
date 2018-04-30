@@ -34,7 +34,7 @@ public class Hightlight : MonoBehaviour {
             {
                 if(interactable is HexCell)
                 {
-                    if(((HexCell)interactable).isActive && ((HexCell)interactable).plant.seed == null)
+                    if(((HexCell)interactable).isActive && ((HexCell)interactable).plant == null)
                     {
                         HexHightlighter.gameObject.SetActive(true);
                         HexHightlighter.position = hit.transform.position;

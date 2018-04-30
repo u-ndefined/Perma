@@ -18,7 +18,7 @@ public class Plant : MonoBehaviour, IPooledObject {
 
     public void OnObjectSpawn()
     {
-        throw new System.NotImplementedException();
+        ResetPlant();
     }
 
     public void OnGoBackToPool()
@@ -28,7 +28,13 @@ public class Plant : MonoBehaviour, IPooledObject {
 
     private void Start()
     {
+        Init();
+    }
+
+    private void Init()
+    {
         growthSteps = new GrowStep[transform.childCount];
+
         for (int i = 0; i < growthSteps.Length; i++)
         {
             growthSteps[i] = transform.GetChild(i).GetComponent<GrowStep>();
@@ -62,6 +68,7 @@ public class Plant : MonoBehaviour, IPooledObject {
 
     public void ResetPlant()
     {
+        Init();
         wilted = false;
         actualGrowthStep = 0;
         for (int i = 0; i < growthSteps.Length; i++)

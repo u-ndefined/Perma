@@ -10,14 +10,14 @@ public class GrowStep : MonoBehaviour
 
     private void Start()
     {
-        renderer = GetComponent<Renderer>();
+        renderer = GetComponentInChildren<Renderer>();
         material = renderer.material;
         wiltedMaterial = GetComponentInParent<Plant>().wiltedMaterial;
     }
 
     public void ResetGrowStep()
     {
-        GetComponent<Renderer>().material = material;
+        GetComponentInChildren<Renderer>().material = material;
     }
 
     public void Wilt()
