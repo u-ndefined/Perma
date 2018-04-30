@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4970159476356776}
+  - component: {fileID: 114380834943417382}
   m_Layer: 0
   m_Name: Carrot_step01
   m_TagString: Untagged
@@ -34,6 +35,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4995121081107090}
+  - component: {fileID: 114233514001796654}
   m_Layer: 0
   m_Name: Carrot_step03
   m_TagString: Untagged
@@ -49,6 +51,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4234398535240582}
+  - component: {fileID: 114584196844258250}
   m_Layer: 0
   m_Name: Carrot_step04
   m_TagString: Untagged
@@ -64,6 +67,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4453445209850034}
+  - component: {fileID: 114041374349047274}
   m_Layer: 0
   m_Name: Carrot_step02
   m_TagString: Untagged
@@ -445,6 +449,50 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1337826364594436}
   m_Mesh: {fileID: 4300000, guid: 3948c8cddb6e880489e63db1158f5e39, type: 3}
+--- !u!114 &114041374349047274
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1293880706408496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4b899e1a864c4f82afd4eb39f4bd73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114233514001796654
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1136430170666080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4b899e1a864c4f82afd4eb39f4bd73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114380834943417382
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1015819360985976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4b899e1a864c4f82afd4eb39f4bd73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114584196844258250
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1208057351290938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4b899e1a864c4f82afd4eb39f4bd73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114649058126845340
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4728647781338904}
   m_Layer: 0
-  m_Name: Carrot_step05
+  m_Name: Carrot_fruit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

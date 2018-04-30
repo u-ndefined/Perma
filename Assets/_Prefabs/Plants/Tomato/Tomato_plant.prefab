@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4248968004683418}
+  - component: {fileID: 114236418614113098}
   m_Layer: 0
   m_Name: Tomato_step03
   m_TagString: Untagged
@@ -34,6 +35,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4951541675036290}
+  - component: {fileID: 114120110585764118}
   m_Layer: 0
   m_Name: Tomato_step01
   m_TagString: Untagged
@@ -117,6 +119,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4744888994714972}
+  - component: {fileID: 114703346360700634}
   m_Layer: 0
   m_Name: Tomato_step04
   m_TagString: Untagged
@@ -149,6 +152,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4635411743871954}
+  - component: {fileID: 114519653409318938}
   m_Layer: 0
   m_Name: Tomato_step02
   m_TagString: Untagged
@@ -192,8 +196,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1159650397181596}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -30.53556, y: 0.003, z: 48.5979}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4532427285300994}
@@ -232,8 +236,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1973341747969278}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -25.160137, y: 0.003, z: 48.880295}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4115067185868094}
@@ -246,8 +250,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1720084398801278}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -35.810596, y: 0.003, z: 48.802475}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4395369411860814}
@@ -291,8 +295,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1265062313609158}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.23622, y: 0.003, z: 49.002968}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4782465058895724}
@@ -517,6 +521,50 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1855370233570388}
   m_Mesh: {fileID: 4300000, guid: be802625a7719574e9bd72b204526041, type: 3}
+--- !u!114 &114120110585764118
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1265062313609158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4b899e1a864c4f82afd4eb39f4bd73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114236418614113098
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1159650397181596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4b899e1a864c4f82afd4eb39f4bd73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114519653409318938
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1973341747969278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4b899e1a864c4f82afd4eb39f4bd73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114703346360700634
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1720084398801278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4b899e1a864c4f82afd4eb39f4bd73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114712436980100312
 MonoBehaviour:
   m_ObjectHideFlags: 1

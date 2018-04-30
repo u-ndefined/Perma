@@ -28,6 +28,7 @@ public class Plant : MonoBehaviour, IPooledObject {
 
     private void Start()
     {
+        Debug.Log("init");
         Init();
     }
 
@@ -68,7 +69,6 @@ public class Plant : MonoBehaviour, IPooledObject {
 
     public void ResetPlant()
     {
-        Init();
         wilted = false;
         actualGrowthStep = 0;
         for (int i = 0; i < growthSteps.Length; i++)

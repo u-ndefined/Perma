@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114697473538433108}
   - component: {fileID: 54871969027338034}
   m_Layer: 0
-  m_Name: Turnip_Fruit
+  m_Name: Turnip_Seed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

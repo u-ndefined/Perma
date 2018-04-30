@@ -36,6 +36,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4245915335597574}
+  - component: {fileID: 114180987092858756}
   m_Layer: 0
   m_Name: Carrot_step01
   m_TagString: Untagged
@@ -111,3 +112,14 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1060473197801020}
   m_Mesh: {fileID: 4300000, guid: d5273026b8ca3154a94c645c37ff013b, type: 3}
+--- !u!114 &114180987092858756
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1115248329307612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4b899e1a864c4f82afd4eb39f4bd73b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

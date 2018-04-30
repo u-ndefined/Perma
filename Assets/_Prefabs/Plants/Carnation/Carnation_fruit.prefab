@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4172206058523170}
   m_Layer: 0
-  m_Name: Carnation_step05
+  m_Name: Carnation_fruit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

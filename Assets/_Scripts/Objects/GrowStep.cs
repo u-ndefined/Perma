@@ -13,6 +13,8 @@ public class GrowStep : MonoBehaviour
         renderer = GetComponentInChildren<Renderer>();
         material = renderer.material;
         wiltedMaterial = GetComponentInParent<Plant>().wiltedMaterial;
+
+        Debug.Log("hello");
     }
 
     public void ResetGrowStep()

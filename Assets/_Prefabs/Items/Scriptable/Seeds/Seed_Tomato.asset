@@ -16,11 +16,7 @@ MonoBehaviour:
   objectOnGround: {fileID: 100002, guid: c5531c82d03290246949f45ac1bb95e9, type: 3}
   itemType: 0
   maxQuantity: 99
-  growthSteps:
-  - {fileID: 1506542235783948, guid: 7aa1eb6c989d6421fa1c279e0dc1100a, type: 2}
-  - {fileID: 1308897535182340, guid: 92c2df8d3cabd49ee8c690ef3d52a655, type: 2}
-  - {fileID: 1862321843746936, guid: f10af1da710fd4fdf8e014bdeaaa7d9f, type: 2}
-  - {fileID: 1076994603934232, guid: 2c6587c37e3d2452999a7ee36bfebc79, type: 2}
+  plantType: 1
   hexEffect:
     light: 0
     humidity: 0
