@@ -17,6 +17,11 @@ public static class GameData
         BEANS
     };
 
+    public enum Sounds
+    {
+        
+    }
+
     /*
     public enum Layers
     {

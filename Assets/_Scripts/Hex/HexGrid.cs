@@ -19,7 +19,6 @@ public class HexGrid : MonoBehaviour {
         {
             foreach(Transform cell in raw)
             {
-                Debug.Log(x + " " + y);
                 cells[x, y] = cell.GetComponent<HexCell>();
                 x++;
             }

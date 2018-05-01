@@ -23,11 +23,11 @@ public class Harvest : Interactable {
 
             if (plant.wilted)
             {
-                Debug.Log("Looks like it didn't enjoy being here.");
+                DialogueManager.Instance.PlayerSay("Wilt");
             }
             else if (!plant.harvestable)
             {
-                Debug.Log("Give it more time.");
+                DialogueManager.Instance.PlayerSay("Growing");
             }
             else
             {

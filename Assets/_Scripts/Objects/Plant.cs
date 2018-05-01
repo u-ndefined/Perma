@@ -12,7 +12,6 @@ public class Plant : MonoBehaviour, IPooledObject {
     public Material wiltedMaterial;
 
     private GameData.Prefabs plantType;
-    private bool init = false;
 
 
 
