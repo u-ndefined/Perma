@@ -19,7 +19,7 @@ public static class GameData
 
     public enum Sounds
     {
-        
+
     }
 
     /*

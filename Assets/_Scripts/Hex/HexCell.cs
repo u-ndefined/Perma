@@ -77,6 +77,7 @@ public class HexCell : Interactable {
             if (stackUsed.item.itemType == ItemType.SHOVEL && plant != null)    //if it's a shovel and there is a plant
             {
                 DestroyPlant();
+                SoundManager.Instance.PlaySound("PlayerAction/Dig");
             }
         }
 
@@ -92,6 +93,7 @@ public class HexCell : Interactable {
 
     private void PlantSeed(Seed seed)
     {
+        SoundManager.Instance.PlaySound("PlayerAction/Plant1");
         GameObject plantObject = ObjectsPooler.Instance.SpawnFromPool(seed.plantType, transform.position, Quaternion.identity, transform);
         plant = plantObject.GetComponent<Plant>();
         workedSoil.SetActive(true);

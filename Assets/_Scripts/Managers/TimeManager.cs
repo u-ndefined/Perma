@@ -26,13 +26,18 @@ public class TimeManager : ISingleton<TimeManager>
     public Calendar calendar;
     public int dayPassed;
 
+    [Header("Song timers")]
+    public Clock dayBeginning;
+    public Clock nightBeginning;
+    private bool isDay = false;
+
 
 	private void Start()
 	{
         secondPerHour = secondPerDay / 24;
         secondPerMinute = secondPerHour / 60;
         secondPerSecond = secondPerMinute / 60;
-        SoundManager.Instance.PlaySound("ambiance_jour");
+        SoundManager.Instance.PlaySound("Ambience/AmbienceDay");
 	}
 
 	private void Update()

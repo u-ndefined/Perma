@@ -42,6 +42,8 @@ public class InventoryInputsHandler : MonoBehaviour
 
             if (startingSlot != null && !dragging)      //if begin drag
             {
+                SoundManager.Instance.PlaySound("UI/InventoryIcon");
+
                 startingPoint = Input.mousePosition;
 
                 dragging = true;
@@ -104,6 +106,8 @@ public class InventoryInputsHandler : MonoBehaviour
                         }
                         else
                         {
+                            SoundManager.Instance.PlaySound("UI/InventoryIcon");
+
                             Debug.Log("add to slot " + endingSlot.slotIndex);
                             inventory.AddAtIndex(endingSlot.slotIndex, stackDragged);   //else add stack to ending slot
                         }

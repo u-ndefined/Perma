@@ -5,7 +5,7 @@ using UnityEngine;
 public class House : Interactable {
     public override void Interact()
     {
-        Debug.Log("iuoiu");
+        SoundManager.Instance.PlaySound("PlayerAction/ClickHouseDoor");
         TimeManager.Instance.NextDay();
 
     }

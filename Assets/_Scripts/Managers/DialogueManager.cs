@@ -56,4 +56,16 @@ public class DialogueManager : ISingleton<DialogueManager> {
         }
     }
 
+    public void ActorSay(Actor actor, string dialogueName)
+    {
+        if (actor.dialogues.Contains(dialogueName))
+        {
+            StartDialogue(actor, (string[])actor.dialogues[dialogueName]);
+        }
+        else
+        {
+            Debug.Log("this dialogue doesn't exist on this actor");
+        }
+    }
+
 }

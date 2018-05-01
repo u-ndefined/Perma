@@ -97,6 +97,7 @@ public class InventoryManager : ISingleton<InventoryManager>
         {
             stacks[index] = newStack;
 
+
             if (onItemChangedEvent != null)         //updateUI
             {
                 onItemChangedEvent.Invoke();
@@ -109,6 +110,7 @@ public class InventoryManager : ISingleton<InventoryManager>
             if(remainingQuantity >= newStack.quantity)          //if enought place
             {
                 stacks[index].quantity += newStack.quantity;    //add stack
+
 
                 if (onItemChangedEvent != null)         //updateUI
                 {
@@ -164,6 +166,8 @@ public class InventoryManager : ISingleton<InventoryManager>
 
     public bool Add(Stack newStack)
     {
+        SoundManager.Instance.PlaySound("PlayerAction/Pickup2");
+
         for (int i = 0; i < stacks.Length; i++)
         {
 

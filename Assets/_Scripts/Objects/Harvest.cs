@@ -49,6 +49,7 @@ public class Harvest : Interactable {
             if(stackUsed.item.itemType == ItemType.SHOVEL)
             {
                 plant.DestroyPlant();
+                SoundManager.Instance.PlaySound("PlayerAction/Dig");
             }
         }
         base.Interact();
