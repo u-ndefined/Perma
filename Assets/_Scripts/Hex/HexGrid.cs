@@ -12,13 +12,14 @@ public class HexGrid : MonoBehaviour {
 	{
 
         //store all cells in the grid (bof bof)
-        cells = new HexCell[width, height];
+        cells = new HexCell[height, width];
         int x = 0;
         int y = 0;
         foreach(Transform raw in transform)
         {
             foreach(Transform cell in raw)
             {
+                Debug.Log(x + " " + y);
                 cells[x, y] = cell.GetComponent<HexCell>();
                 x++;
             }
