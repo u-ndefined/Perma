@@ -127,7 +127,7 @@ MonoBehaviour:
         saturation: 0.93
         contrast: 1
       channelMixer:
-        red: {x: 0.94, y: 0.06, z: 0.31}
+        red: {x: 0.94, y: 0.19, z: 0.01}
         green: {x: 0, y: 1, z: 0}
         blue: {x: 0, y: 0, z: 1}
         currentEditingChannel: 0
@@ -138,9 +138,9 @@ MonoBehaviour:
           power: {r: 1, g: 1, b: 1, a: 0}
           offset: {r: 1, g: 1, b: 1, a: 0}
         linear:
-          lift: {r: 1, g: 0.9632233, b: 0.97950655, a: -0.03846154}
-          gamma: {r: 1, g: 0.9632233, b: 0.9795066, a: 0.0000000022924864}
-          gain: {r: 1, g: 0.9666524, b: 0.97191113, a: -0.0000000011462431}
+          lift: {r: 1, g: 0.87989825, b: 0.82663023, a: -0.03846154}
+          gamma: {r: 0.9835518, g: 0.9671052, b: 1, a: 0.0000000022924864}
+          gain: {r: 0.9890346, g: 0.9780707, b: 1, a: -0.0000000011462431}
       curves:
         master:
           curve:
