@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Fruit_carrot
   icon: {fileID: 21300000, guid: 910ede7fea3f24fd38bdd4c403d9a789, type: 3}
-  objectOnGround: {fileID: 1196777598968104, guid: 01b0c96106e88405680f0cee86f6948e,
+  objectOnGround: {fileID: 1606895595100602, guid: 4eb874dfd021cb04089e58cc30054fd5,
     type: 2}
   itemType: 3
   maxQuantity: 99

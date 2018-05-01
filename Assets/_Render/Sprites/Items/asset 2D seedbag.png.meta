@@ -8,6 +8,10 @@ TextureImporter:
     21300002: asset 2D seedbag_carnation
     21300004: asset 2D seedbag_beans
     21300006: asset 2D seedbag_tomato
+    21300008: asset 2D seedbag_0
+    21300010: asset 2D seedbag_1
+    21300012: asset 2D seedbag_2
+    21300014: asset 2D seedbag_3
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -84,7 +88,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: asset 2D seedbag_carrot
+      name: asset 2D seedbag_0
       rect:
         serializedVersion: 2
         x: 23
@@ -92,13 +96,13 @@ TextureImporter:
         width: 133
         height: 161
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: asset 2D seedbag_carnation
+      name: asset 2D seedbag_1
       rect:
         serializedVersion: 2
         x: 178
@@ -106,13 +110,13 @@ TextureImporter:
         width: 134
         height: 162
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: asset 2D seedbag_beans
+      name: asset 2D seedbag_2
       rect:
         serializedVersion: 2
         x: 333
@@ -120,13 +124,13 @@ TextureImporter:
         width: 132
         height: 161
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: asset 2D seedbag_tomato
+      name: asset 2D seedbag_3
       rect:
         serializedVersion: 2
         x: 486
@@ -134,7 +138,7 @@ TextureImporter:
         width: 130
         height: 158
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Fruit_Tomato
   icon: {fileID: 21300008, guid: bc69f20010a6b4a52a9cc620db824248, type: 3}
-  objectOnGround: {fileID: 1944951606216320, guid: e63fe78c611a14830be73eb3368cc846,
+  objectOnGround: {fileID: 1608194964086746, guid: d899802c1ef1f9d4fb9a9b08bf91582e,
     type: 2}
   itemType: 3
   maxQuantity: 99

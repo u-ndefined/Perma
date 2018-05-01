@@ -12,15 +12,12 @@ MonoBehaviour:
   m_Name: Seed_Carrot
   m_EditorClassIdentifier: 
   name: Seed_Carrot
-  icon: {fileID: 21300000, guid: 910ede7fea3f24fd38bdd4c403d9a789, type: 3}
-  objectOnGround: {fileID: 100002, guid: 82e257f73179c8140b629300ded46e91, type: 3}
+  icon: {fileID: 21300008, guid: 23a92f10251d1334f81a34dc700fbc29, type: 3}
+  objectOnGround: {fileID: 1931115497681400, guid: 2c45e90deac884eadafe29bec0c458bf,
+    type: 2}
   itemType: 0
   maxQuantity: 99
-  growthSteps:
-  - {fileID: 1508708179832240, guid: 75f3d7443b695443eade76eda666fd9d, type: 2}
-  - {fileID: 1001537082989898, guid: d171827233dfa45b18b54b60027a5e87, type: 2}
-  - {fileID: 1660567052028542, guid: c063f36dcec69422c8aa4f14aa2d8379, type: 2}
-  - {fileID: 1531705169912984, guid: faea083f8aed24265946cd212520309b, type: 2}
+  plantType: 0
   hexEffect:
     light: 0
     humidity: 0

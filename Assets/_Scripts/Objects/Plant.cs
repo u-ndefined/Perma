@@ -29,7 +29,6 @@ public class Plant : MonoBehaviour, IPooledObject {
 
     private void Awake()
     {
-        Debug.Log("init");
         Init();
     }
 
@@ -40,7 +39,6 @@ public class Plant : MonoBehaviour, IPooledObject {
         for (int i = 0; i < growthSteps.Length; i++)
         {
             growthSteps[i] = transform.GetChild(i).GetComponent<GrowStep>();
-            Debug.Log("pourqioi" + growthSteps[i].name);
         }
 
     }
@@ -101,7 +99,6 @@ public class Plant : MonoBehaviour, IPooledObject {
     {
         HexCell cell = GetComponentInParent<HexCell>();
         if (cell) cell.DestroyPlant();
-        else Debug.Log("bizarre");
 
     }
 }

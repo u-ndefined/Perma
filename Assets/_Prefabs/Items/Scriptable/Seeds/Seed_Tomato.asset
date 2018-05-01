@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Name: Seed_Tomato
   m_EditorClassIdentifier: 
   name: Seed_Tomato
-  icon: {fileID: 21300008, guid: bc69f20010a6b4a52a9cc620db824248, type: 3}
-  objectOnGround: {fileID: 100002, guid: c5531c82d03290246949f45ac1bb95e9, type: 3}
+  icon: {fileID: 21300014, guid: 23a92f10251d1334f81a34dc700fbc29, type: 3}
+  objectOnGround: {fileID: 1019389827670422, guid: 6733be134e2bc423a896bed555943acf,
+    type: 2}
   itemType: 0
   maxQuantity: 99
   plantType: 1

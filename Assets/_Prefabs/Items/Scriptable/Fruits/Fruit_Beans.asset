@@ -13,6 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Fruit_beans
   icon: {fileID: 21300006, guid: bc69f20010a6b4a52a9cc620db824248, type: 3}
-  objectOnGround: {fileID: 100000, guid: 30a4fd2b036b3214faa49105e81bb576, type: 3}
+  objectOnGround: {fileID: 100000, guid: 40de9c8eef31faa4c9875e60668f6aeb, type: 3}
   itemType: 3
   maxQuantity: 99
