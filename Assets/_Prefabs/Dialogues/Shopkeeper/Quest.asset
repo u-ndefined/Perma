@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
   m_Name: Quest
   m_EditorClassIdentifier: 
-  dialogueName: LeTest
+  dialogueName: Quest
   sentences:
   - I need some tomatoes if I want my business to stay afloat.
