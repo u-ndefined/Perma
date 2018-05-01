@@ -12,6 +12,7 @@ public class Plant : MonoBehaviour, IPooledObject {
     public Material wiltedMaterial;
 
     private GameData.Prefabs plantType;
+    private bool init = false;
 
 
 
@@ -26,7 +27,7 @@ public class Plant : MonoBehaviour, IPooledObject {
         ResetPlant();
     }
 
-    private void Start()
+    private void Awake()
     {
         Debug.Log("init");
         Init();
@@ -39,7 +40,10 @@ public class Plant : MonoBehaviour, IPooledObject {
         for (int i = 0; i < growthSteps.Length; i++)
         {
             growthSteps[i] = transform.GetChild(i).GetComponent<GrowStep>();
+            Debug.Log("pourqioi" + growthSteps[i].name);
         }
+
+        init = true;
     }
 
     private void NextStep()
@@ -71,10 +75,13 @@ public class Plant : MonoBehaviour, IPooledObject {
     {
         wilted = false;
         actualGrowthStep = 0;
+        if(!init)
+        {
+            Init();
+        }
         for (int i = 0; i < growthSteps.Length; i++)
         {
             growthSteps[i].ResetGrowStep();
-
             if (i == 0) growthSteps[i].gameObject.SetActive(true);
             else growthSteps[i].gameObject.SetActive(false);
         }

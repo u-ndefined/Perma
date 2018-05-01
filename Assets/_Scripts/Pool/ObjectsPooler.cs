@@ -32,10 +32,15 @@ public class ObjectsPooler : ISingleton<ObjectsPooler>
         InitPool();
     }
 
-    /// <summary>
-    /// initialise la pool
-    /// </summary>
-    private void InitPool()
+	private void Start()
+	{
+        DesactiveAll();
+	}
+
+	/// <summary>
+	/// initialise la pool
+	/// </summary>
+	private void InitPool()
     {
         poolDictionary = new Dictionary<GameData.Prefabs, List<GameObject>>();
 
@@ -45,10 +50,28 @@ public class ObjectsPooler : ISingleton<ObjectsPooler>
             for (int i = 0; i < pools[j].size; i++)
             {
                 GameObject obj = Instantiate(pools[j].prefab, transform);
-                obj.SetActive(false);
+                obj.SetActive(true);
                 objectPool.Add(obj);
             }
             poolDictionary.Add(pools[j].tag, objectPool);
+        }
+
+    }
+
+    private void DesactiveAll()
+    {
+        foreach (KeyValuePair<GameData.Prefabs, List<GameObject>> attachStat in poolDictionary)
+        {
+            List<GameObject> objFromTag = attachStat.Value;
+            for (int j = 0; j < objFromTag.Count; j++)
+            {
+                //l'objet en question
+                GameObject obj = objFromTag[j];
+                if (!obj)
+                    continue;
+
+                obj.SetActive(false);
+            }
         }
     }
 

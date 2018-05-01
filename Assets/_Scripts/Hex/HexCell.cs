@@ -85,6 +85,7 @@ public class HexCell : Interactable {
 
     private void PlantSeed(Seed seed)
     {
+        Debug.Log("plantlant");
         GameObject plantObject = ObjectsPooler.Instance.SpawnFromPool(seed.plantType, transform.position, Quaternion.identity, transform);
         plant = plantObject.GetComponent<Plant>();
     }
