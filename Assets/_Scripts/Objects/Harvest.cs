@@ -8,7 +8,7 @@ public class Harvest : Interactable {
 
 	private void Start()
 	{
-        plant = GetComponent<Plant>();
+        plant = GetComponentInParent<Plant>();
 	}
 
 	public override void Interact()
@@ -36,14 +36,11 @@ public class Harvest : Interactable {
                 for (int i = 0; i < harvestContent.Length; i++)
                 {
                     Stack content = new Stack(harvestContent[i]);
-                    if (InventoryManager.Instance.Add(content))
-                    {
-                        plant.ResetPlant();
-                    }
-                    else
+                    if (!InventoryManager.Instance.Add(content))
                     {
                         InventoryManager.Instance.DropItem(harvestContent[i]);
                     }
+                    plant.DestroyPlant();
                 }
             }
         }
@@ -51,7 +48,7 @@ public class Harvest : Interactable {
         {
             if(stackUsed.item.itemType == ItemType.SHOVEL)
             {
-                ObjectsPooler.Instance.GoBackToPool(gameObject);
+                plant.DestroyPlant();
             }
         }
         base.Interact();

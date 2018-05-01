@@ -43,7 +43,6 @@ public class Plant : MonoBehaviour, IPooledObject {
             Debug.Log("pourqioi" + growthSteps[i].name);
         }
 
-        init = true;
     }
 
     private void NextStep()
@@ -75,10 +74,6 @@ public class Plant : MonoBehaviour, IPooledObject {
     {
         wilted = false;
         actualGrowthStep = 0;
-        if(!init)
-        {
-            Init();
-        }
         for (int i = 0; i < growthSteps.Length; i++)
         {
             growthSteps[i].ResetGrowStep();
@@ -100,5 +95,13 @@ public class Plant : MonoBehaviour, IPooledObject {
     {
         wilted = true;
         growthSteps[actualGrowthStep].Wilt();
+    }
+
+    public void DestroyPlant()
+    {
+        HexCell cell = GetComponentInParent<HexCell>();
+        if (cell) cell.DestroyPlant();
+        else Debug.Log("bizarre");
+
     }
 }

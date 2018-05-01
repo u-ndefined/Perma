@@ -73,15 +73,20 @@ public class HexCell : Interactable {
                 }
                
             }
-            if (stackUsed.item.itemType == ItemType.SHOVEL && plant.seed != null)    //if it's a seed and hex is exposed
+            if (stackUsed.item.itemType == ItemType.SHOVEL && plant != null)    //if it's a shovel and there is a plant
             {
-                pool.GoBackToPool(plant.gameObject);
-                plant = null;
+                DestroyPlant();
             }
         }
 
         base.Interact();
 	}
+
+    public void DestroyPlant()
+    {
+        ObjectsPooler.Instance.GoBackToPool(plant.gameObject);
+        plant = null;
+    }
 
     private void PlantSeed(Seed seed)
     {

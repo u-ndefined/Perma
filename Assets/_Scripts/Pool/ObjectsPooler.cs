@@ -34,7 +34,7 @@ public class ObjectsPooler : ISingleton<ObjectsPooler>
 
 	private void Start()
 	{
-        DesactiveAll();
+        //DesactiveAll();
 	}
 
 	/// <summary>
@@ -50,7 +50,7 @@ public class ObjectsPooler : ISingleton<ObjectsPooler>
             for (int i = 0; i < pools[j].size; i++)
             {
                 GameObject obj = Instantiate(pools[j].prefab, transform);
-                obj.SetActive(true);
+                obj.SetActive(false);
                 objectPool.Add(obj);
             }
             poolDictionary.Add(pools[j].tag, objectPool);
@@ -191,10 +191,9 @@ public class ObjectsPooler : ISingleton<ObjectsPooler>
             {
                 pooledObject.OnGoBackToPool();
             }
-            else
-            {
+
                 obj.SetActive(false);
-            }
+
         }
     }
     #endregion

@@ -4,25 +4,38 @@ using UnityEngine;
 
 public class GrowStep : MonoBehaviour
 {
-    private Material material;
+    private Material[] materials;
     private Material wiltedMaterial;
-    private new Renderer renderer;
+    private Renderer[] renderers;
 
     private void Awake()
     {
-        renderer = GetComponentInChildren<Renderer>();
-        material = renderer.material;
+        renderers = new Renderer[transform.childCount];
+        materials = new Material[transform.childCount];
+
+        for (int i = 0; i < renderers.Length; i++)
+        {
+            renderers[i] = transform.GetChild(i).GetComponent<Renderer>();
+            materials[i] = renderers[i].material;
+        }
+
         wiltedMaterial = GetComponentInParent<Plant>().wiltedMaterial;
 
     }
 
     public void ResetGrowStep()
     {
-        GetComponentInChildren<Renderer>().material = material;
+        for (int i = 0; i < renderers.Length; i++)
+        {
+            renderers[i].material = materials[i];
+        }
     }
 
     public void Wilt()
     {
-        renderer.material = wiltedMaterial;
+        for (int i = 0; i < renderers.Length; i++)
+        {
+            renderers[i].material =wiltedMaterial;
+        }
     }
 }
