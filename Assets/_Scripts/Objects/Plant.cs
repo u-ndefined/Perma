@@ -71,6 +71,7 @@ public class Plant : MonoBehaviour, IPooledObject {
     public void ResetPlant()
     {
         wilted = false;
+        harvestable = false;
         actualGrowthStep = 0;
         for (int i = 0; i < growthSteps.Length; i++)
         {

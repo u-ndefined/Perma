@@ -9,11 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e64b760ef208d4cdfaa08f0ad27217e9, type: 3}
-  m_Name: Shovel
+  m_Name: Axe
   m_EditorClassIdentifier: 
-  name: Shovel
-  icon: {fileID: 21300002, guid: bc69f20010a6b4a52a9cc620db824248, type: 3}
-  objectOnGround: {fileID: 1509810870487276, guid: 21bd21260b4014b2d84d5ab9ff4332ae,
+  name: Axe
+  icon: {fileID: 21300000, guid: bc69f20010a6b4a52a9cc620db824248, type: 3}
+  objectOnGround: {fileID: 1869479267671610, guid: f1dd2c8cfcedd79498da51fe13ddb29c,
     type: 2}
-  itemType: 1
-  maxQuantity: 1
+  itemType: 2
+  maxQuantity: 99
