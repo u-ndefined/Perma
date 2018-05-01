@@ -9,8 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
-  m_Name: NewDay
+  m_Name: Quest
   m_EditorClassIdentifier: 
-  dialogueName: NewDay
+  dialogueName: LeTest
   sentences:
-  - It's the begining of a new and beautiful day.
+  - I need some tomatoes if I want my business to stay afloat.
