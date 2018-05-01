@@ -13,4 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueName: NewDay
   sentences:
-  - BONJOURRR
+  - "BONJOURRR. Je r\xE9pond au doux nom de PERMA :P"

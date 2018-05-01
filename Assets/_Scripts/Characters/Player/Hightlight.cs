@@ -31,6 +31,11 @@ public class Hightlight : MonoBehaviour {
             HexHightlighter.gameObject.SetActive(false);
             return;
         }
+        else if(selectedStack.item == null)
+        {
+            HexHightlighter.gameObject.SetActive(false);
+            return;
+        }
         else if (selectedStack.item.itemType != ItemType.SEED)
         {
             HexHightlighter.gameObject.SetActive(false);
