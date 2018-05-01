@@ -29,6 +29,7 @@ public class HexCell : Interactable {
     public HexGrid hexGrid;
     [HideInInspector]
     public Plant plant;
+    public GameObject workedSoil;
 
     [Header("Day effect")]
     public HexData dayEffectToAdd;
@@ -86,12 +87,14 @@ public class HexCell : Interactable {
     {
         ObjectsPooler.Instance.GoBackToPool(plant.gameObject);
         plant = null;
+        workedSoil.SetActive(false);
     }
 
     private void PlantSeed(Seed seed)
     {
         GameObject plantObject = ObjectsPooler.Instance.SpawnFromPool(seed.plantType, transform.position, Quaternion.identity, transform);
         plant = plantObject.GetComponent<Plant>();
+        workedSoil.SetActive(true);
     }
 
     private void ChangeColor()

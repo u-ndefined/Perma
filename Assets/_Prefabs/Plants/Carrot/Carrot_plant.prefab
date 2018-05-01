@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4970159476356776}
   - component: {fileID: 114380834943417382}
   - component: {fileID: 136726515288779686}
-  - component: {fileID: 114000055767393446}
   m_Layer: 0
   m_Name: Carrot_step01
   m_TagString: Untagged
@@ -39,7 +38,6 @@ GameObject:
   - component: {fileID: 4995121081107090}
   - component: {fileID: 114233514001796654}
   - component: {fileID: 136953642500469120}
-  - component: {fileID: 114048538132418296}
   m_Layer: 0
   m_Name: Carrot_step03
   m_TagString: Untagged
@@ -75,7 +73,6 @@ GameObject:
   - component: {fileID: 4453445209850034}
   - component: {fileID: 114041374349047274}
   - component: {fileID: 136203083489530038}
-  - component: {fileID: 114751581635783550}
   m_Layer: 0
   m_Name: Carrot_step02
   m_TagString: Untagged
@@ -456,19 +453,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1337826364594436}
   m_Mesh: {fileID: 4300000, guid: 3948c8cddb6e880489e63db1158f5e39, type: 3}
---- !u!114 &114000055767393446
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1015819360985976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69b1a535974e344f09e11781fb6443a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 1.5
-  interactionTransform: {fileID: 4970159476356776}
 --- !u!114 &114041374349047274
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -480,19 +464,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4b899e1a864c4f82afd4eb39f4bd73b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114048538132418296
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1136430170666080}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69b1a535974e344f09e11781fb6443a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 1.5
-  interactionTransform: {fileID: 4995121081107090}
 --- !u!114 &114184875329230798
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -554,19 +525,6 @@ MonoBehaviour:
   wilted: 0
   seed: {fileID: 11400000, guid: 1e26c9230753e45cead160a26235df7b, type: 2}
   wiltedMaterial: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
---- !u!114 &114751581635783550
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1293880706408496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69b1a535974e344f09e11781fb6443a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 1.5
-  interactionTransform: {fileID: 4453445209850034}
 --- !u!136 &136105755536848754
 CapsuleCollider:
   m_ObjectHideFlags: 1

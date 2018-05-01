@@ -7,11 +7,13 @@ public class Hightlight : MonoBehaviour {
     private Ray ray;
     private RaycastHit hit;
     private Camera cam;
+    private InventoryManager inventory;
     public Transform HexHightlighter;
 
 	private void Start()
 	{
         cam = Camera.main;
+        inventory = InventoryManager.Instance;
 	}
 
 
@@ -22,6 +24,20 @@ public class Hightlight : MonoBehaviour {
             HexHightlighter.gameObject.SetActive(false);
             return;
         }
+
+        Stack selectedStack = inventory.stacks[inventory.selectedSlotID];
+        if(selectedStack == null)
+        {
+            HexHightlighter.gameObject.SetActive(false);
+            return;
+        }
+        else if (selectedStack.item.itemType != ItemType.SEED)
+        {
+            HexHightlighter.gameObject.SetActive(false);
+            return;
+        }
+            
+
 
         ray = cam.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, 1000))
@@ -37,7 +53,8 @@ public class Hightlight : MonoBehaviour {
                     if(((HexCell)interactable).isActive && ((HexCell)interactable).plant == null)
                     {
                         HexHightlighter.gameObject.SetActive(true);
-                        HexHightlighter.position = hit.transform.position;
+                        Vector3 pos = new Vector3(hit.transform.position.x, 0.01f, hit.transform.position.z);
+                        HexHightlighter.position = pos;
                     }
                    
                 }
