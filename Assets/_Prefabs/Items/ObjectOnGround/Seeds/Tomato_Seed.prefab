@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 54768435662957138}
   - component: {fileID: 135846954715947884}
   m_Layer: 0
-  m_Name: Tomato_Fruit
+  m_Name: Tomato_Seed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

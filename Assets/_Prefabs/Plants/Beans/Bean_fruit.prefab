@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4170773462447648}
   m_Layer: 0
-  m_Name: Bean_step05
+  m_Name: Bean_fruit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
