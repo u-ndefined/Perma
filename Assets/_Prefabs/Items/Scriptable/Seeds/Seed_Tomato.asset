@@ -17,6 +17,7 @@ MonoBehaviour:
     type: 2}
   itemType: 0
   maxQuantity: 99
+  description: "Ne sert pas \xE0 se t\xE9l\xE9porter ni \xE0 conqu\xE9rir le monde"
   plantType: 1
   hexEffect:
     light: 0

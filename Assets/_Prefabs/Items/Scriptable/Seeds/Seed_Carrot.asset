@@ -17,6 +17,8 @@ MonoBehaviour:
     type: 2}
   itemType: 0
   maxQuantity: 99
+  description: "Inflige 4 points de d\xE9gats quand vous le jetez dans les yeux de
+    votre adversaire"
   plantType: 0
   hexEffect:
     light: 0

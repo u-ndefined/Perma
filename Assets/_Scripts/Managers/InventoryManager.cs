@@ -61,7 +61,7 @@ public class InventoryManager : ISingleton<InventoryManager>
 
     public void SelectSlot(int slotID)
     {
-        stackUsed = null;
+        ResetSlotUsed();
 
         selectedSlotID = slotID;
 
@@ -71,18 +71,24 @@ public class InventoryManager : ISingleton<InventoryManager>
         }
     }
 
-    public void UseSlot()
+    public bool UseSlot()
     {
-        if(stacks[selectedSlotID] != null)
+        if(stacks[selectedSlotID] != null )
         {
             Debug.Log("Use slot " + selectedSlotID);
             stackUsed = stacks[selectedSlotID];
-            //stackUsed.item.Use();
+            return true;
         }
+        return false;
        
     }
 
-    public void DropItem(Stack dropStack)
+	public void ResetSlotUsed()
+	{
+        stackUsed = null;
+	}
+
+	public void DropItem(Stack dropStack)
     {
         Transform player = PlayerControler.Instance.transform;
         Vector3 dropPosition = player.position + player.forward + Vector3.up;

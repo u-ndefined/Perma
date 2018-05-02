@@ -14,6 +14,7 @@ public class PlayerControler : ISingleton<PlayerControler> {
 	public Interactable focus;
     private Rigidbody rb;
     public float rotationSpeed = 5f;
+    private InventoryManager inventory;
 
 
 
@@ -24,6 +25,7 @@ public class PlayerControler : ISingleton<PlayerControler> {
 		cam = Camera.main;
 		motor = GetComponent<Motor> ();
         rb = GetComponent<Rigidbody>();
+        inventory = InventoryManager.Instance;
 	}
 
     void FixedUpdate()
@@ -79,8 +81,11 @@ public class PlayerControler : ISingleton<PlayerControler> {
 		}
 
         if (Input.GetMouseButtonDown (0))       //if left clic
-        {                                 
-
+        {
+            if (!inventory.UseSlot())
+            {
+                return; //use slot, if nothing to use, do nothing else move to target
+            }
 
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -93,14 +98,17 @@ public class PlayerControler : ISingleton<PlayerControler> {
                 {
                     SetFocus(interactable);                                 //go to the object
                 }
+                else
+                {
+                    inventory.ResetSlotUsed();
+                }
             }
-
-            InventoryManager.Instance.UseSlot();                            //use active slot
-           
 		}
 
         if (Input.GetMouseButtonDown (1)) {                                 //if right clic
-            
+
+            inventory.ResetSlotUsed();
+
 			Ray ray = cam.ScreenPointToRay (Input.mousePosition);
 			RaycastHit hit;
 
@@ -115,14 +123,10 @@ public class PlayerControler : ISingleton<PlayerControler> {
                 {
                     motor.MoveToPoint(hit.point);                           //else go there
                 }
-
-
 				
 			}
 			
 		}
-		
-
 	}
 
 	public void SetFocus(Interactable newFocus){
@@ -139,7 +143,7 @@ public class PlayerControler : ISingleton<PlayerControler> {
 	public void RemoveFocus(){
         
 		if (focus != null) {
-            InventoryManager.Instance.stackUsed = null;
+            inventory.ResetSlotUsed();
 			focus.OnDefocused ();
 		}
 		focus = null;

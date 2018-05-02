@@ -17,3 +17,4 @@ MonoBehaviour:
     type: 2}
   itemType: 2
   maxQuantity: 99
+  description: "Attention \xE7a coupe"

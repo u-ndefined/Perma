@@ -17,6 +17,7 @@ MonoBehaviour:
     type: 2}
   itemType: 0
   maxQuantity: 99
+  description: "\xE7a se mange?"
   plantType: 2
   hexEffect:
     light: 0

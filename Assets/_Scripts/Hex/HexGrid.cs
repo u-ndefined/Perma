@@ -8,6 +8,8 @@ public class HexGrid : MonoBehaviour {
     public int height;
     public HexCell[,] cells;
 
+    private bool meshesDisplayed = true;
+
 	private void Start()
 	{
 
@@ -26,6 +28,8 @@ public class HexGrid : MonoBehaviour {
             y++;
         }
 
+        meshesDisplayed = true;
+        ToggleHexMeshes();
 	}
 
 
@@ -37,5 +41,24 @@ public class HexGrid : MonoBehaviour {
         }
 
         return cells[x, y];
+    }
+
+    public void ToggleHexMeshes()
+    {
+        Debug.Log("hello");
+        meshesDisplayed = !meshesDisplayed;
+        int x = 0;
+        int y = 0;
+        foreach (Transform raw in transform)
+        {
+            foreach (Transform cell in raw)
+            {
+                cell.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = meshesDisplayed;
+                x++;
+            }
+            x = 0;
+            y++;
+        }
+
     }
 }

@@ -2,56 +2,55 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Harvest : Interactable {
+public class Harvest : Interactable
+{
 
     Plant plant;
 
-	private void Start()
-	{
-        plant = GetComponentInParent<Plant>();
-	}
-
-	public override void Interact()
+    private void Start()
     {
-        
+        plant = GetComponentInParent<Plant>();
+    }
 
-        Stack stackUsed = InventoryManager.Instance.stackUsed;      //get stack used
+    public override void Interact()
+    {
 
 
-        if(stackUsed == null)   //if no stack used == harvest
+
+        if (plant.wilted)
         {
-
-            if (plant.wilted)
-            {
-                DialogueManager.Instance.PlayerSay("Wilt");
-            }
-            else if (!plant.harvestable)
-            {
-                DialogueManager.Instance.PlayerSay("Growing");
-            }
-            else
-            {
-                Debug.Log("You can harvest it !");
-                Stack[] harvestContent = plant.seed.harvestContent;
-                for (int i = 0; i < harvestContent.Length; i++)
-                {
-                    Stack content = new Stack(harvestContent[i]);
-                    if (!InventoryManager.Instance.Add(content))
-                    {
-                        InventoryManager.Instance.DropItem(harvestContent[i]);
-                    }
-                    plant.DestroyPlant();
-                }
-            }
+            DialogueManager.Instance.PlayerSay("Wilt");
+        }
+        else if (!plant.harvestable)
+        {
+            DialogueManager.Instance.PlayerSay("Growing");
         }
         else
         {
-            if(stackUsed.item.itemType == ItemType.SHOVEL)
+            Debug.Log("You can harvest it !");
+            Stack[] harvestContent = plant.seed.harvestContent;
+            for (int i = 0; i < harvestContent.Length; i++)
             {
+                Stack content = new Stack(harvestContent[i]);
+                if (!InventoryManager.Instance.Add(content))
+                {
+                    InventoryManager.Instance.DropItem(harvestContent[i]);
+                }
                 plant.DestroyPlant();
-                SoundManager.Instance.PlaySound("PlayerAction/Dig");
             }
         }
+
         base.Interact();
+    }
+
+    public override void UseObjectOn(Stack stackUsedOn)
+    {
+        if (stackUsedOn.item.itemType == ItemType.SHOVEL)
+        {
+            plant.DestroyPlant();
+            SoundManager.Instance.PlaySound("PlayerAction/Dig");
+        }
+
+        base.UseObjectOn(stackUsedOn);
     }
 }
