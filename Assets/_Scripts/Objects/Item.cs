@@ -17,6 +17,8 @@ public class Item : ScriptableObject {
     public GameObject objectOnGround;
     public ItemType itemType;
     public int maxQuantity = 99;
+    [TextArea(3, 20)]
+    public string description;
 
     public virtual void Use()
     {

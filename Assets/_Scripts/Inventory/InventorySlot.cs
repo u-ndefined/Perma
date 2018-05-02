@@ -1,15 +1,22 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class InventorySlot : MonoBehaviour {
+public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 
     public StackDisplay stackDisplay;
 
     public int slotIndex;
 
+    public ItemDescription itemDescription;
+
+    private bool isActive;
+    private Item currentItem;
+
     public void UpdateSlot(Stack stack)
     {
         //Debug.Log(stack.quantity + " " + stack.item.name + " updated in slot " + slotIndex);
-
+        isActive = true;
+        currentItem = stack.item;
         stackDisplay.icon.enabled = true;
         stackDisplay.icon.sprite = stack.item.icon;
         stackDisplay.quantity.text = stack.quantity.ToString();
@@ -17,9 +24,21 @@ public class InventorySlot : MonoBehaviour {
 
     public void ClearSlot()
     {
+        isActive = false;
         stackDisplay.icon.enabled = false;
         stackDisplay.icon.sprite = null;
         stackDisplay.quantity.text = null;
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if(isActive)
+            itemDescription.Show(currentItem, transform.position);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        itemDescription.Hide();
     }
 
     /*

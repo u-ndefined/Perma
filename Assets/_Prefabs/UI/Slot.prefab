@@ -315,6 +315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackDisplay: {fileID: 114376283242271498}
   slotIndex: 0
+  itemDescription: {fileID: 0}
 --- !u!222 &222005535411693928
 CanvasRenderer:
   m_ObjectHideFlags: 1
