@@ -19,7 +19,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         currentItem = stack.item;
         stackDisplay.icon.enabled = true;
         stackDisplay.icon.sprite = stack.item.icon;
-        stackDisplay.quantity.text = stack.quantity.ToString();
+        if(stack.quantity > 1)stackDisplay.quantity.text = stack.quantity.ToString();
     }
 
     public void ClearSlot()
