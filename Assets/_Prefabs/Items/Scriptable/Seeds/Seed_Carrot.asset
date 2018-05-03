@@ -11,14 +11,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab7664e062de4c4e964b33210902592, type: 3}
   m_Name: Seed_Carrot
   m_EditorClassIdentifier: 
-  name: Seed_Carrot
+  name: Carrot seeds
   icon: {fileID: 21300008, guid: 23a92f10251d1334f81a34dc700fbc29, type: 3}
   objectOnGround: {fileID: 1931115497681400, guid: 2c45e90deac884eadafe29bec0c458bf,
     type: 2}
   itemType: 0
   maxQuantity: 99
-  description: "Inflige 4 points de d\xE9gats quand vous le jetez dans les yeux de
-    votre adversaire"
+  description: They can grow everywhere, even in shadowy areas.
   plantType: 0
   hexEffect:
     light: 0

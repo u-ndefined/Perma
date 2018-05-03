@@ -101,7 +101,7 @@ MonoBehaviour:
     humidity: 30
     energy: 90
   frequency: 1
-  setLight: 0
+  setLight: 1
   setHumidity: 0
   setEnergy: 0
 --- !u!136 &136779740251928396
