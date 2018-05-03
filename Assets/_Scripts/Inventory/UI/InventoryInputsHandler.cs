@@ -67,9 +67,7 @@ public class InventoryInputsHandler : MonoBehaviour
                     stackDragged.quantity = 1;
                 }
 
-                mouseFollower.gameObject.SetActive(true);                                                   //set mouseFollower
-                mouseFollower.icon.sprite = startingSlot.stackDisplay.icon.sprite;
-                mouseFollower.quantity.text = stackDragged.quantity.ToString();
+                mouseFollower.SetDisplay(stackDragged.item.icon, stackDragged.quantity.ToString());
 
 
 
@@ -129,9 +127,7 @@ public class InventoryInputsHandler : MonoBehaviour
 
             }
 
-            mouseFollower.gameObject.SetActive(false);      //unset mouseFollower
-            mouseFollower.icon.sprite = null;
-            mouseFollower.quantity.text = null;
+            mouseFollower.Reset();
 
             stackDragged = null;
 
