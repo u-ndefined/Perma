@@ -17,3 +17,5 @@ MonoBehaviour:
     type: 2}
   itemType: 3
   maxQuantity: 99
+  description: "Les carottes c'est bon pour le teint, la vue et \xE7a rend aimable.
+    Mais c'est pas bon quand c'est cuit..."

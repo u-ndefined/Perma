@@ -49,7 +49,7 @@ public class HexCell : Interactable {
         pool = ObjectsPooler.Instance;
     }
 
-    public override void Interact()
+    public override void UseObjectOn(Stack stackUsedOn)
 	{
         if(!isActive)   //there is better solutions
         {
@@ -58,30 +58,29 @@ public class HexCell : Interactable {
 
         InventoryManager inventory = InventoryManager.Instance;
 
-        Stack stackUsed = inventory.stackUsed;      //get stack used
-
-        if(stackUsed != null)
+        switch(stackUsedOn.item.itemType)
         {
-            if(stackUsed.item.itemType == ItemType.SEED && hexState == HexState.EXPOSED && plant == null)    //if it's a seed and hex is exposed and there is no seed in this hex
-            {
-                Debug.Log(stackUsed.item.name);
-                if(inventory.stacks[inventory.selectedSlotID].item == stackUsed.item )
+            case ItemType.SEED:
+                if(hexState == HexState.EXPOSED && plant == null)
                 {
-                    //SoundManager.Instance.PlaySound("arrose" + PlayerControler.Instance.transform.GetInstanceID());
-                    //plant.AddSeed((Seed)stackUsed.item);
-                    PlantSeed((Seed)stackUsed.item);
-                    inventory.RemoveAtIndex(inventory.selectedSlotID,1);         //plant the seed and remove it from inventory
+                    PlantSeed((Seed)stackUsedOn.item);
+                    inventory.RemoveAtIndex(inventory.selectedSlotID, 1);         //plant the seed and remove it from inventory
                 }
-               
-            }
-            if (stackUsed.item.itemType == ItemType.SHOVEL && plant != null)    //if it's a shovel and there is a plant
-            {
-                DestroyPlant();
-                SoundManager.Instance.PlaySound("PlayerAction/Dig");
-            }
+                break;
+            case ItemType.SHOVEL:
+                if(plant != null)
+                {
+                    DestroyPlant();
+                    SoundManager.Instance.PlaySound("PlayerAction/Dig");
+                }
+                break;
+            default:
+                Debug.Log("why use this object on " + name + " ?");
+                break;
+
         }
 
-        base.Interact();
+        base.UseObjectOn(stackUsedOn);
 	}
 
     public void DestroyPlant()

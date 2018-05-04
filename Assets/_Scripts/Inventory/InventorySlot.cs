@@ -14,20 +14,16 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void UpdateSlot(Stack stack)
     {
-        //Debug.Log(stack.quantity + " " + stack.item.name + " updated in slot " + slotIndex);
+        Debug.Log(stack.quantity + " " + stack.item.icon.name + " updated in slot " + slotIndex);
         isActive = true;
+        stackDisplay.SetDisplay(stack.item.icon, stack.quantity.ToString());
         currentItem = stack.item;
-        stackDisplay.icon.enabled = true;
-        stackDisplay.icon.sprite = stack.item.icon;
-        stackDisplay.quantity.text = stack.quantity.ToString();
     }
 
     public void ClearSlot()
     {
         isActive = false;
-        stackDisplay.icon.enabled = false;
-        stackDisplay.icon.sprite = null;
-        stackDisplay.quantity.text = null;
+        stackDisplay.Reset();
     }
 
     public void OnPointerEnter(PointerEventData eventData)

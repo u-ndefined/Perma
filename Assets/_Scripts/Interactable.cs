@@ -24,8 +24,10 @@ public class Interactable : MonoBehaviour {
 	void Update(){
 		if (isFocus && !hasInteracted) {
 			float distance = Vector3.Distance (player.position, interactionTransform.position);
-			if (distance < radius) {
-				Interact ();
+			if (distance < radius) 
+            {
+                if (InventoryManager.Instance.stackUsed != null) UseObjectOn(InventoryManager.Instance.stackUsed);
+				else Interact ();
 				hasInteracted = true;
 			}
 		}
@@ -33,8 +35,13 @@ public class Interactable : MonoBehaviour {
 
 	public virtual void Interact(){
 		Debug.Log(name + " interacting with " + player.name);
-        InventoryManager.Instance.stackUsed = null;
 	}
+
+    public virtual void UseObjectOn(Stack stackUsedOn)
+    {
+        Debug.Log(stackUsedOn.item.name + " used on " + name);
+        InventoryManager.Instance.ResetSlotUsed();
+    }
 
 	public void OnFocused(Transform playerTransform){
 		isFocus = true;

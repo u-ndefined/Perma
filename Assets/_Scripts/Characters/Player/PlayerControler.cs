@@ -4,31 +4,39 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Motor))]
-public class PlayerControler : ISingleton<PlayerControler> {
+public class PlayerControler : ISingleton<PlayerControler>
+{
 
-    protected PlayerControler() { }
+    protected PlayerControler()
+    {
+    }
 
-	public LayerMask movementMask;
-	private Camera cam;
-	private Motor motor;
-	public Interactable focus;
+    public LayerMask movementMask;
+    private Camera cam;
+    private Motor motor;
+    public Interactable focus;
     private Rigidbody rb;
     public float rotationSpeed = 5f;
+    private InventoryManager inventory;
+
+    private bool isPressing = false;
+    private Vector3 previousMousePos;
 
 
 
 
 
-	void Start () 
+    void Start()
     {
-		cam = Camera.main;
-		motor = GetComponent<Motor> ();
+        cam = Camera.main;
+        motor = GetComponent<Motor>();
         rb = GetComponent<Rigidbody>();
-	}
+        inventory = InventoryManager.Instance;
+    }
 
     void FixedUpdate()
     {
-        
+
         MovePlayer();
 
     }
@@ -67,20 +75,23 @@ public class PlayerControler : ISingleton<PlayerControler> {
             }
         }
     }
-	
 
-	void Update () 
+
+    void Update()
     {
-        
 
-		if (EventSystem.current.IsPointerOverGameObject ()) 
+
+        if (EventSystem.current.IsPointerOverGameObject())
         {               //return if mouse onUI
-			return;
-		}
+            return;
+        }
 
-        if (Input.GetMouseButtonDown (0))       //if left clic
-        {                                 
-
+        if (Input.GetMouseButtonDown(1))       //if left clic
+        {
+            if (!inventory.UseSlot())
+            {
+                return; //use slot, if nothing to use, do nothing else move to target
+            }
 
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -93,56 +104,102 @@ public class PlayerControler : ISingleton<PlayerControler> {
                 {
                     SetFocus(interactable);                                 //go to the object
                 }
+                else
+                {
+                    inventory.ResetSlotUsed();
+                }
             }
+        }
 
-            InventoryManager.Instance.UseSlot();                            //use active slot
-           
-		}
+        if (Input.GetMouseButtonDown(0))
+        {                                 //if right clic
 
-        if (Input.GetMouseButtonDown (1)) {                                 //if right clic
-            
-			Ray ray = cam.ScreenPointToRay (Input.mousePosition);
-			RaycastHit hit;
 
-			if (Physics.Raycast(ray, out hit,1000))                         //if interactable follow it
-            {                 
-				Interactable interactable = hit.collider.GetComponent<Interactable> ();
+            inventory.ResetSlotUsed();
 
-                if(interactable != null && interactable is HexCell == false){
-					SetFocus (interactable);
-				}
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, 1000))                         //if interactable follow it
+            {
+                Interactable interactable = hit.collider.GetComponent<Interactable>();
+
+                if (interactable != null && interactable is HexCell == false)
+                {
+                    SetFocus(interactable);
+                }
                 else
                 {
                     motor.MoveToPoint(hit.point);                           //else go there
                 }
 
+                previousMousePos = hit.point;
+                isPressing = true;
 
-				
-			}
-			
-		}
-		
+            }
+        }
 
-	}
+        if (isPressing)
+        {
 
-	public void SetFocus(Interactable newFocus){
-		if (newFocus != focus) {
-			if (focus != null) {
-				focus.OnDefocused ();
-			}
-			focus = newFocus;
-            motor.FollowTarget (newFocus.transform);
-		}
-		newFocus.OnFocused (transform);
-	}
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
 
-	public void RemoveFocus(){
-        
-		if (focus != null) {
-            InventoryManager.Instance.stackUsed = null;
-			focus.OnDefocused ();
-		}
-		focus = null;
-		motor.StopFollowingTarget ();
-	}
+            if (Physics.Raycast(ray, out hit, 1000))                         //if interactable follow it
+            {
+
+                if (Vector3.Distance(previousMousePos, hit.point) > 1)
+                {
+                    inventory.ResetSlotUsed();
+
+                    Interactable interactable = hit.collider.GetComponent<Interactable>();
+
+                    if (interactable != null && interactable is HexCell == false)
+                    {
+                        SetFocus(interactable);
+                    }
+                    else
+                    {
+                        motor.MoveToPoint(hit.point);                           //else go there
+                    }
+
+                    previousMousePos = hit.point;
+                }
+            }
+        }
+
+        if(Input.GetMouseButtonUp(0))
+        {
+            isPressing = false;
+        }
+
+
+
+    }
+
+    public void SetFocus(Interactable newFocus)
+    {
+        if (newFocus != focus)
+        {
+            if (focus != null)
+            {
+                focus.OnDefocused();
+            }
+            focus = newFocus;
+            motor.FollowTarget(newFocus.transform);
+        }
+        newFocus.OnFocused(transform);
+    }
+
+    public void RemoveFocus()
+    {
+
+        if (focus != null)
+        {
+            inventory.ResetSlotUsed();
+            focus.OnDefocused();
+        }
+        focus = null;
+        motor.StopFollowingTarget();
+    }
 }

@@ -11,12 +11,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab7664e062de4c4e964b33210902592, type: 3}
   m_Name: Seed_Tomato
   m_EditorClassIdentifier: 
-  name: Seed_Tomato
+  name: Tomato seeds
   icon: {fileID: 21300014, guid: 23a92f10251d1334f81a34dc700fbc29, type: 3}
   objectOnGround: {fileID: 1019389827670422, guid: 6733be134e2bc423a896bed555943acf,
     type: 2}
   itemType: 0
   maxQuantity: 99
+  description: They need a lot of energy to grow and tend to deplete the soil around
+    them.
   plantType: 1
   hexEffect:
     light: 0

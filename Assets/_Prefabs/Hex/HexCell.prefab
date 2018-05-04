@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 4879627763825632}
   - component: {fileID: 114675724754094986}
   - component: {fileID: 65044097530203342}
+  - component: {fileID: 114882613844856998}
   m_Layer: 0
   m_Name: HexCell
   m_TagString: Untagged
@@ -238,3 +239,16 @@ MonoBehaviour:
   setLight: 0
   setHumidity: 0
   setEnergy: 0
+--- !u!114 &114882613844856998
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1733463277521512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24d3ccd01c5bb473e8c247b441adedbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultMaterial: {fileID: 2100000, guid: df14532079523481c8b2d74133007ccf, type: 2}
+  desctivateHex: {fileID: 2100000, guid: 0d5ea7ccca36d449d815c8e11daf247f, type: 2}

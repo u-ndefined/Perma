@@ -11,12 +11,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab7664e062de4c4e964b33210902592, type: 3}
   m_Name: Seed_Beans
   m_EditorClassIdentifier: 
-  name: Seed_Beans
+  name: Bean seeds
   icon: {fileID: 21300012, guid: 23a92f10251d1334f81a34dc700fbc29, type: 3}
   objectOnGround: {fileID: 1481010598562686, guid: 36d898f5ed04a4da4af1b71f20f041e8,
     type: 2}
   itemType: 0
   maxQuantity: 99
+  description: They are great to enrich depleted soils, but need more water than other
+    plants.
   plantType: 2
   hexEffect:
     light: 0
