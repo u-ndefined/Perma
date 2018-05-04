@@ -19,7 +19,10 @@ public class Harvest : Interactable
 
         if (plant.wilted)
         {
-            DialogueManager.Instance.PlayerSay("Wilt");
+            HexData data = plant.transform.GetComponentInParent<HexCell>().hexData;
+            if(data.energy<0)DialogueManager.Instance.PlayerSay("WiltEnergy");
+            else if (data.humidity < 0) DialogueManager.Instance.PlayerSay("WiltHumidity");
+            else if (data.light < 0) DialogueManager.Instance.PlayerSay("WiltLight");
         }
         else if (!plant.harvestable)
         {
