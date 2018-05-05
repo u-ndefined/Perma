@@ -28,12 +28,14 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        Debug.Log("enter");
         if(isActive)
             itemDescription.Show(currentItem, transform.position);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        Debug.Log("exit");
         itemDescription.Hide();
     }
 

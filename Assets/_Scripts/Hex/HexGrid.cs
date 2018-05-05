@@ -45,7 +45,6 @@ public class HexGrid : MonoBehaviour {
 
     public void ToggleHexMeshes()
     {
-        Debug.Log("hello");
         meshesDisplayed = !meshesDisplayed;
         int x = 0;
         int y = 0;

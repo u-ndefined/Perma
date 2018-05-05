@@ -79,14 +79,12 @@ public class PlayerControler : ISingleton<PlayerControler>
 
     void Update()
     {
-
-
         if (EventSystem.current.IsPointerOverGameObject())
         {               //return if mouse onUI
             return;
         }
 
-        if (Input.GetMouseButtonDown(1))       //if left clic
+        if (Input.GetMouseButtonDown(1))       //if right clic
         {
             if (!inventory.UseSlot())
             {
@@ -112,7 +110,7 @@ public class PlayerControler : ISingleton<PlayerControler>
         }
 
         if (Input.GetMouseButtonDown(0))
-        {                                 //if right clic
+        {                                 //if left clic
 
 
             inventory.ResetSlotUsed();

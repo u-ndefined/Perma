@@ -7,28 +7,50 @@ public class StackDisplay : MonoBehaviour {
     private Image icon;
     private TextMeshProUGUI quantity;
 
-	private void Start()
+	private void Awake()
 	{
-        icon = transform.GetChild(0).GetComponent<Image>();
-        quantity = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+        Inititalisation();
+        //Reset();
 	}
+
+	private void Inititalisation()
+	{
+        icon = GetComponentInChildren<Image>();
+        quantity = GetComponentInChildren<TextMeshProUGUI>();
+
+	}
+
+    private void ChangeSize()
+    {
+        quantity.rectTransform.sizeDelta = new Vector2(35, 35);
+        quantity.fontSize = 15;
+    }
 
 
 
 	public void SetDisplay(Sprite sprite, string qtt)
     {
-        icon.enabled = true;
+        //if (icon == null) Inititalisation();
+
+        gameObject.SetActive(true);
+
         icon.sprite = sprite;
         if (!qtt.Equals("1")) quantity.text = qtt;
         else quantity.text = null;
+
+
     }
 
 	public void Reset()
 	{
+        //Debug.Log(gameObject.name);
 
-        icon.enabled = false;
+        if (icon == null) Inititalisation();
+
+        gameObject.SetActive(false);
+
         icon.sprite = null;
-        quantity.text = null;
+        quantity.text = "";
 	}
 
 }

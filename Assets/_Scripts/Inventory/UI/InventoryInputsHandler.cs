@@ -36,7 +36,7 @@ public class InventoryInputsHandler : MonoBehaviour
     {
         if (timeManager.gameIsPaused) return;
 
-        if (Input.GetMouseButtonDown(0)) //when mouse pressed
+        if (Input.GetMouseButtonDown(0)) //when left clic
         {
             startingSlot = GetSlotUnderMouse();             //get slot under mouse
 
@@ -80,9 +80,6 @@ public class InventoryInputsHandler : MonoBehaviour
             {
                 mouseFollower.transform.position = Input.mousePosition; //update mouseFollower position
             }
-
-
-
         }
 
         if (Input.GetMouseButtonUp(0))  //when release
