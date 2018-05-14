@@ -10,35 +10,49 @@ public struct Stack
     public int quantity;
     public bool empty;
 
+
+
     public Stack(Item _item, int _quantity)
     {
         item = _item;
         quantity = _quantity;
-        empty = quantity > 0 ? true : false; 
+        empty = quantity > 0 ? false : true;
     }
 
     public Stack SafeAddStack(Stack stack, bool safeMode = true)
     {
-        if(safeMode)
+        if (stack.empty) return stack;
+
+        if (safeMode)
         {
-            if (empty || stack.item != item) return stack; //different items => return stack
+            if (empty) return stack;
+            if (stack.item != item) return stack; //different items => return stack
         }
         else
         {
-            if (!empty || stack.item != item) return stack; //different items => return stack
-
-            item = stack.item;
+            if(empty)
+            {
+                item = stack.item;
+                quantity = 0;
+                empty = false;
+            }
+            else
+            {
+                return stack;
+            }
         }
 
 
         quantity += stack.quantity;             //add quantity
 
-        if(quantity > item.maxQuantity)         //if exceed max quantity
+        if (quantity > stack.item.maxQuantity)         //if exceed max quantity
         {
             stack.quantity = quantity - item.maxQuantity;   //set surplus on the stack
             quantity = item.maxQuantity;        //set quantity to max
             return stack;                       //return stack
         }
+
+
 
         return new Stack(null, 0);      //if added completly return null/empty
     }
@@ -72,6 +86,12 @@ public struct Stack
         return new Stack(null, 0);
     }
 
+    public string StringDebug()
+    {
+        if (empty) return "Empty";
+        else return quantity + " " + item.name;
+    }
+
 
     /*
     public Stack(Stack other)
@@ -81,5 +101,5 @@ public struct Stack
         //maxQuantity = other.maxQuantity;
     }
     */
-    
+
 }

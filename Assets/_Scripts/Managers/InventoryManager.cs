@@ -25,17 +25,20 @@ public class InventoryManager : ISingleton<InventoryManager>
     void Awake()
     {
         stacks = new Stack[space];
-
+        for (int i = 0; i < space; i++)
+        {
+            stacks[i].Clear();
+        }
     }
 
 	private void Start()
 	{
+        SelectSlot(0);
+
         if (onItemChangedEvent != null)         //updateUI
         {
             onItemChangedEvent.Invoke();
         }
-
-        SelectSlot(0);
 	}
 
 	void Update()
@@ -96,9 +99,9 @@ public class InventoryManager : ISingleton<InventoryManager>
     }
 
     #region Add_and_Remove_at_index
-    public void AddAtIndex(int index, Stack addedStack)
+    public Stack AddAtIndex(int index, Stack addedStack)
     {
-        if (index < 0 || index >= stacks.Length) return;    //if wrong index return
+        if (index < 0 || index >= stacks.Length) return Stack.Empty();    //if wrong index return
 
         bool done = false;
 
@@ -118,16 +121,20 @@ public class InventoryManager : ISingleton<InventoryManager>
             onItemChangedEvent.Invoke();
         }
 
-        if (!addedStack.empty) addedStack = Add(addedStack);
-        if (!addedStack.empty) DropItem(addedStack);
+        return addedStack;
      
     }
 
-    public void SwapStack(int a, int b)
+    public Stack Replace(int slotIndex, Stack stack)
     {
-        Stack tempStack = stacks[a];
-        stacks[a] = stacks[b];
-        stacks[b] = tempStack;
+        Stack replacedStack = stacks[slotIndex];
+        stacks[slotIndex] = stack;
+
+        if (onItemChangedEvent != null)         //updateUI
+        {
+            onItemChangedEvent.Invoke();
+        }
+        return replacedStack;
     }
 
 
@@ -161,6 +168,8 @@ public class InventoryManager : ISingleton<InventoryManager>
     public Stack Add(Stack addedStack)
     {
         SoundManager.Instance.PlaySound("PlayerAction/Pickup2");
+
+
 
         for (int i = 0; i < stacks.Length; i++)
         {

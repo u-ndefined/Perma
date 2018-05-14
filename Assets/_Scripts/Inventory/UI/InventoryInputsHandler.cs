@@ -86,38 +86,46 @@ public class InventoryInputsHandler : MonoBehaviour
                 endingSlot = GetSlotUnderMouse();   //get slot under mouse
 
 
-                    if (endingSlot != null)
+                if (endingSlot != null)
+                {
+                    if (endingSlot == startingSlot) //if it's the same than starting slot
                     {
-                        if (endingSlot == startingSlot) //if it's the same than starting slot
-                        {
-                            Debug.Log("select slot " + startingSlot.slotIndex);
-                            inventory.SelectSlot(startingSlot.slotIndex);  //select slot 
-                            inventory.AddAtIndex(endingSlot.slotIndex, stackDragged);    //add dragged stack
+                        Debug.Log("select slot " + startingSlot.slotIndex);
+                        inventory.SelectSlot(startingSlot.slotIndex);  //select slot 
+                        inventory.AddAtIndex(endingSlot.slotIndex, stackDragged);    //add dragged stack
 
-                        }
-                        else
-                        {
-                            SoundManager.Instance.PlaySound("UI/InventoryIcon");
-
-                        inventory.AddAtIndex(startingSlot.slotIndex, stackDragged);
-
-
-                        inventory.SwapStack(startingSlot.slotIndex, endingSlot.slotIndex);
-                        }
                     }
                     else
                     {
-                        Debug.Log("create object"); //if there is no ending slot create stack on ground
-                        inventory.DropItem(stackDragged);
+                        SoundManager.Instance.PlaySound("UI/InventoryIcon");
+
+                        stackDragged = inventory.AddAtIndex(endingSlot.slotIndex, stackDragged);                        //soft add at ending
+
+                        if (!stackDragged.empty) stackDragged = inventory.Replace(endingSlot.slotIndex, stackDragged);      //if not empty replace
+
+                        stackDragged = inventory.AddAtIndex(startingSlot.slotIndex, stackDragged);                         //soft add at starting
+
+                        if (!stackDragged.empty) stackDragged = inventory.Replace(startingSlot.slotIndex, stackDragged);    //if not empty replace
+
+                        if (!inventory.Add(stackDragged).empty) inventory.DropItem(stackDragged);                           //add anywere or drop
                     }
+
                 }
+
                 else
                 {
-                    if (endingSlot != null)
-                    {
-                        inventory.SelectSlot(endingSlot.slotIndex);  //select slot 
-                    }
+                    Debug.Log("create object"); //if there is no ending slot create stack on ground
+                    inventory.DropItem(stackDragged);
                 }
+            }
+
+            else
+            {
+                if (endingSlot != null)
+                {
+                    inventory.SelectSlot(endingSlot.slotIndex);  //select slot 
+                }
+            }
 
 
             mouseFollower.Reset();
