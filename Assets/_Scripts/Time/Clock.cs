@@ -8,7 +8,14 @@ public struct Clock
 {
     public int second, minute, hour;
 
-    public bool AddSecond(int s)
+	public Clock(int _hour, int _minute, int _second)
+	{
+        hour = _hour;
+        minute = _minute;
+        second = _second;
+	}
+
+	public bool AddSecond(int s)
     {
         second += s;
 

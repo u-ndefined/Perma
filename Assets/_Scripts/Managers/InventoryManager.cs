@@ -19,9 +19,8 @@ public class InventoryManager : ISingleton<InventoryManager>
 
     public int space = 10;
 
-    public Stack stackUsed = null;
+    public Stack stackUsed;
 
-    public Stack tempStack;
 
     void Awake()
     {
@@ -73,7 +72,7 @@ public class InventoryManager : ISingleton<InventoryManager>
 
     public bool UseSlot()
     {
-        if(stacks[selectedSlotID] != null )
+        if(stacks[selectedSlotID].empty)
         {
             Debug.Log("Use slot " + selectedSlotID);
             stackUsed = stacks[selectedSlotID];
@@ -85,7 +84,7 @@ public class InventoryManager : ISingleton<InventoryManager>
 
 	public void ResetSlotUsed()
 	{
-        stackUsed = null;
+        stackUsed.Clear();
 	}
 
 	public void DropItem(Stack dropStack)
@@ -97,51 +96,40 @@ public class InventoryManager : ISingleton<InventoryManager>
     }
 
     #region Add_and_Remove_at_index
-    public void AddAtIndex(int index, Stack newStack)
+    public void AddAtIndex(int index, Stack addedStack)
     {
-        if(stacks[index] == null) //if there is nothing here add new stack
+        if (index < 0 || index >= stacks.Length) return;    //if wrong index return
+
+        bool done = false;
+
+        if (stacks[index].empty)                
         {
-            stacks[index] = newStack;
-
-
-            if (onItemChangedEvent != null)         //updateUI
-            {
-                onItemChangedEvent.Invoke();
-            }
+            addedStack = stacks[index].SafeAddStack(addedStack, false);        //if empty force add
+            done = true;
         }
-        else if (stacks[index].item == newStack.item)   // if it's the same stack type
+        if (!done && stacks[index].item == addedStack.item)                             
         {
-            int remainingQuantity = stacks[index].item.maxQuantity - stacks[index].quantity;
-
-            if(remainingQuantity >= newStack.quantity)          //if enought place
-            {
-                stacks[index].quantity += newStack.quantity;    //add stack
-
-
-                if (onItemChangedEvent != null)         //updateUI
-                {
-                    onItemChangedEvent.Invoke();
-                }
-            }
-            else if (remainingQuantity > 0)                     //if there is place but not enought
-            {
-                stacks[index].quantity += remainingQuantity;
-                newStack.quantity -= remainingQuantity;
-                Add(newStack);                                  //add remaining quantity to Add on empty slot
-            }
-            else
-            {
-                Add(newStack);                                  //if no place, add stack to empty slot
-            }
+            addedStack = stacks[index].SafeAddStack(addedStack);                //if same item safe add
+            done = true;
         }
-        else                                                //if it's not the same object swap them together
+
+        if (onItemChangedEvent != null)                             //updateUI
         {
-            Stack itemToSwap = new Stack(stacks[index]);
-            stacks[index] = newStack;
-            Add(itemToSwap);
+            onItemChangedEvent.Invoke();
         }
-        
+
+        if (!addedStack.empty) addedStack = Add(addedStack);
+        if (!addedStack.empty) DropItem(addedStack);
+     
     }
+
+    public void SwapStack(int a, int b)
+    {
+        Stack tempStack = stacks[a];
+        stacks[a] = stacks[b];
+        stacks[b] = tempStack;
+    }
+
 
     public void RemoveAtIndex(int index, int removedQuantity)
     {
@@ -152,7 +140,7 @@ public class InventoryManager : ISingleton<InventoryManager>
         }
         else if (stacks[index].quantity == removedQuantity)  //if exact quantity remove stack
         {
-            stacks[index] = null;
+            stacks[index].Clear();
         }
         else
         {
@@ -170,112 +158,50 @@ public class InventoryManager : ISingleton<InventoryManager>
 
     #region Add_and_Remove
 
-    public bool Add(Stack newStack)
+    public Stack Add(Stack addedStack)
     {
         SoundManager.Instance.PlaySound("PlayerAction/Pickup2");
 
         for (int i = 0; i < stacks.Length; i++)
         {
-
-            if (stacks[i] != null && stacks[i].item == newStack.item)               //if item already in inventory
-            {
-                int remainingQuantity = stacks[i].item.maxQuantity - stacks[i].quantity; // get remaining quantity
-
-                if (remainingQuantity >= newStack.quantity)     //if enought place
-                {
-                    stacks[i].quantity += newStack.quantity;        //add stack
-
-                    if (onItemChangedEvent != null)         //updateUI
-                    {
-                        onItemChangedEvent.Invoke();
-                    }
-
-                    Debug.Log( newStack.quantity + " " + newStack.item.name + " added to an existing stack");
-
-                    return true;
-                }
-
-                if(remainingQuantity > 0)                   //if there is place but not enought
-                {
-                    stacks[i].quantity += remainingQuantity;    //add remaining quantity to the stack
-                    newStack.quantity -= remainingQuantity; //and substract this quantity to the stack to add
-
-                    Debug.Log(remainingQuantity + " " + newStack.item.name + " added to an existing stack");
-                }
-            }
+            addedStack = stacks[i].SafeAddStack(addedStack);    //add first on none empty slot
         }
-
-        //if this part is reach this means there is remaining quantity in the stack to add
-
-        for (int i = 0; i < stacks.Length; i++)     //search for an empty slot
+        for (int i = 0; i < stacks.Length; i++)
         {
-            if(stacks[i] == null)                   //if empty add new stack
-            {
-                stacks[i] = newStack;
-
-                Debug.Log(newStack.quantity + " " + newStack.item.name + " added to a new slot");
-
-                if (onItemChangedEvent != null)         //updateUI
-                {
-                    onItemChangedEvent.Invoke();
-                }
-
-                return true;
-            }
+            addedStack = stacks[i].SafeAddStack(addedStack, false);   //then empty
         }
-
-
-        Debug.Log("Inventory is full");      //if inventory full return false
 
         if (onItemChangedEvent != null)         //updateUI
         {
             onItemChangedEvent.Invoke();
         }
 
-
-        return false;
-
+        return addedStack;
     }
 
-    public void Remove(Stack removedStack, int removedQuantity)
+    public bool Remove(Stack removedStack)
     {
-
-        for (int i = stacks.Length - 1; i >= 0; i--)     //browse backward to remove safely (old)
+        int quantity = 0;
+        for(int i = 0; i < stacks.Length; i++)
         {
-
-            if (stacks[i] != null && stacks[i].item == removedStack.item) //find the stack to remove
+            if (stacks[i].item == removedStack.item) quantity += stacks[i].quantity;        //get quantity in inventory
+        }
+        if(quantity > removedStack.quantity)                                                //if enought
+        {
+            for (int i = 0; i < stacks.Length; i++)
             {
-                if (stacks[i].quantity > removedQuantity) //if enought quantity remove quantity
-                {
-                    stacks[i].quantity -= removedQuantity;
-                    removedQuantity = 0;
-                    break;
-                }
-                else if (stacks[i].quantity == removedQuantity)  //if exact quantity remove stack
-                {
-                    stacks[i] = null;
-                    removedQuantity = 0;
-                    break;
-                }
-                else
-                {
-                    removedQuantity -= stacks[i].quantity;        //if not enought quantity
-                    stacks[i] = null;                          //remove stack and its quantity and continue
-                    Debug.Log(removedQuantity + " remaining " + removedStack.item.name + " to remove");
-                }
+                removedStack = stacks[i].RemoveStack(removedStack);    //remove
             }
+
+            if (onItemChangedEvent != null)         //updateUI
+            {
+                onItemChangedEvent.Invoke();
+            }
+
+            return true;
         }
 
-        if(removedQuantity > 0)
-        {
-            Debug.Log("!!! " + removedQuantity + " remaining " + removedStack.item.name + " to remove");
-        }
-
-
-        if (onItemChangedEvent != null)         //updateUI
-        {
-            onItemChangedEvent.Invoke();
-        }
+        return false;
 
     }
     #endregion

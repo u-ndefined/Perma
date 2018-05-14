@@ -15,11 +15,14 @@ public static class GameData
         CARROT,
         TOMATO,
         BEANS
-    };
+    }
 
-    public enum Sounds
+    public enum Animation
     {
-
+        Dig,
+        Plant,
+        Harvest,
+        Speak,
     }
 
     /*

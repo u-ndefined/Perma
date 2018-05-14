@@ -26,23 +26,11 @@ public class Hightlight : MonoBehaviour {
         }
 
         Stack selectedStack = inventory.stacks[inventory.selectedSlotID];
-        if(selectedStack == null)
+        if (selectedStack.empty || selectedStack.item.itemType != ItemType.SEED)
         {
             HexHightlighter.gameObject.SetActive(false);
             return;
         }
-        else if(selectedStack.item == null)
-        {
-            HexHightlighter.gameObject.SetActive(false);
-            return;
-        }
-        else if (selectedStack.item.itemType != ItemType.SEED)
-        {
-            HexHightlighter.gameObject.SetActive(false);
-            return;
-        }
-            
-
 
         ray = cam.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, 1000))

@@ -14,7 +14,7 @@ public class ItemPickup : Interactable {
     private void Pickup()
     {
         PlayerControler.Instance.RemoveFocus();
-        if(InventoryManager.Instance.Add(stack))
+        if(InventoryManager.Instance.Add(stack).empty)
         {
             Destroy(gameObject);
         }

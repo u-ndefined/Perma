@@ -63,6 +63,7 @@ public class HexCell : Interactable {
             case ItemType.SEED:
                 if(hexState == HexState.EXPOSED && plant == null)
                 {
+                    DoAction(GameData.Animation.Plant, 2f, new Clock(2, 0, 0));
                     PlantSeed((Seed)stackUsedOn.item);
                     inventory.RemoveAtIndex(inventory.selectedSlotID, 1);         //plant the seed and remove it from inventory
                 }
@@ -70,6 +71,7 @@ public class HexCell : Interactable {
             case ItemType.SHOVEL:
                 if(plant != null)
                 {
+                    DoAction(GameData.Animation.Dig, 2f, new Clock(2, 0, 0));
                     DestroyPlant();
                     SoundManager.Instance.PlaySound("PlayerAction/Dig");
                 }

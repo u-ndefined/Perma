@@ -44,7 +44,7 @@ public class InventoryUI : MonoBehaviour {
         for (int i = 0; i < slots.Length; i++)
         {
             slots[i].stackDisplay.transform.position = slots[i].transform.position;
-            if (inventory.stacks[i] != null)
+            if (!inventory.stacks[i].empty)
             {
                 slots[i].UpdateSlot(inventory.stacks[i]); //add stack to the slot
             }

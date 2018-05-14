@@ -52,9 +52,9 @@ public class InventoryInputsHandler : MonoBehaviour
 
         if (dragging)   //when dragging
         {
-            if (!dragSet && inventory.stacks[startingSlot.slotIndex] != null && MouseMoved())  //prevent drag empty object
+            if (!dragSet && !inventory.stacks[startingSlot.slotIndex].empty && MouseMoved())  //prevent drag empty object
             {
-                stackDragged = new Stack(inventory.stacks[startingSlot.slotIndex]); //copy stack before removing it
+                stackDragged = inventory.stacks[startingSlot.slotIndex]; //copy stack before removing it
 
                 if (Input.GetButton("Modifier1"))   //if modifier 1 get half
                 {
@@ -69,10 +69,7 @@ public class InventoryInputsHandler : MonoBehaviour
 
                 mouseFollower.SetDisplay(stackDragged.item.icon, stackDragged.quantity.ToString());
 
-
-
                 inventory.RemoveAtIndex(startingSlot.slotIndex, stackDragged.quantity); //remove quantity in starting slot
-
 
                 dragSet = true;
             }
@@ -88,8 +85,7 @@ public class InventoryInputsHandler : MonoBehaviour
             {
                 endingSlot = GetSlotUnderMouse();   //get slot under mouse
 
-                if (stackDragged != null)
-                {
+
                     if (endingSlot != null)
                     {
                         if (endingSlot == startingSlot) //if it's the same than starting slot
@@ -103,8 +99,10 @@ public class InventoryInputsHandler : MonoBehaviour
                         {
                             SoundManager.Instance.PlaySound("UI/InventoryIcon");
 
-                            Debug.Log("add to slot " + endingSlot.slotIndex);
-                            inventory.AddAtIndex(endingSlot.slotIndex, stackDragged);   //else add stack to ending slot
+                        inventory.AddAtIndex(startingSlot.slotIndex, stackDragged);
+
+
+                        inventory.SwapStack(startingSlot.slotIndex, endingSlot.slotIndex);
                         }
                     }
                     else
@@ -122,11 +120,9 @@ public class InventoryInputsHandler : MonoBehaviour
                 }
 
 
-            }
-
             mouseFollower.Reset();
 
-            stackDragged = null;
+            stackDragged.Clear();
 
             dragging = false;
 

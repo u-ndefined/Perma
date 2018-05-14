@@ -14,9 +14,6 @@ public class Harvest : Interactable
 
     public override void Interact()
     {
-
-
-
         if (plant.wilted)
         {
             HexData data = plant.transform.GetComponentInParent<HexCell>().hexData;
@@ -30,17 +27,15 @@ public class Harvest : Interactable
         }
         else
         {
-            Debug.Log("You can harvest it !");
             Stack[] harvestContent = plant.seed.harvestContent;
             for (int i = 0; i < harvestContent.Length; i++)
             {
-                Stack content = new Stack(harvestContent[i]);
-                if (!InventoryManager.Instance.Add(content))
-                {
-                    InventoryManager.Instance.DropItem(harvestContent[i]);
-                }
-                plant.DestroyPlant();
+                Stack remaining = InventoryManager.Instance.Add(harvestContent[i]);
+                if (!remaining.empty) InventoryManager.Instance.DropItem(remaining);
+
+
             }
+            plant.DestroyPlant();
         }
 
         base.Interact();
