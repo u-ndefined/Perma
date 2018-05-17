@@ -140,13 +140,16 @@
             <value>84.549546485260777</value>
         </property>
         <property name="volume">
-            <value>-16</value>
+            <value>-11</value>
         </property>
         <relationship name="audioFile">
             <destination>{65450b6f-324a-448a-acda-6f5ce6c1bc62}</destination>
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{37fa3121-fc5b-4881-9c1a-e16d613b2b6a}">
+        <property name="volume">
+            <value>1</value>
+        </property>
         <property name="name">
             <value>loop_nature</value>
         </property>
@@ -165,7 +168,7 @@
             <value>54.200090702947847</value>
         </property>
         <property name="volume">
-            <value>-16</value>
+            <value>-38</value>
         </property>
         <relationship name="audioFile">
             <destination>{c243f824-aecf-44dd-af43-f77ac62199a3}</destination>
@@ -193,7 +196,7 @@
             <value>79.447058144012317</value>
         </property>
         <property name="volume">
-            <value>-5.5</value>
+            <value>-3.5</value>
         </property>
         <property name="minimumTimeBetweenSounds">
             <value>2000</value>
@@ -230,7 +233,7 @@
             <value>79.447058144012317</value>
         </property>
         <property name="volume">
-            <value>-5.5</value>
+            <value>-3.5</value>
         </property>
         <property name="minimumTimeBetweenSounds">
             <value>2000</value>
@@ -267,7 +270,7 @@
             <value>79.447058144012317</value>
         </property>
         <property name="volume">
-            <value>-5.5</value>
+            <value>-3.5</value>
         </property>
         <property name="minimumTimeBetweenSounds">
             <value>2000</value>
