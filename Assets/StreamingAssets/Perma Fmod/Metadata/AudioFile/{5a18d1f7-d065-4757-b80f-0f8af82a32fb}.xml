@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{5a18d1f7-d065-4757-b80f-0f8af82a32fb}">
+        <property name="assetPath">
+            <value>Nuit/owl1.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>2.2726757369614514</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{58364f10-0750-4b1d-83e2-63802984b3f3}</destination>
+        </relationship>
+    </object>
+</objects>
