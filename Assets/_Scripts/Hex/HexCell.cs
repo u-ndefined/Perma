@@ -3,6 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum HexColor
+{
+    none,
+    red,
+    blue,
+    green,
+    cyan,
+    black,
+}
+
 public enum HexType 
 {
     FOREST,
@@ -37,6 +47,9 @@ public class HexCell : Interactable {
     public bool setLight, setHumidity, setEnergy;
 
     private ObjectsPooler pool;
+
+    [HideInInspector]
+    public HexColor color;
 
 
 	private void Start()

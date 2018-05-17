@@ -26,7 +26,7 @@ public class Hightlight : MonoBehaviour {
         }
 
         Stack selectedStack = inventory.stacks[inventory.selectedSlotID];
-        if (selectedStack.empty || selectedStack.item.itemType != ItemType.SEED)
+            if (selectedStack.empty || selectedStack.item.itemType != ItemType.SEED)
         {
             HexHightlighter.gameObject.SetActive(false);
             return;

@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; 
 
+
 public class HexGrid : MonoBehaviour {
     public int width;
     public int height;
     public HexCell[,] cells;
 
+    public Material[] debugMaterials;
     private bool meshesDisplayed = true;
 
 	private void Start()
 	{
+        debugMaterials = new Material[6];
 
         //store all cells in the grid (bof bof)
         cells = new HexCell[height, width];
@@ -60,4 +63,6 @@ public class HexGrid : MonoBehaviour {
         }
 
     }
+
 }
+
