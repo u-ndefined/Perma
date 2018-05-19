@@ -7,12 +7,13 @@ public class ItemPickup : Interactable {
 	public override void Interact()
 	{
         base.Interact();
-
-        Pickup();
+        base.DoAction(GameData.Animation.PickUp, 3, new Clock(1, 1, 1));
+        onActionDoneEvent += Pickup;
 	}
 
     private void Pickup()
     {
+        onActionDoneEvent -= Pickup;
         PlayerControler.Instance.RemoveFocus();
         Stack remaining = InventoryManager.Instance.Add(stack);
         if(remaining.empty)

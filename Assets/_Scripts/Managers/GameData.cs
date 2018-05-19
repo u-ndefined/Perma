@@ -19,6 +19,9 @@ public static class GameData
 
     public enum Animation
     {
+        Idle,
+        Walk,
+        PickUp,
         Dig,
         Plant,
         Harvest,

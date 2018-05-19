@@ -24,20 +24,24 @@ public class Motor : MonoBehaviour {
 	private Vector3 currentDestination;
 	private float currentDistance;
 	private Vector3 direction;
-    private bool hasPath;
+    public bool hasPath;
 	private bool isFollowing = false;
     private bool searchingPath = false;
+    private Animator animator;
 
-	void Start(){
+	void Start()
+    {
 		agent = GetComponent<NavMeshAgent> ();
 
 		agent.enabled = false;
 		cornerQueue = new Queue<Vector3>();
 
         rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
 	}
 
-	void Update(){
+	void Update()
+    {
             
         if (searchingPath && !agent.pathPending)
         {
@@ -57,7 +61,8 @@ public class Motor : MonoBehaviour {
 
 
 
-	public void MoveToPoint(Vector3 point){
+	public void MoveToPoint(Vector3 point)
+    {
 		agent.enabled = true;
         searchingPath = true;
         agent.SetDestination(point);
@@ -80,6 +85,7 @@ public class Motor : MonoBehaviour {
     }
 
 	public void StopFollowingTarget(){
+        
 		currentStoppingDistance = stoppingDistance;
 		isFollowing = false;
 		target = null;
@@ -114,7 +120,10 @@ public class Motor : MonoBehaviour {
 		{
 			hasPath = false;
 
-			if (onPointReached != null) { 
+            animator.SetBool("Walk", false);
+
+			if (onPointReached != null) 
+            { 
 				StopFollowingTarget ();
 				onPointReached.Invoke ();
 			}
@@ -130,7 +139,7 @@ public class Motor : MonoBehaviour {
 
 			if(currentDistance > currentStoppingDistance)
 			{
-
+                animator.SetBool("Walk", true);
                 rb.AddForce(direction * moveSpeed * Time.timeScale, ForceMode.VelocityChange);
                 //Debug.Log(direction * moveSpeed);
                 //rb.velocity = direction * moveSpeed;

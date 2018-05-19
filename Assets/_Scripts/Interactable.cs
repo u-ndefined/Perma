@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour {
 
+    public delegate void voidNoParam();
+    public voidNoParam onActionDoneEvent;
+
 	public float radius = 3f;
 
 	private bool isFocus = false;
@@ -12,12 +15,18 @@ public class Interactable : MonoBehaviour {
 
 	public Transform interactionTransform;
 
+    private AnimatorScript animator;
+
+    private bool isActing = false;
+    private float actionTimer;
+
 	private void Start()
 	{
         if(interactionTransform == null)
         {
             interactionTransform = transform;
         }
+
 	}
 
 
@@ -31,6 +40,13 @@ public class Interactable : MonoBehaviour {
 				hasInteracted = true;
 			}
 		}
+
+        if(isActing && actionTimer < Time.time)
+        {
+            if (onActionDoneEvent != null)
+                onActionDoneEvent = null;
+        }
+
 	}
 
     public virtual void Interact(){
@@ -43,9 +59,19 @@ public class Interactable : MonoBehaviour {
         InventoryManager.Instance.ResetSlotUsed();
     }
 
-    public static void DoAction(GameData.Animation animation, float second, Clock inGameTime)
+    public void DoAction(GameData.Animation animation, float second, Clock inGameTime)
     {
-        
+        PlayerControler.Instance.animator.SetTrigger(animation.ToString());
+        isActing = true;
+        actionTimer = Time.time + second;
+    }
+
+    private void ActionDone()
+    {
+        if (onActionDoneEvent != null)         //update selector
+        {
+            onActionDoneEvent.Invoke();
+        }
     }
 
 	public void OnFocused(Transform playerTransform){

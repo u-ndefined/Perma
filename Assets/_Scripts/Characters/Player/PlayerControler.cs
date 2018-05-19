@@ -22,7 +22,8 @@ public class PlayerControler : ISingleton<PlayerControler>
     private bool isPressing = false;
     private Vector3 previousMousePos;
 
-
+    //private AnimatorScript animator;
+    public Animator animator;
 
 
 
@@ -32,6 +33,8 @@ public class PlayerControler : ISingleton<PlayerControler>
         motor = GetComponent<Motor>();
         rb = GetComponent<Rigidbody>();
         inventory = InventoryManager.Instance;
+
+        animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -64,15 +67,25 @@ public class PlayerControler : ISingleton<PlayerControler>
         rb.velocity = moveDirection * motor.moveSpeed;
 
 
+
         if (moveDirection != Vector3.zero)
         {
             RemoveFocus();  //stop following target if there is an input
+
+            animator.SetBool("Walk", true);
+
+            //animator.ChangeState(GameData.Animation.Walk);
+
 
             if (moveDirection != transform.forward) //face direction
             {
                 Quaternion rotation = Quaternion.LookRotation(moveDirection);
                 transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
             }
+        }
+        else 
+        {
+            if(!motor.hasPath) animator.SetBool("Walk", false);
         }
     }
 

@@ -16,7 +16,7 @@ public class InventoryUI : MonoBehaviour {
 
 
 
-	void Awake () 
+    void Awake () 
     {
         inventory = InventoryManager.Instance;
         inventory.onItemChangedEvent += UpdateSlots;
