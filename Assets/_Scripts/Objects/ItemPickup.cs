@@ -15,7 +15,6 @@ public class ItemPickup : Interactable {
     private void Pickup()
     {
         //onActionDoneEvent -= Pickup;
-        PlayerControler.Instance.RemoveFocus();
         stack = InventoryManager.Instance.Add(stack);
         if(stack.empty)
         {

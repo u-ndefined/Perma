@@ -11,6 +11,213 @@ public class PlayerControler : ISingleton<PlayerControler>
     {
     }
 
+    public delegate void OnFocusChanged(Interactable newFocus);
+    public OnFocusChanged onFocusChangedCallback;
+
+    public Interactable focus;  // Our current focus: Item, Enemy etc.
+
+    public float rotationSpeed = 5f;
+
+    private Motor motor;      // Reference to our motor
+    private Camera cam;             // Reference to our camera
+    private InventoryInputsHandler inventoryInputs;
+    private Rigidbody rb;
+    private InventoryManager inventory;
+    [HideInInspector]
+    public Animator animator;
+
+    private bool isPressing = false;
+    private Vector3 prevMousePos;
+
+    // Get references
+    void Start()
+    {
+        motor = GetComponent<Motor>();
+        cam = Camera.main;
+        rb = GetComponent<Rigidbody>();
+        inventory = InventoryManager.Instance;
+        animator = GetComponentInChildren<Animator>();
+        inventoryInputs = InventoryManager.Instance.GetComponent<InventoryInputsHandler>();
+    }
+
+	private void FixedUpdate()
+	{
+        if (DialogueManager.Instance.isActive)
+        {
+            animator.SetBool("Walk", false);
+            return;
+        }
+
+        if(isPressing)
+        {
+            LeftClic(); 
+        }
+
+        MovePlayerWithKeyboard();
+	}
+
+    private void MovePlayerWithKeyboard()
+    {
+        //direction in the world
+        Vector3 moveDirection = GetMoveDirection();
+
+        rb.velocity = moveDirection * motor.moveSpeed;
+
+        if (moveDirection != Vector3.zero)
+        {
+            SetFocus(null);  //stop following target if there is an input
+
+            animator.SetBool("Walk", true);
+
+
+
+            if (moveDirection != transform.forward) //face direction
+            {
+                Quaternion rotation = Quaternion.LookRotation(moveDirection);
+                transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
+            }
+        }
+        else
+        {
+            if (focus == null && !motor.isWalking) animator.SetBool("Walk", false);
+        }
+    }
+
+	// Update is called once per frame
+	void Update()
+    {
+        if (DialogueManager.Instance.isActive)
+        {
+            animator.SetBool("Walk", false);
+            return;
+        }
+
+        if (EventSystem.current.IsPointerOverGameObject() || inventoryInputs.dragging)
+            return;
+
+        // If we press left mouse
+        if (Input.GetMouseButtonDown(0))
+        {
+            LeftClic();
+            isPressing = true;
+        }
+
+        // If we press right mouse
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (!inventory.UseSlot())
+            {
+                return; //use slot, if nothing to use, do nothing else move to target
+            }
+
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, 1000))
+            {
+                Interactable interactable = hit.collider.GetComponent<Interactable>();       // get interractable under mouse
+
+
+                if (interactable != null)
+                {
+
+                    SetFocus(interactable);                                 //go to the object
+                }
+                else
+                {
+                    inventory.ResetSlotUsed();                              //reset stack used if nothing to interact with
+                }
+            }
+        }
+
+        if (Input.GetMouseButtonUp(0)) isPressing = false;
+
+    }
+
+    // Set our focus to a new focus
+    void SetFocus(Interactable newFocus)
+    {
+        if (onFocusChangedCallback != null)
+            onFocusChangedCallback.Invoke(newFocus);
+
+        // If our focus has changed
+        if (focus != newFocus && focus != null)
+        {
+            // Let our previous focus know that it's no longer being focused
+            focus.OnDefocused();
+        }
+
+        // Set our focus to what we hit
+        // If it's not an interactable, simply set it to null
+        focus = newFocus;
+
+        if (focus != null)
+        {
+            // Let our focus know that it's being focused
+            focus.OnFocused(transform);
+        }
+
+    }
+
+    private Vector3 GetMoveDirection()
+    {
+        //reading the input:
+        float horizontalAxis = Input.GetAxis("Horizontal");
+        float verticalAxis = Input.GetAxis("Vertical");
+
+        //camera forward and right vectors:
+        Vector3 forward = cam.transform.forward;
+        Vector3 right = cam.transform.right;
+
+        //project forward and right vectors on the horizontal plane (y = 0)
+        forward.y = 0f;
+        right.y = 0f;
+        forward.Normalize();
+        right.Normalize();
+
+        //direction in the world
+        return (forward * verticalAxis + right * horizontalAxis).normalized;
+    }
+
+    private void LeftClic()
+    {
+        inventory.ResetSlotUsed();
+
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, 1000))                         //if interactable follow it
+        {
+            Interactable interactable = hit.collider.GetComponent<Interactable>();
+
+            if (interactable != null && interactable is HexCell == false)
+            {
+                Debug.Log("focus " + interactable.name);
+                SetFocus(interactable);
+            }
+            else
+            {
+                motor.MoveToPoint(hit.point);                           //else go there
+            }
+        }
+    }
+
+}
+/*
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.EventSystems;
+
+[RequireComponent(typeof(Motor))]
+public class PlayerControler : ISingleton<PlayerControler>
+{
+
+    protected PlayerControler()
+    {
+    }
+
     public LayerMask movementMask;
     private Camera cam;
     private Motor motor;
@@ -87,7 +294,7 @@ public class PlayerControler : ISingleton<PlayerControler>
         }
         else 
         {
-            if(!motor.hasPath) animator.SetBool("Walk", false);
+            if(!motor.hasPath) animator.SetBool("Walk", false); //dzalfjazbmlfhamzlekfhmalzkefnmlajznefmjlnazemljnfzajenfkjaznefmlejnzflkazjneljfnalzkjefnazkjlenfkzjanfkjzanflkzjan
         }
     }
 
@@ -220,3 +427,4 @@ public class PlayerControler : ISingleton<PlayerControler>
         motor.StopFollowingTarget();
     }
 }
+*/

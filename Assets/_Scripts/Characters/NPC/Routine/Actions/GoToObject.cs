@@ -18,7 +18,7 @@ public class GoToObject : ScriptableAction {
         {
             Debug.Log(target.name);
             Debug.Log(target.position);
-            actor.GetComponent<Motor>().FollowTarget(target);
+            //actor.GetComponent<Motor>().FollowTarget(target);
         }
 
     }
