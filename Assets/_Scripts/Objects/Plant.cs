@@ -84,7 +84,7 @@ public class Plant : MonoBehaviour, IPooledObject {
     {
         if (wilted) return false;
 
-        if (actualGrowthStep >= growthSteps.Length - 1) return false;
+        //if (actualGrowthStep >= growthSteps.Length - 1) return false;
 
         return true;
     }
