@@ -71,12 +71,15 @@ public class HexCell : Interactable {
 
         InventoryManager inventory = InventoryManager.Instance;
 
+        Debug.Log("plant");
+
         switch(stackUsedOn.item.itemType)
         {
             case ItemType.SEED:
                 if(hexState == HexState.EXPOSED && plant == null)
                 {
                     DoAction(GameData.Animation.Plant, 2f, new Clock(2, 0, 0));
+
                     PlantSeed((Seed)stackUsedOn.item);
                     inventory.RemoveAtIndex(inventory.selectedSlotID, 1);         //plant the seed and remove it from inventory
                 }

@@ -8,15 +8,16 @@ public class ItemPickup : Interactable {
 	{
         base.Interact();
         base.DoAction(GameData.Animation.PickUp, 3, new Clock(1, 1, 1));
-        onActionDoneEvent += Pickup;
+        //onActionDoneEvent += Pickup;
+        Pickup();
 	}
 
     private void Pickup()
     {
-        onActionDoneEvent -= Pickup;
+        //onActionDoneEvent -= Pickup;
         PlayerControler.Instance.RemoveFocus();
-        Stack remaining = InventoryManager.Instance.Add(stack);
-        if(remaining.empty)
+        stack = InventoryManager.Instance.Add(stack);
+        if(stack.empty)
         {
             Destroy(gameObject);
         }

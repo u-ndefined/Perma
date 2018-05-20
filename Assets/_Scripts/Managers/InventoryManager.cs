@@ -75,7 +75,7 @@ public class InventoryManager : ISingleton<InventoryManager>
 
     public bool UseSlot()
     {
-        if(stacks[selectedSlotID].empty)
+        if(!stacks[selectedSlotID].empty)
         {
             Debug.Log("Use slot " + selectedSlotID);
             stackUsed = stacks[selectedSlotID];

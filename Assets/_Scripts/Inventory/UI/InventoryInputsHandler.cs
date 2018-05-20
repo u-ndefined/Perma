@@ -15,7 +15,7 @@ public class InventoryInputsHandler : MonoBehaviour
 
     public StackDisplay mouseFollower;
 
-    private bool dragging = false;
+    public bool dragging = false;
     private bool dragSet = false;
 
     private InventoryManager inventory;

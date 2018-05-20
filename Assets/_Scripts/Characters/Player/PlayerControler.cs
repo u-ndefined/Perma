@@ -24,6 +24,7 @@ public class PlayerControler : ISingleton<PlayerControler>
 
     //private AnimatorScript animator;
     public Animator animator;
+    private InventoryInputsHandler inventoryInputs;
 
 
 
@@ -35,6 +36,7 @@ public class PlayerControler : ISingleton<PlayerControler>
         inventory = InventoryManager.Instance;
 
         animator = GetComponent<Animator>();
+        inventoryInputs = InventoryManager.Instance.GetComponent<InventoryInputsHandler>();
     }
 
     void FixedUpdate()
@@ -92,7 +94,7 @@ public class PlayerControler : ISingleton<PlayerControler>
 
     void Update()
     {
-        if (EventSystem.current.IsPointerOverGameObject())
+        if (EventSystem.current.IsPointerOverGameObject() || inventoryInputs.dragging)
         {               //return if mouse onUI
             return;
         }
@@ -109,10 +111,13 @@ public class PlayerControler : ISingleton<PlayerControler>
 
             if (Physics.Raycast(ray, out hit, 1000))
             {
+                Debug.Log(hit.transform.name);
                 Interactable interactable = hit.collider.GetComponent<Interactable>();       // get interractable under mouse
+
 
                 if (interactable != null)
                 {
+                    
                     SetFocus(interactable);                                 //go to the object
                 }
                 else
@@ -123,8 +128,7 @@ public class PlayerControler : ISingleton<PlayerControler>
         }
 
         if (Input.GetMouseButtonDown(0))
-        {                                 //if left clic
-
+        {                               //if left clic
 
             inventory.ResetSlotUsed();
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class TimeManager : ISingleton<TimeManager>
 {
 
@@ -30,6 +31,7 @@ public class TimeManager : ISingleton<TimeManager>
     public Clock dayBeginning;
     public Clock nightBeginning;
     private bool isDay = false;
+
 
 
 	private void Start()
