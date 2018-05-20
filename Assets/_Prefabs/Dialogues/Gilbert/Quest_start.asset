@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
+  m_Name: Quest_start
+  m_EditorClassIdentifier: 
+  dialogueName: Quest_start
+  sentences:
+  - Hello there! I hope I'm not disturbing your work, but when I heard there was a
+    new face in town, I couldn't help but come to welcome you myself.
+  - "I'm Gilbert, I own a shop in town. It's\u2026 well, quite modest. But what I
+    lack I size, I make up with good conversation."
+  - Or at the very least, I try...
+  - Anyway! I heard you were going to farm on this plot of land? That's brave of you,
+    the soil is not very fertile around here.
+  - I would know, I've been trying to get my hands on just twenty tomatoes for weeks
+    now!
+  - The local farmers prefer other, easier species... I could always try to buy some
+    from one of the big distributors, but they won't give me a fair price...
+  - '*SIGH*'
+  - Oh! I'm sorry if I started rambling about myself.
+  - Well, I have to go back to work. But if you need anything, anything at all, don't
+    hesitate to come. And again, welcome!

@@ -9,8 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
-  m_Name: NPC_receiveObject
+  m_Name: Quest_inProgress2
   m_EditorClassIdentifier: 
-  dialogueName: NPC_objectReceive
+  dialogueName: Quest_inProgress2
   sentences:
-  - merci
+  - Did the mayor come greet you at your arrival? I'm kind of worried about him, it's
+    been almost a week since I've seen him leave the townhall.

@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
   m_Name: NPC_receiveObject
   m_EditorClassIdentifier: 
-  dialogueName: NPC_objectReceive
+  dialogueName: NPC_receiveObject
   sentences:
-  - merci
+  - Thank you, that's generous of you.

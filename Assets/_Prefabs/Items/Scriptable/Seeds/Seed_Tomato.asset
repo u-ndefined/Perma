@@ -17,19 +17,20 @@ MonoBehaviour:
     type: 2}
   itemType: 0
   maxQuantity: 99
-  description: They need a lot of energy to grow and tend to deplete the soil around
-    them.
+  description: Toatoes need a rich soil to grow.
   plantType: 1
   hexEffect:
     light: 0
     humidity: 0
-    energy: -10
+    energy: 0
   plantNeeds:
     light: 0
     humidity: 0
-    energy: 0
+    energy: 20
   harvestContent:
   - item: {fileID: 11400000}
     quantity: 4
+    empty: 0
   - item: {fileID: 11400000, guid: 5a3e2480a40084ede9c7e7f00d38ac8e, type: 2}
     quantity: 2
+    empty: 0
