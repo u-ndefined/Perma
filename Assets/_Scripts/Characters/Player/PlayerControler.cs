@@ -111,7 +111,6 @@ public class PlayerControler : ISingleton<PlayerControler>
 
             if (Physics.Raycast(ray, out hit, 1000))
             {
-                Debug.Log(hit.transform.name);
                 Interactable interactable = hit.collider.GetComponent<Interactable>();       // get interractable under mouse
 
 
@@ -141,6 +140,7 @@ public class PlayerControler : ISingleton<PlayerControler>
 
                 if (interactable != null && interactable is HexCell == false)
                 {
+                    Debug.Log("focus " + interactable.name);
                     SetFocus(interactable);
                 }
                 else
@@ -171,6 +171,7 @@ public class PlayerControler : ISingleton<PlayerControler>
 
                     if (interactable != null && interactable is HexCell == false)
                     {
+                        Debug.Log(interactable.name);
                         SetFocus(interactable);
                     }
                     else

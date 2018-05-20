@@ -114,8 +114,22 @@ public class InventoryInputsHandler : MonoBehaviour
 
                 else
                 {
+                    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                    RaycastHit hit;
+                    bool done = false;
+
+                    if (Physics.Raycast(ray, out hit, 1000))                         //if interactable follow it
+                    {
+                        NPC npc = hit.collider.GetComponent<NPC>();
+                        if(npc != null)
+                        {
+                            npc.Give(stackDragged);
+                            done = true;
+                        }
+                    }
+
                     Debug.Log("create object"); //if there is no ending slot create stack on ground
-                    inventory.DropItem(stackDragged);
+                    if(!done) inventory.DropItem(stackDragged);
                 }
             }
 
