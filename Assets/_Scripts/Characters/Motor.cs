@@ -56,7 +56,12 @@ public class Motor : MonoBehaviour {
             MoveToPoint(target.position);
         }
 
-		MoveAlongPath ();
+		
+	}
+
+	private void FixedUpdate()
+	{
+        MoveAlongPath();
 	}
 
 
