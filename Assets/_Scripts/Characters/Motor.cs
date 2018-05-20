@@ -37,7 +37,7 @@ public class Motor : MonoBehaviour {
 		cornerQueue = new Queue<Vector3>();
 
         rb = GetComponent<Rigidbody>();
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
 	}
 
 	void Update()
@@ -115,6 +115,7 @@ public class Motor : MonoBehaviour {
 	{
 		if(cornerQueue.Count > 0)
 		{
+            animator.SetBool("Walk", true);
 			currentDestination = cornerQueue.Dequeue();
 			pointToFace = currentDestination;
 			direction = (currentDestination - transform.position).normalized;
@@ -142,9 +143,9 @@ public class Motor : MonoBehaviour {
 			
 			currentDistance = (currentDestination - transform.position).sqrMagnitude;
 
-			if(currentDistance > currentStoppingDistance)
+			if(currentDistance > 0.1f)
 			{
-                animator.SetBool("Walk", true);
+                
                 rb.AddForce(direction * moveSpeed * Time.timeScale, ForceMode.VelocityChange);
                 //Debug.Log(direction * moveSpeed);
                 //rb.velocity = direction * moveSpeed;

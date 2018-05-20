@@ -6,6 +6,8 @@ public class DialogueManager : ISingleton<DialogueManager> {
 	
 	protected DialogueManager() { }
 
+    public bool isActive;
+
 	private Actor actor;
 	private Queue<string> sentences;
     private Actor player;
@@ -16,8 +18,9 @@ public class DialogueManager : ISingleton<DialogueManager> {
         player = PlayerControler.Instance.GetComponent<Actor>();
 	}
 
-	public void StartDialogue(Actor newActor, string[] newSentences){
-
+	public void StartDialogue(Actor newActor, string[] newSentences)
+    {
+        isActive = true;
         Debug.Log("sentence " + newSentences[0]);
 
 		actor = newActor;
@@ -41,7 +44,8 @@ public class DialogueManager : ISingleton<DialogueManager> {
 
 	void EndDialogue(){
 		actor.dialogueBox.Hide ();
-		SequenceManager.Instance.NextAction ();
+        //SequenceManager.Instance.NextAction ();
+        isActive = false;
 	}
 
     public void PlayerSay(string dialogueName)

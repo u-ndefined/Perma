@@ -35,13 +35,13 @@ public class PlayerControler : ISingleton<PlayerControler>
         rb = GetComponent<Rigidbody>();
         inventory = InventoryManager.Instance;
 
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
         inventoryInputs = InventoryManager.Instance.GetComponent<InventoryInputsHandler>();
     }
 
     void FixedUpdate()
     {
-
+        if (DialogueManager.Instance.isActive) return;
         MovePlayer();
 
     }
@@ -94,6 +94,7 @@ public class PlayerControler : ISingleton<PlayerControler>
 
     void Update()
     {
+        if (DialogueManager.Instance.isActive) return;
         if (EventSystem.current.IsPointerOverGameObject() || inventoryInputs.dragging)
         {               //return if mouse onUI
             return;

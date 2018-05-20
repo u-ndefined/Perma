@@ -34,7 +34,7 @@ public class InventoryInputsHandler : MonoBehaviour
 
     void Update()
     {
-        if (timeManager.gameIsPaused) return;
+        if (timeManager.gameIsPaused || DialogueManager.Instance.isActive) return;
 
         if (Input.GetMouseButtonDown(0)) //when left clic
         {
