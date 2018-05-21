@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Actor : MonoBehaviour {
-	public DialogueBox dialogueBox;
+    public DialogueBox dialogueBox;
 	public Motor motor;
     public ScriptableDialogues[] dialoguesInInspector;
 
@@ -11,6 +11,9 @@ public class Actor : MonoBehaviour {
 
 	private void Start()
 	{
+        dialogueBox = GetComponentInChildren<DialogueBox>(true);
+        dialogueBox.GetComponent<FaceCamera>().character = transform;
+
         dialogues = new Hashtable();
 
         for (int i = 0; i < dialoguesInInspector.Length; i++)
@@ -18,5 +21,6 @@ public class Actor : MonoBehaviour {
             ScriptableDialogues dialogue = dialoguesInInspector[i];
             dialogues.Add(dialogue.dialogueName, dialogue.sentences);
         }
+
 	}
 }

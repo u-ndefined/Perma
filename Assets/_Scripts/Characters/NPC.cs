@@ -39,7 +39,8 @@ public class NPC : Interactable
             }
             else 
             {
-                DialogueManager.Instance.ActorSay(actor, "Quest_inProgress");
+                int r = Mathf.FloorToInt(Random.Range(0, 3)) + 1;
+                DialogueManager.Instance.ActorSay(actor, "Quest_inProgress" + r);
             }
         }
 

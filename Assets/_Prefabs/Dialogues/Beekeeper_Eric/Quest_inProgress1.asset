@@ -9,11 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
-  m_Name: Quest_inProgress
+  m_Name: Quest_inProgress1
   m_EditorClassIdentifier: 
-  dialogueName: Quest_inProgress
+  dialogueName: Quest_inProgress1
   sentences:
-  - '*SIGH* Maybe I should buy these twenty tomatoes from the company after all...
-    I can''t keep losing customers...'
-  - Oh! How are you feeling today? Nice weather isn't it?
-  - "\u2026 *SIGH*"
+  - Hey, you got those ten carrots yet?
