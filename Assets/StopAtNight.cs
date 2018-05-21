@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class StopAtNight : MonoBehaviour {
 
-    private bool mustPlay;
-    private bool isPlaying;
+    public bool mustPlay;
+    public bool isPlaying;
     FmodEventEmitter emitter;
 	// Use this for initialization
 	private void Start () 
