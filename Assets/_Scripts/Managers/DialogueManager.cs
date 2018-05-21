@@ -37,6 +37,8 @@ public class DialogueManager : ISingleton<DialogueManager> {
 			EndDialogue ();
 			return;
 		}
+
+        SoundManager.Instance.PlaySound("UI/DialogWindow");
 		string sentence = sentences.Dequeue ();			//prend la prochaine phrase
 		actor.dialogueBox.textMeshPro.text = sentence;	//affiche là
 	}

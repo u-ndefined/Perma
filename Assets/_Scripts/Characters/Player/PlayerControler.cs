@@ -58,7 +58,6 @@ public class PlayerControler : ISingleton<PlayerControler>
 
         if (inputDirection != Vector3.zero)
         {
-            Debug.Log("hello");
             MovePlayer();
 
             if (inputDirection != transform.forward) //face direction
