@@ -13,5 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueName: Quest_inProgress2
   sentences:
-  - Did the mayor come greet you at your arrival? I'm kind of worried about him, it's
-    been almost a week since I've seen him leave the townhall.
+  - Did the mayor come greet you at your arrival? No?
+  - I'm kind of worried about him, it's been almost a week since I've seen him leave
+    the townhall.

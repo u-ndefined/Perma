@@ -16,13 +16,16 @@ MonoBehaviour:
   - Hey! You here to buy some honey? It's handmade, organic and gluten-free. I'm sure
     you'll love it!
   - "\u2026 What? You just moved here? Oh! I think I heard the mayor talking about
-    you. You're\u2026 uhm... ah, a farmer, right?"
-  - Well, I'm Eric, best beekeeper in the area! It's nice to meet you! I've only been
-    in this town myself for six months, but I can still be helpful if you need anything.
-  - Talking about help, have you brought any seeds with you to start your little farm?
-    I heard those are hard to come by these days.
+    you. You're\u2026 uhm... Ah! A farmer, right?"
+  - Well, I'm Eric, best beekeeper in the area! It's nice to meet you!
+  - I've only been in this town myself for six months, but I can still be helpful
+    if you need anything.
+  - Speaking about help, have you brought any seeds with you to start your little
+    farm?
+  - I heard those are hard to come by these days.
   - Well, if you didn't... don't fret! For I have in my possession ten tomato seeds
-    bags! And I'll trade them to you for... uhm... let's say... ten carrots!
+    bags!
+  - And I'll trade them to you for... uhm... let's say... ten carrots!
   - It seems like a fair trade to me, generous even.
-  - "Just\u2026 please don't talk to anyone about this, I think we're not supposed
-    to trade seeds outside of the official market circuit. OK?"
+  - "Just\u2026 please don't talk to anyone about this. OK?"
+  - I don't think we're supposed to trade seeds outside of the official market circuit.
