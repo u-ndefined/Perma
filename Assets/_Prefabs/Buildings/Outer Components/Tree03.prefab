@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4707669442892770}
   - component: {fileID: 33938147139854266}
   - component: {fileID: 23858917184979484}
+  - component: {fileID: 136370346379152634}
   m_Layer: 0
   m_Name: Cylinder002
   m_TagString: Untagged
@@ -111,3 +112,16 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1175207939404546}
   m_Mesh: {fileID: 4300000, guid: 129beb170d2018e42b311fb978371b3c, type: 3}
+--- !u!136 &136370346379152634
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1175207939404546}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 2.6775
+  m_Height: 10.3924
+  m_Direction: 1
+  m_Center: {x: 0, y: 5.1962, z: 0}
