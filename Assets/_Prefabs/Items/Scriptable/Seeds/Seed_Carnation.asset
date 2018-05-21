@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cab7664e062de4c4e964b33210902592, type: 3}
+  m_Name: Seed_Carnation
+  m_EditorClassIdentifier: 
+  name: Carnation seeds
+  icon: {fileID: 21300010, guid: 23a92f10251d1334f81a34dc700fbc29, type: 3}
+  objectOnGround: {fileID: 1606324278878722, guid: c9d593678d03a436d98f9e4a437eba02,
+    type: 2}
+  itemType: 0
+  maxQuantity: 99
+  description: This flower can't grow in shadowy areas, but attracts bees and improves
+    the yield of surrounding plants.
+  plantType: 0
+  hexEffect:
+    light: 0
+    humidity: 0
+    energy: 0
+  plantNeeds:
+    light: 10
+    humidity: 0
+    energy: 0
+  harvestContent:
+  - item: {fileID: 11400000}
+    quantity: 2
+    empty: 0
+  - item: {fileID: 11400000, guid: 7ec7ee5ed19f2456fb400f85437637be, type: 2}
+    quantity: 1
+    empty: 0

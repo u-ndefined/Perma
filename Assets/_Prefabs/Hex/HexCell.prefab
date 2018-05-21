@@ -218,27 +218,28 @@ MonoBehaviour:
   type: 0
   hexState: 1
   hexData:
-    light: 90
-    humidity: 30
-    energy: 90
+    light: 10
+    humidity: 0
+    energy: 0
   hexDataMax:
-    light: 90
-    humidity: 30
-    energy: 90
+    light: 10
+    humidity: 90
+    energy: 60
   hexGrid: {fileID: 0}
   plant: {fileID: 0}
   workedSoil: {fileID: 1985835831374796}
   dayEffectToAdd:
     light: 0
-    humidity: 5
-    energy: 2
+    humidity: 0
+    energy: 0
   dayEffectToSet:
     light: 0
     humidity: 0
     energy: 0
   setLight: 0
   setHumidity: 0
-  setEnergy: 0
+  setEnergy: 1
+  color: 0
 --- !u!114 &114882613844856998
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -250,5 +251,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24d3ccd01c5bb473e8c247b441adedbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultMaterial: {fileID: 2100000, guid: df14532079523481c8b2d74133007ccf, type: 2}
-  desctivateHex: {fileID: 2100000, guid: 0d5ea7ccca36d449d815c8e11daf247f, type: 2}

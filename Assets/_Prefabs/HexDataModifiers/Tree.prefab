@@ -97,9 +97,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 1
   hexEffect:
-    light: -10
-    humidity: 30
-    energy: 90
+    light: 0
+    humidity: 0
+    energy: 0
   frequency: 1
   setLight: 1
   setHumidity: 0

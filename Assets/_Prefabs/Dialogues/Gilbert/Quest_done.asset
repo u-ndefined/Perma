@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
+  m_Name: Quest_done
+  m_EditorClassIdentifier: 
+  dialogueName: Quest_done
+  sentences:
+  - Is... Is that... tomatoes you have here? Plump, juicy tomatoes? All twenty of
+    them?
+  - And you're giving them to me? I... That's very kind of you.
+  - Let me give you something. Not because I owe you something... but as a gift to
+    you.
+  - "It's my uncle\u2019s old axe. Now, don't be fooled by its age : the older they
+    are the more... trustworthy? I guess?"
+  - That's what my uncle used to say when I was a little boy anyway.
+  - He was a farmer, like you. I remember him cutting wood with this axe and burying
+    the wood into the soil before planting his seeds.
+  - He told me the decomposing wood could keep a plant's roots warm all winter.
+  - "\u2026 I hope it will be useful to you. And thanks again. For the tomatoes I
+    mean."

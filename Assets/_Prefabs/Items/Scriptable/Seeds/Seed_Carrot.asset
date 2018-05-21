@@ -17,18 +17,20 @@ MonoBehaviour:
     type: 2}
   itemType: 0
   maxQuantity: 99
-  description: They can grow everywhere, even in shadowy areas.
+  description: These can grow everywhere, even in shadowy areas.
   plantType: 0
   hexEffect:
     light: 0
     humidity: 0
     energy: 0
   plantNeeds:
-    light: -10
+    light: 0
     humidity: 0
     energy: 0
   harvestContent:
   - item: {fileID: 11400000, guid: c61ee4686f51c4a1187233e25fa804ec, type: 2}
     quantity: 1
+    empty: 0
   - item: {fileID: 11400000}
     quantity: 2
+    empty: 0

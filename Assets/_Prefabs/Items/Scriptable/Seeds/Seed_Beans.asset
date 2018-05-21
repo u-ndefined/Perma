@@ -17,19 +17,21 @@ MonoBehaviour:
     type: 2}
   itemType: 0
   maxQuantity: 99
-  description: They are great to enrich depleted soils, but need more water than other
-    plants.
+  description: Beans are great to enrich depleted soils, but need water nearby to
+    grow.
   plantType: 2
   hexEffect:
     light: 0
-    humidity: -5
+    humidity: 0
     energy: 10
   plantNeeds:
     light: 0
-    humidity: 0
+    humidity: 10
     energy: 0
   harvestContent:
   - item: {fileID: 11400000}
     quantity: 10
+    empty: 0
   - item: {fileID: 11400000, guid: c0beb26d63f494b15881239fcc059fde, type: 2}
     quantity: 5
+    empty: 0
