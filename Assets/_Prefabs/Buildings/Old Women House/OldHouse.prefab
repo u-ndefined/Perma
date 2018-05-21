@@ -36,6 +36,7 @@ GameObject:
   - component: {fileID: 4795320013177074}
   - component: {fileID: 33514439369022486}
   - component: {fileID: 23190779920095166}
+  - component: {fileID: 135771014910061254}
   m_Layer: 0
   m_Name: FarmHouse
   m_TagString: Untagged
@@ -111,3 +112,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1691988462539388}
   m_Mesh: {fileID: 4300000, guid: 8f5b5695c5e74934f91227a36d8f8749, type: 3}
+--- !u!135 &135771014910061254
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1691988462539388}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 9.988807
+  m_Center: {x: 0, y: 0.79148865, z: 0.6394892}

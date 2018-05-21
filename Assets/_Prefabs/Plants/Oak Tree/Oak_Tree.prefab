@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4870791651819882}
   - component: {fileID: 33856548611394960}
   - component: {fileID: 23201620470979436}
+  - component: {fileID: 136252335992977032}
   m_Layer: 0
   m_Name: Oak_Tree
   m_TagString: Untagged
@@ -111,3 +112,16 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1031745603237474}
   m_Mesh: {fileID: 4300000, guid: 76afe71a7b752ff4d8d1db36e1edd47f, type: 3}
+--- !u!136 &136252335992977032
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1031745603237474}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 7.10425
+  m_Height: 12.3626
+  m_Direction: 1
+  m_Center: {x: -0.53725004, y: 7.2005997, z: 0.37364984}
