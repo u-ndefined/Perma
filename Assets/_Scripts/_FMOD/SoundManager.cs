@@ -136,8 +136,8 @@ public class SoundManager : ISingleton<SoundManager>                            
     /// </summary>
     /// <param name="emitterScript"></param>
     public void PlaySound(FmodEventEmitter emitterScript, string paramName, float value)
-    {
-        emitterScript.setParameterValue(paramName, value);
+    {;
+        emitterScript.SetParameterValue(paramName, value);
     }
 
     #endregion
