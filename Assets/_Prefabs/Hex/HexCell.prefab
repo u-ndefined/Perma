@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc544671602249d98c783bf489e86a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 1.5
+  radius: 2.2
   interactionTransform: {fileID: 4879627763825632}
   coordinates:
     x: 0

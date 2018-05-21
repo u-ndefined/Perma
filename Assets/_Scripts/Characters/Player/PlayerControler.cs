@@ -90,6 +90,8 @@ public class PlayerControler : ISingleton<PlayerControler>
 	// Update is called once per frame
 	void Update()
     {
+        if (Input.GetMouseButtonUp(0)) isPressing = false;
+
         if (DialogueManager.Instance.isActive)
         {
             animator.SetBool("Walk", false);
@@ -138,7 +140,7 @@ public class PlayerControler : ISingleton<PlayerControler>
             }
         }
 
-        if (Input.GetMouseButtonUp(0)) isPressing = false;
+
 
     }
 

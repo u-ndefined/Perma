@@ -38,14 +38,14 @@ public class Motor : MonoBehaviour
     {
         if (newFocus != null)
         {
-            agent.stoppingDistance = newFocus.radius * .8f;
+            agent.stoppingDistance = newFocus.radius;
             agent.updateRotation = false;
 
             target = newFocus.interactionTransform;
         }
         else
         {
-            agent.stoppingDistance = 0f;
+            agent.stoppingDistance = 0.5f;
             agent.updateRotation = true;
             target = null;
             agent.isStopped = true;
@@ -57,13 +57,12 @@ public class Motor : MonoBehaviour
     {
         if (!agent.pathPending)
         {
-            if (agent.remainingDistance <= agent.stoppingDistance)
+            if (agent.remainingDistance <= agent.stoppingDistance * 1.2f)
             {
-                if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
-                {
-                    //player.animator.SetBool("Walk", false);
-                    isWalking = false;
-                }
+               
+                isWalking = false;
+                agent.isStopped = true;
+                agent.ResetPath();
             }
         }
 
