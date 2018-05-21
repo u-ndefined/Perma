@@ -30,23 +30,28 @@ public class Interactable : MonoBehaviour {
 	}
 
 
-	void Update(){
-		if (isFocus && !hasInteracted) {
-			float distance = Vector3.Distance (player.position, interactionTransform.position);
-			if (distance < radius) 
+	void Update()
+    {
+        if (isFocus)    // If currently being focused
+        {
+            float distance = Vector3.Distance(player.position, interactionTransform.position);
+            // If we haven't already interacted and the player is close enough
+            if (!hasInteracted && distance <= radius)
             {
+                // Interact with the object
+                hasInteracted = true;
                 if (!InventoryManager.Instance.stackUsed.empty) UseObjectOn(InventoryManager.Instance.stackUsed);
-				else Interact ();
-				hasInteracted = true;
-			}
-		}
+                else Interact();
 
-        if(isActing && actionTimer < Time.time)
+                PlayerControler.Instance.SetFocus(null);
+            }
+        }
+
+        if (isActing && actionTimer < Time.time)
         {
             if (onActionDoneEvent != null)
                 onActionDoneEvent = null;
         }
-
 	}
 
     public virtual void Interact(){
@@ -75,15 +80,15 @@ public class Interactable : MonoBehaviour {
     }
 
 	public void OnFocused(Transform playerTransform){
-		isFocus = true;
-		player = playerTransform;
-		hasInteracted = false;
+        isFocus = true;
+        hasInteracted = false;
+        player = playerTransform;
 	}
 
 	public void OnDefocused(){
-		isFocus = false;
-		player = null;
-		hasInteracted = false;
+        isFocus = false;
+        hasInteracted = false;
+        player = null;
 	}
 
 	void OnDrawGizmosSelected(){

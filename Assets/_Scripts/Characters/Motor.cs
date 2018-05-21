@@ -48,16 +48,23 @@ public class Motor : MonoBehaviour
             agent.stoppingDistance = 0f;
             agent.updateRotation = true;
             target = null;
-            agent.SetDestination(transform.position);
-            player.animator.SetBool("Walk", false);
+            agent.isStopped = true;
+            agent.ResetPath();
         }
     }
 
     void Update()
     {
-        if (agent.remainingDistance <= agent.stoppingDistance)
+        if (!agent.pathPending)
         {
-            isWalking = false;
+            if (agent.remainingDistance <= agent.stoppingDistance)
+            {
+                if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
+                {
+                    //player.animator.SetBool("Walk", false);
+                    isWalking = false;
+                }
+            }
         }
 
         if (target != null)

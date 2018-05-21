@@ -167,8 +167,6 @@ public class InventoryManager : ISingleton<InventoryManager>
 
     public Stack Add(Stack addedStack)
     {
-        SoundManager.Instance.PlaySound("PlayerAction/Pickup2");
-
 
 
         for (int i = 0; i < stacks.Length; i++)

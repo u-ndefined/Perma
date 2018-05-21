@@ -16,6 +16,7 @@ public class ItemPickup : Interactable {
     {
         //onActionDoneEvent -= Pickup;
         stack = InventoryManager.Instance.Add(stack);
+        SoundManager.Instance.PlaySound("PlayerAction/Pickup2");
         if(stack.empty)
         {
             Destroy(gameObject);

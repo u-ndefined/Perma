@@ -27,6 +27,7 @@ public class Harvest : Interactable
         }
         else
         {
+            SoundManager.Instance.PlaySound("PlayerAction/Pickup2");
             Stack[] harvestContent = plant.seed.harvestContent;
             for (int i = 0; i < harvestContent.Length; i++)
             {

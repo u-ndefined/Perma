@@ -28,6 +28,7 @@ public class PlayerControler : ISingleton<PlayerControler>
 
     private bool isPressing = false;
     private Vector3 prevMousePos;
+    private Vector3 inputDirection;
 
     // Get references
     void Start()
@@ -53,34 +54,37 @@ public class PlayerControler : ISingleton<PlayerControler>
             LeftClic(); 
         }
 
-        MovePlayerWithKeyboard();
-	}
+        rb.velocity = inputDirection * motor.moveSpeed;
 
-    private void MovePlayerWithKeyboard()
-    {
-        //direction in the world
-        Vector3 moveDirection = GetMoveDirection();
-
-        rb.velocity = moveDirection * motor.moveSpeed;
-
-        if (moveDirection != Vector3.zero)
+        if (inputDirection != Vector3.zero)
         {
-            SetFocus(null);  //stop following target if there is an input
+            Debug.Log("hello");
+            MovePlayer();
 
-            animator.SetBool("Walk", true);
-
-
-
-            if (moveDirection != transform.forward) //face direction
+            if (inputDirection != transform.forward) //face direction
             {
-                Quaternion rotation = Quaternion.LookRotation(moveDirection);
+                Quaternion rotation = Quaternion.LookRotation(inputDirection);
                 transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
             }
         }
-        else
+        else if(!motor.isWalking) animator.SetBool("Walk", false);
+
+	}
+
+    private void MovePlayer()
+    {
+        SetFocus(null);  //stop following target if there is an input
+        animator.SetBool("Walk", true);
+
+        /*
+        if (inputDirection != transform.forward) //face direction
         {
-            if (focus == null && !motor.isWalking) animator.SetBool("Walk", false);
+            Quaternion rotation = Quaternion.LookRotation(inputDirection);
+            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
         }
+        */
+
+
     }
 
 	// Update is called once per frame
@@ -92,8 +96,12 @@ public class PlayerControler : ISingleton<PlayerControler>
             return;
         }
 
+        //direction in the world
+        inputDirection = GetMoveDirection();
+
         if (EventSystem.current.IsPointerOverGameObject() || inventoryInputs.dragging)
             return;
+        
 
         // If we press left mouse
         if (Input.GetMouseButtonDown(0))
@@ -135,7 +143,7 @@ public class PlayerControler : ISingleton<PlayerControler>
     }
 
     // Set our focus to a new focus
-    void SetFocus(Interactable newFocus)
+    public void SetFocus(Interactable newFocus)
     {
         if (onFocusChangedCallback != null)
             onFocusChangedCallback.Invoke(newFocus);
