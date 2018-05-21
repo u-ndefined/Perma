@@ -21,12 +21,13 @@ GameObject:
   - component: {fileID: 4862930027137412}
   - component: {fileID: 33794983121036628}
   - component: {fileID: 23372393047819656}
+  - component: {fileID: 136497840508798348}
   m_Layer: 0
   m_Name: Barrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1841699890055834
 GameObject:
@@ -41,7 +42,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4155281193888842
 Transform:
@@ -49,9 +50,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1841699890055834}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 38.58, y: 0, z: 34.87}
+  m_LocalScale: {x: 0.29999998, y: 0.29999998, z: 0.29999998}
   m_Children:
   - {fileID: 4862930027137412}
   m_Father: {fileID: 0}
@@ -111,3 +112,16 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1528271632351630}
   m_Mesh: {fileID: 4300000, guid: c64b74168ed69ac48ae5c28270f2c3de, type: 3}
+--- !u!136 &136497840508798348
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1528271632351630}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.7104174
+  m_Height: 11.020599
+  m_Direction: 0
+  m_Center: {x: 0.0125010805, y: 1.5481765, z: -0.04646619}
