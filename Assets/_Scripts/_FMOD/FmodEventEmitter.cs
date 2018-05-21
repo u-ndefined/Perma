@@ -42,7 +42,7 @@ public class FmodEventEmitter : MonoBehaviour
     /// </summary>
     /// <param name="paramName"></param>
     /// <param name="value"></param>
-    public void setParameterValue(string paramName, float value)
+    public void SetParameterValue(string paramName, float value)
     {
         if (!gameObject || !emitter)
             return;
