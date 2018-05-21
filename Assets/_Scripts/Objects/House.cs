@@ -9,7 +9,7 @@ public class House : Interactable {
     public float duration;
     private float transition;
     public Image image;
-    public bool thenReverse;
+    private bool thenReverse;
 
 
 
