@@ -832,12 +832,12 @@ MonoBehaviour:
   interactionTransform: {fileID: 3935519}
   quest: 0
   need:
-    item: {fileID: 11400000, guid: c61ee4686f51c4a1187233e25fa804ec, type: 2}
-    quantity: 10
+    item: {fileID: 11400000, guid: 5a3e2480a40084ede9c7e7f00d38ac8e, type: 2}
+    quantity: 20
     empty: 0
   reward:
-    item: {fileID: 11400000, guid: 6690101d7dbcd448485d8c775fafe879, type: 2}
-    quantity: 10
+    item: {fileID: 11400000, guid: 008b78cafb4b144d6a0fb06983239fe3, type: 2}
+    quantity: 1
     empty: 0
 --- !u!114 &32087922
 MonoBehaviour:
@@ -20472,11 +20472,6 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1189149401}
-    - target: {fileID: 114003130970840062, guid: daf5fae73eb6849f1aab39e300688169,
-        type: 2}
-      propertyPath: m_text
-      value: Eric
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: daf5fae73eb6849f1aab39e300688169, type: 2}
   m_IsPrefabParent: 0
@@ -28163,11 +28158,6 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DisplayNextSentence
-      objectReference: {fileID: 0}
-    - target: {fileID: 114003130970840062, guid: daf5fae73eb6849f1aab39e300688169,
-        type: 2}
-      propertyPath: m_text
-      value: Gilbert
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: daf5fae73eb6849f1aab39e300688169, type: 2}
