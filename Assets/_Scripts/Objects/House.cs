@@ -42,7 +42,7 @@ public class House : Interactable {
             if (thenReverse)
             {
                 TimeManager.Instance.NextDay();
-                TimeManager.Instance.clock = new Clock(6, 0, 0);
+                TimeManager.Instance.clock = new Clock(7, 0, 0);
                 Quaternion rotation = Quaternion.LookRotation(new Vector3(0,0,1));
                 PlayerControler.Instance.transform.rotation = rotation;
                 Fade(!fadeOut, duration, false);

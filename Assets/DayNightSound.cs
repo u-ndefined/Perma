@@ -11,6 +11,9 @@ public class DayNightSound : MonoBehaviour
 	}
 	private void Update()
 	{
-        emitter.SetParameterValue("DayHours", TimeManager.Instance.clock.hour);
+        float minutes = TimeManager.Instance.clock.minute / 60.0f;
+        Debug.Log(minutes);
+        float time = TimeManager.Instance.clock.hour + minutes;
+        emitter.SetParameterValue("DayHours", time);
 	}
 }
