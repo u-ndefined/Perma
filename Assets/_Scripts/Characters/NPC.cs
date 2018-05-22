@@ -23,21 +23,9 @@ public class NPC : Interactable
         actor = GetComponent<Actor>();
 	}
 
-	protected override void Update()
-	{
-        base.Update();
-        if(isFocus)
-        {
-            Debug.Log("foc");
-            Quaternion rotation = Quaternion.LookRotation(PlayerControler.Instance.transform.position);
-            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * 3);
-        }
-	}
-
-	public override void Interact()
+    public override void Interact()
     {
-        base.Interact();
-
+        //base.Interact();
         if(!quest)
         {
             DialogueManager.Instance.ActorSay(actor, "Quest_start");

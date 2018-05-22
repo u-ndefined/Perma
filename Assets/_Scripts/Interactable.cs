@@ -8,7 +8,7 @@ public class Interactable : MonoBehaviour {
 
 	public float radius = 3f;
 
-    protected bool isFocus = false;
+	private bool isFocus = false;
 	Transform player;
 
 	private bool hasInteracted = false;
