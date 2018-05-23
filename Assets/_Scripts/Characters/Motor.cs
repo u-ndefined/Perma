@@ -69,20 +69,19 @@ public class Motor : MonoBehaviour
         
         if (!agent.pathPending)
         {
-            if (agent.remainingDistance <= agent.stoppingDistance * 1.2f)
+            if (agent.remainingDistance <= agent.stoppingDistance)
             {
                 if (!player)
                 {
                     animator.SetBool("Walk", false);
-                    OnFocusChanged(null);
+                    //OnFocusChanged(null);
                 }
                 isWalking = false;
-                agent.isStopped = true;
-                agent.ResetPath();
+                //agent.isStopped = true;
+                //agent.ResetPath();
             }
         }
 
-        Debug.Log(isWalking);
     }
 
 	private void FixedUpdate()

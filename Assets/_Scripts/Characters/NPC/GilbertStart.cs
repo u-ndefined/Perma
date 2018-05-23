@@ -29,11 +29,12 @@ public class GilbertStart : MonoBehaviour {
 
         if(!done)
         {
-            Debug.Log(routine.actor.motor.isWalking);
-            if(routine.actor.motor.isWalking == false)
+            float distance = Vector3.Distance(transform.position, PlayerControler.Instance.transform.position);
+            Debug.Log(distance);
+            if(distance < 4)
             {
                 done = true;
-
+                routine.actor.motor.OnFocusChanged(null);
                 GetComponent<NPC>().Interact();
             }
         }

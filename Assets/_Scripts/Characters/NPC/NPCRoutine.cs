@@ -11,9 +11,8 @@ public class NPCRoutine : MonoBehaviour
     [HideInInspector]
     public bool isActive = false;
 
-	private void Awake()
+	private void Start()
 	{
-        actor = GetComponent<Actor>();
         SortFlags();
         CheckFlag();
         TimeManager.Instance.OnNewDayEvent += NextDay;
@@ -50,8 +49,18 @@ public class NPCRoutine : MonoBehaviour
             }
 
         }
-        Vector3 pos = flags[step].target.position;
-        actor.motor.MoveToPoint(pos);
+        //if(flags[step].roam)
+        Interactable interactable = flags[step].target.GetComponent<Interactable>();
+        if (interactable != null)
+        {
+            actor.motor.OnFocusChanged(flags[step].target.GetComponent<Interactable>());
+        }
+        else
+        {
+            Vector3 pos = flags[step].target.position;
+            actor.motor.MoveToPoint(pos);
+        }
+
 
     }
 
