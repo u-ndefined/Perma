@@ -27,9 +27,8 @@ public class TimeManager : ISingleton<TimeManager>
     public Calendar calendar;
     public int dayPassed;
 
-    [Header("Song timers")]
-    public Clock dayBeginning;
-    public Clock nightBeginning;
+    public Clock wakeUp;
+
     private bool isDay = false;
 
 
