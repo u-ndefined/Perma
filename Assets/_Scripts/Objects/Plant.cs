@@ -11,6 +11,7 @@ public class Plant : MonoBehaviour, IPooledObject {
     //public GameObject plantObject;
     public Material wiltedMaterial;
 
+
     private GameData.Prefabs plantType;
 
 
@@ -44,7 +45,7 @@ public class Plant : MonoBehaviour, IPooledObject {
 
     private void NextStep()
     {
-       
+            
             growthSteps[actualGrowthStep].gameObject.SetActive(false);
             actualGrowthStep++;
             growthSteps[actualGrowthStep].gameObject.SetActive(true);

@@ -8,9 +8,9 @@ public enum HexColor
     none,
     red,
     blue,
-    green,
-    cyan,
-    black,
+    Carnation,
+    carrot,
+    beans,
 }
 
 public enum HexType 
@@ -37,7 +37,6 @@ public class HexCell : Interactable {
     public HexData hexDataMax;
     [HideInInspector]
     public HexGrid hexGrid;
-    [HideInInspector]
     public Plant plant;
     public GameObject workedSoil;
 
@@ -46,10 +45,12 @@ public class HexCell : Interactable {
     public HexData dayEffectToSet;
     public bool setLight, setHumidity, setEnergy;
 
+
+    [Header("Editor")]
     private ObjectsPooler pool;
 
-    [HideInInspector]
     public HexColor color;
+    //public Seed editorSeed;
 
 
 	private void Start()
@@ -60,6 +61,9 @@ public class HexCell : Interactable {
         baseHexData = hexData;
 
         pool = ObjectsPooler.Instance;
+
+        Seed colorSeed = PlantManager.Instance.GetSeed(color);
+        if (colorSeed != null) PlantSeed(colorSeed);
     }
 
     public override void UseObjectOn(Stack stackUsedOn)

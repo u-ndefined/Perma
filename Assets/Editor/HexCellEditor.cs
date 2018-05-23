@@ -7,8 +7,9 @@ using UnityEngine;
 [CustomEditor(typeof(HexCell))]
 public class HexCellEditor : Editor
 {
-    private HexColor color;
+    private HexColor color = HexColor.none;
     HexCell hexCell;
+
 
     public override void OnInspectorGUI()
     {
@@ -16,12 +17,11 @@ public class HexCellEditor : Editor
 
         hexCell = (HexCell)target;
 
-        color = (HexColor)EditorGUILayout.EnumPopup("Cell color", hexCell.color);
-
         if(color != hexCell.color)
         {
+            color = hexCell.color;
             ChangeMaterial();
-            hexCell.color = color;
+
         }
 
     }
@@ -45,13 +45,13 @@ public class HexCellEditor : Editor
                 return Resources.Load("Materials/White", typeof(Material)) as Material;
             case HexColor.red:
                 return Resources.Load("Materials/Red", typeof(Material)) as Material;
-            case HexColor.green:
+            case HexColor.Carnation:
                 return Resources.Load("Materials/Green", typeof(Material)) as Material;
             case HexColor.blue:
                 return Resources.Load("Materials/Blue", typeof(Material)) as Material;
-            case HexColor.cyan:
+            case HexColor.carrot:
                 return Resources.Load("Materials/Cyan", typeof(Material)) as Material;
-            case HexColor.black:
+            case HexColor.beans:
                 return Resources.Load("Materials/Black", typeof(Material)) as Material;
             default:
                 return Resources.Load("Materials/White", typeof(Material)) as Material;
