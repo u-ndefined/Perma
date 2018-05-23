@@ -14,23 +14,34 @@ public class Motor : MonoBehaviour
     public Transform target;
     private NavMeshAgent agent;     // Reference to our NavMeshAgent
     private PlayerControler player;
+    private Animator animator;
     public bool isWalking = false;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+
         moveSpeed = agent.speed;
 
 
         player = GetComponent<PlayerControler>();
         if(player != null)
+        {
             player.onFocusChangedCallback += OnFocusChanged;
+            animator =GetComponentInChildren<Animator>();
+        }
+        else
+        {
+            animator = GetComponent<Animator>();
+        }
+            
     }
 
     public void MoveToPoint(Vector3 point)
     {
+        //if (agent == null) agent = GetComponent<NavMeshAgent>();
         agent.SetDestination(point);
-        player.animator.SetBool("Walk", true);
+        animator.SetBool("Walk", true);
         isWalking = true;
     }
 
@@ -59,7 +70,7 @@ public class Motor : MonoBehaviour
         {
             if (agent.remainingDistance <= agent.stoppingDistance * 1.2f)
             {
-               
+                if(player != null) animator.SetBool("Walk", false);
                 isWalking = false;
                 agent.isStopped = true;
                 agent.ResetPath();
