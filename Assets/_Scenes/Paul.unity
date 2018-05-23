@@ -2838,22 +2838,21 @@ MonoBehaviour:
   - target: {fileID: 32087920}
     clock:
       second: 0
-      minute: 0
-      hour: 1
+      minute: 30
+      hour: 12
   - target: {fileID: 29494984}
     clock:
       second: 0
       minute: 0
-      hour: 12
-  - target: {fileID: 659172808}
+      hour: 13
+  - target: {fileID: 102003678}
     clock:
       second: 0
-      minute: 0
-      hour: 13
-  nextClock:
-    second: 0
-    minute: 0
-    hour: 0
+      minute: 30
+      hour: 0
+  step: -1
+  waitNextDay: 0
+  isActive: 0
 --- !u!95 &102198540
 Animator:
   serializedVersion: 3
@@ -28192,13 +28191,9 @@ MonoBehaviour:
   clock:
     second: 0
     minute: 0
-    hour: 0
+    hour: 6
   dayPassed: 0
-  dayBeginning:
-    second: 0
-    minute: 0
-    hour: 0
-  nightBeginning:
+  wakeUp:
     second: 0
     minute: 0
     hour: 0

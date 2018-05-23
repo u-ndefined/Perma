@@ -12,12 +12,12 @@ public class Motor : MonoBehaviour
 {
     public float moveSpeed;
     public Transform target;
-    private NavMeshAgent agent;     // Reference to our NavMeshAgent
+    public NavMeshAgent agent;     // Reference to our NavMeshAgent
     private PlayerControler player;
     private Animator animator;
     public bool isWalking = false;
 
-    void Start()
+    void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
 
@@ -45,7 +45,7 @@ public class Motor : MonoBehaviour
         isWalking = true;
     }
 
-    void OnFocusChanged(Interactable newFocus)
+    public void OnFocusChanged(Interactable newFocus)
     {
         if (newFocus != null)
         {
@@ -66,26 +66,35 @@ public class Motor : MonoBehaviour
 
     void Update()
     {
+        
         if (!agent.pathPending)
         {
             if (agent.remainingDistance <= agent.stoppingDistance * 1.2f)
             {
-                if(!player) animator.SetBool("Walk", false);
+                if (!player)
+                {
+                    animator.SetBool("Walk", false);
+                    OnFocusChanged(null);
+                }
                 isWalking = false;
                 agent.isStopped = true;
                 agent.ResetPath();
             }
         }
 
+        Debug.Log(isWalking);
+    }
+
+	private void FixedUpdate()
+	{
         if (target != null)
         {
             MoveToPoint(target.position);
             FaceTarget();
         }
+	}
 
-    }
-
-    void FaceTarget()
+	void FaceTarget()
     {
         Vector3 direction = (target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));

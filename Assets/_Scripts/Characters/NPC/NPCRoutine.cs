@@ -4,24 +4,27 @@ using UnityEngine;
 
 public class NPCRoutine : MonoBehaviour 
 {
-    private Actor actor;
+    public Actor actor;
     public Flag[] flags;
-    public int step = -1;
-    public bool waitNextDay = false;
+    private int step;
+    private bool waitNextDay = false;
+    [HideInInspector]
+    public bool isActive = false;
 
-	private void Start()
+	private void Awake()
 	{
         actor = GetComponent<Actor>();
         SortFlags();
-        NextFlag();
+        CheckFlag();
         TimeManager.Instance.OnNewDayEvent += NextDay;
 	}
 
 	private void Update()
 	{
+        if (!isActive) return;
         if(!waitNextDay && TimeManager.Instance.clock > flags[step].clock)
         {
-            NextFlag();
+            CheckFlag();
         }
 	}
 
@@ -30,13 +33,22 @@ public class NPCRoutine : MonoBehaviour
         waitNextDay = false;
     }
 
-    private void NextFlag()
+    public void CheckFlag()
     {
-        step++;
-        if (step >= flags.Length)
+        step = 0;
+        for (int i = 0; i < flags.Length; i++)
         {
-            step = 0;
-            waitNextDay = true;
+            if (flags[i].clock > TimeManager.Instance.clock) step = i;
+            else break;
+        }
+        if (step == flags.Length - 1)
+        {
+            if(flags[step].clock < TimeManager.Instance.clock)
+            {
+                step = 0;
+                waitNextDay = true;
+            }
+
         }
         Vector3 pos = flags[step].target.position;
         actor.motor.MoveToPoint(pos);

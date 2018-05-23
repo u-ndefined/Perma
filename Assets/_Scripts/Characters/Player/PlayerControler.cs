@@ -127,7 +127,7 @@ public class PlayerControler : ISingleton<PlayerControler>
                 Interactable interactable = hit.collider.GetComponent<Interactable>();       // get interractable under mouse
 
 
-                if (interactable != null)
+                if (interactable != null && interactable.tag != "Player")
                 {
 
                     SetFocus(interactable);                                 //go to the object
@@ -199,7 +199,7 @@ public class PlayerControler : ISingleton<PlayerControler>
         {
             Interactable interactable = hit.collider.GetComponent<Interactable>();
 
-            if (interactable != null && interactable is HexCell == false)
+            if (interactable != null && interactable is HexCell == false && interactable.tag != "Player")
             {
                 Debug.Log("focus " + interactable.name);
                 SetFocus(interactable);
