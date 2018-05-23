@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e64b760ef208d4cdfaa08f0ad27217e9, type: 3}
   m_Name: Fruit_Beans
   m_EditorClassIdentifier: 
-  name: Fruit_beans
+  name: Beans
   icon: {fileID: 21300006, guid: bc69f20010a6b4a52a9cc620db824248, type: 3}
   objectOnGround: {fileID: 1641443092907058, guid: 34f5df7249ce5458395b813761661554,
     type: 2}

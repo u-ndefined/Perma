@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e64b760ef208d4cdfaa08f0ad27217e9, type: 3}
   m_Name: Fruit_Carnation
   m_EditorClassIdentifier: 
-  name: Fruit_Carnation
+  name: Carnation
   icon: {fileID: 21300012, guid: bc69f20010a6b4a52a9cc620db824248, type: 3}
   objectOnGround: {fileID: 1315277078671740, guid: cda68e98ee47ce14691a70cbd1442e0c,
     type: 2}
