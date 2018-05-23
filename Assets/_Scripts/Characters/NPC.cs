@@ -46,25 +46,21 @@ public class NPC : Interactable
 
     }
 
-    public override void UseObjectOn(Stack stackUsedOn)
+	public override void UseObjectOn(Stack stackUsedOn)
     {
         base.Interact();
-        switch (stackUsedOn.item.itemType)
-        {
-            case ItemType.SHOVEL:
-                Debug.Log("Pourquoi tu me tends cette pelle?");
-                break;
-            default:
-                stackUsedOn.quantity = 1;
-                playerInventory.RemoveAtIndex(playerInventory.selectedSlotID, 1);
-                Give(stackUsedOn);
-                break;
-
-        }
+        stackUsedOn.quantity = 1;
+        playerInventory.RemoveAtIndex(playerInventory.selectedSlotID, 1);
+        Give(stackUsedOn);
     }
 
     public void Give(Stack stack)
     {
+        if(stack.item.itemType == ItemType.SHOVEL)
+        {
+            InventoryManager.Instance.Add(stack);
+            return;
+        }
         
         bool added = false;
         for (int i = 0; i < inventory.Count; i++)
@@ -79,23 +75,34 @@ public class NPC : Interactable
         }
         if (!added) inventory.Add(stack);
 
-        if(QuestEnds()) DialogueManager.Instance.ActorSay(actor, "Quest_done");
+        if (UpdateQuestStatus()) EndQuest();
         else DialogueManager.Instance.ActorSay(actor, "NPC_receiveObject");
+
     }
 
-    private bool QuestEnds()
+    private bool UpdateQuestStatus()
     {
+        if (done) return false;
         for (int i = 0; i < inventory.Count; i++)
         {
-            if (need.item == inventory[i].item)
+            Stack stack = inventory[i];
+            if (need.item == stack.item)
             {
-                if(need.quantity <= inventory[i].quantity)
+                if(need.quantity <= stack.quantity)
                 {
-                    done = true;
+                    stack.quantity -= need.quantity;
+                    inventory[i] = stack;
                     return true;
                 }
             }
         }
         return false;
+    }
+
+    private void EndQuest()
+    {
+        DialogueManager.Instance.ActorSay(actor, "Quest_done");
+        quest = done;
+        playerInventory.Add(reward);
     }
 }
