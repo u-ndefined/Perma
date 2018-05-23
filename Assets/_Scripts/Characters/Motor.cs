@@ -70,7 +70,7 @@ public class Motor : MonoBehaviour
         {
             if (agent.remainingDistance <= agent.stoppingDistance * 1.2f)
             {
-                if(player != null) animator.SetBool("Walk", false);
+                if(!player) animator.SetBool("Walk", false);
                 isWalking = false;
                 agent.isStopped = true;
                 agent.ResetPath();
