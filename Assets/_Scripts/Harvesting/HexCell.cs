@@ -63,7 +63,15 @@ public class HexCell : Interactable {
         pool = ObjectsPooler.Instance;
 
         Seed colorSeed = PlantManager.Instance.GetSeed(color);
-        if (colorSeed != null) PlantSeed(colorSeed);
+        if (colorSeed != null)
+        {
+            PlantSeed(colorSeed);
+            plant.Grow();
+            plant.Grow();
+            plant.Grow();
+            plant.Grow();
+            plant.Grow();
+        } 
     }
 
     public override void UseObjectOn(Stack stackUsedOn)

@@ -30,7 +30,6 @@ public class GilbertStart : MonoBehaviour {
         if(!done)
         {
             float distance = Vector3.Distance(transform.position, PlayerControler.Instance.transform.position);
-            Debug.Log(distance);
             if(distance < 4)
             {
                 done = true;
