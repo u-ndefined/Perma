@@ -20,7 +20,7 @@ public class NPCRoutine : MonoBehaviour
 
 	private void Update()
 	{
-        if (!isActive) return;
+        if (!isActive || DialogueManager.Instance.isActive) return;
         if(!waitNextDay && TimeManager.Instance.clock > flags[step].clock)
         {
             CheckFlag();

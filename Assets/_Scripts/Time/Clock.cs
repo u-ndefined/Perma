@@ -61,6 +61,14 @@ public struct Clock
         return "Hour " + hour + ", Minute " + minute + ", Second " + second;
     }
 
+    public static Clock operator +(Clock a, Clock b)
+    {
+        a.AddSecond(b.second);
+        a.AddMinute(b.minute);
+        a.AddHour(b.hour);
+        return a;
+    }
+
     public static bool operator ==(Clock a, Clock b)
     {
         // an item is always equal to itself

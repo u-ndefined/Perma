@@ -51,7 +51,12 @@ public class Interactable : MonoBehaviour {
         if (isActing && actionTimer < Time.time)
         {
             if (onActionDoneEvent != null)
-                onActionDoneEvent = null;
+            {
+                onActionDoneEvent.Invoke();
+                onActionDoneEvent = null;   
+            }
+            isActing = false;
+                
         }
 	}
 
@@ -65,11 +70,12 @@ public class Interactable : MonoBehaviour {
         InventoryManager.Instance.ResetSlotUsed();
     }
 
-    public void DoAction(GameData.Animation animation, float second, Clock inGameTime)
+    public void DoAction(Anim anim)
     {
-        PlayerControler.Instance.animator.SetTrigger(animation.ToString());
+        PlayerControler.Instance.animator.SetTrigger(anim.animation.ToString());
         isActing = true;
-        actionTimer = Time.time + second;
+        TimeManager.Instance.clock += anim.inGameTime;
+        actionTimer = Time.time + anim.realtime;
     }
 
     private void ActionDone()

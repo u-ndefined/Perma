@@ -102,4 +102,6 @@ public class Plant : MonoBehaviour, IPooledObject {
         if (cell) cell.DestroyPlant();
 
     }
+
+   
 }

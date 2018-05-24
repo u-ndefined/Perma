@@ -43,7 +43,7 @@ public class NPC : Interactable
                 DialogueManager.Instance.ActorSay(actor, "Quest_inProgress" + r);
             }
         }
-
+        DoAction(PlayerManager.Instance.GetAnim(GameData.Animation.Speak));
     }
 
 	public override void UseObjectOn(Stack stackUsedOn)

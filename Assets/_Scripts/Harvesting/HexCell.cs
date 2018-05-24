@@ -51,6 +51,7 @@ public class HexCell : Interactable {
 
     public HexColor color;
     //public Seed editorSeed;
+    private Stack usedOn;
 
 
 	private void Start()
@@ -83,25 +84,23 @@ public class HexCell : Interactable {
 
         InventoryManager inventory = InventoryManager.Instance;
 
-        Debug.Log("plant");
+            Debug.Log("plant");
 
         switch(stackUsedOn.item.itemType)
         {
             case ItemType.SEED:
                 if(hexState == HexState.EXPOSED && plant == null)
                 {
-                    DoAction(GameData.Animation.Plant, 2f, new Clock(2, 0, 0));
-
-                    PlantSeed((Seed)stackUsedOn.item);
-                    inventory.RemoveAtIndex(inventory.selectedSlotID, 1);         //plant the seed and remove it from inventory
+                    DoAction(PlayerManager.Instance.GetAnim(GameData.Animation.Plant));
+                    usedOn = stackUsedOn;
+                    onActionDoneEvent += AnimPlant;
                 }
                 break;
             case ItemType.SHOVEL:
                 if(plant != null)
                 {
-                    DoAction(GameData.Animation.Dig, 2f, new Clock(2, 0, 0));
-                    DestroyPlant();
-                    SoundManager.Instance.PlaySound("PlayerAction/Dig");
+                    base.DoAction(PlayerManager.Instance.GetAnim(GameData.Animation.Harvest));
+                    onActionDoneEvent += Dig;
                 }
                 break;
             default:
@@ -226,5 +225,17 @@ public class HexCell : Interactable {
         result.energy = hexData.energy > hexDataMax.energy ? hexDataMax.energy : hexData.energy;
 
         return result;
+    }
+
+    private void Dig()
+    {
+        DestroyPlant();
+        SoundManager.Instance.PlaySound("PlayerAction/Dig");
+    }
+
+    private void AnimPlant()
+    {
+        PlantSeed((Seed)usedOn.item);
+        InventoryManager.Instance.RemoveAtIndex(InventoryManager.Instance.selectedSlotID, 1);         //plant the seed and remove it from inventory
     }
 }

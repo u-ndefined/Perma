@@ -26,6 +26,18 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
+  - m_Name: Harvest
+    m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: Plant
+    m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -198,7 +210,16 @@ AnimatorStateTransition:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: PickUp
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: Harvest
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: Plant
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102672428899665932}
   m_Solo: 0
@@ -324,10 +345,7 @@ AnimatorStateTransition:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: PickUp
-    m_EventTreshold: 0
+  m_Conditions: []
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102777167210443730}
   m_Solo: 0
@@ -566,7 +584,7 @@ AnimatorStateMachine:
     m_Position: {x: 612, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102507933800971346}
-    m_Position: {x: 612, y: 300, z: 0}
+    m_Position: {x: 612, y: 0, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102777167210443730}
     m_Position: {x: 612, y: 60, z: 0}
@@ -578,7 +596,7 @@ AnimatorStateMachine:
     m_Position: {x: 612, y: 240, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102440315819673042}
-    m_Position: {x: 612, y: 180, z: 0}
+    m_Position: {x: 612, y: 300, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102970189892898786}
     m_Position: {x: 1236, y: 192, z: 0}
