@@ -17,7 +17,7 @@ MonoBehaviour:
     type: 2}
   itemType: 0
   maxQuantity: 99
-  description: Toatoes need a rich soil to grow.
+  description: Toatoes need sunlight and a rich soil to grow.
   plantType: 1
   hexEffect:
     light: 0

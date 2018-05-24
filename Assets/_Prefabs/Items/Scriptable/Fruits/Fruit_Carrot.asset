@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e64b760ef208d4cdfaa08f0ad27217e9, type: 3}
   m_Name: Fruit_Carrot
   m_EditorClassIdentifier: 
-  name: Fruit_carrot
+  name: Carrot
   icon: {fileID: 21300000, guid: 910ede7fea3f24fd38bdd4c403d9a789, type: 3}
   objectOnGround: {fileID: 1606895595100602, guid: 4eb874dfd021cb04089e58cc30054fd5,
     type: 2}
