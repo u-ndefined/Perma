@@ -1,18 +1,17 @@
 fileFormatVersion: 2
-guid: b168d8f23a68b584c85f0dfc411b8a36
-timeCreated: 1527087540
+guid: a80d595723c494349a8c129b4f54fd76
+timeCreated: 1527151199
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: oldWomen
     400000: //RootNode
-    400002: oldWomen
-    2100000: oldWomenMat
-    2300000: oldWomen
-    3300000: oldWomen
+    2100000: No Name
+    2300000: //RootNode
+    3300000: //RootNode
     4300000: oldWomen
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -87,7 +86,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
