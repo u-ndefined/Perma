@@ -111,11 +111,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb8d36c425c0648688721f1e672bd4e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 1.5
+  radius: 2.5
   interactionTransform: {fileID: 4091454232262196}
   stack:
     item: {fileID: 11400000, guid: 5a3e2480a40084ede9c7e7f00d38ac8e, type: 2}
     quantity: 0
+    empty: 0
 --- !u!135 &135085344990740266
 SphereCollider:
   m_ObjectHideFlags: 1

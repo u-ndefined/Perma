@@ -123,8 +123,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb8d36c425c0648688721f1e672bd4e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 1.5
+  radius: 2.5
   interactionTransform: {fileID: 4791683461963918}
   stack:
     item: {fileID: 11400000, guid: c61ee4686f51c4a1187233e25fa804ec, type: 2}
     quantity: 0
+    empty: 0
