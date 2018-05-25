@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a3bdb2cd68f901469e7cc149151eb49, type: 3}
-  m_Name: New Post-Processing Profile
+  m_Name: day 1
   m_EditorClassIdentifier: 
   debugViews:
     m_Enabled: 1
@@ -102,8 +102,8 @@ MonoBehaviour:
       bloom:
         intensity: 0.55
         threshold: 1.14
-        softKnee: 0.93
-        radius: 2.69
+        softKnee: 0.53
+        radius: 1.5
         antiFlicker: 0
       lensDirt:
         texture: {fileID: 0}
