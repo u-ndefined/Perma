@@ -17,7 +17,7 @@ MonoBehaviour:
     type: 2}
   itemType: 0
   maxQuantity: 99
-  description: Beans are great to enrich depleted soils, but need sunlight and water
+  description: Beans give energy to the soil around them, but need sunlight and water
     nearby to grow.
   plantType: 2
   hexEffect:
