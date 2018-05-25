@@ -36,6 +36,9 @@ GameObject:
   - component: {fileID: 4852972223400810}
   - component: {fileID: 33372433285859184}
   - component: {fileID: 23112799494799228}
+  - component: {fileID: 136132423948741552}
+  - component: {fileID: 136921150299911268}
+  - component: {fileID: 65572898966984110}
   m_Layer: 0
   m_Name: patio
   m_TagString: Untagged
@@ -111,3 +114,41 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1203251252964270}
   m_Mesh: {fileID: 4300000, guid: 79c8a3213f2d19c4388e462900ff6596, type: 3}
+--- !u!65 &65572898966984110
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1203251252964270}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 31.950817, y: 13.1207, z: 20.25061}
+  m_Center: {x: -0.17093086, y: 5.5971503, z: -1.979805}
+--- !u!136 &136132423948741552
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1203251252964270}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.1302948
+  m_Height: 11.159336
+  m_Direction: 1
+  m_Center: {x: 15.939411, y: 3.0859623, z: 10.195053}
+--- !u!136 &136921150299911268
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1203251252964270}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.3417892
+  m_Height: 9.957706
+  m_Direction: 1
+  m_Center: {x: -15.39291, y: 3.1258125, z: 10.195053}

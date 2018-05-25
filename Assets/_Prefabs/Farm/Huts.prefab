@@ -21,12 +21,14 @@ GameObject:
   - component: {fileID: 4301985732781930}
   - component: {fileID: 33320936094611284}
   - component: {fileID: 23278986771637788}
+  - component: {fileID: 136014268939877848}
+  - component: {fileID: 136619404998051838}
   m_Layer: 0
   m_Name: Huts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1925376850740272
 GameObject:
@@ -41,7 +43,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4301985732781930
 Transform:
@@ -62,9 +64,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1925376850740272}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.4, y: -4.417894e-16, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 28.605, y: 0, z: 11.35}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4301985732781930}
   m_Father: {fileID: 0}
@@ -111,3 +113,29 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1590333668470394}
   m_Mesh: {fileID: 4300000, guid: d74eab3eb7b4b344d83418bfc80bb50b, type: 3}
+--- !u!136 &136014268939877848
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1590333668470394}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.1987352
+  m_Height: 13.78141
+  m_Direction: 1
+  m_Center: {x: -6.9052134, y: 5.2531013, z: 10.519913}
+--- !u!136 &136619404998051838
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1590333668470394}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.2897816
+  m_Height: 19.746708
+  m_Direction: 1
+  m_Center: {x: 11.736465, y: 8.412016, z: 5.7229347}
