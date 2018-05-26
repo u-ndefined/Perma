@@ -83,7 +83,7 @@ public class Motor : MonoBehaviour
             direction = (currentDestination - transform.position).normalized;
             if(Vector3.Distance(currentDestination, transform.position) <= 0.1f) GetNextCorner();
         }
-        else
+        else if(!searchingPath)
         {
             isWalking = false;
         }
@@ -141,7 +141,12 @@ public class Motor : MonoBehaviour
         {
             cornerQueue.Enqueue(corner);
         }
-        if (cornerQueue.Count > 1) cornerQueue.Dequeue();
+
+        for (int i = 0; i < cornerQueue.Count - 1; i++)
+        {
+            cornerQueue.Dequeue();
+        }
+
         GetNextCorner();
     }
 

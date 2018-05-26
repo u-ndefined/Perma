@@ -21,7 +21,8 @@ public class Hightlight : MonoBehaviour {
 	{
         HexHightlighter.gameObject.SetActive(false);
         if (EventSystem.current.IsPointerOverGameObject())
-        {    
+        {
+            Debug.Log("ça");
             return;
         }
 
@@ -35,7 +36,6 @@ public class Hightlight : MonoBehaviour {
         if (Physics.Raycast(ray, out hit, 1000))
         {
             Interactable interactable = hit.collider.GetComponent<Interactable>();
-
             if (interactable != null)
             {
                 if(interactable is HexCell)

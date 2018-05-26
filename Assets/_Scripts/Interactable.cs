@@ -41,7 +41,6 @@ public class Interactable : MonoBehaviour {
             {
                 // Interact with the object
                 hasInteracted = true;
-                Debug.Log(hasInteracted);
                 if (!InventoryManager.Instance.stackUsed.empty) UseObjectOn(InventoryManager.Instance.stackUsed);
                 else Interact();
 

@@ -125,7 +125,7 @@ public class PlayerControler : ISingleton<PlayerControler>
         {
             if (!inventory.UseSlot())
             {
-                return; //use slot, if nothing to use, do nothing else move to target
+                return; //use slotand do nothing , if nothing to use move to target
             }
 
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -157,6 +157,7 @@ public class PlayerControler : ISingleton<PlayerControler>
     {
         if (onFocusChangedCallback != null)
             onFocusChangedCallback.Invoke(newFocus);
+
 
         // If our focus has changed
         if (focus != newFocus && focus != null)

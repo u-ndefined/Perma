@@ -72,7 +72,9 @@ public class HexCell : Interactable {
             plant.Grow();
             plant.Grow();
             plant.Grow();
-        } 
+        }
+
+        if (color == HexColor.none) isActive = true;    
     }
 
     public override void UseObjectOn(Stack stackUsedOn)
@@ -82,17 +84,18 @@ public class HexCell : Interactable {
             return;
         }
 
+        base.UseObjectOn(stackUsedOn);
+
         InventoryManager inventory = InventoryManager.Instance;
+        usedOn = inventory.stacks[inventory.selectedSlotID];
 
-            Debug.Log("plant");
 
-        switch(stackUsedOn.item.itemType)
+        switch(usedOn.item.itemType)
         {
             case ItemType.SEED:
-                if(hexState == HexState.EXPOSED && plant == null)
+                if(hexState == HexState.EXPOSED && plant == null && !usedOn.empty)
                 {
                     DoAction(PlayerManager.Instance.GetAnim(GameData.Animation.Plant));
-                    usedOn = stackUsedOn;
                     onActionDoneEvent += AnimPlant;
                 }
                 break;
@@ -109,7 +112,7 @@ public class HexCell : Interactable {
 
         }
 
-        base.UseObjectOn(stackUsedOn);
+
 	}
 
     public void DestroyPlant()
@@ -235,7 +238,10 @@ public class HexCell : Interactable {
 
     private void AnimPlant()
     {
-        PlantSeed((Seed)usedOn.item);
-        InventoryManager.Instance.RemoveAtIndex(InventoryManager.Instance.selectedSlotID, 1);         //plant the seed and remove it from inventory
+        if (!usedOn.empty)
+        {
+            PlantSeed((Seed)usedOn.item);
+            InventoryManager.Instance.RemoveAtIndex(InventoryManager.Instance.selectedSlotID, 1);         //plant the seed and remove it from inventory
+        }
     }
 }
