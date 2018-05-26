@@ -124,16 +124,21 @@ public class InventoryInputsHandler : MonoBehaviour
                         if(npc != null)
                         {
                             stackDragged.quantity -= 1;
-                            inventory.AddAtIndex(startingSlot.slotIndex, stackDragged);    //add dragged stack
+                            if(stackDragged.quantity > 0)
+                            {
+                                inventory.AddAtIndex(startingSlot.slotIndex, stackDragged);    //add dragged stack
+                            }
+
                             stackDragged.quantity = 1;
                             npc.Give(stackDragged);
+                            stackDragged.empty = true;
 
                             done = true;
                         }
                     }
 
                     Debug.Log("create object"); //if there is no ending slot create stack on ground
-                    if(!done) inventory.DropItem(stackDragged);
+                    if(!done && !stackDragged.empty) inventory.DropItem(stackDragged);
                 }
             }
 

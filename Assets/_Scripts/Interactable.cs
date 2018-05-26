@@ -15,7 +15,6 @@ public class Interactable : MonoBehaviour {
 
 	public Transform interactionTransform;
 
-    private AnimatorScript animator;
 
     private bool isActing = false;
     private float actionTimer;

@@ -18,6 +18,17 @@ public class DialogueManager : ISingleton<DialogueManager> {
         player = PlayerControler.Instance.GetComponent<Actor>();
 	}
 
+	private void Update()
+	{
+        if(isActive)
+        {
+            if(Input.GetMouseButtonDown(0))
+            {
+                DisplayNextSentence();
+            }
+        }
+	}
+
 	public void StartDialogue(Actor newActor, string[] newSentences)
     {
         isActive = true;

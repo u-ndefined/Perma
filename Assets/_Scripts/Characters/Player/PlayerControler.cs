@@ -62,7 +62,6 @@ public class PlayerControler : ISingleton<PlayerControler>
 
         if (rb.velocity.normalized != Vector3.zero)
         {
-            Debug.Log(rb.velocity.normalized);
             Quaternion rotation = Quaternion.LookRotation(rb.velocity.normalized);
             transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed);
         }
