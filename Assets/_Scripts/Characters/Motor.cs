@@ -19,7 +19,7 @@ public class Motor : MonoBehaviour
     private float stoppingDistance;
     private bool searchingPath = false;
     private Queue<Vector3> cornerQueue;
-    private Vector3 currentDestination;
+    public Vector3 currentDestination;
     public Vector3 direction;
     public bool hasPath = false;
     private Rigidbody rb;
@@ -92,7 +92,6 @@ public class Motor : MonoBehaviour
         {
             searchingPath = false;
             SetupPath(agent.path);
-            Debug.Log("setup");
         }
         
         //if (!agent.pathPending)

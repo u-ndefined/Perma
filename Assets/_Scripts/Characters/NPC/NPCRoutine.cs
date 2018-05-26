@@ -8,11 +8,15 @@ public class NPCRoutine : MonoBehaviour
     public Flag[] flags;
     private int step;
     private bool waitNextDay = false;
-    [HideInInspector]
-    public bool isActive = false;
+    public bool isActive = true;
+    private Rigidbody rb;
+    private Animator animator;
+    public float rotationSpeed = 0.125f;
 
 	private void Start()
 	{
+        rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
         SortFlags();
         CheckFlag();
         TimeManager.Instance.OnNewDayEvent += NextDay;
@@ -20,10 +24,20 @@ public class NPCRoutine : MonoBehaviour
 
 	private void Update()
 	{
-        if (!isActive || DialogueManager.Instance.isActive) return;
+        if (!isActive || DialogueManager.Instance.isActive) 
+        {
+            animator.SetBool("Walk", false);
+            return;
+        }
         if(!waitNextDay && TimeManager.Instance.clock > flags[step].clock)
         {
             CheckFlag();
+        }
+        rb.velocity = actor.motor.direction * actor.motor.moveSpeed;
+        if (rb.velocity.normalized != Vector3.zero)
+        {
+            Quaternion rotation = Quaternion.LookRotation(rb.velocity.normalized);
+            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed);
         }
 	}
 

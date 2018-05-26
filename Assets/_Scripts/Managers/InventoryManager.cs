@@ -151,7 +151,7 @@ public class InventoryManager : ISingleton<InventoryManager>
         }
         else
         {
-            Debug.Log("!!! " + removedQuantity + " remaining " + stacks[index].item.name + " to remove");
+            Debug.Log("!!! " + removedQuantity + " remaining to remove");
         }
 
         if (onItemChangedEvent != null)         //updateUI

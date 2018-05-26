@@ -37,14 +37,13 @@ public class Interactable : MonoBehaviour {
 
             float distance = Vector3.Distance(player.position, interactionTransform.position);
             // If we haven't already interacted and the player is close enough
-            if (!hasInteracted && distance <= radius)
+            if (!hasInteracted && distance <= radius && !PlayerControler.Instance.actionInProgress)
             {
                 // Interact with the object
                 hasInteracted = true;
                 if (!InventoryManager.Instance.stackUsed.empty) UseObjectOn(InventoryManager.Instance.stackUsed);
                 else Interact();
-
-                //PlayerControler.Instance.SetFocus(null);
+                PlayerControler.Instance.SetFocus(null);
             }
         }
 

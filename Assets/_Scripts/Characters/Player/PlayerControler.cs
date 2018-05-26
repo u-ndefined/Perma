@@ -71,14 +71,13 @@ public class PlayerControler : ISingleton<PlayerControler>
             MovePlayer();
         }
         else if(!motor.isWalking) animator.SetBool("Walk", false);
-
-
 	}
 
     private void MovePlayer()
     {
         SetFocus(null);  //stop following target if there is an input
         animator.SetBool("Walk", true);
+
 
         /*
         if (inputDirection != transform.forward) //face direction
@@ -103,6 +102,8 @@ public class PlayerControler : ISingleton<PlayerControler>
         if (DialogueManager.Instance.isActive)
         {
             animator.SetBool("Walk", false);
+            motor.isWalking = false;
+            rb.velocity = Vector3.zero;
             return;
         }
 
@@ -216,6 +217,7 @@ public class PlayerControler : ISingleton<PlayerControler>
             }
             else
             {
+                SetFocus(null);
                 motor.MoveToPoint(hit.point);                           //else go there
             }
         }
