@@ -11,7 +11,7 @@ public class Interactable : MonoBehaviour {
 	private bool isFocus = false;
 	Transform player;
 
-	private bool hasInteracted = false;
+    public bool hasInteracted = false;
 
 	public Transform interactionTransform;
 
@@ -41,10 +41,11 @@ public class Interactable : MonoBehaviour {
             {
                 // Interact with the object
                 hasInteracted = true;
+                Debug.Log(hasInteracted);
                 if (!InventoryManager.Instance.stackUsed.empty) UseObjectOn(InventoryManager.Instance.stackUsed);
                 else Interact();
 
-                PlayerControler.Instance.SetFocus(null);
+                //PlayerControler.Instance.SetFocus(null);
             }
         }
 
@@ -56,7 +57,7 @@ public class Interactable : MonoBehaviour {
                 onActionDoneEvent = null;   
             }
             isActing = false;
-                
+            PlayerControler.Instance.actionInProgress = false;
         }
 	}
 
@@ -76,6 +77,7 @@ public class Interactable : MonoBehaviour {
         isActing = true;
         TimeManager.Instance.clock += anim.inGameTime;
         actionTimer = Time.time + anim.realtime;
+        PlayerControler.Instance.actionInProgress = true;
     }
 
     private void ActionDone()
@@ -88,7 +90,7 @@ public class Interactable : MonoBehaviour {
 
 	public void OnFocused(Transform playerTransform){
         isFocus = true;
-        hasInteracted = false;
+        //hasInteracted = false;
         player = playerTransform;
 	}
 

@@ -29,6 +29,7 @@ public class PlayerControler : ISingleton<PlayerControler>
     private bool isPressing = false;
     private Vector3 prevMousePos;
     private Vector3 inputDirection;
+    public bool actionInProgress = false;
 
     // Get references
     void Start()
@@ -56,6 +57,8 @@ public class PlayerControler : ISingleton<PlayerControler>
 
         if(motor.isWalking)rb.velocity = motor.direction * motor.moveSpeed;
         else rb.velocity = inputDirection * motor.moveSpeed;
+
+        if (actionInProgress) rb.velocity = Vector3.zero;
 
         if(rb.velocity.normalized != Vector3.zero)
         {

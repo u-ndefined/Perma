@@ -141,8 +141,7 @@ public class Motor : MonoBehaviour
         {
             cornerQueue.Enqueue(corner);
         }
-        Debug.Log(cornerQueue.Dequeue());
-        Debug.Log(cornerQueue.Count);
+        if (cornerQueue.Count > 1) cornerQueue.Dequeue();
         GetNextCorner();
     }
 
