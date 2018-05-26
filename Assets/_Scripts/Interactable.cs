@@ -47,6 +47,13 @@ public class Interactable : MonoBehaviour {
             }
         }
 
+        if(isActing)
+        {
+            player = PlayerControler.Instance.transform;
+            Quaternion rotation = Quaternion.LookRotation(transform.position - player.position);
+            player.rotation = Quaternion.Lerp(player.rotation, rotation, PlayerControler.Instance.rotationSpeed);
+        }
+
         if (isActing && actionTimer < Time.time)
         {
             if (onActionDoneEvent != null)
@@ -55,6 +62,7 @@ public class Interactable : MonoBehaviour {
                 onActionDoneEvent = null;   
             }
             isActing = false;
+
             PlayerControler.Instance.actionInProgress = false;
         }
 	}

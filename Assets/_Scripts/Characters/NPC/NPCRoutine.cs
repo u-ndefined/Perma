@@ -27,6 +27,8 @@ public class NPCRoutine : MonoBehaviour
         if (!isActive || DialogueManager.Instance.isActive) 
         {
             animator.SetBool("Walk", false);
+            Quaternion rotation = Quaternion.LookRotation(PlayerControler.Instance.transform.position - transform.position);
+            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed);
             return;
         }
         if(!waitNextDay && TimeManager.Instance.clock > flags[step].clock)

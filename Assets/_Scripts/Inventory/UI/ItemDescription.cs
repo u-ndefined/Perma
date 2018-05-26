@@ -9,7 +9,7 @@ public class ItemDescription : MonoBehaviour {
     public TextMeshProUGUI description;
     public TextMeshProUGUI itemName;
     public Image icon;
-
+    public float offset;
     //public Vector3 offset;
 
     public void Show(Item item, Vector3 position)
@@ -19,7 +19,7 @@ public class ItemDescription : MonoBehaviour {
         icon.sprite = item.icon;
         Vector3 pos = transform.position;
         //transform.position = position + offset;
-        transform.position = new Vector3(position.x,pos.y,pos.z);
+        transform.position = new Vector3(position.x + offset,pos.y,pos.z);
         gameObject.SetActive(true);
     }
 

@@ -22,7 +22,6 @@ public class Hightlight : MonoBehaviour {
         HexHightlighter.gameObject.SetActive(false);
         if (EventSystem.current.IsPointerOverGameObject())
         {
-            Debug.Log("ça");
             return;
         }
 
