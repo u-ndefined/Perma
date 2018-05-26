@@ -38,6 +38,9 @@ GameObject:
   - component: {fileID: 4543211646041288}
   - component: {fileID: 33262577473387560}
   - component: {fileID: 23087522123058120}
+  - component: {fileID: 136599681073329058}
+  - component: {fileID: 136261881132948002}
+  - component: {fileID: 136624179800338090}
   m_Layer: 0
   m_Name: Huts
   m_TagString: Untagged
@@ -183,3 +186,42 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1005275204510954}
   m_Mesh: {fileID: 4300002, guid: 5d367b075fb04db409350d019969a115, type: 3}
+--- !u!136 &136261881132948002
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1170542146485594}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.93826914
+  m_Height: 14.934826
+  m_Direction: 1
+  m_Center: {x: -14.762822, y: 6.9701405, z: 7.625459}
+--- !u!136 &136599681073329058
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1170542146485594}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.281333
+  m_Height: 12.450201
+  m_Direction: 1
+  m_Center: {x: 14.043225, y: 5.401704, z: 5.8933907}
+--- !u!136 &136624179800338090
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1170542146485594}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.1103458
+  m_Height: 14.934826
+  m_Direction: 1
+  m_Center: {x: -16.501884, y: 6.9701405, z: -5.9941883}
