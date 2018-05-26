@@ -123,7 +123,11 @@ public class InventoryInputsHandler : MonoBehaviour
                         NPC npc = hit.collider.GetComponent<NPC>();
                         if(npc != null)
                         {
+                            stackDragged.quantity -= 1;
+                            inventory.AddAtIndex(startingSlot.slotIndex, stackDragged);    //add dragged stack
+                            stackDragged.quantity = 1;
                             npc.Give(stackDragged);
+
                             done = true;
                         }
                     }
