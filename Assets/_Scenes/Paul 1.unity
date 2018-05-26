@@ -7444,7 +7444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   focus: {fileID: 0}
-  rotationSpeed: 1
+  rotationSpeed: 0.2
   animator: {fileID: 0}
   actionInProgress: 0
 --- !u!54 &516515083

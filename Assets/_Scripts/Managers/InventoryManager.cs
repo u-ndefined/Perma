@@ -138,7 +138,7 @@ public class InventoryManager : ISingleton<InventoryManager>
     }
 
 
-    public void RemoveAtIndex(int index, int removedQuantity)
+    public bool RemoveAtIndex(int index, int removedQuantity)
     {
         
         if (stacks[index].quantity > removedQuantity) //if enought quantity remove quantity
@@ -152,12 +152,14 @@ public class InventoryManager : ISingleton<InventoryManager>
         else
         {
             Debug.Log("!!! " + removedQuantity + " remaining to remove");
+            return false;
         }
 
         if (onItemChangedEvent != null)         //updateUI
         {
             onItemChangedEvent.Invoke();
         }
+        return true;
     }
 
     #endregion

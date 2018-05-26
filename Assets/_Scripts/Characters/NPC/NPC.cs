@@ -7,6 +7,7 @@ public class NPC : Interactable
     private List<Stack> inventory = new List<Stack>();
     private InventoryManager playerInventory;
     private Actor actor;
+    private Animator animator;
 
     [Header("Quest")]
     public bool quest = false;
@@ -21,6 +22,7 @@ public class NPC : Interactable
     {
         playerInventory = InventoryManager.Instance;
         actor = GetComponent<Actor>();
+        animator = GetComponent<Animator>();
 	}
 
     public override void Interact()
@@ -43,6 +45,7 @@ public class NPC : Interactable
                 DialogueManager.Instance.ActorSay(actor, "Quest_inProgress" + r);
             }
         }
+        animator.SetTrigger("NPCSpeak");
         DoAction(PlayerManager.Instance.GetAnim(GameData.Animation.Speak));
     }
 

@@ -241,7 +241,11 @@ public class HexCell : Interactable {
         if (!usedOn.empty)
         {
             PlantSeed((Seed)usedOn.item);
-            InventoryManager.Instance.RemoveAtIndex(InventoryManager.Instance.selectedSlotID, 1);         //plant the seed and remove it from inventory
+            if(!InventoryManager.Instance.RemoveAtIndex(InventoryManager.Instance.selectedSlotID, 1))         //plant the seed and remove it from inventory
+            {
+                usedOn.quantity = 1;
+                InventoryManager.Instance.Remove(usedOn);
+            }
         }
     }
 }
