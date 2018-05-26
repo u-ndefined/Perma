@@ -51,22 +51,24 @@ public class PlayerControler : ISingleton<PlayerControler>
 
         if(isPressing)
         {
-            LeftClic(); 
+            LeftClic();
         }
 
-        rb.velocity = inputDirection * motor.moveSpeed;
+        if(motor.isWalking)rb.velocity = motor.direction * motor.moveSpeed;
+        else rb.velocity = inputDirection * motor.moveSpeed;
 
+        if(rb.velocity.normalized != Vector3.zero)
+        {
+            Quaternion rotation = Quaternion.LookRotation(rb.velocity.normalized);
+            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed);
+        }
+       
         if (inputDirection != Vector3.zero)
         {
             MovePlayer();
-
-            if (inputDirection != transform.forward) //face direction
-            {
-                Quaternion rotation = Quaternion.LookRotation(inputDirection);
-                transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
-            }
         }
         else if(!motor.isWalking) animator.SetBool("Walk", false);
+
 
 	}
 
@@ -89,7 +91,11 @@ public class PlayerControler : ISingleton<PlayerControler>
 	// Update is called once per frame
 	void Update()
     {
-        if (Input.GetMouseButtonUp(0)) isPressing = false;
+        if (Input.GetMouseButtonUp(0))
+        {
+            isPressing = false;
+
+        }
 
         if (DialogueManager.Instance.isActive)
         {
@@ -210,6 +216,7 @@ public class PlayerControler : ISingleton<PlayerControler>
             }
         }
     }
+
 
 }
 /*

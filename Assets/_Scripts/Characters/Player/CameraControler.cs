@@ -6,9 +6,12 @@ public class CameraControler : MonoBehaviour {
 	public Transform target;
 
 	public Vector3 offset;
+    public float smoothSpeed = 0.125f;
 
+
+
+    [Header("OSEF")]
 	public float pitch = 2f;
-
 	private float currentZoom = 10f;
 	public float zoomSpeed = 4f;
 	public float minZoom = 5f;
@@ -31,9 +34,13 @@ public class CameraControler : MonoBehaviour {
 		//currentYaw -= Input.GetAxis ("Horizontal") * yawSpeed * Time.deltaTime; 
 	}
 	// Update is called once per frame
-	void LateUpdate () {
-		transform.position = target.position - offset * currentZoom;
-		transform.LookAt (target.position + Vector3.up * pitch);
-		transform.RotateAround (target.position, Vector3.up, currentYaw);
+	void FixedUpdate () {
+        Vector3 desiredPosition = target.position + offset;
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+        transform.position = smoothedPosition;
+		//transform.LookAt (target.position + Vector3.up * pitch);
+		//transform.RotateAround (target.position, Vector3.up, currentYaw);
 	}
+
+
 }

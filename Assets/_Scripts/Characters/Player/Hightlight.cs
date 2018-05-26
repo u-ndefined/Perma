@@ -19,16 +19,15 @@ public class Hightlight : MonoBehaviour {
 
 	private void FixedUpdate()
 	{
+        HexHightlighter.gameObject.SetActive(false);
         if (EventSystem.current.IsPointerOverGameObject())
         {    
-            HexHightlighter.gameObject.SetActive(false);
             return;
         }
 
         Stack selectedStack = inventory.stacks[inventory.selectedSlotID];
             if (selectedStack.empty || selectedStack.item.itemType != ItemType.SEED)
         {
-            HexHightlighter.gameObject.SetActive(false);
             return;
         }
 
@@ -36,8 +35,6 @@ public class Hightlight : MonoBehaviour {
         if (Physics.Raycast(ray, out hit, 1000))
         {
             Interactable interactable = hit.collider.GetComponent<Interactable>();
-
-            HexHightlighter.gameObject.SetActive(false);
 
             if (interactable != null)
             {

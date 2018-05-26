@@ -130,7 +130,7 @@ MonoBehaviour:
         red: {x: 1.2, y: 0.19, z: -0.12}
         green: {x: 0, y: 1, z: 0}
         blue: {x: 0.6, y: 0, z: 1.14}
-        currentEditingChannel: 0
+        currentEditingChannel: 1
       colorWheels:
         mode: 0
         log:

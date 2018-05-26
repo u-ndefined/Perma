@@ -16,89 +16,149 @@ public class Motor : MonoBehaviour
     private PlayerControler player;
     private Animator animator;
     public bool isWalking = false;
+    private float stoppingDistance;
+    private bool searchingPath = false;
+    private Queue<Vector3> cornerQueue;
+    private Vector3 currentDestination;
+    public Vector3 direction;
+    public bool hasPath = false;
+    private Rigidbody rb;
+    private Vector3 previousPosition;
 
     void Awake()
     {
+        animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
+        rb = GetComponent<Rigidbody>();
+        stoppingDistance = agent.stoppingDistance;
 
         moveSpeed = agent.speed;
 
+        agent.speed = 0;
+
+        cornerQueue = new Queue<Vector3>();
 
         player = GetComponent<PlayerControler>();
+
         if(player != null)
         {
             player.onFocusChangedCallback += OnFocusChanged;
-            animator =GetComponentInChildren<Animator>();
+
         }
-        else
-        {
-            animator = GetComponent<Animator>();
-        }
-            
+
     }
 
     public void MoveToPoint(Vector3 point)
     {
-        //if (agent == null) agent = GetComponent<NavMeshAgent>();
         agent.SetDestination(point);
         animator.SetBool("Walk", true);
         isWalking = true;
+        searchingPath = true;
     }
 
     public void OnFocusChanged(Interactable newFocus)
     {
         if (newFocus != null)
         {
-            agent.stoppingDistance = newFocus.radius;
-            agent.updateRotation = false;
-
+            agent.stoppingDistance = newFocus.radius * 0.9f;
             target = newFocus.interactionTransform;
+            previousPosition = target.position;
+            MoveToPoint(target.position);
         }
         else
         {
-            agent.stoppingDistance = 0.5f;
-            agent.updateRotation = true;
+            agent.stoppingDistance = stoppingDistance;
             target = null;
-            agent.isStopped = true;
-            agent.ResetPath();
+            //agent.isStopped = true;
+            //agent.ResetPath();
+            hasPath = false;
         }
     }
 
     void Update()
     {
-        
-        if (!agent.pathPending)
+
+        if (hasPath)
         {
-            if (agent.remainingDistance <= agent.stoppingDistance)
-            {
-                if (!player)
-                {
-                    animator.SetBool("Walk", false);
-                    //OnFocusChanged(null);
-                }
-                isWalking = false;
-                //agent.isStopped = true;
-                //agent.ResetPath();
-            }
+            direction = (currentDestination - transform.position).normalized;
+            if(Vector3.Distance(currentDestination, transform.position) <= 0.1f) GetNextCorner();
         }
+        else
+        {
+            isWalking = false;
+        }
+
+        if (searchingPath && !agent.pathPending)
+        {
+            searchingPath = false;
+            SetupPath(agent.path);
+            Debug.Log("setup");
+        }
+        
+        //if (!agent.pathPending)
+        //{
+        //    if (agent.remainingDistance <= agent.stoppingDistance)
+        //    {
+        //        if (!player)
+        //        {
+        //            animator.SetBool("Walk", false);
+        //            //OnFocusChanged(null);
+        //        }
+        //        isWalking = false;
+        //        //agent.isStopped = true;
+        //        //agent.ResetPath();
+        //    }
+        //}
 
     }
 
 	private void FixedUpdate()
 	{
-        if (target != null)
+
+        if (target != null && target.position != previousPosition)
         {
             MoveToPoint(target.position);
-            FaceTarget();
+            previousPosition = target.position;
+            //FaceTarget();
         }
 	}
 
-	void FaceTarget()
+	//void FaceTarget()
+    //{
+    //    Vector3 direction = (target.position - transform.position).normalized;
+    //    Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+    //    transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+    //}
+
+    private void SetupPath(NavMeshPath path)
     {
-        Vector3 direction = (target.position - transform.position).normalized;
-        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+        if (cornerQueue.Count != 0)
+        {
+            cornerQueue.Clear();
+        }
+
+        foreach (Vector3 corner in path.corners)
+        {
+            cornerQueue.Enqueue(corner);
+        }
+        Debug.Log(cornerQueue.Dequeue());
+        Debug.Log(cornerQueue.Count);
+        GetNextCorner();
     }
+
+    private void GetNextCorner()
+    {
+        if (cornerQueue.Count > 0)
+        {
+            currentDestination = cornerQueue.Dequeue();
+            hasPath = true;
+        }
+        else
+        {
+            hasPath = false;
+        }
+    }
+
 
 
 }
