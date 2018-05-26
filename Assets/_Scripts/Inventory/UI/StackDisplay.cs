@@ -6,6 +6,7 @@ public class StackDisplay : MonoBehaviour {
 
     private Image icon;
     private TextMeshProUGUI quantity;
+    public GameObject quantityDisplay;
 
 	private void Awake()
 	{
@@ -17,7 +18,6 @@ public class StackDisplay : MonoBehaviour {
 	{
         icon = GetComponentInChildren<Image>();
         quantity = GetComponentInChildren<TextMeshProUGUI>();
-
 	}
 
     private void ChangeSize()
@@ -35,8 +35,15 @@ public class StackDisplay : MonoBehaviour {
         gameObject.SetActive(true);
 
         icon.sprite = sprite;
-        if (!qtt.Equals("1")) quantity.text = qtt;
-        else quantity.text = null;
+        quantity.text = qtt;
+        if (!qtt.Equals("1"))
+        {
+            quantityDisplay.SetActive(true);
+        }
+        else
+        {
+            quantityDisplay.SetActive(false);
+        }
 
 
     }
