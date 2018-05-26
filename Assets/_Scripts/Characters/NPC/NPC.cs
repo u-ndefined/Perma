@@ -41,8 +41,18 @@ public class NPC : Interactable
             }
             else 
             {
-                int r = Mathf.FloorToInt(Random.Range(0, 3)) + 1;
-                DialogueManager.Instance.ActorSay(actor, "Quest_inProgress" + r);
+                if(playerInventory.GetQuantity(need) >= need.quantity)
+                {
+                    playerInventory.Remove(need);
+                    Give(need);
+                    UpdateQuestStatus();
+                }
+                else
+                {
+                    int r = Mathf.FloorToInt(Random.Range(0, 3)) + 1;
+                    DialogueManager.Instance.ActorSay(actor, "Quest_inProgress" + r);
+                }
+
             }
         }
         animator.SetTrigger("NPCSpeak");

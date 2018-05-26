@@ -190,12 +190,8 @@ public class InventoryManager : ISingleton<InventoryManager>
 
     public bool Remove(Stack removedStack)
     {
-        int quantity = 0;
-        for(int i = 0; i < stacks.Length; i++)
-        {
-            if (stacks[i].item == removedStack.item) quantity += stacks[i].quantity;        //get quantity in inventory
-        }
-        if(quantity > removedStack.quantity)                                                //if enought
+        
+        if(GetQuantity(removedStack) >= removedStack.quantity )                                                //if enought
         {
             for (int i = 0; i < stacks.Length; i++)
             {
@@ -214,4 +210,14 @@ public class InventoryManager : ISingleton<InventoryManager>
 
     }
     #endregion
+
+    public int GetQuantity(Stack stack)
+    {
+        int quantity = 0;
+        for (int i = 0; i < stacks.Length; i++)
+        {
+            if (stacks[i].item == stack.item) quantity += stacks[i].quantity;        //get quantity in inventory
+        }
+        return quantity;
+    }
 }
