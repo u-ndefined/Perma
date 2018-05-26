@@ -593,6 +593,7 @@ MonoBehaviour:
   target: {fileID: 0}
   agent: {fileID: 0}
   isWalking: 0
+  currentDestination: {x: 0, y: 0, z: 0}
   direction: {x: 0, y: 0, z: 0}
   hasPath: 0
 --- !u!114 &29494980
@@ -878,6 +879,7 @@ MonoBehaviour:
   target: {fileID: 0}
   agent: {fileID: 32087924}
   isWalking: 0
+  currentDestination: {x: 0, y: 0, z: 0}
   direction: {x: 0, y: 0, z: 0}
   hasPath: 0
 --- !u!114 &32087926
@@ -1876,6 +1878,7 @@ MonoBehaviour:
   target: {fileID: 0}
   agent: {fileID: 0}
   isWalking: 0
+  currentDestination: {x: 0, y: 0, z: 0}
   direction: {x: 0, y: 0, z: 0}
   hasPath: 0
 --- !u!114 &102198539
@@ -7317,8 +7320,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 20
   target: {fileID: 0}
-  agent: {fileID: 0}
+  agent: {fileID: 516515084}
   isWalking: 0
+  currentDestination: {x: 0, y: 0, z: 0}
   direction: {x: 0, y: 0, z: 0}
   hasPath: 0
 --- !u!114 &516515082
@@ -7333,7 +7337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   focus: {fileID: 0}
-  rotationSpeed: 0.124
+  rotationSpeed: 1
   animator: {fileID: 0}
   actionInProgress: 0
 --- !u!54 &516515083
@@ -7364,7 +7368,7 @@ NavMeshAgent:
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 1200
-  m_StoppingDistance: 0
+  m_StoppingDistance: 0.2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -16596,6 +16600,7 @@ MonoBehaviour:
   target: {fileID: 0}
   agent: {fileID: 1295644749}
   isWalking: 0
+  currentDestination: {x: 0, y: 0, z: 0}
   direction: {x: 0, y: 0, z: 0}
   hasPath: 0
 --- !u!195 &1295644749
@@ -23747,6 +23752,7 @@ MonoBehaviour:
   description: {fileID: 478518793}
   itemName: {fileID: 1417009846}
   icon: {fileID: 324218183}
+  offset: 0
 --- !u!1001 &1763834757
 Prefab:
   m_ObjectHideFlags: 0

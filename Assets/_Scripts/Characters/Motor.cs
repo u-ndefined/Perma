@@ -81,7 +81,7 @@ public class Motor : MonoBehaviour
         if (hasPath)
         {
             direction = (currentDestination - transform.position).normalized;
-            if(Vector3.Distance(currentDestination, transform.position) <= 0.1f) GetNextCorner();
+            if(Vector3.Distance(currentDestination, transform.position) <= stoppingDistance) GetNextCorner();
         }
         else if(!searchingPath)
         {
@@ -93,6 +93,8 @@ public class Motor : MonoBehaviour
             searchingPath = false;
             SetupPath(agent.path);
         }
+
+     
         
         //if (!agent.pathPending)
         //{
