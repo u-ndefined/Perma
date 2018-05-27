@@ -7,6 +7,9 @@ public class PauseMenu : MonoBehaviour {
     
     private GameObject pauseMenuUI;
     private TimeManager timeManager;
+    private bool onSettings = false;
+    public GameObject pauseMenu;
+    public GameObject settings;
 
 	private void Start()
 	{
@@ -45,5 +48,12 @@ public class PauseMenu : MonoBehaviour {
     {
         Resume();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
+    public void ToggleSettings()
+    {
+        onSettings = !onSettings;
+        settings.SetActive(onSettings);
+        pauseMenu.SetActive(!onSettings);
     }
 }
