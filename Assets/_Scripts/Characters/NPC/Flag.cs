@@ -7,5 +7,5 @@ public struct Flag
 {
     public Transform target;
     public Clock clock;
-    public bool roam;
+    public bool hide;
 }

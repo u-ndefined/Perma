@@ -18,8 +18,9 @@ public class NPC : Interactable
 
 
 	// Use this for initialization
-	void Start () 
+    protected override void Start () 
     {
+        base.Start();
         playerInventory = InventoryManager.Instance;
         actor = GetComponent<Actor>();
         animatorr = GetComponent<Animator>();

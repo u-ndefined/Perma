@@ -6,12 +6,15 @@ public class NPCRoutine : MonoBehaviour
 {
     public Actor actor;
     public Flag[] flags;
-    private int step;
-    private bool waitNextDay = false;
+    public int step;
+    //[HideInInspector]
+    public bool waitNextDay = false;
     public bool isActive = true;
     private Rigidbody rb;
     private Animator animator;
     public float rotationSpeed = 0.125f;
+    [HideInInspector]
+    public bool hide;
 
 	private void Start()
 	{
@@ -20,6 +23,7 @@ public class NPCRoutine : MonoBehaviour
         SortFlags();
         CheckFlag();
         TimeManager.Instance.OnNewDayEvent += NextDay;
+
 	}
 
 	private void Update()
@@ -51,26 +55,25 @@ public class NPCRoutine : MonoBehaviour
 
     public void CheckFlag()
     {
-        step = 0;
-        for (int i = 0; i < flags.Length; i++)
+        step = -1;
+        for (int i = flags.Length - 1; i >= 0; i--)
         {
             if (flags[i].clock > TimeManager.Instance.clock) step = i;
             else break;
         }
-        if (step == flags.Length - 1)
+        Debug.Log(step);
+        if (step == -1)
         {
-            if(flags[step].clock < TimeManager.Instance.clock)
-            {
+           
                 step = 0;
                 waitNextDay = true;
-            }
 
         }
-        //if(flags[step].roam)
+        hide = flags[step].hide;
         Interactable interactable = flags[step].target.GetComponent<Interactable>();
         if (interactable != null)
         {
-            actor.motor.OnFocusChanged(flags[step].target.GetComponent<Interactable>());
+            actor.motor.OnFocusChanged(interactable);
         }
         else
         {

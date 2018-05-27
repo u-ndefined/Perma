@@ -124,7 +124,7 @@ public struct Clock
         if (a.hour > b.hour) return true;
         else if (a.hour == b.hour)
         {
-            if (a.minute > b.hour) return true;
+            if (a.minute > b.minute) return true;
             else if (a.minute == b.minute)
             {
                 if (a.second >= b.second) return true;
@@ -150,7 +150,7 @@ public struct Clock
         if (a.hour < b.hour) return true;
         else if (a.hour == b.hour)
         {
-            if (a.minute < b.hour) return true;
+            if (a.minute < b.minute) return true;
             else if (a.minute == b.minute)
             {
                 if (a.second <= b.second) return true;
@@ -176,7 +176,7 @@ public struct Clock
         if (a.hour > b.hour) return true;
         else if (a.hour == b.hour)
         {
-            if (a.minute > b.hour) return true;
+            if (a.minute > b.minute) return true;
             else if (a.minute == b.minute)
             {
                 if (a.second > b.second) return true;
@@ -202,7 +202,7 @@ public struct Clock
         if (a.hour < b.hour) return true;
         else if (a.hour == b.hour)
         {
-            if (a.minute < b.hour) return true;
+            if (a.minute < b.minute) return true;
             else if (a.minute == b.minute)
             {
                 if (a.second < b.second) return true;

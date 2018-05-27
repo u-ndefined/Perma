@@ -19,7 +19,7 @@ public class Interactable : MonoBehaviour {
     private bool isActing = false;
     private float actionTimer;
 
-	private void Start()
+    protected virtual void Start()
 	{
         if(interactionTransform == null)
         {
