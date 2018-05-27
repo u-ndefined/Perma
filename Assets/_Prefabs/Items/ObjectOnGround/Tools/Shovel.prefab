@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 54490241037159166}
   m_Layer: 0
   m_Name: Shovel
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
+  hasInteracted: 0
   interactionTransform: {fileID: 4206320710091374}
   stack:
     item: {fileID: 11400000, guid: 8fe8342dc64f444f5a34c5cabb0c144d, type: 2}

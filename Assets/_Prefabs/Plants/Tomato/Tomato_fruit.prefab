@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 54787966776892618}
   m_Layer: 0
   m_Name: Tomato_fruit
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 2.5
+  hasInteracted: 0
   interactionTransform: {fileID: 4091454232262196}
   stack:
     item: {fileID: 11400000, guid: 5a3e2480a40084ede9c7e7f00d38ac8e, type: 2}

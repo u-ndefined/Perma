@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114999943821214864}
   m_Layer: 0
   m_Name: Axe
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,7 +124,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
+  hasInteracted: 0
   interactionTransform: {fileID: 4056387217697906}
   stack:
     item: {fileID: 11400000, guid: 008b78cafb4b144d6a0fb06983239fe3, type: 2}
     quantity: 1
+    empty: 0

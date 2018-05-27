@@ -28,6 +28,18 @@ public static class GameData
         Speak,
     }
 
+    public enum Cursor
+    {
+        Normal, 
+        Grab, 
+        InspectWilt, 
+        InspectHealthy, 
+        Knock, 
+        Dig, 
+        Sleep, 
+        Talk
+    }
+
     /*
     public enum Layers
     {

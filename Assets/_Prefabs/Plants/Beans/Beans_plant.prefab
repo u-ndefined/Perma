@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114938079289369646}
   m_Layer: 0
   m_Name: Bean_step03
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 114126459855197662}
   m_Layer: 0
   m_Name: Bean_step04
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 114712070813195038}
   m_Layer: 0
   m_Name: Bean_step02
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 114815678492436718}
   m_Layer: 0
   m_Name: Beans_plant
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 114967866037532154}
   m_Layer: 0
   m_Name: Bean_step01
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -540,6 +540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
+  hasInteracted: 0
   interactionTransform: {fileID: 4502745487370454}
 --- !u!114 &114128486702288118
 MonoBehaviour:
@@ -575,6 +576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
+  hasInteracted: 0
   interactionTransform: {fileID: 4050307696051954}
 --- !u!114 &114760504074631712
 MonoBehaviour:
@@ -625,6 +627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
+  hasInteracted: 0
   interactionTransform: {fileID: 4821262748665004}
 --- !u!114 &114967866037532154
 MonoBehaviour:
@@ -638,6 +641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
+  hasInteracted: 0
   interactionTransform: {fileID: 4444811011494218}
 --- !u!136 &136102684546583312
 CapsuleCollider:

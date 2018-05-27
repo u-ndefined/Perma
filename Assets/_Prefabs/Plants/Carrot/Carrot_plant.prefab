@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114566777867550686}
   m_Layer: 0
   m_Name: Carrot_step01
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 114941123487360556}
   m_Layer: 0
   m_Name: Carrot_step03
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 114184875329230798}
   m_Layer: 0
   m_Name: Carrot_step04
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 114900800220447156}
   m_Layer: 0
   m_Name: Carrot_step02
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 114649058126845340}
   m_Layer: 0
   m_Name: Carrot_plant
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -479,6 +479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
+  hasInteracted: 0
   interactionTransform: {fileID: 4234398535240582}
 --- !u!114 &114233514001796654
 MonoBehaviour:
@@ -514,6 +515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
+  hasInteracted: 0
   interactionTransform: {fileID: 4970159476356776}
 --- !u!114 &114584196844258250
 MonoBehaviour:
@@ -553,6 +555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
+  hasInteracted: 0
   interactionTransform: {fileID: 4453445209850034}
 --- !u!114 &114941123487360556
 MonoBehaviour:
@@ -566,6 +569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
+  hasInteracted: 0
   interactionTransform: {fileID: 4995121081107090}
 --- !u!136 &136105755536848754
 CapsuleCollider:

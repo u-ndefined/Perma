@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114465718197145918}
   m_Layer: 0
   m_Name: Tomato_step03
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 114061162374220190}
   m_Layer: 0
   m_Name: Tomato_step01
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 114678637705382676}
   m_Layer: 0
   m_Name: Tomato_step04
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 114195320881780354}
   m_Layer: 0
   m_Name: Tomato_step02
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 114712436980100312}
   m_Layer: 0
   m_Name: Tomato_plant
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -540,6 +540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
+  hasInteracted: 0
   interactionTransform: {fileID: 4951541675036290}
 --- !u!114 &114120110585764118
 MonoBehaviour:
@@ -564,6 +565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
+  hasInteracted: 0
   interactionTransform: {fileID: 4635411743871954}
 --- !u!114 &114236418614113098
 MonoBehaviour:
@@ -588,6 +590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
+  hasInteracted: 0
   interactionTransform: {fileID: 4248968004683418}
 --- !u!114 &114519653409318938
 MonoBehaviour:
@@ -612,6 +615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
+  hasInteracted: 0
   interactionTransform: {fileID: 4744888994714972}
 --- !u!114 &114703346360700634
 MonoBehaviour:
