@@ -20,6 +20,7 @@ public class DialogueManager : ISingleton<DialogueManager> {
 
 	private void Update()
 	{
+        if (TimeManager.Instance.gameIsPaused) return;
         if(isActive)
         {
             if(Input.GetMouseButtonDown(0))

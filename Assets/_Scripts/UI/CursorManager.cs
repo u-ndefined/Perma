@@ -22,6 +22,11 @@ public class CursorManager : ISingleton<CursorManager>
 
 	private void Update()
 	{
+        if(TimeManager.Instance.gameIsPaused)
+        {
+            Swap(GameData.Cursor.Normal);
+            return;
+        }
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
