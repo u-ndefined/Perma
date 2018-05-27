@@ -13,12 +13,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueName: Quest_done
   sentences:
-  - Ah, you managed to grow those ten carrots all by yourself? Well done Greeny!
+  - Ah, you managed to grow those<#f9ae06><b> ten carrots</b></color> all by yourself?
+    Well done Greeny!
   - Here, ten tomato seeds bags. A promise is a promise after all.
   - I'm happy, I had those seeds for a long time but, growing things is kinda not
     my thing, you know?
   - And I couldn't give them to someone without any skills who would let them go to
     waste.
-  - You see, tomatoes are hard to grow, they need a lot of energy and a rich soil
-    to develop properly...
+  - You see,<#f9ae06><b> tomatoes</b></color> are hard to grow, they need a lot of
+    energy and a rich soil to develop properly...
   - At least that's what the back of the bag said, ha ha!

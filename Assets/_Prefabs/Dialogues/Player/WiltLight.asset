@@ -13,4 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueName: WiltLight
   sentences:
-  - This spot is too shadowy... The plant died because of that.
+  - This spot doesn't have enough<#fce38a><b>  sunlight</b></color>... The plant died
+    because of that.

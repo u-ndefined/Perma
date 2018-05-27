@@ -17,8 +17,9 @@ MonoBehaviour:
     type: 2}
   itemType: 0
   maxQuantity: 99
-  description: Beans give energy to the soil around them, but need sunlight and water
-    nearby to grow.
+  description: Beans give<#f38181><b> energy</b></color> to the soil around them,
+    but need<#fce38a><b> sunlight</b></color> and<#95e0d3><b> water</b></color> nearby
+    to grow.
   plantType: 2
   hexEffect:
     light: 0

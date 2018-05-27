@@ -13,4 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueName: WiltHumidity
   sentences:
-  - The soil is all dried up... The plant died because of that.
+  - The soil doesn't have<#95e0d3><b> water</b></color> nearby... The plant died because
+    of that.

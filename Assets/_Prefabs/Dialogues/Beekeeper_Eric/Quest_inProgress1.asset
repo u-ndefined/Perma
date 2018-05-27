@@ -13,4 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueName: Quest_inProgress1
   sentences:
-  - Hey, you got those ten carrots yet?
+  - Hey, you got those<#f9ae06><b> ten carrots</b></color>  yet?
