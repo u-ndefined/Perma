@@ -13,4 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueName: WiltEnergy
   sentences:
-  - The soil is depleted of its energy... The plant died because of that.
+  - The soil doesn't have enough<#f38181><b>  energy</b></color>... The plant died
+    because of that.

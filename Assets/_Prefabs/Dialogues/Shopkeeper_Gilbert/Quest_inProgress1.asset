@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueName: Quest_inProgress1
   sentences:
-  - '*SIGH* Maybe I should buy these twenty tomatoes from the company after all...
-    I can''t keep losing customers...'
+  - '*SIGH* Maybe I should buy these<#f94032><b> twenty tomatoes</b></color> from
+    the company after all... I can''t keep losing customers...'
   - Oh! How are you feeling today? Nice weather isn't it?
   - "\u2026 *SIGH*"

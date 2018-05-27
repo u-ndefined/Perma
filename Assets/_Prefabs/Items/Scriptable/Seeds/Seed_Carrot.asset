@@ -17,7 +17,7 @@ MonoBehaviour:
     type: 2}
   itemType: 0
   maxQuantity: 99
-  description: Carrots can grow everywhere, even in shadowy areas.
+  description: Carrots can grow everywhere, even in areas with no<#fce38a><b> sunlight</b></color>.
   plantType: 0
   hexEffect:
     light: 0

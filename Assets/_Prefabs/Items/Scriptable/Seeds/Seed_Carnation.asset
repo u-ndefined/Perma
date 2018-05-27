@@ -17,8 +17,8 @@ MonoBehaviour:
     type: 2}
   itemType: 0
   maxQuantity: 99
-  description: This flower needs sunlight to grow, but attracts bees and improves
-    the yield of surrounding plants.
+  description: This flower needs<#fce38a><b> sunlight</b></color> to grow, but attracts
+    bees and improves the yield of surrounding plants.
   plantType: 0
   hexEffect:
     light: 0
