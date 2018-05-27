@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  offset: {x: 0, y: 146, z: 186}
+  offset: {x: 0, y: 141.6, z: 186}
   smoothSpeed: 0.125
   pitch: 2
   zoomSpeed: 4
