@@ -2643,6 +2643,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114585788051079856, guid: fb6a95d035fba44ee9c9d6c291a7361b,
+        type: 2}
+      propertyPath: clock.hour
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fb6a95d035fba44ee9c9d6c291a7361b, type: 2}
   m_IsPrefabParent: 0
@@ -5876,6 +5881,18 @@ Prefab:
       propertyPath: sunLight
       value: 
       objectReference: {fileID: 1283615765}
+    - target: {fileID: 114206161578802744, guid: b81613eeacb414ddd9e1428eac839aeb,
+        type: 2}
+      propertyPath: day
+      value: 
+      objectReference: {fileID: 11400000, guid: ee1632fa1bcabc044a8ce1ab13248020,
+        type: 2}
+    - target: {fileID: 114395240249687576, guid: b81613eeacb414ddd9e1428eac839aeb,
+        type: 2}
+      propertyPath: profile
+      value: 
+      objectReference: {fileID: 11400000, guid: b262f344f2daf9546b9b68baae97e572,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b81613eeacb414ddd9e1428eac839aeb, type: 2}
   m_IsPrefabParent: 0

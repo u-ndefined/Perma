@@ -89,6 +89,7 @@ public class HexCell : Interactable {
         InventoryManager inventory = InventoryManager.Instance;
         usedOn = inventory.stacks[inventory.selectedSlotID];
 
+        if (usedOn.empty) return;
 
         switch(usedOn.item.itemType)
         {
