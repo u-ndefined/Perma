@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-[RequireComponent(typeof(Motor))]
+[RequireComponent(typeof(PlayerMotor))]
 public class PlayerControler : ISingleton<PlayerControler>
 {
 
@@ -18,7 +18,7 @@ public class PlayerControler : ISingleton<PlayerControler>
 
     public float rotationSpeed = 5f;
 
-    private Motor motor;      // Reference to our motor
+    private PlayerMotor motor;      // Reference to our motor
     private Camera cam;             // Reference to our camera
     private InventoryInputsHandler inventoryInputs;
     private Rigidbody rb;
@@ -34,7 +34,7 @@ public class PlayerControler : ISingleton<PlayerControler>
     // Get references
     void Start()
     {
-        motor = GetComponent<Motor>();
+        motor = GetComponent<PlayerMotor>();
         cam = Camera.main;
         rb = GetComponent<Rigidbody>();
         inventory = InventoryManager.Instance;

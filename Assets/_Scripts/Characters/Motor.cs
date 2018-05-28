@@ -143,11 +143,6 @@ public class Motor : MonoBehaviour
             cornerQueue.Enqueue(corner);
         }
 
-        for (int i = 0; i < cornerQueue.Count - 1; i++)
-        {
-            cornerQueue.Dequeue();
-        }
-
         GetNextCorner();
     }
 
