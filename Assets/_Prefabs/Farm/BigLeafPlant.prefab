@@ -36,6 +36,7 @@ GameObject:
   - component: {fileID: 4982697634331974}
   - component: {fileID: 33337501359593116}
   - component: {fileID: 23254755680114952}
+  - component: {fileID: 136452357821362400}
   m_Layer: 0
   m_Name: BigLeafPlant
   m_TagString: Untagged
@@ -49,23 +50,23 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1156487336004150}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.5, y: -1.2791015e-16, z: -12.3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.33788532, y: 0.39102456, z: 0.15776776, w: 0.8414527}
+  m_LocalPosition: {x: -27.13, y: 1.7407, z: 79.12}
+  m_LocalScale: {x: 0.8867389, y: 0.88673836, z: 0.88673896}
   m_Children:
   - {fileID: 4982697634331974}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 26.439001, y: 58.649002, z: 36.273003}
 --- !u!4 &4982697634331974
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1514131940349710}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.21, y: -1.64, z: 5.04}
+  m_LocalScale: {x: 0.7759508, y: 0.77595097, z: 0.77595097}
   m_Children: []
   m_Father: {fileID: 4362295681571518}
   m_RootOrder: 0
@@ -111,3 +112,16 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1514131940349710}
   m_Mesh: {fileID: 4300000, guid: 86567b6504942ee4b81254dc526661c8, type: 3}
+--- !u!136 &136452357821362400
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1514131940349710}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 4.5370307
+  m_Height: 9.074066
+  m_Direction: 1
+  m_Center: {x: 0.10622836, y: 2.6534514, z: -1.1289889}

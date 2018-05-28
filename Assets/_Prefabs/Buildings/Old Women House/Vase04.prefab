@@ -36,6 +36,7 @@ GameObject:
   - component: {fileID: 4886859071715734}
   - component: {fileID: 33591977272154394}
   - component: {fileID: 23845393693655590}
+  - component: {fileID: 135628744462001048}
   m_Layer: 0
   m_Name: Vase004
   m_TagString: Untagged
@@ -49,9 +50,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1186787780169710}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -47.015335, y: 0, z: 142.07}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -60.17, y: -0.39088, z: 142.66}
+  m_LocalScale: {x: 1.3366345, y: 1.3366344, z: 1.3366344}
   m_Children:
   - {fileID: 4886859071715734}
   m_Father: {fileID: 0}
@@ -111,3 +112,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1985665876202606}
   m_Mesh: {fileID: 4300000, guid: e7cef996ebd19b94aa1ab867bb892262, type: 3}
+--- !u!135 &135628744462001048
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1985665876202606}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.14835
+  m_Center: {x: 0, y: 1.16115, z: 0}
