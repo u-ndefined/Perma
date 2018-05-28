@@ -669,17 +669,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameIsPaused: 0
-  secondPerDay: 720
+  secondPerDay: 480
   dayPerSeason: 0
   clock:
     second: 0
     minute: 0
-    hour: 6
+    hour: 7
   dayPassed: 0
   wakeUp:
     second: 0
     minute: 0
-    hour: 0
+    hour: 7
 --- !u!114 &114710864188893102
 MonoBehaviour:
   m_ObjectHideFlags: 1
