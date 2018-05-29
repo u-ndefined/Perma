@@ -27,7 +27,7 @@ public class PlayerMotor : MonoBehaviour
     {
         if(isWalking)
         {
-            if(Vector3.Distance(transform.position, destination) <= 0.1f)
+            if((destination - transform.position).sqrMagnitude <= 0.1f)
             {
                 isWalking = false;
             }

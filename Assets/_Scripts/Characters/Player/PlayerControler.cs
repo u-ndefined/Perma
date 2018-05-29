@@ -30,6 +30,7 @@ public class PlayerControler : ISingleton<PlayerControler>
     private Vector3 prevMousePos;
     private Vector3 inputDirection;
     public bool actionInProgress = false;
+    private DialogueManager dialogueManager;
 
     // Get references
     void Start()
@@ -40,11 +41,12 @@ public class PlayerControler : ISingleton<PlayerControler>
         inventory = InventoryManager.Instance;
         animator = GetComponentInChildren<Animator>();
         inventoryInputs = InventoryManager.Instance.GetComponent<InventoryInputsHandler>();
+        dialogueManager = DialogueManager.Instance;
     }
 
 	private void FixedUpdate()
 	{
-        if (DialogueManager.Instance.isActive)
+        if (dialogueManager.isActive)
         {
             animator.SetBool("Walk", false);
             return;
@@ -93,17 +95,14 @@ public class PlayerControler : ISingleton<PlayerControler>
 	// Update is called once per frame
 	void Update()
     {
-        if (Input.GetMouseButtonUp(0))
-        {
-            isPressing = false;
+        
 
-        }
-
-        if (DialogueManager.Instance.isActive)
+        if (dialogueManager.isActive)
         {
             animator.SetBool("Walk", false);
             motor.isWalking = false;
             rb.velocity = Vector3.zero;
+            isPressing = false;
             return;
         }
 
@@ -149,6 +148,11 @@ public class PlayerControler : ISingleton<PlayerControler>
             }
         }
 
+        if (Input.GetMouseButtonUp(0))
+        {
+            isPressing = false;
+
+        }
 
 
     }
