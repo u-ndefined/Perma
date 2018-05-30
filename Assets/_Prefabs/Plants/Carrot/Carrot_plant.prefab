@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114380834943417382}
   - component: {fileID: 136726515288779686}
   - component: {fileID: 114566777867550686}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Carrot_step01
   m_TagString: Plant
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 114233514001796654}
   - component: {fileID: 136953642500469120}
   - component: {fileID: 114941123487360556}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Carrot_step03
   m_TagString: Plant
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 114584196844258250}
   - component: {fileID: 136105755536848754}
   - component: {fileID: 114184875329230798}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Carrot_step04
   m_TagString: Plant
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 114041374349047274}
   - component: {fileID: 136203083489530038}
   - component: {fileID: 114900800220447156}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Carrot_step02
   m_TagString: Plant
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 4915460939801102}
   - component: {fileID: 33814920839666260}
   - component: {fileID: 23239974290248576}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Carrot_step03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4959617413562410}
   - component: {fileID: 114649058126845340}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Carrot_plant
   m_TagString: Plant
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 4598442238555502}
   - component: {fileID: 33152310471602624}
   - component: {fileID: 23907797582759082}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Carrot_step04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 4925765510126376}
   - component: {fileID: 33720377750297906}
   - component: {fileID: 23250819502322926}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Carrot_step02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 4682784123457586}
   - component: {fileID: 33068229823346312}
   - component: {fileID: 23268355390142688}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Carrot_step01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

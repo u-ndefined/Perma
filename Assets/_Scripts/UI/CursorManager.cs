@@ -30,7 +30,7 @@ public class CursorManager : ISingleton<CursorManager>
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 1000))
+        if (Physics.Raycast(ray, out hit, 250, LayerMask.GetMask("Clickable")))
         {
             switch (hit.transform.tag)
             {

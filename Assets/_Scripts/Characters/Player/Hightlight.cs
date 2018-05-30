@@ -32,7 +32,7 @@ public class Hightlight : MonoBehaviour {
         }
 
         ray = cam.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, 1000))
+        if (Physics.Raycast(ray, out hit, 250, LayerMask.GetMask("Clickable")))
         {
             Interactable interactable = hit.collider.GetComponent<Interactable>();
             if (interactable != null)

@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4715102246191598}
   - component: {fileID: 33676634792603570}
   - component: {fileID: 23834972863265424}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bean_step03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 114683560592793504}
   - component: {fileID: 136419320063358784}
   - component: {fileID: 114938079289369646}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bean_step03
   m_TagString: Plant
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 114760504074631712}
   - component: {fileID: 136626461860210788}
   - component: {fileID: 114126459855197662}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bean_step04
   m_TagString: Plant
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 4802149469436870}
   - component: {fileID: 33889221869987292}
   - component: {fileID: 23941899119828724}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bean_fruit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 114128486702288118}
   - component: {fileID: 136154327594390884}
   - component: {fileID: 114712070813195038}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bean_step02
   m_TagString: Plant
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4719461205491370}
   - component: {fileID: 114815678492436718}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Beans_plant
   m_TagString: Plant
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 4689015134925534}
   - component: {fileID: 33265810434128644}
   - component: {fileID: 23405044913095958}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bean_step02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 114894640623790712}
   - component: {fileID: 136102684546583312}
   - component: {fileID: 114967866037532154}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bean_step01
   m_TagString: Plant
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 4157990032294942}
   - component: {fileID: 33866724208366840}
   - component: {fileID: 23349342876128200}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bean_step01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 4268621414453428}
   - component: {fileID: 33657007565859710}
   - component: {fileID: 23878429543350670}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bean_step04
   m_TagString: Untagged
   m_Icon: {fileID: 0}

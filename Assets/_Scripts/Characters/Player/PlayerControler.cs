@@ -11,6 +11,8 @@ public class PlayerControler : ISingleton<PlayerControler>
     {
     }
 
+    public LayerMask clickLayer;
+
     public delegate void OnFocusChanged(Interactable newFocus);
     public OnFocusChanged onFocusChangedCallback;
 
@@ -57,8 +59,14 @@ public class PlayerControler : ISingleton<PlayerControler>
             LeftClic();
         }
 
+        rb.velocity = inputDirection * motor.moveSpeed;
+
+        if (inputDirection != Vector3.zero)
+        {
+            MovePlayer();
+        }
+
         if(motor.isWalking)rb.velocity = motor.direction * motor.moveSpeed;
-        else rb.velocity = inputDirection * motor.moveSpeed;
 
         if (actionInProgress) rb.velocity = Vector3.zero;
 
@@ -68,10 +76,7 @@ public class PlayerControler : ISingleton<PlayerControler>
             transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed);
         }
        
-        if (inputDirection != Vector3.zero)
-        {
-            MovePlayer();
-        }
+
         else if(!motor.isWalking) animator.SetBool("Walk", false);
 	}
 
@@ -131,7 +136,7 @@ public class PlayerControler : ISingleton<PlayerControler>
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, 1000))
+            if (Physics.Raycast(ray, out hit, 250, clickLayer))
             {
                 Interactable interactable = hit.collider.GetComponent<Interactable>();       // get interractable under mouse
 
@@ -148,10 +153,9 @@ public class PlayerControler : ISingleton<PlayerControler>
             }
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && isPressing)
         {
             isPressing = false;
-
         }
 
 
@@ -210,7 +214,7 @@ public class PlayerControler : ISingleton<PlayerControler>
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 1000))                         //if interactable follow it
+        if (Physics.Raycast(ray, out hit, 250, clickLayer))                         //if interactable follow it
         {
             Interactable interactable = hit.collider.GetComponent<Interactable>();
 
