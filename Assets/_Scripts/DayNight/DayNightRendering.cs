@@ -5,7 +5,7 @@ using UnityEngine.PostProcessing;
 
 public class DayNightRendering : MonoBehaviour {
     private TimeManager time;
-    public Light light;
+    public Light sceneLight;
     public Color dayLight;
     public Color nightLight;
     private PostProcessingBehaviour postProcessing;
@@ -67,7 +67,7 @@ public class DayNightRendering : MonoBehaviour {
 
         postProcessing.profile.colorGrading.settings = settings;
 
-        light.color = GetColor(nightLight, dayLight, hn);
+        sceneLight.color = GetColor(nightLight, dayLight, hn);
     }
 
     private Vector3 Solve(float n , float d )
