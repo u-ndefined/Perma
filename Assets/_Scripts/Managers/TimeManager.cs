@@ -92,5 +92,13 @@ public class TimeManager : ISingleton<TimeManager>
             }
         }
     }
+
+    public float TimeNormalised()
+    {
+        float s = clock.second / 60;
+        float m = (clock.minute + s) / 60;
+        float h = (clock.hour + m) / 24;
+        return h;
+    }
     
 }

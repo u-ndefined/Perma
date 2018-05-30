@@ -11,6 +11,6 @@ public class DayNightSound : MonoBehaviour
 	}
 	private void Update()
 	{
-        emitter.SetParameterValue("DayHours", TimeManager.Instance.clock.hour);
+        emitter.SetParameterValue("DayHours", TimeManager.Instance.TimeNormalised());
 	}
 }
