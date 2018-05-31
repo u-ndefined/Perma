@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 65688882599864342}
   - component: {fileID: 114558907222708028}
   - component: {fileID: 54158701760923260}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Beans_fruit
   m_TagString: Item
   m_Icon: {fileID: 0}

@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 65079999122188892}
   - component: {fileID: 114949488214297976}
   - component: {fileID: 54589609604173774}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Beans_seedBag
   m_TagString: Item
   m_Icon: {fileID: 0}

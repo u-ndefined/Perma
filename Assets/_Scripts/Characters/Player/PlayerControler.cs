@@ -221,7 +221,6 @@ public class PlayerControler : ISingleton<PlayerControler>
 
             if (interactable != null && interactable is HexCell == false && interactable.tag != "Player")
             {
-                Debug.Log("focus " + interactable.name);
                 SetFocus(interactable);
             }
             else

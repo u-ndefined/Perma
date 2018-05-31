@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 65093059310151776}
   - component: {fileID: 114064799294922088}
   - component: {fileID: 54096132952663222}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tomato_seedBag
   m_TagString: Item
   m_Icon: {fileID: 0}
