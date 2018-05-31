@@ -40,15 +40,20 @@ public class NPCRoutine : MonoBehaviour
         {
             CheckFlag();
         }
+
+	}
+
+	private void FixedUpdate()
+	{
         rb.velocity = actor.motor.direction * actor.motor.moveSpeed;
-        if (rb.velocity.normalized != Vector3.zero)
+        if (actor.motor.isWalking && rb.velocity.normalized != Vector3.zero)
         {
             Quaternion rotation = Quaternion.LookRotation(rb.velocity.normalized);
             transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed);
         }
 	}
 
-    private void NextDay()
+	private void NextDay()
     {
         waitNextDay = false;
     }

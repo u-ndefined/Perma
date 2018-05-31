@@ -54,6 +54,7 @@ public class Motor : MonoBehaviour
         animator.SetBool("Walk", true);
         isWalking = true;
         searchingPath = true;
+        //hasPath = false;
     }
 
     public void OnFocusChanged(Interactable newFocus)
@@ -69,8 +70,6 @@ public class Motor : MonoBehaviour
         {
             agent.stoppingDistance = stoppingDistance;
             target = null;
-            //agent.isStopped = true;
-            //agent.ResetPath();
             hasPath = false;
         }
     }
@@ -81,11 +80,16 @@ public class Motor : MonoBehaviour
         if (hasPath)
         {
             direction = (currentDestination - transform.position).normalized;
-            if((currentDestination - transform.position).sqrMagnitude <= stoppingDistance * stoppingDistance) GetNextCorner();
+            if((currentDestination - transform.position).sqrMagnitude <= agent.stoppingDistance * agent.stoppingDistance)
+            {
+                Debug.Log((currentDestination - transform.position).sqrMagnitude + " " + stoppingDistance * stoppingDistance);
+                GetNextCorner();
+            }
         }
-        else if(!searchingPath)
+        else 
         {
             isWalking = false;
+            animator.SetBool("Walk", false);
         }
 
         if (searchingPath && !agent.pathPending)
@@ -94,22 +98,7 @@ public class Motor : MonoBehaviour
             SetupPath(agent.path);
         }
 
-     
-        
-        //if (!agent.pathPending)
-        //{
-        //    if (agent.remainingDistance <= agent.stoppingDistance)
-        //    {
-        //        if (!player)
-        //        {
-        //            animator.SetBool("Walk", false);
-        //            //OnFocusChanged(null);
-        //        }
-        //        isWalking = false;
-        //        //agent.isStopped = true;
-        //        //agent.ResetPath();
-        //    }
-        //}
+    
 
     }
 
@@ -120,16 +109,9 @@ public class Motor : MonoBehaviour
         {
             MoveToPoint(target.position);
             previousPosition = target.position;
-            //FaceTarget();
         }
 	}
 
-	//void FaceTarget()
-    //{
-    //    Vector3 direction = (target.position - transform.position).normalized;
-    //    Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-    //    transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
-    //}
 
     private void SetupPath(NavMeshPath path)
     {
@@ -156,6 +138,7 @@ public class Motor : MonoBehaviour
         else
         {
             hasPath = false;
+            Debug.Log("falseee");
         }
     }
 

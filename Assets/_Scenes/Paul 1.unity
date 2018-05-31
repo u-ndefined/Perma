@@ -5787,6 +5787,11 @@ Prefab:
       propertyPath: nightLight.b
       value: 0.5514706
       objectReference: {fileID: 0}
+    - target: {fileID: 114206161578802744, guid: b81613eeacb414ddd9e1428eac839aeb,
+        type: 2}
+      propertyPath: sceneLight
+      value: 
+      objectReference: {fileID: 1283615765}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b81613eeacb414ddd9e1428eac839aeb, type: 2}
   m_IsPrefabParent: 0
@@ -10040,6 +10045,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 326591739}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &328475025 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4795704416876598, guid: 09a489b7dd6724e71b567b6cf2c81a5e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1729700661}
 --- !u!1001 &329302902
 Prefab:
   m_ObjectHideFlags: 0
@@ -47652,11 +47662,11 @@ Prefab:
         type: 2}
       propertyPath: flags.Array.data[0].target
       value: 
-      objectReference: {fileID: 1811445308}
+      objectReference: {fileID: 516515085}
     - target: {fileID: 114845279977793754, guid: 09a489b7dd6724e71b567b6cf2c81a5e,
         type: 2}
       propertyPath: flags.Array.data[0].hide
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114845279977793754, guid: 09a489b7dd6724e71b567b6cf2c81a5e,
         type: 2}
@@ -47675,7 +47685,17 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1591659813197896, guid: 09a489b7dd6724e71b567b6cf2c81a5e, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114464889310703972, guid: 09a489b7dd6724e71b567b6cf2c81a5e,
+        type: 2}
+      propertyPath: interactionTransform
+      value: 
+      objectReference: {fileID: 328475025}
+    - target: {fileID: 114845279977793754, guid: 09a489b7dd6724e71b567b6cf2c81a5e,
+        type: 2}
+      propertyPath: rotationSpeed
+      value: 0.025
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 09a489b7dd6724e71b567b6cf2c81a5e, type: 2}
@@ -49846,11 +49866,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4879627763825632, guid: 392115c7881564baaad71092fdc19cb7,
     type: 2}
   m_PrefabInternal: {fileID: 1809239225}
---- !u!4 &1811445308 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4019776175074848, guid: 3e2b81b1ea9da47ec8c5942a780a7be3,
-    type: 2}
-  m_PrefabInternal: {fileID: 963199248}
 --- !u!1001 &1812813454
 Prefab:
   m_ObjectHideFlags: 0
