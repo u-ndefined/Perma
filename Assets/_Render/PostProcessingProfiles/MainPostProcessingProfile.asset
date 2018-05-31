@@ -25,7 +25,7 @@ MonoBehaviour:
         motionVectorsResolution: 24
         motionVectorsAmplitude: 64
   fog:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
       excludeSkybox: 1
   antialiasing:
@@ -97,7 +97,7 @@ MonoBehaviour:
       logMin: -8
       logMax: 4
   bloom:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       bloom:
         intensity: 0.5
@@ -112,7 +112,7 @@ MonoBehaviour:
     m_Enabled: 1
     m_Settings:
       tonemapping:
-        tonemapper: 2
+        tonemapper: 0
         neutralBlackIn: 0.02
         neutralWhiteIn: 10
         neutralBlackOut: 0
@@ -124,23 +124,23 @@ MonoBehaviour:
         temperature: 0
         tint: 0
         hueShift: 0
-        saturation: 1
+        saturation: 0.93
         contrast: 1
       channelMixer:
-        red: {x: 1, y: 0, z: 0}
+        red: {x: 0.94, y: 0.19, z: 0.01}
         green: {x: 0, y: 1, z: 0}
         blue: {x: 0, y: 0, z: 1}
         currentEditingChannel: 0
       colorWheels:
-        mode: 1
+        mode: 0
         log:
           slope: {r: 1, g: 1, b: 1, a: 0}
           power: {r: 1, g: 1, b: 1, a: 0}
           offset: {r: 1, g: 1, b: 1, a: 0}
         linear:
-          lift: {r: 0, g: 0, b: 0, a: 0}
-          gamma: {r: 0, g: 0, b: 0, a: 0}
-          gain: {r: 0, g: 0, b: 0, a: 0}
+          lift: {r: 1, g: 0.87989825, b: 0.82663023, a: -0.03846154}
+          gamma: {r: 0.9835518, g: 0.9671052, b: 1, a: 0.0000000022924864}
+          gain: {r: 0.9890346, g: 0.9780707, b: 1, a: -0.0000000011462431}
       curves:
         master:
           curve:
@@ -182,7 +182,7 @@ MonoBehaviour:
               tangentMode: 0
             m_PreInfinity: 2
             m_PostInfinity: 2
-            m_RotationOrder: 4
+            m_RotationOrder: 0
           m_Loop: 0
           m_ZeroValue: 0
           m_Range: 1
@@ -272,7 +272,7 @@ MonoBehaviour:
           m_Range: 1
         e_CurrentEditingCurve: 0
         e_CurveY: 1
-        e_CurveR: 0
+        e_CurveR: 1
         e_CurveG: 0
         e_CurveB: 0
   userLut:
