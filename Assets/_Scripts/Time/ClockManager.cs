@@ -5,7 +5,8 @@ using TMPro;
 
 public class ClockManager : MonoBehaviour {
     TimeManager time;
-    TextMeshProUGUI textMesh; 
+    TextMeshProUGUI textMesh;
+    public GameObject disk;
 	// Use this for initialization
 	void Start () 
     {
@@ -17,7 +18,9 @@ public class ClockManager : MonoBehaviour {
 	void Update () 
     {
         int demie = Mathf.FloorToInt(time.clock.minute / 30) * 30;
-        string hour = time.clock.hour + " : " + demie;
+        string hour = string.Format("{0:00} : {1:00}", time.clock.hour, demie);
         textMesh.text = hour;
+
+        disk.transform.rotation = Quaternion.Euler(new Vector3(0,0,time.TimeNormalised() * 360));
 	}
 }

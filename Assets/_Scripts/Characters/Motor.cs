@@ -32,9 +32,9 @@ public class Motor : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         stoppingDistance = agent.stoppingDistance;
 
-        moveSpeed = agent.speed;
+        //moveSpeed = agent.speed;
 
-        agent.speed = 0;
+        agent.speed = moveSpeed;
 
         cornerQueue = new Queue<Vector3>();
 
@@ -53,7 +53,7 @@ public class Motor : MonoBehaviour
         agent.SetDestination(point);
         animator.SetBool("Walk", true);
         isWalking = true;
-        searchingPath = true;
+        //searchingPath = true;
         //hasPath = false;
     }
 
@@ -71,12 +71,19 @@ public class Motor : MonoBehaviour
             agent.stoppingDistance = stoppingDistance;
             target = null;
             hasPath = false;
+            agent.ResetPath();
         }
     }
 
     void Update()
     {
+        if((agent.destination - transform.position).sqrMagnitude <= agent.stoppingDistance * agent.stoppingDistance)
+        {
+            animator.SetBool("Walk", false);
+            isWalking = false;
+        }
 
+        /*
         if (hasPath)
         {
             direction = (currentDestination - transform.position).normalized;
@@ -98,13 +105,13 @@ public class Motor : MonoBehaviour
             SetupPath(agent.path);
         }
 
-    
+    */
 
     }
 
 	private void FixedUpdate()
 	{
-
+        
         if (target != null && target.position != previousPosition)
         {
             MoveToPoint(target.position);

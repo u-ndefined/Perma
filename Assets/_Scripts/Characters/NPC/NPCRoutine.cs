@@ -15,6 +15,8 @@ public class NPCRoutine : MonoBehaviour
     public float rotationSpeed = 0.125f;
     [HideInInspector]
     public bool hide;
+    [HideInInspector]
+    public bool dial;
 
 	private void Start()
 	{
@@ -28,15 +30,23 @@ public class NPCRoutine : MonoBehaviour
 
 	private void Update()
 	{
-        if (!isActive || DialogueManager.Instance.isActive) 
+        if (!isActive) return;
+        if (DialogueManager.Instance.isActive) 
         {
             animator.SetBool("Walk", false);
             Quaternion rotation = Quaternion.LookRotation(PlayerControler.Instance.transform.position - transform.position);
             transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed);
-            rb.velocity = Vector3.zero;
+            actor.motor.agent.isStopped = true;
+            dial = true;
             return;
         }
-        if(!waitNextDay && TimeManager.Instance.clock > flags[step].clock)
+        if(dial)
+        {
+            dial = false;
+            actor.motor.OnFocusChanged(null);
+            CheckFlag();
+        }
+        else if(!waitNextDay && TimeManager.Instance.clock > flags[step].clock)
         {
             CheckFlag();
         }
@@ -45,12 +55,14 @@ public class NPCRoutine : MonoBehaviour
 
 	private void FixedUpdate()
 	{
+        /*
         rb.velocity = actor.motor.direction * actor.motor.moveSpeed;
         if (actor.motor.isWalking && rb.velocity.normalized != Vector3.zero)
         {
             Quaternion rotation = Quaternion.LookRotation(rb.velocity.normalized);
             transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed);
         }
+        */
 	}
 
 	private void NextDay()
