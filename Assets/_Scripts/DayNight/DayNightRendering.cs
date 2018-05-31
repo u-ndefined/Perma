@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PostProcessing;
 
+[ExecuteInEditMode]
 public class DayNightRendering : MonoBehaviour {
     private TimeManager time;
     public Light sceneLight;
