@@ -33,7 +33,13 @@ public class NPC : Interactable
         //base.Interact();
         if(end)
         {
-            DialogueManager.Instance.ActorSay(actor, "Good_end et Bad_end");
+            if (playerInventory.GetQuantity(need) >= need.quantity)
+            {
+                playerInventory.Remove(need);
+                done = true;
+            }
+            if(done) DialogueManager.Instance.ActorSay(actor, "Good_end");
+            else DialogueManager.Instance.ActorSay(actor, "Bad_end");
         }
         else if(!quest)
         {
@@ -42,7 +48,7 @@ public class NPC : Interactable
         }
         else
         {
-            if(done)
+            if(!done)
             {
                 DialogueManager.Instance.ActorSay(actor, "Quest_done");
             }
@@ -52,14 +58,12 @@ public class NPC : Interactable
                 {
                     playerInventory.Remove(need);
                     Give(need);
-                    UpdateQuestStatus();
                 }
                 else
                 {
                     int r = Mathf.FloorToInt(Random.Range(0, 3)) + 1;
                     DialogueManager.Instance.ActorSay(actor, "Quest_inProgress" + r);
                 }
-
             }
         }
         animatorr.SetTrigger("NPCSpeak");
