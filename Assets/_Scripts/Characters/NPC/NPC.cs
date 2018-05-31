@@ -14,7 +14,7 @@ public class NPC : Interactable
     [Header("Quest")]
     public bool quest = false;
     public Stack need;
-    public Stack reward;
+    public Stack[] rewards;
     private bool done = false;
 
 
@@ -127,6 +127,15 @@ public class NPC : Interactable
     {
         DialogueManager.Instance.ActorSay(actor, "Quest_done");
         quest = done;
-        playerInventory.Add(reward);
+
+        for (int i = 0; i < rewards.Length; i++)
+        {
+            Stack reward = playerInventory.Add(rewards[i]);
+            if(!reward.empty)
+            {
+                playerInventory.DropItem(reward);
+            }
+        }
+
     }
 }
