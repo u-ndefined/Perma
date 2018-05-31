@@ -8,6 +8,8 @@ public class NPC : Interactable
     private InventoryManager playerInventory;
     private Actor actor;
     private Animator animatorr;
+    [HideInInspector]
+    public bool end;
 
     [Header("Quest")]
     public bool quest = false;
@@ -29,7 +31,11 @@ public class NPC : Interactable
     public override void Interact()
     {
         //base.Interact();
-        if(!quest)
+        if(end)
+        {
+            DialogueManager.Instance.ActorSay(actor, "Good_end et Bad_end");
+        }
+        else if(!quest)
         {
             DialogueManager.Instance.ActorSay(actor, "Quest_start");
             quest = true;

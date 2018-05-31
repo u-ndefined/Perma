@@ -18,12 +18,13 @@ public class NPCRoutine : MonoBehaviour
     [HideInInspector]
     public bool dial;
 
+
 	private void Start()
 	{
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         SortFlags();
-        CheckFlag();
+        if (isActive)CheckFlag();
         TimeManager.Instance.OnNewDayEvent += NextDay;
 
 	}

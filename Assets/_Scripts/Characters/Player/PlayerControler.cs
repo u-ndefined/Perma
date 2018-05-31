@@ -66,7 +66,7 @@ public class PlayerControler : ISingleton<PlayerControler>
             MovePlayer();
         }
 
-        if(motor.isWalking)rb.velocity = motor.direction * motor.moveSpeed;
+        else if(motor.isWalking)rb.velocity = motor.direction * motor.moveSpeed;
 
         if (actionInProgress) rb.velocity = Vector3.zero;
 
@@ -157,6 +157,7 @@ public class PlayerControler : ISingleton<PlayerControler>
         {
             isPressing = false;
         }
+
 
 
     }

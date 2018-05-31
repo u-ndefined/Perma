@@ -58,6 +58,8 @@ public class PlayerMotor : MonoBehaviour
         {
             stoppingDistance = 0.1f;
             target = null;
+
+            isWalking = false;
         }
     }
 
