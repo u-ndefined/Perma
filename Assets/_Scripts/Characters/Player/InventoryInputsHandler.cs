@@ -40,7 +40,7 @@ public class InventoryInputsHandler : MonoBehaviour
         {
             startingSlot = GetSlotUnderMouse();             //get slot under mouse
 
-            if (startingSlot != null && !dragging)      //if begin drag
+            if (startingSlot != null && !dragging && !inventory.stacks[startingSlot.slotIndex].empty)      //if begin drag
             {
                 SoundManager.Instance.PlaySound("UI/InventoryIcon");
 

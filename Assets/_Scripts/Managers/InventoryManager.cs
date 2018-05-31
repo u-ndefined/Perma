@@ -21,6 +21,8 @@ public class InventoryManager : ISingleton<InventoryManager>
 
     public Stack stackUsed;
 
+    private bool init = false;
+
 
     void Awake()
     {
@@ -33,16 +35,29 @@ public class InventoryManager : ISingleton<InventoryManager>
 
 	private void Start()
 	{
-        SelectSlot(0);
+        
 
         if (onItemChangedEvent != null)         //updateUI
         {
             onItemChangedEvent.Invoke();
         }
+
+
 	}
 
+	
 	void Update()
     {
+        if (!init)
+        {
+
+            SelectSlot(selectedSlotID + 1);
+            if (onSelectorChangedEvent != null)         //update selector
+            {
+                onSelectorChangedEvent.Invoke();
+                init = true;
+            }
+        }
         //Get scrollwheel and update selected slot
         if (Input.GetAxis("Mouse ScrollWheel") < 0f)
         {

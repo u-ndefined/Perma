@@ -31,15 +31,19 @@ public class InventoryUI : MonoBehaviour {
             slots[i].slotIndex = i;
         }
 
-        //UpdateSlots();
-        //UpdateSelector();
 
+
+	}
+
+	private void Start()
+	{
+        UpdateSlots();
+        UpdateSelector();
 	}
 
 
 
-
-    private void UpdateSlots()  //I need to change this later, the player may want to choose a slot for each item
+	private void UpdateSlots()  //I need to change this later, the player may want to choose a slot for each item
     {
         for (int i = 0; i < slots.Length; i++)
         {

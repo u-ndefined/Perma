@@ -23,7 +23,8 @@ public class PauseMenu : MonoBehaviour {
         {
             if(timeManager.gameIsPaused)
             {
-                Resume();
+                if (onSettings) ToggleSettings();
+                else Resume();
             }
             else
             {
