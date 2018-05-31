@@ -8,6 +8,11 @@ public class NPC : Interactable
     private InventoryManager playerInventory;
     private Actor actor;
     private Animator animatorr;
+
+    public ScriptableDialogues[] dialogQuest;
+    public ScriptableDialogues[] dialogNoQuest;
+
+
     [HideInInspector]
     public bool end;
 
@@ -18,6 +23,9 @@ public class NPC : Interactable
     private bool done = false;
 
 
+    private int currentDialog = 0;
+
+
 
 	// Use this for initialization
     protected override void Start () 
@@ -26,6 +34,7 @@ public class NPC : Interactable
         playerInventory = InventoryManager.Instance;
         actor = GetComponent<Actor>();
         animatorr = GetComponent<Animator>();
+        TimeManager.Instance.OnNewDayEvent += NextDialog;
 	}
 
     public override void Interact()
@@ -48,9 +57,9 @@ public class NPC : Interactable
         }
         else
         {
-            if(!done)
+            if(done)
             {
-                DialogueManager.Instance.ActorSay(actor, "Quest_done");
+                DialogueManager.Instance.ActorSay(actor, dialogNoQuest[currentDialog % dialogNoQuest.Length].name);
             }
             else 
             {
@@ -61,13 +70,17 @@ public class NPC : Interactable
                 }
                 else
                 {
-                    int r = Mathf.FloorToInt(Random.Range(0, 3)) + 1;
-                    DialogueManager.Instance.ActorSay(actor, "Quest_inProgress" + r);
+                    DialogueManager.Instance.ActorSay(actor, dialogQuest[currentDialog % dialogQuest.Length].name);
                 }
             }
         }
         animatorr.SetTrigger("NPCSpeak");
         DoAction(PlayerManager.Instance.GetAnim(GameData.Animation.Speak));
+    }
+
+    private void NextDialog()
+    {
+        currentDialog++;
     }
 
 	public override void UseObjectOn(Stack stackUsedOn)
