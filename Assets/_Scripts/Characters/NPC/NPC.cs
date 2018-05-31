@@ -17,7 +17,7 @@ public class NPC : Interactable
     public bool end;
 
     [Header("Quest")]
-    public bool quest = false;
+    private bool quest = false;
     public Stack need;
     public Stack[] rewards;
     private bool done = false;
