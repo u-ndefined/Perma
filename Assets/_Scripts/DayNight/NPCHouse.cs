@@ -6,9 +6,9 @@ public class NPCHouse : Interactable
 {
     public ScriptableDialogues dialog;
     private NPCRoutine npc;
-    private bool waitNextDay = false;
+    public bool waitNextDay = false;
     private bool isHiding;
-    private Clock clock;
+    public Clock clock;
 
     protected override void Start()
 	{
