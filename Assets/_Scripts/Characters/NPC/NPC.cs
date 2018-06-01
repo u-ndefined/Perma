@@ -155,7 +155,7 @@ public class NPC : Interactable
     private void EndQuest()
     {
         DialogueManager.Instance.ActorSay(actor, "Quest_done");
-        quest = done;
+        done = true;
 
         for (int i = 0; i < rewards.Length; i++)
         {
