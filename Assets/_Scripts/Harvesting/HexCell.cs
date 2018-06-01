@@ -126,7 +126,7 @@ public class HexCell : Interactable {
     private void PlantSeed(Seed seed)
     {
         SoundManager.Instance.PlaySound("PlayerAction/Plant1");
-        GameObject plantObject = ObjectsPooler.Instance.SpawnFromPool(seed.plantType, transform.position, Quaternion.identity, transform);
+        GameObject plantObject = ObjectsPooler.Instance.SpawnFromPool(seed.plantType, new Vector3(transform.position.x, 0.02f, transform.position.z), Quaternion.identity, transform);
         plant = plantObject.GetComponent<Plant>();
         workedSoil.SetActive(true);
     }
