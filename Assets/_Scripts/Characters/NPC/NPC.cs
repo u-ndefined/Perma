@@ -26,6 +26,9 @@ public class NPC : Interactable
     private int currentDialog = 0;
 
 
+    public Stack[] realyEndReward;
+
+
 
 	// Use this for initialization
     protected override void Start () 
@@ -47,7 +50,18 @@ public class NPC : Interactable
                 playerInventory.Remove(need);
                 done = true;
             }
-            if(done) DialogueManager.Instance.ActorSay(actor, "Good_end");
+            if(done)
+            {
+                for (int i = 0; i < realyEndReward.Length; i++)
+                {
+                    Stack reward = playerInventory.Add(rewards[i]);
+                    if (!reward.empty)
+                    {
+                        playerInventory.DropItem(reward);
+                    }
+                }
+                DialogueManager.Instance.ActorSay(actor, "Good_end");
+            }
             else DialogueManager.Instance.ActorSay(actor, "Bad_end");
         }
         else if(!quest)
