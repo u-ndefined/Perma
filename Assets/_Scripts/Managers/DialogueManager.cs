@@ -33,8 +33,6 @@ public class DialogueManager : ISingleton<DialogueManager> {
 	public void StartDialogue(Actor newActor, string[] newSentences)
     {
         isActive = true;
-        Debug.Log("sentence " + newSentences[0]);
-
 		actor = newActor;
 		actor.dialogueBox.Display ();					//affiche la dialogueBox
 		sentences.Clear ();

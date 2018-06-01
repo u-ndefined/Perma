@@ -47,6 +47,7 @@ public class Gilbert : MonoBehaviour
             wait = false;
             routine.isActive = true;
             npc.Interact();
+            GetComponentInChildren<BoxCollider>().gameObject.SetActive(false);
         }
 	}
 }
