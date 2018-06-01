@@ -16,8 +16,8 @@ public class FaceCamera : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //transform.LookAt(2 * transform.position - cam.transform.position);
-        //transform.position = character.position + offset;
+        transform.LookAt(2 * transform.position - cam.transform.position);
+        transform.position = character.position + offset;
 	}
 
     public void Tourne()
