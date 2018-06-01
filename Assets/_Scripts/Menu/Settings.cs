@@ -22,11 +22,12 @@ public class Settings : MonoBehaviour {
 
 	public void SetVolume(float volume)
     {
-        
+        SoundManager.Instance.PlaySound("UI/ScrollSound");
     }
 
     public void Mute()
     {
+        SoundManager.Instance.PlaySound("UI/ClickMenu");
         if(muted)
         {
             SetVolume(previousVolume);
@@ -45,16 +46,19 @@ public class Settings : MonoBehaviour {
 
     public void SetQuality(int qualityIndex)
     {
+        SoundManager.Instance.PlaySound("UI/ClickMenu");
         QualitySettings.SetQualityLevel(qualityIndex);
     }
 
     public void SetFullscreen(bool isFullscreen)
     {
+        SoundManager.Instance.PlaySound("UI/ClickMenu");
         Screen.fullScreen = isFullscreen;
     }
 
     public void SetResolution(int resolutionIndex)
     {
+        SoundManager.Instance.PlaySound("UI/ClickMenu");
         Screen.SetResolution(resolutions[resolutionIndex].width, resolutions[resolutionIndex].height, Screen.fullScreen);
     }
 

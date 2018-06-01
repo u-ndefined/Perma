@@ -11,16 +11,19 @@ public class NavigationMenu : MonoBehaviour
 
     public void NewGame()
     {
+        SoundManager.Instance.PlaySound("UI/ClickMenu");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void Quit()
     {
+        SoundManager.Instance.PlaySound("UI/ClickMenu");
         Application.Quit();
     }
 
     public void ToggleSettings()
     {
+        SoundManager.Instance.PlaySound("UI/ClickMenu");
         if(onSettings)
         {
             settings.SetActive(false);
@@ -37,6 +40,7 @@ public class NavigationMenu : MonoBehaviour
 
     public void ToggleCredits()
     {
+        SoundManager.Instance.PlaySound("UI/ClickMenu");
         if (onCredits)
         {
             Debug.Log("la");
