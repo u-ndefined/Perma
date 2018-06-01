@@ -126,6 +126,8 @@ public class NPC : Interactable
         }
         if (!added) inventory.Add(stack);
 
+        if (stack.item == need.item) need.quantity -= stack.quantity;
+
         if (UpdateQuestStatus()) EndQuest();
         else DialogueManager.Instance.ActorSay(actor, "NPC_receiveObject");
 
