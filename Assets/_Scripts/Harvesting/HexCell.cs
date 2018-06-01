@@ -179,7 +179,7 @@ public class HexCell : Interactable {
 
     private void UpdatePlantEffects()
     {
-        if (plant.CanGrow())
+        if (plant != null && plant.CanGrow())
         {
             hexData += plant.seed.hexEffect;                //impact its own cell
             ImpactAdjacentHexCells(plant.seed.hexEffect);   //impact adjacent cells
