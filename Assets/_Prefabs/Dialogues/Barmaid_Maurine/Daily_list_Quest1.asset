@@ -9,9 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
-  m_Name: Daily_list_quest2
+  m_Name: Daily_list_Quest1
   m_EditorClassIdentifier: 
-  dialogueName: Daily_list_quest2
+  dialogueName: Daily_list_Quest1
   sentences:
-  - Why is it so difficult to find<#f94032><b> ten tomatoes</b></color> at an affordable
-    price in this world?
+  - I'll give you some great advice.
+  - Don't stay holed up in your farm all day by yourself!
+  - Try to talk to the inhabitants of this town.
+  - They usually have something new to say every day.

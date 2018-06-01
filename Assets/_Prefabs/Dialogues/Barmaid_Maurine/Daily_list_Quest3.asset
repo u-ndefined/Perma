@@ -9,9 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
-  m_Name: Daily_list_quest2
+  m_Name: Daily_list_Quest3
   m_EditorClassIdentifier: 
-  dialogueName: Daily_list_quest2
+  dialogueName: Daily_list_Quest3
   sentences:
-  - Why is it so difficult to find<#f94032><b> ten tomatoes</b></color> at an affordable
-    price in this world?
+  - If you ever see Victoria, try to talk to her.
+  - She may seem harsh, but she hides a vulnerable heart.
+  - And she really loves to talk.
+  - Outside company will do her some good.

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
+  m_Name: Daily_list_Quest7
+  m_EditorClassIdentifier: 
+  dialogueName: Daily_list_Quest7
+  sentences:
+  - Hey, wanna know a secret?
+  - Well, everyone knows it, but nobody wants to talk about it...
+  - The mayor has a brother that lives somewhere in the forest.
+  - He used to live in the village and help out at the townhall.
+  - But one day, he just sort of became crazy.
+  - '"I''m telling you I''m a robot!", "I can''t live with normal humans!" Creepy,
+    right?'
+  - Since that day, he lives in the forest.
+  - And the mayor rarely comes out anymore.
+  - '............This place is so weird.'

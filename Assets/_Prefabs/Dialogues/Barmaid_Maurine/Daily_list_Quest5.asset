@@ -9,9 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
-  m_Name: Daily_list_quest2
+  m_Name: Daily_list_Quest5
   m_EditorClassIdentifier: 
-  dialogueName: Daily_list_quest2
+  dialogueName: Daily_list_Quest5
   sentences:
-  - Why is it so difficult to find<#f94032><b> ten tomatoes</b></color> at an affordable
-    price in this world?
+  - One evening, we had a drinking contest.
+  - Do you want to know what happened?
+  - You reeeeally want to know?
+  - '...Well I won of course.'
+  - But Victoria was a close second.

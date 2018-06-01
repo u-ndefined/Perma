@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
   m_Name: Bad_end
   m_EditorClassIdentifier: 
-  dialogueName: Quest_done
+  dialogueName: Bad_end
   sentences:
   - Hey, I just wanted to tell you...
   - I know I practically begged you for some<#f94032><b> tomatoes</b></color> when

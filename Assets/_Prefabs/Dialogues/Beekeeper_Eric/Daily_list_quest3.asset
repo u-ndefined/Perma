@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
   m_Name: Daily_list_quest3
   m_EditorClassIdentifier: 
-  dialogueName: Quest_start
+  dialogueName: Daily_list_quest3
   sentences:
   - I guess I could just give you ten tomato seeds bags...
   - But no! I want to know if you can take care of your crops first!

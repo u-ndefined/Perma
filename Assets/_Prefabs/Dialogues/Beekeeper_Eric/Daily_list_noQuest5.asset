@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
   m_Name: Daily_list_noQuest5
   m_EditorClassIdentifier: 
-  dialogueName: Quest_start
+  dialogueName: Daily_list_noQuest5
   sentences:
   - I met my girlfriend at the company I used to work for.
   - But when I decided to start my beekeeping activity here, she refused to follow
