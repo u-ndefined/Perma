@@ -108,8 +108,13 @@ public class InventoryManager : ISingleton<InventoryManager>
 	public void DropItem(Stack dropStack)
     {
         Transform player = PlayerControler.Instance.transform;
-        Vector3 dropPosition = player.position + player.forward + Vector3.up;
-        GameObject dropObject = Instantiate(dropStack.item.objectOnGround, dropPosition, player.rotation);
+        Vector3 dropPosition = player.position + (player.forward * 1.2f) + (Vector3.up * 0.1f);
+        Quaternion rot = player.rotation;
+        if (dropStack.item.itemType == ItemType.SHOVEL)
+        {
+            rot = Quaternion.Euler(90, 0, 90);
+        }
+        GameObject dropObject = Instantiate(dropStack.item.objectOnGround, dropPosition, rot);
         dropObject.GetComponent<ItemPickup>().stack.quantity = dropStack.quantity;
     }
 
