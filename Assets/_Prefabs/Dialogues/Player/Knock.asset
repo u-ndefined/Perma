@@ -13,4 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueName: Knock
   sentences:
-  - Knock
+  - '...No one is responding.'

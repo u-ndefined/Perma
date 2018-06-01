@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
   m_Name: Daily_list_quest2
   m_EditorClassIdentifier: 
-  dialogueName: Quest_start
+  dialogueName: Daily_list_quest2
   sentences:
   - Why is it so difficult to find<#f94032><b> ten tomatoes</b></color> at an affordable
     price in this world?

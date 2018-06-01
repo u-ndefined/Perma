@@ -17,7 +17,7 @@ MonoBehaviour:
     type: 2}
   itemType: 0
   maxQuantity: 99
-  description: Toatoes need<#fce38a><b> sunlight</b></color> and an<#f38181><b> energy</b></color>
+  description: Tomatoes need<#fce38a><b> sunlight</b></color> and an<#f38181><b> energy</b></color>
     rich soil to grow.
   plantType: 1
   hexEffect:
