@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
+  m_Name: Daily_list_noQuest6
+  m_EditorClassIdentifier: 
+  dialogueName: Quest_start
+  sentences:
+  - When we met, I told you to call me Chris.
+  - You must have guessed it but it's just a nickname.
+  - My real name is so weird and lame, I don't even want to say it.
+  - '...'
+  - It's "Chrystal".
+  - Argh! It's so bad!
+  - '...But it''s the name chosen by my mom, so I can''t abandon it completely.'
+  - So, "Chris" it is.

@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
-  m_Name: Quest_inProgress3
+  m_Name: Daily_list_noQuest2
   m_EditorClassIdentifier: 
-  dialogueName: Quest_inProgress3
+  dialogueName: Quest_start
   sentences:
   - So, why did you decide to leave the city for this practically dead town?
   - Me? You wouldn't know it by looking at me now but I used to work in the marketing
     department of a big brand.
   - And when I say big, I mean BIG big.
-  - One day... I don't know, I just had enough of everything and... well, here I am.
+  - One day... I don't know, I just had enough of everything and... Well, here I am.

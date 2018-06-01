@@ -9,8 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
-  m_Name: NewDay
+  m_Name: Quest_start
   m_EditorClassIdentifier: 
-  dialogueName: NewDay
+  dialogueName: Quest_start
   sentences:
-  - It's the beginning of a new and beautiful day.
+  - Hey, my dad told me about you.
+  - You're from the city right? That's so cool.
+  - You can call me Chris, do you want to be friends?
+  - Well, it's too late, we're friends now!

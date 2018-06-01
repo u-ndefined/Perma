@@ -9,12 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
-  m_Name: Quest_inProgress3
+  m_Name: Quest_start
   m_EditorClassIdentifier: 
-  dialogueName: Quest_inProgress3
+  dialogueName: Quest_start
   sentences:
-  - You know, before I had to worry about<#f94032><b> tomatoes</b></color> I was fairly
-    successful.
-  - Tourists used to stop here on their way to the coast and they seemed to like my
-    local products.
-  - Ah, those were the days... *SIGH*
+  - Who are you? What are you doing here?
+  - If you have anything to sell, I'm not interested.
+  - Go away now.

@@ -9,8 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
-  m_Name: NewDay
+  m_Name: Daily_list_quest3
   m_EditorClassIdentifier: 
-  dialogueName: NewDay
+  dialogueName: Quest_start
   sentences:
-  - It's the beginning of a new and beautiful day.
+  - I guess I could just give you ten tomato seeds bags...
+  - But no! I want to know if you can take care of your crops first!
+  - So bring me<#f9ae06><b> ten carrots</b></color> if you really want them.

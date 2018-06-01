@@ -9,8 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
-  m_Name: NewDay
+  m_Name: Daily_list_noQuest3
   m_EditorClassIdentifier: 
-  dialogueName: NewDay
+  dialogueName: Quest_start
   sentences:
-  - It's the beginning of a new and beautiful day.
+  - How is your business working out?
+  - I had a rough start when I arrived. So I know how you might feel.
+  - But now things are better, I built a good customer base.
+  - I have to make it work if I want my girlfriend to come live here.

@@ -9,10 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
-  m_Name: Quest_inProgress2
+  m_Name: Daily_list_noQuest3
   m_EditorClassIdentifier: 
-  dialogueName: Quest_inProgress2
+  dialogueName: Quest_start
   sentences:
-  - Did the mayor come greet you at your arrival? No?
-  - I'm kind of worried about him, it's been almost a week since I've seen him leave
-    the townhall.
+  - You're still around?
+  - I heard you started a farm up north.
+  - It's a respectable activity...
+  - But don't get any ideas, you're still a stranger for now.
+  - I've got my eyes on you. (Welcome)

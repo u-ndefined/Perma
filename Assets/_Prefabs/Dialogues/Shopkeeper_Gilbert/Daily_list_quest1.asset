@@ -9,8 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
-  m_Name: NewDay
+  m_Name: Daily_list_quest1
   m_EditorClassIdentifier: 
-  dialogueName: NewDay
+  dialogueName: Quest_start
   sentences:
-  - It's the beginning of a new and beautiful day.
+  - '*SIGH* Maybe I should buy these<#f94032><b> ten tomatoes</b></color> from the
+    company after all... I can''t keep losing customers...'
+  - Oh! How are you feeling today? Nice weather isn't it?
+  - "\u2026 *SIGH*"
