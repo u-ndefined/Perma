@@ -43,3 +43,5 @@ Assets/StreamingAssets/*.bank
 fmod_editor.log
 *.log
 Assets/_Render/Materials/HexHighlighter/HexHighLighter.mat
+*.meta
+Assets/_Prefabs/Dialogues/Player/Knock.asset

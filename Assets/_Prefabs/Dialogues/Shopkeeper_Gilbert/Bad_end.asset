@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
+  m_Name: Bad_end
+  m_EditorClassIdentifier: 
+  dialogueName: Quest_done
+  sentences:
+  - Hey, I just wanted to tell you...
+  - I know I practically begged you for some<#f94032><b> tomatoes</b></color> when
+    you arrived.
+  - And I'm sorry I've been so shameless.
+  - "I finally decided to buy TOMAGA\xA9 tomatoes, tomatoes that change your life!"
+  - I signed an exclusivity contract with them. They'll supply me for at least five
+    years.
+  - So... I can't accept your help anymore.
+  - I hope your farming activity works out for you.

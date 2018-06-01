@@ -9,8 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
-  m_Name: NewDay
+  m_Name: Quest_start
   m_EditorClassIdentifier: 
-  dialogueName: NewDay
+  dialogueName: Quest_start
   sentences:
-  - It's the beginning of a new and beautiful day.
+  - Who are you? What are you doing here?
+  - If you have anything to sell, I'm not interested.
+  - Go away now.

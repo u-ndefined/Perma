@@ -9,8 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
-  m_Name: NewDay
+  m_Name: Daily_list_noQuest2
   m_EditorClassIdentifier: 
-  dialogueName: NewDay
+  dialogueName: Quest_start
   sentences:
-  - It's the beginning of a new and beautiful day.
+  - Don't think that just because you moved in, you're not a stranger.
+  - I lived here my whole life.
+  - And I won't let people like you do whatever they want in my home.
+  - (But it's nice to see new faces around here)

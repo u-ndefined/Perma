@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
+  m_Name: Daily_list_noQuest3
+  m_EditorClassIdentifier: 
+  dialogueName: Quest_start
+  sentences:
+  - I swear, this is the last holiday I'm spending in this backwater town.
+  - Next year, I'll be old enough to have a job.
+  - I'll go to the city and become a rookie reporter!
+  - In no time, I'll write an amazing article about some important stuff.
+  - And I'll be rich, and admired, and I'll do whatever I want.

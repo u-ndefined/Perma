@@ -9,8 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
-  m_Name: NewDay
+  m_Name: Daily_list_noQuest2
   m_EditorClassIdentifier: 
-  dialogueName: NewDay
+  dialogueName: Quest_start
   sentences:
-  - It's the beginning of a new and beautiful day.
+  - Gilbert told me he welcomed you when you arrived.
+  - More like begged for tomatoes... I'm right, aren't I?
+  - The poor man, his business can't keep up with the competition.
