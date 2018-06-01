@@ -7,7 +7,9 @@ using TMPro;
 public class DialogueBox : MonoBehaviour {
 	public TextMeshProUGUI textMeshPro;
 	public void Display(){
+        GetComponent<FaceCamera>().Tourne();
         gameObject.SetActive(true);
+
         /*
 		foreach (Transform child in transform) {
 			child.gameObject.SetActive (true);
