@@ -9,9 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
-  m_Name: Daily_list_noQuest5
+  m_Name: Daily_list_Quest6
   m_EditorClassIdentifier: 
-  dialogueName: Quest_start
+  dialogueName: Daily_list_Quest6
   sentences:
-  - Why do adults always try to hurt each other?
-  - If dad would just tell mom that he's sorry, I'm sure she would come back.
+  - '...Do you think I gossip too much about other people?'
+  - You know, in a small village like ours, it's the only entertainment we're gonna
+    get.

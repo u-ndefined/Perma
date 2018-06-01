@@ -9,11 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
-  m_Name: Daily_list_noQuest2
+  m_Name: Daily_list_Quest1
   m_EditorClassIdentifier: 
-  dialogueName: Quest_start
+  dialogueName: Daily_list_Quest1
   sentences:
-  - Don't think that just because you moved in, you're not a stranger.
-  - I lived here my whole life.
-  - And I won't let people like you do whatever they want in my home.
-  - (But it's nice to see new faces around here)
+  - I'll give you some great advice.
+  - Don't stay holed up in your farm all day by yourself!
+  - Try to talk to the inhabitants of this town.
+  - They usually have something new to say every day.

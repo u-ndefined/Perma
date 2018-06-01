@@ -9,10 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
-  m_Name: Daily_list_noQuest2
+  m_Name: Daily_list_Quest3
   m_EditorClassIdentifier: 
-  dialogueName: Quest_start
+  dialogueName: Daily_list_Quest3
   sentences:
-  - Gilbert told me he welcomed you when you arrived.
-  - More like begged for tomatoes... I'm right, aren't I?
-  - The poor man, his business can't keep up with the competition.
+  - If you ever see Victoria, try to talk to her.
+  - She may seem harsh, but she hides a vulnerable heart.
+  - And she really loves to talk.
+  - Outside company will do her some good.

@@ -9,11 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
-  m_Name: Daily_list_noQuest3
+  m_Name: Daily_list_Quest4
   m_EditorClassIdentifier: 
-  dialogueName: Quest_start
+  dialogueName: Daily_list_Quest4
   sentences:
-  - If you ever see Victoria, try to talk to her.
-  - She may seem harsh, but she hides a vulnerable heart.
-  - And she really loves to talk.
-  - Outside company will do her some good.
+  - Reporters are just soooo great, don't you think?
+  - They get to travel all over the world to see all kinds of stuff.
+  - And when they say something, people listen.

@@ -9,9 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
-  m_Name: Daily_list_noQuest6
+  m_Name: Daily_list_Quest6
   m_EditorClassIdentifier: 
-  dialogueName: Quest_start
+  dialogueName: Daily_list_Quest6
   sentences:
   - When we met, I told you to call me Chris.
   - You must have guessed it but it's just a nickname.

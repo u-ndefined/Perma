@@ -9,11 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
-  m_Name: Daily_list_noQuest1
+  m_Name: Daily_list_Quest5
   m_EditorClassIdentifier: 
-  dialogueName: Quest_start
+  dialogueName: Daily_list_Quest5
   sentences:
-  - I'll give you some great advice.
-  - Don't stay holed up in your farm all day by yourself!
-  - Try to talk to the inhabitants of this town.
-  - They usually have something new to say every day.
+  - Why do adults always try to hurt each other?
+  - If dad would just tell mom that he's sorry, I'm sure she would come back.

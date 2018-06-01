@@ -9,10 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
-  m_Name: Daily_list_noQuest6
+  m_Name: Daily_list_Quest5
   m_EditorClassIdentifier: 
-  dialogueName: Quest_start
+  dialogueName: Daily_list_Quest5
   sentences:
-  - 'If you ever grow pumpkins in that farm of yours, bring some to me. '
-  - 'I''ll make you my speciality: pumpkin pie.'
-  - It will fatten you up in no time, I guaranty it.
+  - One evening, we had a drinking contest.
+  - Do you want to know what happened?
+  - You reeeeally want to know?
+  - '...Well I won of course.'
+  - But Victoria was a close second.

@@ -9,9 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17a614856482f41f9bf69455746e0417, type: 3}
-  m_Name: Daily_list_noQuest7
+  m_Name: Daily_list_Quest7
   m_EditorClassIdentifier: 
-  dialogueName: Quest_start
+  dialogueName: Daily_list_Quest7
   sentences:
   - '...What? You want to hear something about myself?'
   - I'm the sole owner of this bar, and I'm proud of it.
