@@ -10595,7 +10595,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4019776175074848, guid: 3e2b81b1ea9da47ec8c5942a780a7be3, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 4019776175074848, guid: 3e2b81b1ea9da47ec8c5942a780a7be3, type: 2}
       propertyPath: m_LocalRotation.x
@@ -10629,7 +10629,21 @@ Prefab:
     - target: {fileID: 114643457682077744, guid: 3e2b81b1ea9da47ec8c5942a780a7be3,
         type: 2}
       propertyPath: radius
-      value: 4.48
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1058409815590452, guid: 3e2b81b1ea9da47ec8c5942a780a7be3, type: 2}
+      propertyPath: m_TagString
+      value: NPCHouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 114643457682077744, guid: 3e2b81b1ea9da47ec8c5942a780a7be3,
+        type: 2}
+      propertyPath: dialog
+      value: 
+      objectReference: {fileID: 11400000, guid: 0a00f04e0faef4086a0145b824ec0acf,
+        type: 2}
+    - target: {fileID: 1058409815590452, guid: 3e2b81b1ea9da47ec8c5942a780a7be3, type: 2}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3e2b81b1ea9da47ec8c5942a780a7be3, type: 2}
@@ -48506,6 +48520,11 @@ Prefab:
       propertyPath: dialogNoQuest.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114969823336123228, guid: 09a489b7dd6724e71b567b6cf2c81a5e,
+        type: 2}
+      propertyPath: dialoguesInInspector.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4985687342241560, guid: 09a489b7dd6724e71b567b6cf2c81a5e, type: 2}
       propertyPath: m_LocalPosition.x
       value: 42.39
@@ -48710,6 +48729,18 @@ Prefab:
       propertyPath: dialoguesInInspector.Array.data[4]
       value: 
       objectReference: {fileID: 11400000, guid: 8bc6846fe920a4b40875c605dfee5420,
+        type: 2}
+    - target: {fileID: 114969823336123228, guid: 09a489b7dd6724e71b567b6cf2c81a5e,
+        type: 2}
+      propertyPath: dialoguesInInspector.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 788d5a1aa96ae4a51bbcb30194ddc9f9,
+        type: 2}
+    - target: {fileID: 114969823336123228, guid: 09a489b7dd6724e71b567b6cf2c81a5e,
+        type: 2}
+      propertyPath: dialoguesInInspector.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: bdabdb9f72162428181ffadcaabebfdd,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 09a489b7dd6724e71b567b6cf2c81a5e, type: 2}
@@ -55235,7 +55266,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4682029185521552, guid: f281ddae21c8741e38d67975edc4353f, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 96.5
       objectReference: {fileID: 0}
     - target: {fileID: 4682029185521552, guid: f281ddae21c8741e38d67975edc4353f, type: 2}
       propertyPath: m_LocalRotation.x

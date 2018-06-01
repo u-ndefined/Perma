@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class NPCHouse : Interactable 
 {
-    public string dialog;
+    public ScriptableDialogues dialog;
     private NPCRoutine npc;
     private bool waitNextDay = false;
     private bool isHiding;
-    public Clock clock;
+    private Clock clock;
 
     protected override void Start()
 	{
@@ -19,8 +19,10 @@ public class NPCHouse : Interactable
 	public override void Interact()
 	{
         base.Interact();
-        DialogueManager.Instance.PlayerSay(dialog);
+        Debug.Log("VTFF");
+        DialogueManager.Instance.PlayerSay(dialog.dialogueName);
 	}
+
 	private void OnTriggerEnter(Collider other)
 	{
         if(other.tag == "NPC")
@@ -35,6 +37,7 @@ public class NPCHouse : Interactable
 
     protected override void Update()
     {
+        base.Update();
         if (isHiding && !waitNextDay && TimeManager.Instance.clock > clock)
         {
             Display();
