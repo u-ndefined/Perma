@@ -57,6 +57,7 @@ public class HexCell : Interactable {
 	private void Start()
     {
         TimeManager.Instance.OnNewDayEvent += UpdateHexState;
+        TimeManager.Instance.OnNewDayMidEvent += UpdatePlantEffects;
         TimeManager.Instance.OnNewDayLateEvent += UpdatePlantState;
 
         baseHexData = hexData;
@@ -171,14 +172,19 @@ public class HexCell : Interactable {
             DayEffect();
         }
 
-        else if (plant.CanGrow())
+       
+
+        hexData = ClampHexData();   //clamp hexData with maxHexData
+	}
+
+    private void UpdatePlantEffects()
+    {
+        if (plant.CanGrow())
         {
             hexData += plant.seed.hexEffect;                //impact its own cell
             ImpactAdjacentHexCells(plant.seed.hexEffect);   //impact adjacent cells
         }
-
-        hexData = ClampHexData();   //clamp hexData with maxHexData
-	}
+    }
 
     private void UpdatePlantState()
     {

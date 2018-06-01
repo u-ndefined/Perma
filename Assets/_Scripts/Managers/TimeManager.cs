@@ -14,6 +14,7 @@ public class TimeManager : ISingleton<TimeManager>
 
     public delegate void voidNoParam();
     public voidNoParam OnNewDayEvent;
+    public voidNoParam OnNewDayMidEvent;
     public voidNoParam OnNewDayLateEvent;
 
     public float secondPerDay;
@@ -52,6 +53,11 @@ public class TimeManager : ISingleton<TimeManager>
         if (OnNewDayEvent != null)         //updateUI
         {
             OnNewDayEvent.Invoke();
+        }
+
+        if (OnNewDayMidEvent != null)         //updateUI
+        {
+            OnNewDayMidEvent.Invoke();
         }
 
         if (OnNewDayLateEvent != null)         //updateUI
