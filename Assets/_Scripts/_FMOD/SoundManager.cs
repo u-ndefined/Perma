@@ -5,12 +5,17 @@ using System.Collections.Generic;
 /// description
 /// </summary>
 //[RequireComponent(typeof(CircleCollider2D))]
-public class SoundManager : ISingleton<SoundManager>                                   //commentaire
+public class SoundManager : MonoBehaviour                                   //commentaire
 {
     #region public variable
     /// <summary>
     /// variable public
     /// </summary>
+    /// 
+    public static SoundManager Instance
+    {
+        get; private set;
+    }
 
     public Dictionary<string, FmodEventEmitter> soundsEmitter = new Dictionary<string, FmodEventEmitter>();
 
@@ -35,8 +40,16 @@ public class SoundManager : ISingleton<SoundManager>                            
     private int musicState = 0;
     //[FMODUnity.EventRef]
 
-    protected SoundManager()
+    protected void Awake()
     {
+        if(Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
    
 

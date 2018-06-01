@@ -245,12 +245,12 @@ GameObject:
   - component: {fileID: 195418854380323172}
   - component: {fileID: 54004298973237596}
   - component: {fileID: 114551707058408318}
-  - component: {fileID: 114558896118421682}
   - component: {fileID: 114468706332124668}
   - component: {fileID: 114119965652024472}
   - component: {fileID: 136997362972946096}
   - component: {fileID: 114236755482959680}
   - component: {fileID: 95365812449981080}
+  - component: {fileID: 114756591219452572}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -1286,13 +1286,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueBox: {fileID: 0}
-  motor: {fileID: 114558896118421682}
+  motor: {fileID: 0}
   dialoguesInInspector:
   - {fileID: 11400000, guid: 51e0c92a119174090a57587b84809bb5, type: 2}
   - {fileID: 11400000, guid: b53dd82855d4a4957acab13135959462, type: 2}
   - {fileID: 11400000, guid: 9791b50d83ea0427e99e1ff1b8a4785f, type: 2}
   - {fileID: 11400000, guid: a1c63f72d22274b76b00c53d0f3c7b98, type: 2}
   - {fileID: 11400000, guid: bbeb42d0929ba4d3db8e7dc1fc15a6d8, type: 2}
+  - {fileID: 11400000, guid: 0a00f04e0faef4086a0145b824ec0acf, type: 2}
 --- !u!114 &114236755482959680
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1304,7 +1305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a54eb570c95c04707bd0e95885a7f5b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5.29
+  radius: 10
   hasInteracted: 0
   interactionTransform: {fileID: 4682029185521552}
 --- !u!114 &114268976339658920
@@ -1610,28 +1611,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dbc174480305436eb43da6a57880178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clickLayer:
+    serializedVersion: 2
+    m_Bits: 512
   focus: {fileID: 0}
   rotationSpeed: 0.2
   animator: {fileID: 0}
   actionInProgress: 0
---- !u!114 &114558896118421682
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1425494265108002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8cd0264f9c7f45a180b19f2686d4c86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 20
-  target: {fileID: 0}
-  agent: {fileID: 195418854380323172}
-  isWalking: 0
-  currentDestination: {x: 0, y: 0, z: 0}
-  direction: {x: 0, y: 0, z: 0}
-  hasPath: 0
 --- !u!114 &114568279469490752
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1709,6 +1695,20 @@ MonoBehaviour:
   m_canvasRenderer: {fileID: 222287829169771872}
   m_TextComponent: {fileID: 114354725815628992}
   m_materialReferenceIndex: 1
+--- !u!114 &114756591219452572
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1425494265108002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b12d93fdbc5f4e63a7f8ad822cbaa13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isWalking: 0
+  direction: {x: 0, y: 0, z: 0}
+  moveSpeed: 10
 --- !u!114 &114804859302775086
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1882,7 +1882,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1198397247
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &224128446780011882

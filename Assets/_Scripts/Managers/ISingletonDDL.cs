@@ -7,7 +7,7 @@
 /// 
 /// As a note, this is made as MonoBehaviour because we need Coroutines.
 /// </summary>
-public class ISingleton<T> : MonoBehaviour where T : MonoBehaviour
+public class ISingletonDDL<T> : MonoBehaviour where T : MonoBehaviour
 {
 	private static T _instance;
 
@@ -17,7 +17,7 @@ public class ISingleton<T> : MonoBehaviour where T : MonoBehaviour
 	{
 		get
 		{
-            if (applicationIsQuitting)
+			if (applicationIsQuitting)
             {
                 Debug.LogWarning("[Singleton] Instance '" + typeof(T) +
                     "' already destroyed on application quit." +
@@ -46,7 +46,7 @@ public class ISingleton<T> : MonoBehaviour where T : MonoBehaviour
 						_instance = singleton.AddComponent<T>();
 						singleton.name = "(singleton) " + typeof(T).ToString();
 
-						//DontDestroyOnLoad(singleton);
+						DontDestroyOnLoad(singleton);
 
 						Debug.Log("[Singleton] An instance of " + typeof(T) +
 							" is needed in the scene, so '" + singleton +
