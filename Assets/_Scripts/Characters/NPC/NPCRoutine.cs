@@ -25,9 +25,20 @@ public class NPCRoutine : MonoBehaviour
         animator = GetComponent<Animator>();
         SortFlags();
         if (isActive)CheckFlag();
-        TimeManager.Instance.OnNewDayEvent += NextDay;
+
 
 	}
+
+	private void OnEnable()
+	{
+        TimeManager.Instance.OnNewDayEvent += NextDay;
+	}
+
+	private void OnDisable()
+    {
+        TimeManager.Instance.OnNewDayEvent -= NextDay;
+    }
+
 
 	private void Update()
 	{

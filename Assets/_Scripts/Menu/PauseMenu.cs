@@ -49,10 +49,35 @@ public class PauseMenu : MonoBehaviour {
 
     public void SaveAndQuit()
     {
-        SoundManager.Instance.PlaySound("UI/ClickMenu");
-        Resume();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+
+
+        restart();
+        //SoundManager.Instance.PlaySound("UI/ClickMenu");
+        //Resume();
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
+
+    public static void restart()
+    {
+        string[] endings = new string[]{
+         "exe", "x86", "x86_64", "app"
+     };
+        string executablePath = Application.dataPath + "/..";
+        foreach (string file in System.IO.Directory.GetFiles(executablePath))
+        {
+            foreach (string ending in endings)
+            {
+                if (file.ToLower().EndsWith("." + ending))
+                {
+                    System.Diagnostics.Process.Start(executablePath + file);
+                    Application.Quit();
+                    return;
+                }
+            }
+
+        }
+    }
+
 
     public void ToggleSettings()
     {

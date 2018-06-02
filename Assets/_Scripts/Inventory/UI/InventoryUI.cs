@@ -19,8 +19,7 @@ public class InventoryUI : MonoBehaviour {
     void Awake () 
     {
         inventory = InventoryManager.Instance;
-        inventory.onItemChangedEvent += UpdateSlots;
-        inventory.onSelectorChangedEvent += UpdateSelector;
+
 
         slots = slotParent.GetComponentsInChildren<InventorySlot>();
 
@@ -33,6 +32,18 @@ public class InventoryUI : MonoBehaviour {
 
 
 
+	}
+
+	private void OnEnable()
+	{
+        inventory.onItemChangedEvent += UpdateSlots;
+        inventory.onSelectorChangedEvent += UpdateSelector;
+	}
+
+	private void OnDisable()
+	{
+        inventory.onItemChangedEvent -= UpdateSlots;
+        inventory.onSelectorChangedEvent -= UpdateSelector;
 	}
 
 	private void Start()

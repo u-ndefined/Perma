@@ -40,11 +40,6 @@ public class Motor : MonoBehaviour
 
         player = GetComponent<PlayerControler>();
 
-        if(player != null)
-        {
-            player.onFocusChangedCallback += OnFocusChanged;
-
-        }
 
     }
 

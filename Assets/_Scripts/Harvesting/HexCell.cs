@@ -54,11 +54,10 @@ public class HexCell : Interactable {
     private Stack usedOn;
 
 
-	private void Start()
+    protected override void Start()
     {
-        TimeManager.Instance.OnNewDayEvent += UpdateHexState;
-        TimeManager.Instance.OnNewDayMidEvent += UpdatePlantEffects;
-        TimeManager.Instance.OnNewDayLateEvent += UpdatePlantState;
+        base.Start();
+
 
         baseHexData = hexData;
 
@@ -77,6 +76,22 @@ public class HexCell : Interactable {
 
         if (color == HexColor.none) isActive = true;    
     }
+
+	private void OnEnable()
+	{
+        TimeManager.Instance.OnNewDayEvent += UpdateHexState;
+        TimeManager.Instance.OnNewDayMidEvent += UpdatePlantEffects;
+        TimeManager.Instance.OnNewDayLateEvent += UpdatePlantState;
+	}
+
+	private void OnDisable()
+    {
+        TimeManager.Instance.OnNewDayEvent -= UpdateHexState;
+        TimeManager.Instance.OnNewDayMidEvent -= UpdatePlantEffects;
+        TimeManager.Instance.OnNewDayLateEvent -= UpdatePlantState;
+    }
+
+
 
     public override void UseObjectOn(Stack stackUsedOn)
 	{

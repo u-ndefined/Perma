@@ -8,8 +8,9 @@ public class RoamingGuide : Interactable
     public float timerMin, timerMax;
     private Vector3[] childs;
 
-	private void Start()
+    protected override void Start()
 	{
+        base.Start();
         childs = new Vector3[transform.childCount];
         int i = 0;
         foreach(Transform child in transform)

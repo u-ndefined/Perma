@@ -51,7 +51,7 @@ public class InventoryManager : ISingleton<InventoryManager>
         if (!init)
         {
 
-            SelectSlot(selectedSlotID + 1);
+            SelectSlot(0);
             if (onSelectorChangedEvent != null)         //update selector
             {
                 onSelectorChangedEvent.Invoke();

@@ -47,6 +47,23 @@ public class HexDataModifier : MonoBehaviour
 
 	}
 
+    private void OnDestroy()
+    {
+        switch (frequency)
+        {
+            
+            case Frequency.ADD_EACH_DAY:
+                TimeManager.Instance.OnNewDayEvent -= AddHexData;
+                break;
+            case Frequency.SET_EACH_DAY:
+                TimeManager.Instance.OnNewDayEvent -= SetHexData;
+                break;
+            default:
+                break;
+        }
+    }
+
+
     private void SetHexData()
     {
         HexCell[] cellsInRange = GetHexCellsInRange();

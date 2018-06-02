@@ -7,8 +7,9 @@ public class Harvest : Interactable
 
     Plant plant;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         plant = GetComponentInParent<Plant>();
     }
 

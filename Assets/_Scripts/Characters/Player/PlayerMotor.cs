@@ -15,13 +15,23 @@ public class PlayerMotor : MonoBehaviour
     PlayerControler player;
 
 	// Use this for initialization
-	void Start () 
+	void Awake () 
     {
         animator = GetComponent<Animator>();
         player = GetComponent<PlayerControler>();
+
+	}
+
+	private void OnEnable()
+	{
         player.onFocusChangedCallback += OnFocusChanged;
 	}
-	
+
+	private void OnDisable()
+	{
+        player.onFocusChangedCallback -= OnFocusChanged;
+	}
+
 	// Update is called once per frame
 	void Update () 
     {

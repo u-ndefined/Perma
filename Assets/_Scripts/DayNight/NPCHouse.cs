@@ -10,11 +10,16 @@ public class NPCHouse : Interactable
     private bool isHiding;
     public Clock clock;
 
-    protected override void Start()
+  
+	private void OnEnable()
 	{
-        base.Start();
         TimeManager.Instance.OnNewDayEvent += NextDay;
 	}
+
+	private void OnDisable()
+    {
+        TimeManager.Instance.OnNewDayEvent -= NextDay;
+    }
 
 	public override void Interact()
 	{

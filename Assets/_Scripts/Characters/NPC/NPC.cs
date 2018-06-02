@@ -37,10 +37,20 @@ public class NPC : Interactable
         playerInventory = InventoryManager.Instance;
         actor = GetComponent<Actor>();
         animatorr = GetComponent<Animator>();
+
+	}
+
+	private void OnEnable()
+	{
         TimeManager.Instance.OnNewDayEvent += NextDialog;
 	}
 
-    public override void Interact()
+	private void onDisable()
+	{
+        TimeManager.Instance.OnNewDayEvent -= NextDialog;
+	}
+
+	public override void Interact()
     {
         //base.Interact();
         if(end)
