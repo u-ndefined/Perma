@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : ISingleton<DialogueManager> {
 	
@@ -11,6 +12,8 @@ public class DialogueManager : ISingleton<DialogueManager> {
 	private Actor actor;
 	private Queue<string> sentences;
     private Actor player;
+
+    public bool end = false;
 
 	// Use this for initialization
 	void Start () {
@@ -58,6 +61,11 @@ public class DialogueManager : ISingleton<DialogueManager> {
 		actor.dialogueBox.Hide ();
         //SequenceManager.Instance.NextAction ();
         isActive = false;
+        if(end)
+        {
+            Fade.Instance.FadeOut(true, 2);
+            SceneManager.LoadScene(0);
+        }
 	}
 
     public void PlayerSay(string dialogueName)

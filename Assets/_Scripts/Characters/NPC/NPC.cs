@@ -63,6 +63,7 @@ public class NPC : Interactable
                 DialogueManager.Instance.ActorSay(actor, "Good_end");
             }
             else DialogueManager.Instance.ActorSay(actor, "Bad_end");
+            DialogueManager.Instance.end = true;
         }
         else if(!quest)
         {
