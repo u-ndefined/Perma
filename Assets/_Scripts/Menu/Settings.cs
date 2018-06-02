@@ -14,10 +14,12 @@ public class Settings : MonoBehaviour {
     private bool muted = false;
     private Slider slider;
 
+
 	private void Start()
 	{
         SetupResolutionDropdown();
         slider = GetComponentInChildren<Slider>();
+
 	}
 
 	public void SetVolume(float volume)

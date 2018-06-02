@@ -88,6 +88,7 @@ public class TimeManager : ISingleton<TimeManager>
             if(clock.AddSecond(s))
             {
                 calendar.AddDay();
+                NextDay();
 
                 if(dayPassed >= dayPerSeason)
                 {

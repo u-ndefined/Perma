@@ -10,16 +10,13 @@ public class NPCHouse : Interactable
     private bool isHiding;
     public Clock clock;
 
-  
-	private void OnEnable()
+
+    protected override void Start()
 	{
+        base.Start();
         TimeManager.Instance.OnNewDayEvent += NextDay;
 	}
 
-	private void OnDisable()
-    {
-        TimeManager.Instance.OnNewDayEvent -= NextDay;
-    }
 
 	public override void Interact()
 	{
@@ -30,7 +27,7 @@ public class NPCHouse : Interactable
 
 	private void OnTriggerEnter(Collider other)
 	{
-        if(other.tag == "NPC")
+        if(other.tag == "NPC" && !isHiding)
         {
             npc = other.GetComponent<NPCRoutine>();
             if(npc != null && npc.hide)
