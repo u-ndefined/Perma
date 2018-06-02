@@ -53,8 +53,6 @@ public class Motor : MonoBehaviour
         agent.SetDestination(point);
         animator.SetBool("Walk", true);
         isWalking = true;
-        //searchingPath = true;
-        //hasPath = false;
     }
 
     public void OnFocusChanged(Interactable newFocus)
@@ -70,42 +68,20 @@ public class Motor : MonoBehaviour
         {
             agent.stoppingDistance = stoppingDistance;
             target = null;
-            hasPath = false;
+            animator.SetBool("Walk", false);
+            isWalking = false;
             agent.ResetPath();
         }
     }
 
     void Update()
     {
-        if((agent.destination - transform.position).sqrMagnitude <= agent.stoppingDistance * agent.stoppingDistance)
+        if( (agent.destination - transform.position).sqrMagnitude <= agent.stoppingDistance * agent.stoppingDistance)
         {
             animator.SetBool("Walk", false);
             isWalking = false;
         }
 
-        /*
-        if (hasPath)
-        {
-            direction = (currentDestination - transform.position).normalized;
-            if((currentDestination - transform.position).sqrMagnitude <= agent.stoppingDistance * agent.stoppingDistance)
-            {
-                Debug.Log((currentDestination - transform.position).sqrMagnitude + " " + stoppingDistance * stoppingDistance);
-                GetNextCorner();
-            }
-        }
-        else 
-        {
-            isWalking = false;
-            animator.SetBool("Walk", false);
-        }
-
-        if (searchingPath && !agent.pathPending)
-        {
-            searchingPath = false;
-            SetupPath(agent.path);
-        }
-
-    */
 
     }
 
@@ -145,7 +121,6 @@ public class Motor : MonoBehaviour
         else
         {
             hasPath = false;
-            Debug.Log("falseee");
         }
     }
 
