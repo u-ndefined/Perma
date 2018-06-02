@@ -24,7 +24,7 @@ public class Gilbert : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-        if(Time.time - start >= endTimerSecond)
+        if(!npc.end && Time.time - start >= endTimerSecond)
         {
             routine.isActive = false;
             routine.actor.motor.OnFocusChanged(PlayerControler.Instance.GetComponent<Interactable>());
