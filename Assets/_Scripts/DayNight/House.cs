@@ -25,6 +25,7 @@ public class House : Interactable {
         fade.FadeOut(true, fadeOutDuration);
         PlayerControler.Instance.animator.SetBool("Walk", false);
         PlayerControler.Instance.actionInProgress = true;
+        SoundManager.Instance.PlaySound("PlayerAction/SleepingMusic");
         fade.onFadeEndEvent += GoToBed;
 
     }

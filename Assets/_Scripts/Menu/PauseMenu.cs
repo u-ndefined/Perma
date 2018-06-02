@@ -35,24 +35,28 @@ public class PauseMenu : MonoBehaviour {
 
     public void Resume()
     {
+        SoundManager.Instance.PlaySound("UI/ClickMenu");
         pauseMenuUI.SetActive(false);
         timeManager.Play();
     }
 
 	public void Pause()
 	{
+        SoundManager.Instance.PlaySound("UI/ClickMenu");
         pauseMenuUI.SetActive(true);
         timeManager.Pause();
 	}
 
     public void SaveAndQuit()
     {
+        SoundManager.Instance.PlaySound("UI/ClickMenu");
         Resume();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     public void ToggleSettings()
     {
+        SoundManager.Instance.PlaySound("UI/ClickMenu");
         onSettings = !onSettings;
         settings.SetActive(onSettings);
         pauseMenu.SetActive(!onSettings);

@@ -21912,7 +21912,7 @@ SpriteRenderer:
   m_Size: {x: 2.47, y: 2.46}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!1001 &565388348
 Prefab:
@@ -22654,7 +22654,7 @@ SpriteRenderer:
   m_Size: {x: 2.47, y: 2.46}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!1001 &580619738
 Prefab:
@@ -35418,7 +35418,7 @@ SpriteRenderer:
   m_Size: {x: 2.47, y: 2.46}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!1001 &938292130
 Prefab:
@@ -52683,8 +52683,7 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!4 &1425686955 stripped
 Transform:
-  m_PrefabParentObject: {fileID: 4134086033329682, guid: 1a1bc8b3f0fd8461cb07bf13270eed32,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 1425686954}
 --- !u!1001 &1427232339
 Prefab:
@@ -65572,8 +65571,7 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!4 &1762862147 stripped
 Transform:
-  m_PrefabParentObject: {fileID: 4777906452038224, guid: ee2e0cfdf074544218f6960c167cc9ee,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 1762862146}
 --- !u!1 &1762927523
 GameObject:
@@ -72031,8 +72029,7 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!4 &1904358484 stripped
 Transform:
-  m_PrefabParentObject: {fileID: 4340086854949824, guid: a9a3e2600bc8c4c8195c9661f2af271b,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 1904358483}
 --- !u!1001 &1909323661
 Prefab:
