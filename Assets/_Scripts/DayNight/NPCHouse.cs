@@ -30,7 +30,7 @@ public class NPCHouse : Interactable
         if(other.tag == "NPC" && !isHiding)
         {
             npc = other.GetComponent<NPCRoutine>();
-            if(npc != null && npc.hide)
+            if(npc != null && npc.hide && !npc.dial)
             {
                 Hide();
             }
