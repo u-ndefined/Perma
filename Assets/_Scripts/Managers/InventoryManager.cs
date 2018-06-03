@@ -31,33 +31,24 @@ public class InventoryManager : ISingleton<InventoryManager>
         {
             stacks[i].Clear();
         }
+
+
     }
 
 	private void Start()
 	{
-        
-
-        if (onItemChangedEvent != null)         //updateUI
-        {
-            onItemChangedEvent.Invoke();
-        }
-
-
+        Invoke("SelectZero", 0.3f);
 	}
 
+	private void SelectZero()
+    {
+        SelectSlot(0);
+    }
+
+	
 	
 	void Update()
     {
-        if (!init)
-        {
-
-            SelectSlot(0);
-            if (onSelectorChangedEvent != null)         //update selector
-            {
-                onSelectorChangedEvent.Invoke();
-                init = true;
-            }
-        }
         //Get scrollwheel and update selected slot
         if (Input.GetAxis("Mouse ScrollWheel") < 0f)
         {
