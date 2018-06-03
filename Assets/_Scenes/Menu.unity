@@ -4969,7 +4969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a223c6a395c54c049c5fcbd69f2a9d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeDuration: 0
+  fadeDuration: 2
 --- !u!114 &1908524512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5233,8 +5233,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: event:/Ambience/AmbienceGame
-  PlayEvent: 0
+  Event: event:/UI/Menu
+  PlayEvent: 1
   StopEvent: 2
   CollisionTag: 
   AllowFadeout: 1

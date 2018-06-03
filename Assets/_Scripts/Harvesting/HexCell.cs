@@ -45,6 +45,8 @@ public class HexCell : Interactable {
     public HexData dayEffectToSet;
     public bool setLight, setHumidity, setEnergy;
 
+    private bool isStarting = true;
+
 
     [Header("Editor")]
     private ObjectsPooler pool;
@@ -72,6 +74,7 @@ public class HexCell : Interactable {
             plant.Grow();
             plant.Grow();
             plant.Grow();
+            isStarting = false;
         }
 
         if (color == HexColor.none) isActive = true; 
@@ -133,7 +136,7 @@ public class HexCell : Interactable {
 
     private void PlantSeed(Seed seed)
     {
-        SoundManager.Instance.PlaySound("PlayerAction/Plant1");
+        if(!isStarting)SoundManager.Instance.PlaySound("PlayerAction/Plant1");
         GameObject plantObject = ObjectsPooler.Instance.SpawnFromPool(seed.plantType, new Vector3(transform.position.x, 0.02f, transform.position.z), Quaternion.identity, transform);
         plant = plantObject.GetComponent<Plant>();
         workedSoil.SetActive(true);
