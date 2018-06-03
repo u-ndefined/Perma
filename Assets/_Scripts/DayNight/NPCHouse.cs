@@ -21,7 +21,6 @@ public class NPCHouse : Interactable
 	public override void Interact()
 	{
         base.Interact();
-        Debug.Log("VTFF");
         DialogueManager.Instance.PlayerSay(dialog.dialogueName);
 	}
 

@@ -26,6 +26,11 @@ public class NavigationMenu : MonoBehaviour
     {
         Fade2.Instance.FadeOut(true, 2);
         SoundManager.Instance.PlaySound("UI/ClickMenu");
+        Fade2.Instance.onFadeEndEvent += RealQuit;
+    }
+
+    private void RealQuit()
+    {
         Application.Quit();
     }
 

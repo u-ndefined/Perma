@@ -57421,6 +57421,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
+  actor: {fileID: 0}
+  end: 0
 --- !u!1001 &1730400296
 Prefab:
   m_ObjectHideFlags: 0

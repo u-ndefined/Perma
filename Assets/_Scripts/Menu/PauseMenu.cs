@@ -49,15 +49,15 @@ public class PauseMenu : MonoBehaviour {
 
     public void SaveAndQuit()
     {
-
-
-        restart();
+        Fade.Instance.FadeOut(true, 2);
+        SoundManager.Instance.PlaySound("UI/ClickMenu");
+        Fade.Instance.onFadeEndEvent += Restart;
         //SoundManager.Instance.PlaySound("UI/ClickMenu");
         //Resume();
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
-    public static void restart()
+    public static void Restart()
     {
         System.Diagnostics.Process.Start(Application.dataPath.Replace("_Data", ".exe")); //new program 
         Application.Quit(); //kill current process

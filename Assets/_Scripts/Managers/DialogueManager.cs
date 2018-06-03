@@ -63,12 +63,20 @@ public class DialogueManager : ISingleton<DialogueManager> {
         isActive = false;
         if(end)
         {
-            Fade.Instance.FadeOut(true, 1);
-            SceneManager.LoadScene(0);
+            Fade.Instance.FadeOut(true, 5);
+            Fade.Instance.onFadeEndEvent += Quit;
         }
+
+        PlayerControler.Instance.actionInProgress = false;
 	}
 
-    public void PlayerSay(string dialogueName)
+	private void Quit()
+	{
+        System.Diagnostics.Process.Start(Application.dataPath.Replace("_Data", ".exe")); //new program 
+        Application.Quit();
+	}
+
+	public void PlayerSay(string dialogueName)
     {
         if(player.dialogues.Contains(dialogueName))
         {

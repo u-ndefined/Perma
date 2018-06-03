@@ -74,8 +74,9 @@ public class HexCell : Interactable {
             plant.Grow();
             plant.Grow();
             plant.Grow();
-            isStarting = false;
         }
+
+        isStarting = false;
 
         if (color == HexColor.none) isActive = true; 
 
