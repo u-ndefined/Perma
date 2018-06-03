@@ -11,12 +11,14 @@ public class NavigationMenu : MonoBehaviour
 
     public void NewGame()
     {
+        Fade2.Instance.FadeOut(true, 2);
         SoundManager.Instance.PlaySound("UI/ClickMenu");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void Quit()
     {
+        Fade2.Instance.FadeOut(true, 2);
         SoundManager.Instance.PlaySound("UI/ClickMenu");
         Application.Quit();
     }

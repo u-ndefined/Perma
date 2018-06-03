@@ -11,11 +11,6 @@ public class AnimatorScript : MonoBehaviour {
         animator = GetComponent<Animator>();
 	}
 	
-	// Update is called once per frame
-	void Update () 
-    {
-		
-	}
 
     public void PlayAnimation(GameData.Animation animation)
     {

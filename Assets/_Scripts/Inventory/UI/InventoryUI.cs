@@ -30,21 +30,11 @@ public class InventoryUI : MonoBehaviour {
             slots[i].slotIndex = i;
         }
 
-
-
-	}
-
-	private void OnEnable()
-	{
         inventory.onItemChangedEvent += UpdateSlots;
         inventory.onSelectorChangedEvent += UpdateSelector;
+
 	}
 
-	private void OnDisable()
-	{
-        inventory.onItemChangedEvent -= UpdateSlots;
-        inventory.onSelectorChangedEvent -= UpdateSelector;
-	}
 
 	private void Start()
 	{

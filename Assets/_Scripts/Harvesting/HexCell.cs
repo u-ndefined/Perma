@@ -74,22 +74,14 @@ public class HexCell : Interactable {
             plant.Grow();
         }
 
-        if (color == HexColor.none) isActive = true;    
-    }
+        if (color == HexColor.none) isActive = true; 
 
-	private void OnEnable()
-	{
         TimeManager.Instance.OnNewDayEvent += UpdateHexState;
         TimeManager.Instance.OnNewDayMidEvent += UpdatePlantEffects;
         TimeManager.Instance.OnNewDayLateEvent += UpdatePlantState;
-	}
-
-	private void OnDisable()
-    {
-        TimeManager.Instance.OnNewDayEvent -= UpdateHexState;
-        TimeManager.Instance.OnNewDayMidEvent -= UpdatePlantEffects;
-        TimeManager.Instance.OnNewDayLateEvent -= UpdatePlantState;
     }
+
+	
 
 
 
