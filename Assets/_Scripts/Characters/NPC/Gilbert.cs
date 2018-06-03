@@ -10,6 +10,7 @@ public class Gilbert : MonoBehaviour
     private float endTimerSecond;
     private float start;
     private bool wait = true;
+    private bool done = false;
 
 	// Use this for initialization
 	void Awake () 
@@ -30,12 +31,13 @@ public class Gilbert : MonoBehaviour
             routine.actor.motor.OnFocusChanged(PlayerControler.Instance.GetComponent<Interactable>());
             npc.end = true;
         }
-        if(npc.end)
+        if(npc.end && !done)
         {
             float distance = (PlayerControler.Instance.transform.position - transform.position).sqrMagnitude;
             if (distance <= Mathf.Pow(routine.actor.motor.agent.stoppingDistance, 2))
             {
                 npc.Interact();
+                done = true;
             }
         }
 	}

@@ -35,7 +35,7 @@ public class NPCRoutine : MonoBehaviour
 	private void Update()
 	{
         if (!isActive) return;
-        if (DialogueManager.Instance.isActive) 
+        if (DialogueManager.Instance.isActive && DialogueManager.Instance.actor == actor) 
         {
             animator.SetBool("Walk", false);
             Quaternion rotation = Quaternion.LookRotation(PlayerControler.Instance.transform.position - transform.position);

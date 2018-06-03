@@ -9,7 +9,7 @@ public class DialogueManager : ISingleton<DialogueManager> {
 
     public bool isActive;
 
-	private Actor actor;
+    public Actor actor;
 	private Queue<string> sentences;
     private Actor player;
 
@@ -63,7 +63,7 @@ public class DialogueManager : ISingleton<DialogueManager> {
         isActive = false;
         if(end)
         {
-            Fade.Instance.FadeOut(true, 2);
+            Fade.Instance.FadeOut(true, 1);
             SceneManager.LoadScene(0);
         }
 	}

@@ -92,7 +92,7 @@ public class NPC : Interactable
             }
         }
         animatorr.SetTrigger("NPCSpeak");
-        DoAction(PlayerManager.Instance.GetAnim(GameData.Animation.Speak));
+        if(!end)DoAction(PlayerManager.Instance.GetAnim(GameData.Animation.Speak));
     }
 
     private void NextDialog()
