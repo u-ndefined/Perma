@@ -52,9 +52,8 @@ public class PauseMenu : MonoBehaviour {
         Fade.Instance.FadeOut(true, 2);
         SoundManager.Instance.PlaySound("UI/ClickMenu");
         Fade.Instance.onFadeEndEvent += Restart;
-        //SoundManager.Instance.PlaySound("UI/ClickMenu");
-        //Resume();
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        pauseMenuUI.SetActive(false);
+        timeManager.Play();
     }
 
     public static void Restart()

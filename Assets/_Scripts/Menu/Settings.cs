@@ -13,6 +13,9 @@ public class Settings : MonoBehaviour {
     private float previousVolume;
     private bool muted = false;
     private Slider slider;
+    private FMOD.Studio.Bus masterBus;
+
+    private float theVolume;
 
 
 	private void Start()
@@ -20,11 +23,19 @@ public class Settings : MonoBehaviour {
         SetupResolutionDropdown();
         slider = GetComponentInChildren<Slider>();
 
+        string masterBusString = "Bus:/";
+
+
+        masterBus = FMODUnity.RuntimeManager.GetBus(masterBusString);
+
 	}
 
 	public void SetVolume(float volume)
     {
         SoundManager.Instance.PlaySound("UI/ScrollSound");
+        theVolume = volume;
+
+        masterBus.setVolume(volume);
     }
 
     public void Mute()
@@ -38,7 +49,7 @@ public class Settings : MonoBehaviour {
         }
         else
         {
-            previousVolume = 10;//get volume
+            previousVolume = theVolume;//get volume
             SetVolume(0);
             slider.value = 0;
             muted = true;

@@ -61,13 +61,17 @@ public class DialogueManager : ISingleton<DialogueManager> {
 		actor.dialogueBox.Hide ();
         //SequenceManager.Instance.NextAction ();
         isActive = false;
-        if(end)
+        if (end)
         {
             Fade.Instance.FadeOut(true, 5);
             Fade.Instance.onFadeEndEvent += Quit;
         }
+        else
+        {
+            PlayerControler.Instance.actionInProgress = false;
+        }
 
-        PlayerControler.Instance.actionInProgress = false;
+
 	}
 
 	private void Quit()

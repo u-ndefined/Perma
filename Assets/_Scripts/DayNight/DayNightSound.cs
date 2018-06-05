@@ -8,12 +8,11 @@ public class DayNightSound : MonoBehaviour
 	private void Start()
 	{
         emitter = GetComponent<FmodEventEmitter>();
-        Debug.Log("stop");
         SoundManager.Instance.PlaySound("UI/Menu", true);
         SoundManager.Instance.PlaySound("Ambience/AmbienceGame");
 	}
 	private void Update()
 	{
-        emitter.SetParameterValue("DayHours", TimeManager.Instance.TimeNormalised());
+        emitter.SetParameterValue("DayHours", TimeManager.Instance.TimeNormalised() * 24);
 	}
 }
