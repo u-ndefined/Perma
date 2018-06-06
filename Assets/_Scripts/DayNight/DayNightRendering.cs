@@ -26,7 +26,6 @@ public class DayNightRendering : MonoBehaviour {
         settings = new ColorGradingModel.Settings();
         settings = postProcessing.profile.colorGrading.settings;
         parameters = new Vector3[6];
-        Debug.Log(night.colorGrading.settings.basic.temperature +" "+ day.colorGrading.settings.basic.temperature);
         parameters[0] = Solve(night.colorGrading.settings.basic.contrast, day.colorGrading.settings.basic.contrast);
         parameters[1] = Solve(night.colorGrading.settings.basic.hueShift, day.colorGrading.settings.basic.hueShift);
         parameters[2] = Solve(night.colorGrading.settings.basic.postExposure, day.colorGrading.settings.basic.postExposure);

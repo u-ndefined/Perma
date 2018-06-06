@@ -66,12 +66,13 @@ public class DialogueManager : ISingleton<DialogueManager> {
             Fade.Instance.FadeOut(true, 5);
             Fade.Instance.onFadeEndEvent += Quit;
         }
-        else
+       
+         PlayerControler.Instance.actionInProgress = false;
+
+        if(end)
         {
-            PlayerControler.Instance.actionInProgress = false;
+            PlayerControler.Instance.actionInProgress = true;
         }
-
-
 	}
 
 	private void Quit()

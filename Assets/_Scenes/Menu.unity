@@ -2034,7 +2034,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 10
   m_WholeNumbers: 1
-  m_Value: 0
+  m_Value: 10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -2904,6 +2904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionDropdown: {fileID: 1246654065}
+  volumeToggle: {fileID: 794926580}
 --- !u!1 &1246654063
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,6 +17,8 @@ public class Settings : MonoBehaviour {
 
     private float theVolume;
 
+    public Toggle volumeToggle;
+
 
 	private void Start()
 	{
@@ -25,15 +27,29 @@ public class Settings : MonoBehaviour {
 
         string masterBusString = "Bus:/";
 
-
         masterBus = FMODUnity.RuntimeManager.GetBus(masterBusString);
+
+        float ok;
+        masterBus.getVolume(out theVolume, out ok);
+
+        Debug.Log(theVolume);
+        masterBus.setVolume(theVolume);
 
 	}
 
 	public void SetVolume(float volume)
     {
         SoundManager.Instance.PlaySound("UI/ScrollSound");
-        theVolume = volume;
+
+        if(muted) 
+        {
+            volumeToggle.isOn = false;
+        }
+
+        float ok;
+        masterBus.getVolume(out theVolume, out ok);
+        Debug.Log(theVolume);
+
 
         masterBus.setVolume(volume);
     }

@@ -56,7 +56,6 @@ public class NavigationMenu : MonoBehaviour
         SoundManager.Instance.PlaySound("UI/ClickMenu");
         if (onCredits)
         {
-            Debug.Log("la");
             credits.SetActive(false);
             start.SetActive(true);
         }

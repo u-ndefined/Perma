@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class NPCHouse : Interactable 
 {
-    public ScriptableDialogues dialog;
+    public ScriptableDialogues nightDialog;
+    public ScriptableDialogues dayDialog;
     private NPCRoutine npc;
     public bool waitNextDay = false;
     private bool isHiding;
@@ -21,7 +22,11 @@ public class NPCHouse : Interactable
 	public override void Interact()
 	{
         base.Interact();
-        DialogueManager.Instance.PlayerSay(dialog.dialogueName);
+
+        if(isHiding) DialogueManager.Instance.PlayerSay(nightDialog.dialogueName);
+        else DialogueManager.Instance.PlayerSay(dayDialog.dialogueName);
+
+        
 	}
 
 	private void OnTriggerEnter(Collider other)

@@ -6080,6 +6080,91 @@ Prefab:
       value: 
       objectReference: {fileID: 11400000, guid: c2938d1c81d484d598da4773ebc62fc0,
         type: 2}
+    - target: {fileID: 114152166427520660, guid: fdd3c6e410ee14b60aac3da9d7c66359,
+        type: 2}
+      propertyPath: dayDialog
+      value: 
+      objectReference: {fileID: 11400000, guid: abd070ba46f764a3c834723de03c87ef,
+        type: 2}
+    - target: {fileID: 114145616118865328, guid: fdd3c6e410ee14b60aac3da9d7c66359,
+        type: 2}
+      propertyPath: dayDialog
+      value: 
+      objectReference: {fileID: 11400000, guid: abd070ba46f764a3c834723de03c87ef,
+        type: 2}
+    - target: {fileID: 114260579959754222, guid: fdd3c6e410ee14b60aac3da9d7c66359,
+        type: 2}
+      propertyPath: dayDialog
+      value: 
+      objectReference: {fileID: 11400000, guid: abd070ba46f764a3c834723de03c87ef,
+        type: 2}
+    - target: {fileID: 114127216793681710, guid: fdd3c6e410ee14b60aac3da9d7c66359,
+        type: 2}
+      propertyPath: dayDialog
+      value: 
+      objectReference: {fileID: 11400000, guid: abd070ba46f764a3c834723de03c87ef,
+        type: 2}
+    - target: {fileID: 114439606892755020, guid: fdd3c6e410ee14b60aac3da9d7c66359,
+        type: 2}
+      propertyPath: dayDialog
+      value: 
+      objectReference: {fileID: 11400000, guid: abd070ba46f764a3c834723de03c87ef,
+        type: 2}
+    - target: {fileID: 114152166427520660, guid: fdd3c6e410ee14b60aac3da9d7c66359,
+        type: 2}
+      propertyPath: nightDialog
+      value: 
+      objectReference: {fileID: 11400000, guid: b3f86c528b5da4ae2923ad4e65344033,
+        type: 2}
+    - target: {fileID: 114145616118865328, guid: fdd3c6e410ee14b60aac3da9d7c66359,
+        type: 2}
+      propertyPath: nightDialog
+      value: 
+      objectReference: {fileID: 11400000, guid: b3f86c528b5da4ae2923ad4e65344033,
+        type: 2}
+    - target: {fileID: 114260579959754222, guid: fdd3c6e410ee14b60aac3da9d7c66359,
+        type: 2}
+      propertyPath: nightDialog
+      value: 
+      objectReference: {fileID: 11400000, guid: abd070ba46f764a3c834723de03c87ef,
+        type: 2}
+    - target: {fileID: 114127216793681710, guid: fdd3c6e410ee14b60aac3da9d7c66359,
+        type: 2}
+      propertyPath: nightDialog
+      value: 
+      objectReference: {fileID: 11400000, guid: b3f86c528b5da4ae2923ad4e65344033,
+        type: 2}
+    - target: {fileID: 114439606892755020, guid: fdd3c6e410ee14b60aac3da9d7c66359,
+        type: 2}
+      propertyPath: nightDialog
+      value: 
+      objectReference: {fileID: 11400000, guid: b3f86c528b5da4ae2923ad4e65344033,
+        type: 2}
+    - target: {fileID: 114051890550936526, guid: fdd3c6e410ee14b60aac3da9d7c66359,
+        type: 2}
+      propertyPath: rotationSpeed
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 114419294641108404, guid: fdd3c6e410ee14b60aac3da9d7c66359,
+        type: 2}
+      propertyPath: rotationSpeed
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 114227932289285236, guid: fdd3c6e410ee14b60aac3da9d7c66359,
+        type: 2}
+      propertyPath: rotationSpeed
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 114500773861756920, guid: fdd3c6e410ee14b60aac3da9d7c66359,
+        type: 2}
+      propertyPath: rotationSpeed
+      value: 0.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 114536455426853012, guid: fdd3c6e410ee14b60aac3da9d7c66359,
+        type: 2}
+      propertyPath: rotationSpeed
+      value: 0.125
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 64966839322423080, guid: fdd3c6e410ee14b60aac3da9d7c66359, type: 2}
     - {fileID: 64617665363777540, guid: fdd3c6e410ee14b60aac3da9d7c66359, type: 2}
@@ -46809,6 +46894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionDropdown: {fileID: 412432367}
+  volumeToggle: {fileID: 0}
 --- !u!114 &1654896598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57039,7 +57125,8 @@ MonoBehaviour:
   radius: 3.57
   hasInteracted: 0
   interactionTransform: {fileID: 1876932600}
-  dialog: {fileID: 11400000, guid: 0a00f04e0faef4086a0145b824ec0acf, type: 2}
+  nightDialog: {fileID: 11400000, guid: abd070ba46f764a3c834723de03c87ef, type: 2}
+  dayDialog: {fileID: 11400000, guid: abd070ba46f764a3c834723de03c87ef, type: 2}
   waitNextDay: 0
   clock:
     second: 0
@@ -59276,6 +59363,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114119965652024472, guid: f281ddae21c8741e38d67975edc4353f,
+        type: 2}
+      propertyPath: dialoguesInInspector.Array.size
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4682029185521552, guid: f281ddae21c8741e38d67975edc4353f, type: 2}
       propertyPath: m_LocalPosition.x
       value: 28.9
@@ -59323,6 +59415,18 @@ Prefab:
       propertyPath: dialogueBox
       value: 
       objectReference: {fileID: 1489848623}
+    - target: {fileID: 114119965652024472, guid: f281ddae21c8741e38d67975edc4353f,
+        type: 2}
+      propertyPath: dialoguesInInspector.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: abd070ba46f764a3c834723de03c87ef,
+        type: 2}
+    - target: {fileID: 114119965652024472, guid: f281ddae21c8741e38d67975edc4353f,
+        type: 2}
+      propertyPath: dialoguesInInspector.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: b3f86c528b5da4ae2923ad4e65344033,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f281ddae21c8741e38d67975edc4353f, type: 2}
   m_IsPrefabParent: 0

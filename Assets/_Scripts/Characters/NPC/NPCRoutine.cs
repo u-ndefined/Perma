@@ -82,7 +82,6 @@ public class NPCRoutine : MonoBehaviour
             if (flags[i].clock > TimeManager.Instance.clock) step = i;
             else break;
         }
-        Debug.Log(step);
         if (step == -1)
         {
            
